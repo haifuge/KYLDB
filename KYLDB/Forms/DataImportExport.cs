@@ -103,7 +103,8 @@ namespace KYLDB.Forms
                         DataRow dr = table.NewRow();
                         for (int j = 1; j < col; j++)
                         {
-                            string cell = xlRange.Cells[row, j].Value2 != null ? xlRange.Cells[row, j].Value2.ToString() : "";
+                            object obj = xlRange.Cells[row, j].Value2;
+                            string cell = obj == null ? "" : obj.ToString();
                             // FirstCheckDate, PayClosedDate, BankStartDate ,PayStartDate
                             if ((j == 80 || j == 40 || j == 35 || j == 28)&& cell != "")
                             {
