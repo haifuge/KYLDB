@@ -1,4 +1,5 @@
 ﻿using KYLDB.Forms;
+using KYLDB.Reports;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,6 +48,13 @@ namespace KYLDB
             DataImportExport die = new DataImportExport();
             die.MdiParent = this;
             die.Show();
+        }
+
+        private void accountInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AccountInfoRep aiRep = new AccountInfoRep();
+            aiRep.MdiParent = this;
+            aiRep.Show();
         }
     }
 }
