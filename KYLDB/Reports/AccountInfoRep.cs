@@ -20,10 +20,10 @@ namespace KYLDB.Reports
 
         private void AccountInfoRep_Load(object sender, EventArgs e)
         {
-            this.reportViewer1.RefreshReport();
             string sql = "select * from AccountInfo";
             DataTable dt = DBOperator.QuerySql(sql);
             this.AccountInfoBindingSource.DataSource = dt;
+            this.reportViewer1.RefreshReport();
         }
     }
 }
