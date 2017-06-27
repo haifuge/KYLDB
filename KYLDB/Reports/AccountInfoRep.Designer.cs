@@ -37,6 +37,8 @@
             // 
             // reportViewer1
             // 
+            this.reportViewer1.AutoSize = true;
+            this.reportViewer1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource1.Name = "dsAccountInfo";
             reportDataSource1.Value = this.AccountInfoBindingSource;
@@ -44,8 +46,9 @@
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "KYLDB.Reports.Report1.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.PageCountMode = Microsoft.Reporting.WinForms.PageCountMode.Actual;
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1077, 625);
+            this.reportViewer1.Size = new System.Drawing.Size(882, 462);
             this.reportViewer1.TabIndex = 0;
             // 
             // AccountInfoBindingSource
@@ -56,13 +59,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1077, 625);
+            this.ClientSize = new System.Drawing.Size(882, 462);
             this.Controls.Add(this.reportViewer1);
             this.Name = "AccountInfoRep";
             this.Text = "AccountInfoRep";
             this.Load += new System.EventHandler(this.AccountInfoRep_Load);
             ((System.ComponentModel.ISupportInitialize)(this.AccountInfoBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
