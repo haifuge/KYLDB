@@ -32,8 +32,8 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.AccountInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.AccountInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.AccountInfoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,10 +57,6 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "AccNum:";
             // 
-            // AccountInfoBindingSource
-            // 
-            this.AccountInfoBindingSource.DataSource = typeof(KYLDB.Model.AccountInfo);
-            // 
             // reportViewer1
             // 
             this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -69,12 +65,16 @@
             reportDataSource1.Name = "dsAccountInfo";
             reportDataSource1.Value = this.AccountInfoBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "KYLDB.Reports.Report1.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "KYLDB.Reports.AccountInfo.Report1.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 35);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(924, 477);
             this.reportViewer1.TabIndex = 4;
+            // 
+            // AccountInfoBindingSource
+            // 
+            this.AccountInfoBindingSource.DataSource = typeof(KYLDB.Model.AccountInfo);
             // 
             // AccountInfoRep
             // 

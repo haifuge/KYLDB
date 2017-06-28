@@ -86,10 +86,10 @@
     <Compile Include="Model\AccountInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reports\AccountInfoRep.cs">
+    <Compile Include="Reports\AccountInfo\AccountInfoRep.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reports\AccountInfoRep.Designer.cs">
+    <Compile Include="Reports\AccountInfo\AccountInfoRep.Designer.cs">
       <DependentUpon>AccountInfoRep.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
@@ -111,10 +111,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Reports\AccountInfoRep.resx">
+    <EmbeddedResource Include="Reports\AccountInfo\AccountInfoRep.resx">
       <DependentUpon>AccountInfoRep.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\Report1.rdlc" />
+    <EmbeddedResource Include="Reports\AccountInfo\Report1.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\KYLDB.Model.AccountInfo.datasource" />
     <None Include="Properties\Settings.settings">
