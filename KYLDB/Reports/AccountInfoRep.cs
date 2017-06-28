@@ -17,12 +17,24 @@ namespace KYLDB.Reports
         {
             InitializeComponent();
         }
-
+        List<AccountInfo> AccountInfos = new List<AccountInfo>();
         private void AccountInfoRep_Load(object sender, EventArgs e)
         {
             string sql = "select * from AccountInfo";
             DataTable dt = DBOperator.QuerySql(sql);
-            this.AccountInfoBindingSource.DataSource = dt;
+            AccountInfos = DBOperator.getListFromTable<AccountInfo>(dt);
+            var acclist = from ac in AccountInfos
+                          select ac.AccNum;
+            comboBox1.DataSource = acclist.ToArray();
+            this.reportViewer1.RefreshReport();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var acc = from ac in AccountInfos
+                      where ac.AccNum==comboBox1.Text
+                      select ac;
+            this.AccountInfoBindingSource.DataSource = acc;
             this.reportViewer1.RefreshReport();
         }
     }
