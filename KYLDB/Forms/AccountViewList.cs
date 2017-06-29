@@ -85,5 +85,10 @@ namespace KYLDB.Forms
         {
 
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            MessageBox.Show(e.ColumnIndex + ", " + e.RowIndex);
+        }
     }
 }
