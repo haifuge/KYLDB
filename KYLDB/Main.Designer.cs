@@ -35,6 +35,7 @@
             this.dataImportExportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.accountInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewClientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,7 +55,8 @@
             // Client
             // 
             this.Client.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.clientInfoToolStripMenuItem});
+            this.clientInfoToolStripMenuItem,
+            this.viewClientsToolStripMenuItem});
             this.Client.Name = "Client";
             this.Client.Size = new System.Drawing.Size(59, 24);
             this.Client.Text = "Client";
@@ -62,7 +64,7 @@
             // clientInfoToolStripMenuItem
             // 
             this.clientInfoToolStripMenuItem.Name = "clientInfoToolStripMenuItem";
-            this.clientInfoToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
+            this.clientInfoToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.clientInfoToolStripMenuItem.Text = "Client Info";
             this.clientInfoToolStripMenuItem.Click += new System.EventHandler(this.clientInfoToolStripMenuItem_Click);
             // 
@@ -92,9 +94,16 @@
             // accountInfoToolStripMenuItem
             // 
             this.accountInfoToolStripMenuItem.Name = "accountInfoToolStripMenuItem";
-            this.accountInfoToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.accountInfoToolStripMenuItem.Size = new System.Drawing.Size(168, 26);
             this.accountInfoToolStripMenuItem.Text = "Account Info";
             this.accountInfoToolStripMenuItem.Click += new System.EventHandler(this.accountInfoToolStripMenuItem_Click);
+            // 
+            // viewClientsToolStripMenuItem
+            // 
+            this.viewClientsToolStripMenuItem.Name = "viewClientsToolStripMenuItem";
+            this.viewClientsToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.viewClientsToolStripMenuItem.Text = "View Clients";
+            this.viewClientsToolStripMenuItem.Click += new System.EventHandler(this.viewClientsToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -125,6 +134,7 @@
         private System.Windows.Forms.ToolStripMenuItem dataImportExportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem accountInfoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewClientsToolStripMenuItem;
     }
 }
 

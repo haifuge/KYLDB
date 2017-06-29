@@ -56,5 +56,12 @@ namespace KYLDB
             aiRep.MdiParent = this;
             aiRep.Show();
         }
+
+        private void viewClientsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AccountViewList avl = new AccountViewList();
+            avl.MdiParent = this;
+            avl.Show();
+        }
     }
 }
