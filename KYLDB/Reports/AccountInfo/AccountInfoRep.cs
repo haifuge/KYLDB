@@ -13,9 +13,27 @@ namespace KYLDB.Reports
 {
     public partial class AccountInfoRep : Form
     {
-        public AccountInfoRep()
+        private AccountInfoRep()
         {
             InitializeComponent();
+        }
+
+        private static AccountInfoRep singleton = null;
+        public static AccountInfoRep GetInstance()
+        {
+            if (singleton == null)
+                singleton = new AccountInfoRep();
+            return singleton;
+        }
+        public new void Show()
+        {
+            this.Visible = true;
+            base.Show();
+            this.BringToFront();
+        }
+        public void SetData(string accNum)
+        {
+            comboBox1.Text = accNum;
         }
         List<AccountInfo> AccountInfos = new List<AccountInfo>();
         private void AccountInfoRep_Load(object sender, EventArgs e)
@@ -36,6 +54,11 @@ namespace KYLDB.Reports
                       select ac;
             this.AccountInfoBindingSource.DataSource = acc;
             this.reportViewer1.RefreshReport();
+        }
+
+        private void AccountInfoRep_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            singleton = null;
         }
     }
 }

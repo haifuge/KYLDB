@@ -14,7 +14,6 @@ namespace KYLDB
 {
     public partial class Main : Form
     {
-        Form curForm;
         public Main()
         {
             InitializeComponent();
@@ -28,38 +27,33 @@ namespace KYLDB
 
         private void clientInfoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ClientInfo ci = new ClientInfo();
+            ClientPayroll ci = ClientPayroll.GetInstance();
             ci.MdiParent = this;
-            curForm = ci;
             ci.Show();
         }
 
         private void Main_Resize(object sender, EventArgs e)
         {
-            if (curForm != null)
-            {
-                curForm.Width = this.Width - 50;
-                curForm.Height = this.Height - 80;
-            }
+            
         }
 
         private void dataImportExportToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DataImportExport die = new DataImportExport();
+            DataImportExport die = DataImportExport.GetInstance();
             die.MdiParent = this;
             die.Show();
         }
 
         private void accountInfoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AccountInfoRep aiRep = new AccountInfoRep();
+            AccountInfoRep aiRep = AccountInfoRep.GetInstance();
             aiRep.MdiParent = this;
             aiRep.Show();
         }
 
         private void viewClientsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AccountViewList avl = new AccountViewList();
+            AccountViewList avl = AccountViewList.GetInstance();
             avl.MdiParent = this;
             avl.Show();
         }

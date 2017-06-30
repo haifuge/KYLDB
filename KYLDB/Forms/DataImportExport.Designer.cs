@@ -30,21 +30,21 @@
         {
             this.tabpage = new System.Windows.Forms.TabControl();
             this.DataImport = new System.Windows.Forms.TabPage();
-            this.DataExport = new System.Windows.Forms.TabPage();
-            this.cTableList = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.btnSelectFile = new System.Windows.Forms.Button();
+            this.tFilePath = new System.Windows.Forms.TextBox();
             this.btnImport = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.tFilePath = new System.Windows.Forms.TextBox();
-            this.btnSelectFile = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cTableList = new System.Windows.Forms.ComboBox();
+            this.DataExport = new System.Windows.Forms.TabPage();
+            this.progressBar2 = new System.Windows.Forms.ProgressBar();
             this.btnSave = new System.Windows.Forms.Button();
             this.tSavePath = new System.Windows.Forms.TextBox();
             this.btnExport = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cExportTable = new System.Windows.Forms.ComboBox();
-            this.progressBar2 = new System.Windows.Forms.ProgressBar();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.tabpage.SuspendLayout();
             this.DataImport.SuspendLayout();
             this.DataExport.SuspendLayout();
@@ -78,41 +78,31 @@
             this.DataImport.Text = "Data Import";
             this.DataImport.UseVisualStyleBackColor = true;
             // 
-            // DataExport
+            // progressBar1
             // 
-            this.DataExport.Controls.Add(this.progressBar2);
-            this.DataExport.Controls.Add(this.btnSave);
-            this.DataExport.Controls.Add(this.tSavePath);
-            this.DataExport.Controls.Add(this.btnExport);
-            this.DataExport.Controls.Add(this.label3);
-            this.DataExport.Controls.Add(this.label4);
-            this.DataExport.Controls.Add(this.cExportTable);
-            this.DataExport.Location = new System.Drawing.Point(4, 25);
-            this.DataExport.Name = "DataExport";
-            this.DataExport.Padding = new System.Windows.Forms.Padding(3);
-            this.DataExport.Size = new System.Drawing.Size(735, 381);
-            this.DataExport.TabIndex = 1;
-            this.DataExport.Text = "Data Export";
-            this.DataExport.UseVisualStyleBackColor = true;
+            this.progressBar1.Location = new System.Drawing.Point(347, 247);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(305, 23);
+            this.progressBar1.TabIndex = 5;
+            this.progressBar1.UseWaitCursor = true;
+            this.progressBar1.Visible = false;
             // 
-            // cTableList
+            // btnSelectFile
             // 
-            this.cTableList.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cTableList.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cTableList.FormattingEnabled = true;
-            this.cTableList.Location = new System.Drawing.Point(213, 72);
-            this.cTableList.Name = "cTableList";
-            this.cTableList.Size = new System.Drawing.Size(172, 24);
-            this.cTableList.TabIndex = 0;
+            this.btnSelectFile.Location = new System.Drawing.Point(564, 162);
+            this.btnSelectFile.Name = "btnSelectFile";
+            this.btnSelectFile.Size = new System.Drawing.Size(106, 24);
+            this.btnSelectFile.TabIndex = 4;
+            this.btnSelectFile.Text = "Open File";
+            this.btnSelectFile.UseVisualStyleBackColor = true;
+            this.btnSelectFile.Click += new System.EventHandler(this.btnSelectFile_Click);
             // 
-            // label1
+            // tFilePath
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(100, 165);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 17);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Select File:";
+            this.tFilePath.Location = new System.Drawing.Point(183, 162);
+            this.tFilePath.Name = "tFilePath";
+            this.tFilePath.Size = new System.Drawing.Size(365, 22);
+            this.tFilePath.TabIndex = 3;
             // 
             // btnImport
             // 
@@ -133,22 +123,50 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Import Table:";
             // 
-            // tFilePath
+            // label1
             // 
-            this.tFilePath.Location = new System.Drawing.Point(183, 162);
-            this.tFilePath.Name = "tFilePath";
-            this.tFilePath.Size = new System.Drawing.Size(365, 22);
-            this.tFilePath.TabIndex = 3;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(100, 165);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 17);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Select File:";
             // 
-            // btnSelectFile
+            // cTableList
             // 
-            this.btnSelectFile.Location = new System.Drawing.Point(564, 162);
-            this.btnSelectFile.Name = "btnSelectFile";
-            this.btnSelectFile.Size = new System.Drawing.Size(106, 24);
-            this.btnSelectFile.TabIndex = 4;
-            this.btnSelectFile.Text = "Open File";
-            this.btnSelectFile.UseVisualStyleBackColor = true;
-            this.btnSelectFile.Click += new System.EventHandler(this.btnSelectFile_Click);
+            this.cTableList.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cTableList.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cTableList.FormattingEnabled = true;
+            this.cTableList.Location = new System.Drawing.Point(213, 72);
+            this.cTableList.Name = "cTableList";
+            this.cTableList.Size = new System.Drawing.Size(172, 24);
+            this.cTableList.TabIndex = 0;
+            // 
+            // DataExport
+            // 
+            this.DataExport.Controls.Add(this.progressBar2);
+            this.DataExport.Controls.Add(this.btnSave);
+            this.DataExport.Controls.Add(this.tSavePath);
+            this.DataExport.Controls.Add(this.btnExport);
+            this.DataExport.Controls.Add(this.label3);
+            this.DataExport.Controls.Add(this.label4);
+            this.DataExport.Controls.Add(this.cExportTable);
+            this.DataExport.Location = new System.Drawing.Point(4, 25);
+            this.DataExport.Name = "DataExport";
+            this.DataExport.Padding = new System.Windows.Forms.Padding(3);
+            this.DataExport.Size = new System.Drawing.Size(735, 381);
+            this.DataExport.TabIndex = 1;
+            this.DataExport.Text = "Data Export";
+            this.DataExport.UseVisualStyleBackColor = true;
+            // 
+            // progressBar2
+            // 
+            this.progressBar2.Location = new System.Drawing.Point(393, 265);
+            this.progressBar2.Name = "progressBar2";
+            this.progressBar2.Size = new System.Drawing.Size(259, 23);
+            this.progressBar2.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.progressBar2.TabIndex = 12;
+            this.progressBar2.Visible = false;
             // 
             // btnSave
             // 
@@ -205,24 +223,6 @@
             this.cExportTable.Size = new System.Drawing.Size(172, 24);
             this.cExportTable.TabIndex = 6;
             // 
-            // progressBar2
-            // 
-            this.progressBar2.Location = new System.Drawing.Point(393, 265);
-            this.progressBar2.Name = "progressBar2";
-            this.progressBar2.Size = new System.Drawing.Size(259, 23);
-            this.progressBar2.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
-            this.progressBar2.TabIndex = 12;
-            this.progressBar2.Visible = false;
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(347, 247);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(305, 23);
-            this.progressBar1.TabIndex = 5;
-            this.progressBar1.UseWaitCursor = true;
-            this.progressBar1.Visible = false;
-            // 
             // DataImportExport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -231,6 +231,7 @@
             this.Controls.Add(this.tabpage);
             this.Name = "DataImportExport";
             this.Text = "DataImportExport";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DataImportExport_FormClosed);
             this.Load += new System.EventHandler(this.DataImportExport_Load);
             this.tabpage.ResumeLayout(false);
             this.DataImport.ResumeLayout(false);

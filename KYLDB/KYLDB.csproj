@@ -70,13 +70,13 @@
     <Compile Include="Forms\AccountViewList.Designer.cs">
       <DependentUpon>AccountViewList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ClientInfo.cs">
+    <Compile Include="DBOperator.cs" />
+    <Compile Include="Forms\ClientPayroll.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ClientInfo.Designer.cs">
-      <DependentUpon>ClientInfo.cs</DependentUpon>
+    <Compile Include="Forms\ClientPayroll.Designer.cs">
+      <DependentUpon>ClientPayroll.cs</DependentUpon>
     </Compile>
-    <Compile Include="DBOperator.cs" />
     <Compile Include="Forms\DataImportExport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,8 +102,8 @@
     <EmbeddedResource Include="Forms\AccountViewList.resx">
       <DependentUpon>AccountViewList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ClientInfo.resx">
-      <DependentUpon>ClientInfo.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ClientPayroll.resx">
+      <DependentUpon>ClientPayroll.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DataImportExport.resx">
       <DependentUpon>DataImportExport.cs</DependentUpon>

@@ -13,11 +13,24 @@ namespace KYLDB.Forms
 {
     public partial class DataImportExport : Form
     {
-        public DataImportExport()
+        private DataImportExport()
         {
             InitializeComponent();
         }
 
+        private static DataImportExport singleton = null;
+        public static DataImportExport GetInstance()
+        {
+            if (singleton == null)
+                singleton = new DataImportExport();
+            return singleton;
+        }
+        public new void Show()
+        {
+            this.Visible = true;
+            base.Show();
+            this.BringToFront();
+        }
         private void DataImportExport_Load(object sender, EventArgs e)
         {
             string sql = "select * from KLYTables";
@@ -208,6 +221,11 @@ namespace KYLDB.Forms
                 xlWorkbook.Close();
                 xlApp.Quit();
             }
+        }
+
+        private void DataImportExport_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            singleton = null;
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace KYLDB
 {
-    partial class ClientInfo
+    partial class ClientPayroll
     {
         /// <summary>
         /// Required designer variable.
@@ -28,11 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnNext = new System.Windows.Forms.Button();
+            this.btnMain = new System.Windows.Forms.Button();
             this.AccNumList = new System.Windows.Forms.ComboBox();
-            this.btnPrev = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -195,72 +192,45 @@
             this.dPayCloseDate = new System.Windows.Forms.DateTimePicker();
             this.label80 = new System.Windows.Forms.Label();
             this.dFirstCheckDate = new System.Windows.Forms.DateTimePicker();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label81 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // btnNext
+            // btnMain
             // 
-            this.btnNext.Location = new System.Drawing.Point(334, 26);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(70, 27);
-            this.btnNext.TabIndex = 81;
-            this.btnNext.Text = "Next";
-            this.btnNext.UseVisualStyleBackColor = true;
-            this.btnNext.Click += new System.EventHandler(this.button1_Click);
+            this.btnMain.Location = new System.Drawing.Point(634, 24);
+            this.btnMain.Name = "btnMain";
+            this.btnMain.Size = new System.Drawing.Size(93, 27);
+            this.btnMain.TabIndex = 81;
+            this.btnMain.Text = "Main";
+            this.btnMain.UseVisualStyleBackColor = true;
+            this.btnMain.Click += new System.EventHandler(this.btnMain_Click);
             // 
             // AccNumList
             // 
             this.AccNumList.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.AccNumList.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.AccNumList.FormattingEnabled = true;
-            this.AccNumList.Location = new System.Drawing.Point(142, 26);
+            this.AccNumList.Location = new System.Drawing.Point(99, 26);
             this.AccNumList.Name = "AccNumList";
             this.AccNumList.Size = new System.Drawing.Size(140, 24);
             this.AccNumList.TabIndex = 0;
             this.AccNumList.SelectedIndexChanged += new System.EventHandler(this.AccNumList_SelectedIndexChanged);
             // 
-            // btnPrev
-            // 
-            this.btnPrev.Location = new System.Drawing.Point(421, 26);
-            this.btnPrev.Name = "btnPrev";
-            this.btnPrev.Size = new System.Drawing.Size(70, 27);
-            this.btnPrev.TabIndex = 82;
-            this.btnPrev.Text = "Prev";
-            this.btnPrev.UseVisualStyleBackColor = true;
-            this.btnPrev.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(508, 26);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(70, 27);
-            this.btnEdit.TabIndex = 83;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(595, 26);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(70, 27);
-            this.btnSave.TabIndex = 84;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
             // btnPrint
             // 
-            this.btnPrint.Location = new System.Drawing.Point(682, 26);
+            this.btnPrint.Location = new System.Drawing.Point(760, 24);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(70, 27);
+            this.btnPrint.Size = new System.Drawing.Size(93, 27);
             this.btnPrint.TabIndex = 85;
             this.btnPrint.Text = "Print";
             this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(76, 31);
+            this.label1.Location = new System.Drawing.Point(33, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 17);
             this.label1.TabIndex = 8;
@@ -1824,11 +1794,32 @@
             this.dFirstCheckDate.TabIndex = 80;
             this.dFirstCheckDate.Value = new System.DateTime(2017, 6, 15, 21, 36, 28, 0);
             // 
-            // ClientInfo
+            // comboBox2
+            // 
+            this.comboBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(337, 25);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(194, 24);
+            this.comboBox2.TabIndex = 161;
+            // 
+            // label81
+            // 
+            this.label81.AutoSize = true;
+            this.label81.Location = new System.Drawing.Point(258, 29);
+            this.label81.Name = "label81";
+            this.label81.Size = new System.Drawing.Size(72, 17);
+            this.label81.TabIndex = 160;
+            this.label81.Text = "Customer:";
+            // 
+            // ClientPayroll
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(990, 930);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.label81);
             this.Controls.Add(this.tLocalPSD);
             this.Controls.Add(this.tPhilaEZReportN);
             this.Controls.Add(this.tLocalCollector);
@@ -1991,14 +1982,12 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnPrint);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.btnPrev);
             this.Controls.Add(this.AccNumList);
-            this.Controls.Add(this.btnNext);
+            this.Controls.Add(this.btnMain);
             this.MinimumSize = new System.Drawing.Size(990, 930);
-            this.Name = "ClientInfo";
+            this.Name = "ClientPayroll";
             this.Text = "ClientInfo";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ClientInfo_FormClosed);
             this.Load += new System.EventHandler(this.ClientInfo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -2006,11 +1995,8 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Button btnMain;
         private System.Windows.Forms.ComboBox AccNumList;
-        private System.Windows.Forms.Button btnPrev;
-        private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -2173,5 +2159,7 @@
         private System.Windows.Forms.DateTimePicker dPayCloseDate;
         private System.Windows.Forms.Label label80;
         private System.Windows.Forms.DateTimePicker dFirstCheckDate;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label81;
     }
 }

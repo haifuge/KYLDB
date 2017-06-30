@@ -30,12 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.AccountInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.AccountInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.AccountInfoBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // AccountInfoBindingSource
+            // 
+            this.AccountInfoBindingSource.DataSource = typeof(KYLDB.Model.AccountInfo);
             // 
             // comboBox1
             // 
@@ -72,10 +76,6 @@
             this.reportViewer1.Size = new System.Drawing.Size(924, 477);
             this.reportViewer1.TabIndex = 4;
             // 
-            // AccountInfoBindingSource
-            // 
-            this.AccountInfoBindingSource.DataSource = typeof(KYLDB.Model.AccountInfo);
-            // 
             // AccountInfoRep
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -86,6 +86,7 @@
             this.Controls.Add(this.comboBox1);
             this.Name = "AccountInfoRep";
             this.Text = "AccountInfoRep";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AccountInfoRep_FormClosed);
             this.Load += new System.EventHandler(this.AccountInfoRep_Load);
             ((System.ComponentModel.ISupportInitialize)(this.AccountInfoBindingSource)).EndInit();
             this.ResumeLayout(false);
