@@ -123,14 +123,15 @@ namespace KYLDB.Forms
             if (e.ColumnIndex == 8)
             {
                 // detail
-                ClientPayroll ci = ClientPayroll.GetInstance();
-                ci.MdiParent = this.MdiParent;
-                ci.Show();
-                ci.SetData(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+                
             }
             else if (e.ColumnIndex==9)
             {
                 // payroll
+                ClientPayroll ci = ClientPayroll.GetInstance();
+                ci.MdiParent = this.MdiParent;
+                ci.Show();
+                ci.SetData(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
             }
             else if (e.ColumnIndex==10)
             {
