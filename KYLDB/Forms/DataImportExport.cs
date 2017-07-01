@@ -134,6 +134,25 @@ namespace KYLDB.Forms
                         row++;
                     }
                     break;
+                case "ClientDetail":
+                    while (xlRange.Cells[row, 1].Value2 != null)
+                    {
+                        DataRow dr = table.NewRow();
+                        for (int j = 1; j < col; j++)
+                        {
+                            object obj = xlRange.Cells[row, j].Value2;
+                            string cell = obj == null ? "" : obj.ToString();
+                            // StartDate, end Date
+                            if ((j == 41 || j == 42 ) && cell != "")
+                            {
+                                cell = DateTime.FromOADate(double.Parse(cell)).ToShortDateString();
+                            }
+                            dr[j - 1] = cell;
+                        }
+                        table.Rows.Add(dr);
+                        row++;
+                    }
+                    break;
             }
 
             xlWorkbook.Close();

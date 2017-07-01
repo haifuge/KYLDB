@@ -104,6 +104,12 @@
     <Compile Include="Reports\ClientPayroll\ClientPayrollRep.Designer.cs">
       <DependentUpon>ClientPayrollRep.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\StatisticReport\StatisticReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\StatisticReport\StatisticReport.Designer.cs">
+      <DependentUpon>StatisticReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="Forms\AccountViewList.resx">
       <DependentUpon>AccountViewList.cs</DependentUpon>
@@ -133,6 +139,10 @@
       <DependentUpon>ClientPayrollRep.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\ClientPayroll\Report1.rdlc" />
+    <EmbeddedResource Include="Reports\StatisticReport\Report1.rdlc" />
+    <EmbeddedResource Include="Reports\StatisticReport\StatisticReport.resx">
+      <DependentUpon>StatisticReport.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\KYLDB.Model.AccountInfo.datasource" />
     <None Include="Properties\Settings.settings">
@@ -191,6 +201,9 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Reports\ClientDetail\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
