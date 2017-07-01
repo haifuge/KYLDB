@@ -83,6 +83,12 @@
     <Compile Include="Forms\DataImportExport.Designer.cs">
       <DependentUpon>DataImportExport.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\RepManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RepManagement.Designer.cs">
+      <DependentUpon>RepManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DataImportExport.resx">
       <DependentUpon>DataImportExport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RepManagement.resx">
+      <DependentUpon>RepManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>

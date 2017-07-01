@@ -31,11 +31,13 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.Client = new System.Windows.Forms.ToolStripMenuItem();
             this.clientInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewClientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataImportExportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.accountInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewClientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.repManageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.repManageToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,7 +47,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Client,
             this.dataToolStripMenuItem,
-            this.reportsToolStripMenuItem});
+            this.reportsToolStripMenuItem,
+            this.repManageToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1122, 28);
@@ -64,9 +67,16 @@
             // clientInfoToolStripMenuItem
             // 
             this.clientInfoToolStripMenuItem.Name = "clientInfoToolStripMenuItem";
-            this.clientInfoToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.clientInfoToolStripMenuItem.Size = new System.Drawing.Size(164, 26);
             this.clientInfoToolStripMenuItem.Text = "Client Info";
             this.clientInfoToolStripMenuItem.Click += new System.EventHandler(this.clientInfoToolStripMenuItem_Click);
+            // 
+            // viewClientsToolStripMenuItem
+            // 
+            this.viewClientsToolStripMenuItem.Name = "viewClientsToolStripMenuItem";
+            this.viewClientsToolStripMenuItem.Size = new System.Drawing.Size(164, 26);
+            this.viewClientsToolStripMenuItem.Text = "View Clients";
+            this.viewClientsToolStripMenuItem.Click += new System.EventHandler(this.viewClientsToolStripMenuItem_Click);
             // 
             // dataToolStripMenuItem
             // 
@@ -98,12 +108,20 @@
             this.accountInfoToolStripMenuItem.Text = "Account Info";
             this.accountInfoToolStripMenuItem.Click += new System.EventHandler(this.accountInfoToolStripMenuItem_Click);
             // 
-            // viewClientsToolStripMenuItem
+            // repManageToolStripMenuItem
             // 
-            this.viewClientsToolStripMenuItem.Name = "viewClientsToolStripMenuItem";
-            this.viewClientsToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.viewClientsToolStripMenuItem.Text = "View Clients";
-            this.viewClientsToolStripMenuItem.Click += new System.EventHandler(this.viewClientsToolStripMenuItem_Click);
+            this.repManageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.repManageToolStripMenuItem1});
+            this.repManageToolStripMenuItem.Name = "repManageToolStripMenuItem";
+            this.repManageToolStripMenuItem.Size = new System.Drawing.Size(101, 24);
+            this.repManageToolStripMenuItem.Text = "RepManage";
+            // 
+            // repManageToolStripMenuItem1
+            // 
+            this.repManageToolStripMenuItem1.Name = "repManageToolStripMenuItem1";
+            this.repManageToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
+            this.repManageToolStripMenuItem1.Text = "RepManage";
+            this.repManageToolStripMenuItem1.Click += new System.EventHandler(this.repManageToolStripMenuItem1_Click);
             // 
             // Main
             // 
@@ -135,6 +153,8 @@
         private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem accountInfoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewClientsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem repManageToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem repManageToolStripMenuItem1;
     }
 }
 

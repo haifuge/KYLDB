@@ -57,5 +57,12 @@ namespace KYLDB
             avl.MdiParent = this;
             avl.Show();
         }
+
+        private void repManageToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            RepManagement rm = RepManagement.GetInstance();
+            rm.MdiParent = this;
+            rm.Show();
+        }
     }
 }

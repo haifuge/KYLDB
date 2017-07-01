@@ -80,7 +80,7 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(347, 247);
+            this.progressBar1.Location = new System.Drawing.Point(350, 250);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(305, 23);
             this.progressBar1.TabIndex = 5;
@@ -99,14 +99,14 @@
             // 
             // tFilePath
             // 
-            this.tFilePath.Location = new System.Drawing.Point(183, 162);
+            this.tFilePath.Location = new System.Drawing.Point(183, 163);
             this.tFilePath.Name = "tFilePath";
             this.tFilePath.Size = new System.Drawing.Size(365, 22);
             this.tFilePath.TabIndex = 3;
             // 
             // btnImport
             // 
-            this.btnImport.Location = new System.Drawing.Point(225, 241);
+            this.btnImport.Location = new System.Drawing.Point(225, 247);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(100, 29);
             this.btnImport.TabIndex = 2;
@@ -126,7 +126,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(100, 165);
+            this.label1.Location = new System.Drawing.Point(100, 166);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 17);
             this.label1.TabIndex = 1;
@@ -136,6 +136,7 @@
             // 
             this.cTableList.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cTableList.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cTableList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cTableList.FormattingEnabled = true;
             this.cTableList.Location = new System.Drawing.Point(213, 72);
             this.cTableList.Name = "cTableList";
@@ -161,16 +162,16 @@
             // 
             // progressBar2
             // 
-            this.progressBar2.Location = new System.Drawing.Point(393, 265);
+            this.progressBar2.Location = new System.Drawing.Point(350, 250);
             this.progressBar2.Name = "progressBar2";
-            this.progressBar2.Size = new System.Drawing.Size(259, 23);
+            this.progressBar2.Size = new System.Drawing.Size(305, 23);
             this.progressBar2.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.progressBar2.TabIndex = 12;
             this.progressBar2.Visible = false;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(546, 181);
+            this.btnSave.Location = new System.Drawing.Point(564, 162);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(106, 24);
             this.btnSave.TabIndex = 11;
@@ -180,14 +181,14 @@
             // 
             // tSavePath
             // 
-            this.tSavePath.Location = new System.Drawing.Point(165, 181);
+            this.tSavePath.Location = new System.Drawing.Point(183, 163);
             this.tSavePath.Name = "tSavePath";
             this.tSavePath.Size = new System.Drawing.Size(365, 22);
             this.tSavePath.TabIndex = 10;
             // 
             // btnExport
             // 
-            this.btnExport.Location = new System.Drawing.Point(207, 260);
+            this.btnExport.Location = new System.Drawing.Point(225, 247);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(100, 29);
             this.btnExport.TabIndex = 9;
@@ -198,7 +199,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(82, 94);
+            this.label3.Location = new System.Drawing.Point(100, 75);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(92, 17);
             this.label3.TabIndex = 7;
@@ -207,7 +208,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(82, 184);
+            this.label4.Location = new System.Drawing.Point(100, 166);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 17);
             this.label4.TabIndex = 8;
@@ -217,8 +218,9 @@
             // 
             this.cExportTable.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cExportTable.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cExportTable.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cExportTable.FormattingEnabled = true;
-            this.cExportTable.Location = new System.Drawing.Point(195, 91);
+            this.cExportTable.Location = new System.Drawing.Point(213, 72);
             this.cExportTable.Name = "cExportTable";
             this.cExportTable.Size = new System.Drawing.Size(172, 24);
             this.cExportTable.TabIndex = 6;

@@ -41,19 +41,12 @@ namespace KYLDB.Forms
             cTableList.DataSource = tableList.ToList();
             cExportTable.DataSource = tableList.ToList();
         }
-
-        private void btnSelectFile_Click(object sender, EventArgs e)
+        private void DataImportExport_FormClosed(object sender, FormClosedEventArgs e)
         {
-            OpenFileDialog od = new OpenFileDialog();
-            od.Filter = "Excel|*.xlsx|Excel|*.xlsm|cvs|*.cvs|All|*.*";
-            od.RestoreDirectory = true;
-            od.FilterIndex = 1;
-            if (od.ShowDialog() == DialogResult.OK)
-            {
-                tFilePath.Text = od.FileName;
-            }
+            singleton = null;
         }
 
+        #region Import
         private async void btnImport_Click(object sender, EventArgs e)
         {
             cTableList.Enabled = false;
@@ -74,7 +67,6 @@ namespace KYLDB.Forms
             btnSelectFile.Enabled = true;
             progressBar1.Visible = false;
         }
-
         private void importData(string filePath, string tableName)
         {
             DataTable dt = ReadExcelToDataTable(filePath, tableName);
@@ -86,11 +78,10 @@ namespace KYLDB.Forms
                 {
                     sql += "'" + dt.Rows[i][j].ToString().Replace("'", "''") + "',";
                 }
-                sql = sql.Substring(0, sql.Length - 1) + ",''); ";
+                sql = sql.Substring(0, sql.Length - 1) + "); ";
             }
             DBOperator.ExecuteSql(sql);
         }
-
         private DataTable ReadExcelToDataTable(string filePath, string tableName)
         {
             if (filePath == string.Empty) throw new ArgumentNullException("路径参数不能为空");
@@ -110,7 +101,7 @@ namespace KYLDB.Forms
             // read data
             switch (tableName)
             {
-                case "AccountInfo":
+                case "ClientPayroll":
                     while (xlRange.Cells[row, 1].Value2 != null)
                     {
                         DataRow dr = table.NewRow();
@@ -119,7 +110,7 @@ namespace KYLDB.Forms
                             object obj = xlRange.Cells[row, j].Value2;
                             string cell = obj == null ? "" : obj.ToString();
                             // FirstCheckDate, PayClosedDate, BankStartDate ,PayStartDate
-                            if ((j == 80 || j == 40 || j == 35 || j == 28)&& cell != "")
+                            if ((j == 80 || j == 40 || j == 35 || j == 28) && cell != "")
                             {
                                 cell = DateTime.FromOADate(double.Parse(cell)).ToShortDateString();
                             }
@@ -129,13 +120,40 @@ namespace KYLDB.Forms
                         row++;
                     }
                     break;
+                case "Representative":
+                    while (xlRange.Cells[row, 1].Value2 != null)
+                    {
+                        DataRow dr = table.NewRow();
+                        for (int j = 1; j < col; j++)
+                        {
+                            object obj = xlRange.Cells[row, j].Value2;
+                            string cell = obj == null ? "" : obj.ToString();
+                            dr[j - 1] = cell;
+                        }
+                        table.Rows.Add(dr);
+                        row++;
+                    }
+                    break;
             }
-            
+
             xlWorkbook.Close();
             xlApp.Quit();
             return table;
         }
+        private void btnSelectFile_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog od = new OpenFileDialog();
+            od.Filter = "Excel|*.xlsx|Excel|*.xlsm|cvs|*.cvs|All|*.*";
+            od.RestoreDirectory = true;
+            od.FilterIndex = 1;
+            if (od.ShowDialog() == DialogResult.OK)
+            {
+                tFilePath.Text = od.FileName;
+            }
+        }
+        #endregion
 
+        #region Export
         private void btnSave_Click(object sender, EventArgs e)
         {
             SaveFileDialog sd = new SaveFileDialog();
@@ -149,7 +167,6 @@ namespace KYLDB.Forms
                 tSavePath.Text = sd.FileName;
             }
         }
-
         private async void button2_Click(object sender, EventArgs e)
         {
             cExportTable.Enabled = false;
@@ -181,7 +198,7 @@ namespace KYLDB.Forms
             Excel.Range xlRange;
 
             // write header
-            for(int i = 0; i < dt.Columns.Count; i++)
+            for (int i = 0; i < dt.Columns.Count; i++)
             {
                 xlWorksheet.Cells[1, i + 1] = dt.Columns[i].ColumnName;
                 xlRange = xlWorksheet.Cells[1, i + 1];
@@ -198,7 +215,7 @@ namespace KYLDB.Forms
                         for (int j = 0; j < dt.Columns.Count; j++)
                         {
                             string data = dt.Rows[i][j].ToString();
-                            if ((j == 79 || j == 39 || j == 34 || j == 27)&& data != "")
+                            if ((j == 79 || j == 39 || j == 34 || j == 27) && data != "")
                             {
                                 data = DateTime.Parse(data).ToShortDateString();
                             }
@@ -206,10 +223,18 @@ namespace KYLDB.Forms
                         }
                     }
                     break;
-                case "":
+                case "Representative":
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string data = dt.Rows[i][j].ToString();
+                            xlWorksheet.Cells[j + 1][i + 2] = data;
+                        }
+                    }
                     break;
             }
-            
+
             try
             {
                 xlWorkbook.Saved = true;
@@ -219,15 +244,15 @@ namespace KYLDB.Forms
             {
                 MessageBox.Show("导出文件时出错,文件可能正被打开！\n" + ex.Message);
             }
-            finally { 
+            finally
+            {
                 xlWorkbook.Close();
                 xlApp.Quit();
             }
         }
+        #endregion
 
-        private void DataImportExport_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            singleton = null;
-        }
+        
+        
     }
 }
