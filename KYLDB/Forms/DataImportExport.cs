@@ -191,7 +191,7 @@ namespace KYLDB.Forms
             // write data
             switch (tableName)
             {
-                case "AccountInfo":
+                case "ClientPayroll":
                     // 处理日期类型
                     for (int i = 0; i < dt.Rows.Count; i++)
                     {
@@ -205,6 +205,8 @@ namespace KYLDB.Forms
                             xlWorksheet.Cells[j + 1][i + 2] = data;
                         }
                     }
+                    break;
+                case "":
                     break;
             }
             
