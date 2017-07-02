@@ -70,22 +70,22 @@
           </Border>
         </Style>
       </Line>
-      <Tablix Name="Tablix3">
+      <Tablix Name="monthlyTable">
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>2.47222in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>2.47222in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>2.47222in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.25in</Height>
+              <Height>0.225in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -180,7 +180,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.25in</Height>
+              <Height>0.225in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -293,10 +293,10 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <Top>2.34667in</Top>
-        <Left>3.68in</Left>
-        <Height>0.5in</Height>
-        <Width>3in</Width>
+        <Top>0.78833in</Top>
+        <Left>0.39667in</Left>
+        <Height>0.45in</Height>
+        <Width>7.41667in</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -311,9 +311,40 @@
   <Width>8.27in</Width>
   <Page>
     <PageFooter>
-      <Height>1in</Height>
+      <Height>0.49167in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="PageNumber">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Globals!PageNumber</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>PageNumber</rd:DefaultName>
+          <Top>0.13583in</Top>
+          <Left>0.27167in</Left>
+          <Height>0.25in</Height>
+          <Width>1in</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
       <Style>
         <Border>
           <Style>None</Style>
