@@ -15,7 +15,7 @@ namespace KYLDB
 {
     public partial class ClientPayroll : Form
     {
-        List<AccountInfo> AccountInfos = new List<AccountInfo>();
+        List<AccountPayroll> AccountInfos = new List<AccountPayroll>();
 
         private ClientPayroll()
         {
@@ -44,7 +44,7 @@ namespace KYLDB
         {
             string sql = "select * from AccountInfo";
             DataTable dt = DBOperator.QuerySql(sql);
-            AccountInfos = DBOperator.getListFromTable<AccountInfo>(dt);
+            AccountInfos = DBOperator.getListFromTable<AccountPayroll>(dt);
             var acclist = from ac in AccountInfos
                           select ac.AccNum;
             AccNumList.DataSource = acclist.ToArray();
@@ -347,7 +347,7 @@ namespace KYLDB
             DBOperator.ExecuteSql(sql);
             sql = "select * from AccountInfo";
             DataTable dt = DBOperator.QuerySql(sql);
-            AccountInfos = DBOperator.getListFromTable<AccountInfo>(dt);
+            AccountInfos = DBOperator.getListFromTable<AccountPayroll>(dt);
         }
 
         private void btnPrint_Click(object sender, EventArgs e)

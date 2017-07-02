@@ -39,7 +39,7 @@
             // 
             // AccountInfoBindingSource
             // 
-            this.AccountInfoBindingSource.DataSource = typeof(KYLDB.Model.AccountInfo);
+            this.AccountInfoBindingSource.DataSource = typeof(KYLDB.Model.AccountPayroll);
             // 
             // comboBox1
             // 

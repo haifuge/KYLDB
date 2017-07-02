@@ -36,7 +36,7 @@ namespace KYLDB.Forms
             this.BringToFront();
         }
         DataTable dt;
-        List<AccountInfo> AccountInfos = new List<AccountInfo>();
+        List<AccountPayroll> AccountInfos = new List<AccountPayroll>();
         private void btnSearch_Click(object sender, EventArgs e)
         {
             var searchList = from ac in AccountInfos
@@ -62,7 +62,7 @@ namespace KYLDB.Forms
         {
             string sql = "select * from AccountInfo";
             dt = DBOperator.QuerySql(sql);
-            AccountInfos = DBOperator.getListFromTable<AccountInfo>(dt);
+            AccountInfos = DBOperator.getListFromTable<AccountPayroll>(dt);
             
             var searchList = from ac in AccountInfos
                              select new

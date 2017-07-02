@@ -35,12 +35,12 @@ namespace KYLDB.Reports
         {
             comboBox1.Text = accNum;
         }
-        List<AccountInfo> AccountInfos = new List<AccountInfo>();
+        List<AccountPayroll> AccountInfos = new List<AccountPayroll>();
         private void AccountInfoRep_Load(object sender, EventArgs e)
         {
             string sql = "select * from AccountInfo";
             DataTable dt = DBOperator.QuerySql(sql);
-            AccountInfos = DBOperator.getListFromTable<AccountInfo>(dt);
+            AccountInfos = DBOperator.getListFromTable<AccountPayroll>(dt);
             var acclist = from ac in AccountInfos
                           select ac.AccNum;
             comboBox1.DataSource = acclist.ToArray();

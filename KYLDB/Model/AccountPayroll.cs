@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KYLDB.Model
 {
-    public class AccountInfo
+    public class AccountPayroll
     {
         // 79
         public string AccNum { get; set; }
