@@ -11,18 +11,18 @@ using System.Windows.Forms;
 
 namespace KYLDB.Reports
 {
-    public partial class AccountInfoRep : Form
+    public partial class ClientPayrollRep : Form
     {
-        private AccountInfoRep()
+        private ClientPayrollRep()
         {
             InitializeComponent();
         }
 
-        private static AccountInfoRep singleton = null;
-        public static AccountInfoRep GetInstance()
+        private static ClientPayrollRep singleton = null;
+        public static ClientPayrollRep GetInstance()
         {
             if (singleton == null)
-                singleton = new AccountInfoRep();
+                singleton = new ClientPayrollRep();
             return singleton;
         }
         public new void Show()
@@ -35,13 +35,13 @@ namespace KYLDB.Reports
         {
             comboBox1.Text = accNum;
         }
-        List<Model.ClientPayroll> AccountInfos = new List<Model.ClientPayroll>();
-        private void AccountInfoRep_Load(object sender, EventArgs e)
+        List<Model.ClientPayroll> ClientPayrolls = new List<Model.ClientPayroll>();
+        private void ClientPayrollRep_Load(object sender, EventArgs e)
         {
             string sql = "select * from ClientPayroll";
             DataTable dt = DBOperator.QuerySql(sql);
-            AccountInfos = DBOperator.getListFromTable<Model.ClientPayroll>(dt);
-            var acclist = from ac in AccountInfos
+            ClientPayrolls = DBOperator.getListFromTable<Model.ClientPayroll>(dt);
+            var acclist = from ac in ClientPayrolls
                           select ac.AccNum;
             comboBox1.DataSource = acclist.ToArray();
             this.reportViewer1.RefreshReport();
@@ -49,14 +49,14 @@ namespace KYLDB.Reports
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var acc = from ac in AccountInfos
+            var acc = from ac in ClientPayrolls
                       where ac.AccNum==comboBox1.Text
                       select ac;
-            this.AccountInfoBindingSource.DataSource = acc;
+            this.ClientPayrollBindingSource.DataSource = acc;
             this.reportViewer1.RefreshReport();
         }
 
-        private void AccountInfoRep_FormClosed(object sender, FormClosedEventArgs e)
+        private void ClientPayrollRep_FormClosed(object sender, FormClosedEventArgs e)
         {
             singleton = null;
         }

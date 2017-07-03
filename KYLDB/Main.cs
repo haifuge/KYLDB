@@ -1,5 +1,6 @@
 ﻿using KYLDB.Forms;
 using KYLDB.Reports;
+using KYLDB.Reports.MonthlySaleTax;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -44,9 +45,9 @@ namespace KYLDB
             die.Show();
         }
 
-        private void accountInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ClientPayrollToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AccountInfoRep aiRep = AccountInfoRep.GetInstance();
+            ClientPayrollRep aiRep = ClientPayrollRep.GetInstance();
             aiRep.MdiParent = this;
             aiRep.Show();
         }
@@ -63,6 +64,13 @@ namespace KYLDB
             RepManagement rm = RepManagement.GetInstance();
             rm.MdiParent = this;
             rm.Show();
+        }
+
+        private void monthlySalesTaxToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MonthlySaleTax mst = MonthlySaleTax.GetInstance();
+            mst.MdiParent = this;
+            mst.Show();
         }
     }
 }

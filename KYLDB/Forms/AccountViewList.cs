@@ -36,10 +36,10 @@ namespace KYLDB.Forms
             this.BringToFront();
         }
         DataTable dt;
-        List<Model.ClientPayroll> AccountInfos = new List<Model.ClientPayroll>();
+        List<Model.ClientPayroll> ClientPayrolls = new List<Model.ClientPayroll>();
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            var searchList = from ac in AccountInfos
+            var searchList = from ac in ClientPayrolls
                              where ac.Entity.Contains(textBox1.Text.Trim())
                              select new
                              {
@@ -60,11 +60,11 @@ namespace KYLDB.Forms
 
         private void AccountViewList_Load(object sender, EventArgs e)
         {
-            string sql = "select * from AccountInfo";
+            string sql = "select * from ClientPayroll";
             dt = DBOperator.QuerySql(sql);
-            AccountInfos = DBOperator.getListFromTable<Model.ClientPayroll>(dt);
+            ClientPayrolls = DBOperator.getListFromTable<Model.ClientPayroll>(dt);
             
-            var searchList = from ac in AccountInfos
+            var searchList = from ac in ClientPayrolls
                              select new
                              {
                                  id = ac.AccNum,
@@ -82,12 +82,12 @@ namespace KYLDB.Forms
             dataGridView1.DataSource = searchList.ToArray();
             setLinkColumns();
 
-            var acclist = from ac in AccountInfos
+            var acclist = from ac in ClientPayrolls
                           select ac.AccNum;
             comboBox1.DataSource = acclist.ToArray();
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
 
-            var enList = from ac in AccountInfos
+            var enList = from ac in ClientPayrolls
                           select ac.Entity;
             comboBox2.DataSource = enList.ToArray();
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
@@ -95,7 +95,7 @@ namespace KYLDB.Forms
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var searchList = from ac in AccountInfos
+            var searchList = from ac in ClientPayrolls
                              where ac.AccNum==comboBox1.Text
                              select new
                              {
@@ -184,7 +184,7 @@ namespace KYLDB.Forms
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var searchList = from ac in AccountInfos
+            var searchList = from ac in ClientPayrolls
                              where ac.Entity == comboBox2.Text
                              select new
                              {

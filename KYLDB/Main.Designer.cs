@@ -35,9 +35,10 @@
             this.dataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataImportExportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.accountInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ClientPayrollToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.repManageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.repManageToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.monthlySalesTaxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -96,17 +97,18 @@
             // reportsToolStripMenuItem
             // 
             this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.accountInfoToolStripMenuItem});
+            this.ClientPayrollToolStripMenuItem,
+            this.monthlySalesTaxToolStripMenuItem});
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
             this.reportsToolStripMenuItem.Size = new System.Drawing.Size(72, 24);
             this.reportsToolStripMenuItem.Text = "Reports";
             // 
-            // accountInfoToolStripMenuItem
+            // ClientPayrollToolStripMenuItem
             // 
-            this.accountInfoToolStripMenuItem.Name = "accountInfoToolStripMenuItem";
-            this.accountInfoToolStripMenuItem.Size = new System.Drawing.Size(168, 26);
-            this.accountInfoToolStripMenuItem.Text = "Account Info";
-            this.accountInfoToolStripMenuItem.Click += new System.EventHandler(this.accountInfoToolStripMenuItem_Click);
+            this.ClientPayrollToolStripMenuItem.Name = "ClientPayrollToolStripMenuItem";
+            this.ClientPayrollToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
+            this.ClientPayrollToolStripMenuItem.Text = "Client Payroll";
+            this.ClientPayrollToolStripMenuItem.Click += new System.EventHandler(this.ClientPayrollToolStripMenuItem_Click);
             // 
             // repManageToolStripMenuItem
             // 
@@ -122,6 +124,13 @@
             this.repManageToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
             this.repManageToolStripMenuItem1.Text = "RepManage";
             this.repManageToolStripMenuItem1.Click += new System.EventHandler(this.repManageToolStripMenuItem1_Click);
+            // 
+            // monthlySalesTaxToolStripMenuItem
+            // 
+            this.monthlySalesTaxToolStripMenuItem.Name = "monthlySalesTaxToolStripMenuItem";
+            this.monthlySalesTaxToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
+            this.monthlySalesTaxToolStripMenuItem.Text = "Monthly - Sales Tax";
+            this.monthlySalesTaxToolStripMenuItem.Click += new System.EventHandler(this.monthlySalesTaxToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -151,10 +160,11 @@
         private System.Windows.Forms.ToolStripMenuItem dataToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dataImportExportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem accountInfoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ClientPayrollToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewClientsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem repManageToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem repManageToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem monthlySalesTaxToolStripMenuItem;
     }
 }
 

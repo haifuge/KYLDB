@@ -1,6 +1,6 @@
 ﻿namespace KYLDB.Reports
 {
-    partial class AccountInfoRep
+    partial class ClientPayrollRep
     {
         /// <summary>
         /// Required designer variable.
@@ -30,16 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.AccountInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            ((System.ComponentModel.ISupportInitialize)(this.AccountInfoBindingSource)).BeginInit();
+            this.ClientPayrollBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.ClientPayrollBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // AccountInfoBindingSource
-            // 
-            this.AccountInfoBindingSource.DataSource = typeof(KYLDB.Model.ClientPayroll);
             // 
             // comboBox1
             // 
@@ -66,17 +62,21 @@
             this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            reportDataSource1.Name = "dsAccountInfo";
-            reportDataSource1.Value = this.AccountInfoBindingSource;
+            reportDataSource1.Name = "dsClientPayroll";
+            reportDataSource1.Value = this.ClientPayrollBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "KYLDB.Reports.AccountInfo.Report1.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "KYLDB.Reports.ClientPayroll.Report1.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 35);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(924, 477);
             this.reportViewer1.TabIndex = 4;
             // 
-            // AccountInfoRep
+            // ClientPayrollBindingSource
+            // 
+            this.ClientPayrollBindingSource.DataSource = typeof(KYLDB.Model.ClientPayroll);
+            // 
+            // ClientPayrollRep
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -84,18 +84,18 @@
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
-            this.Name = "AccountInfoRep";
-            this.Text = "AccountInfoRep";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AccountInfoRep_FormClosed);
-            this.Load += new System.EventHandler(this.AccountInfoRep_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.AccountInfoBindingSource)).EndInit();
+            this.Name = "ClientPayrollRep";
+            this.Text = "Client Payroll Report";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ClientPayrollRep_FormClosed);
+            this.Load += new System.EventHandler(this.ClientPayrollRep_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.ClientPayrollBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.BindingSource AccountInfoBindingSource;
+        private System.Windows.Forms.BindingSource ClientPayrollBindingSource;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;

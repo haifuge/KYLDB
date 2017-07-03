@@ -15,7 +15,7 @@ namespace KYLDB
 {
     public partial class ClientPayroll : Form
     {
-        List<Model.ClientPayroll> AccountInfos = new List<Model.ClientPayroll>();
+        List<Model.ClientPayroll> ClientPayrolls = new List<Model.ClientPayroll>();
 
         private ClientPayroll()
         {
@@ -42,14 +42,14 @@ namespace KYLDB
         }
         private void ClientInfo_Load(object sender, EventArgs e)
         {
-            string sql = "select * from AccountInfo";
+            string sql = "select * from ClientPayroll";
             DataTable dt = DBOperator.QuerySql(sql);
-            AccountInfos = DBOperator.getListFromTable<Model.ClientPayroll>(dt);
-            var acclist = from ac in AccountInfos
+            ClientPayrolls = DBOperator.getListFromTable<Model.ClientPayroll>(dt);
+            var acclist = from ac in ClientPayrolls
                           select ac.AccNum;
             AccNumList.DataSource = acclist.ToArray();
 
-            var enList = from ac in AccountInfos
+            var enList = from ac in ClientPayrolls
                          select ac.Entity;
             comboBox2.DataSource = enList.ToArray();
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
@@ -57,7 +57,7 @@ namespace KYLDB
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             string entity = comboBox2.Text;
-            var acc = (from ac in AccountInfos
+            var acc = (from ac in ClientPayrolls
                        where ac.Entity == entity
                        select ac).First();
             tAccNum.Text = acc.AccNum;
@@ -144,7 +144,7 @@ namespace KYLDB
         private void AccNumList_SelectedIndexChanged(object sender, EventArgs e)
         {
             string accNum = AccNumList.Text;
-            var acc = (from ac in AccountInfos
+            var acc = (from ac in ClientPayrolls
                        where ac.AccNum == accNum
                        select ac).First();
             tAccNum.Text = acc.AccNum;
@@ -335,7 +335,7 @@ namespace KYLDB
     
         private void saveCurentItem()
         {
-            string sql = "update AccountInfo set EIN='" + tEIN.Text + "', AccRep='" + tAccRep.Text + "', PayRep='" + tPayRep.Text + "', CkRep='" + tCkRep.Text + "', Entity='" + tEntity.Text + "', TradeName='" + tTradeName.Text + "', BusAdd1='" + tBusAdd1.Text + "', BusAdd2='" + tBusAdd2.Text + "', BusCity='" + tBusCity.Text + "', BusSt='" + tBusSt.Text + "', BusZip='" + tBusZip.Text + @"', 
+            string sql = "update ClientPayroll set EIN='" + tEIN.Text + "', AccRep='" + tAccRep.Text + "', PayRep='" + tPayRep.Text + "', CkRep='" + tCkRep.Text + "', Entity='" + tEntity.Text + "', TradeName='" + tTradeName.Text + "', BusAdd1='" + tBusAdd1.Text + "', BusAdd2='" + tBusAdd2.Text + "', BusCity='" + tBusCity.Text + "', BusSt='" + tBusSt.Text + "', BusZip='" + tBusZip.Text + @"', 
                                                  MailAdd1 = '" + tMailAdd1.Text + "', MailAdd2 = '" + tMailAdd2.Text + "', MailCity = '" + tMailCity.Text + "', MailSt = '" + tMailSt.Text + "', MailZip = '" + tMailZip.Text + "', HomeAdd = '" + tHomeAdd.Text + "', Contact1 = '" + tContact1.Text + "', Contact1Tel1 = '" + tContact1Tel1.Text + "', Contact1Tel2 = '" + tContact1Tel2.Text + "', Contact2 = '" + tContact2.Text + "', Contact2Tel1 = '" + tContact2Tel1.Text + @"', 
                                                  Contact2Tel2 = '" + tContact2Tel2.Text + "', Fax = '" + tFax.Text + "', Email = '" + tEmail.Text + "', Lauguage = '" + tLanguage.Text + "', PayStartDate = '" + dPayStartDate.Text + "', PayType = '" + cPayType.Text + "', PayFreq = '" + cPayFreq.Text + "', TaxDepType = '" + cTaxDepType.Text + "', Bank = '" + tBank.Text + "', BankRtg = '" + tBankRtg.Text + "', BankAcc = '" + tBankAcc.Text + "', BankStartDate = '" + dBankStartDate.Text + @"',
                                                  DateIn = '" + cDateIn.Text + "', DateOut = '" + cDateOut.Text + "', TimeToDone = '" + tTimeToDone.Text + "', AveNumEE = '" + tAveNumEE.Text + "', PayClosedDate = '" + dPayCloseDate.Text + "', Note = '" + tNote.Text + "', FedTaxFreq = '" + cFedTaxFreq.Text + "', EFTPS = '" + tEFTPS.Text + "', F8655 = '" + cF8655.Text + "', EFTPSPin = '" + tEFTPSPin.Text + "', EFTPSPw = '" + tEFTPSPw.Text + "', PhilaNum = '" + tPhilaNum.Text + @"',
@@ -345,14 +345,14 @@ namespace KYLDB
                                                  StateTaxFreq = '" + cStateTaxFreq.Text + "', StateWH = '" + tStateWH.Text + "', StateUser = '" + tStateUser.Text + "', StatePw = '" + tStatePw.Text + @"'
                         where AccNum = '" + tAccNum.Text + "'";
             DBOperator.ExecuteSql(sql);
-            sql = "select * from AccountInfo";
+            sql = "select * from ClientPayroll";
             DataTable dt = DBOperator.QuerySql(sql);
-            AccountInfos = DBOperator.getListFromTable<Model.ClientPayroll>(dt);
+            ClientPayrolls = DBOperator.getListFromTable<Model.ClientPayroll>(dt);
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            AccountInfoRep aiRep = AccountInfoRep.GetInstance();
+            ClientPayrollRep aiRep = ClientPayrollRep.GetInstance();
             aiRep.MdiParent = this.MdiParent;
             aiRep.Show();
             aiRep.SetData(AccNumList.Text);

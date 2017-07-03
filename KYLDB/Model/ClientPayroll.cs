@@ -8,7 +8,7 @@ namespace KYLDB.Model
 {
     public class ClientPayroll
     {
-        // 79
+        // 80
         public string AccNum { get; set; }
         public string EIN { get; set; }
         public string AccRep { get; set; }
