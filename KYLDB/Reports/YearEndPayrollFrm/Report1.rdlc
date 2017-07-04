@@ -7,11 +7,11 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>1b6bad68-6dd3-4a69-8832-73295d2d3a50</rd:DataSourceID>
+      <rd:DataSourceID>33b6b577-a867-4aea-aa0c-08bc011849c2</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="dsQuarterlyPayroll">
+    <DataSet Name="dsYearEndPayroll">
       <Query>
         <DataSourceName>KYLDBModel</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -41,27 +41,31 @@
           <DataField>MemoForUpdate</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="PaycheckRep">
-          <DataField>PaycheckRep</DataField>
+        <Field Name="Paycheck">
+          <DataField>Paycheck</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="PayrollLocal">
-          <DataField>PayrollLocal</DataField>
+        <Field Name="Payrollrep">
+          <DataField>Payrollrep</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="PayrollRep">
-          <DataField>PayrollRep</DataField>
+        <Field Name="PayrollW2">
+          <DataField>PayrollW2</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Phone">
           <DataField>Phone</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="Rep">
+          <DataField>Rep</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>KYLDB.Model</rd:DataSetName>
-        <rd:TableName>QuarterPayroll</rd:TableName>
-        <rd:ObjectDataSourceType>KYLDB.Model.QuarterPayroll, KYLDB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:TableName>YearEndPayroll</rd:TableName>
+        <rd:ObjectDataSourceType>KYLDB.Model.YearEndPayroll, KYLDB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
@@ -69,17 +73,17 @@
     <ReportSection>
       <Body>
         <ReportItems>
-          <Tablix Name="Tablix4">
+          <Tablix Name="Tablix1">
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
                   <Width>0.6in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.1in</Width>
+                  <Width>1.7in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.5in</Width>
+                  <Width>1.4in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.8in</Width>
@@ -91,16 +95,16 @@
                   <Width>1in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.5in</Width>
+                  <Width>1.3in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.38333in</Height>
+                  <Height>0.35in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox66">
+                        <Textbox Name="Textbox3">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -114,7 +118,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox66</rd:DefaultName>
+                          <rd:DefaultName>Textbox3</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -130,7 +134,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox68">
+                        <Textbox Name="Textbox5">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -153,7 +157,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox68</rd:DefaultName>
+                          <rd:DefaultName>Textbox5</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -169,7 +173,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox70">
+                        <Textbox Name="Textbox7">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -192,7 +196,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox70</rd:DefaultName>
+                          <rd:DefaultName>Textbox7</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -208,7 +212,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox75">
+                        <Textbox Name="Textbox9">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -222,7 +226,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox75</rd:DefaultName>
+                          <rd:DefaultName>Textbox9</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -238,21 +242,32 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox78">
+                        <Textbox Name="Textbox11">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Payroll Local</Value>
+                                  <Value>Payroll             </Value>
+                                  <Style>
+                                    <TextDecoration>Underline</TextDecoration>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>               # of W2</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox78</rd:DefaultName>
+                          <rd:DefaultName>Textbox11</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -268,7 +283,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox81">
+                        <Textbox Name="Textbox13">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -291,7 +306,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox81</rd:DefaultName>
+                          <rd:DefaultName>Textbox13</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -307,14 +322,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox84">
+                        <Textbox Name="Textbox15">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Memo _________</Value>
+                                  <Value>Memo__________ </Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -323,18 +338,14 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value> _____ For </Value>
-                                  <Style />
-                                </TextRun>
-                                <TextRun>
-                                  <Value>Update</Value>
+                                  <Value>           For Update</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox84</rd:DefaultName>
+                          <rd:DefaultName>Textbox15</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -475,21 +486,21 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="PayrollLocal">
+                        <Textbox Name="PayrollW2">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!PayrollLocal.Value</Value>
+                                  <Value>=Fields!PayrollW2.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>PayrollLocal</rd:DefaultName>
+                          <rd:DefaultName>PayrollW2</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -505,21 +516,21 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="PayrollRep">
+                        <Textbox Name="Payrollrep">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!PayrollRep.Value</Value>
+                                  <Value>=Fields!Payrollrep.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>PayrollRep</rd:DefaultName>
+                          <rd:DefaultName>Payrollrep</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -570,7 +581,7 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox72">
+                        <Textbox Name="Textbox17">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -584,7 +595,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox72</rd:DefaultName>
+                          <rd:DefaultName>Textbox17</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -660,7 +671,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox77">
+                        <Textbox Name="Textbox20">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -674,7 +685,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox77</rd:DefaultName>
+                          <rd:DefaultName>Textbox20</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -690,7 +701,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox80">
+                        <Textbox Name="Textbox21">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -704,7 +715,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox80</rd:DefaultName>
+                          <rd:DefaultName>Textbox21</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -720,21 +731,21 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="PaycheckRep">
+                        <Textbox Name="Paycheck">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!PaycheckRep.Value</Value>
+                                  <Value>=Fields!Paycheck.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>PaycheckRep</rd:DefaultName>
+                          <rd:DefaultName>Paycheck</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -750,7 +761,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox86">
+                        <Textbox Name="Textbox23">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -764,7 +775,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox86</rd:DefaultName>
+                          <rd:DefaultName>Textbox23</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -807,11 +818,11 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <DataSetName>dsQuarterlyPayroll</DataSetName>
+            <DataSetName>dsYearEndPayroll</DataSetName>
             <Top>0.04in</Top>
             <Left>0.2in</Left>
-            <Height>0.88333in</Height>
-            <Width>8.5in</Width>
+            <Height>0.85in</Height>
+            <Width>7.8in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -822,10 +833,10 @@
         <Height>11.69in</Height>
         <Style />
       </Body>
-      <Width>9.055in</Width>
+      <Width>8.27in</Width>
       <Page>
         <PageHeader>
-          <Height>0.49667in</Height>
+          <Height>0.505in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -850,7 +861,7 @@
               <Top>0.1in</Top>
               <Left>1in</Left>
               <Height>0.25in</Height>
-              <Width>2.5in</Width>
+              <Width>2.39167in</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -861,14 +872,14 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Textbox Name="repQuarter">
+            <Textbox Name="repYear">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Parameters!repQuarter.Value</Value>
+                      <Value>=Parameters!repYear.Value</Value>
                       <Style>
                         <FontSize>12pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -878,11 +889,11 @@
                   <Style />
                 </Paragraph>
               </Paragraphs>
-              <rd:DefaultName>repQuarter</rd:DefaultName>
+              <rd:DefaultName>repYear</rd:DefaultName>
               <Top>0.1in</Top>
               <Left>4.5in</Left>
               <Height>0.25in</Height>
-              <Width>2.5in</Width>
+              <Width>2.39167in</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -916,16 +927,16 @@
       <DataType>String</DataType>
       <DefaultValue>
         <Values>
-          <Value>Quarterly Query - </Value>
+          <Value>Year End Payroll - </Value>
         </Values>
       </DefaultValue>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="repQuarter">
+    <ReportParameter Name="repYear">
       <DataType>String</DataType>
       <DefaultValue>
         <Values>
-          <Value>Quarter: </Value>
+          <Value>Year: </Value>
         </Values>
       </DefaultValue>
       <Prompt>ReportParameter1</Prompt>
@@ -944,11 +955,11 @@
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>repQuarter</ParameterName>
+          <ParameterName>repYear</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>
   </ReportParametersLayout>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
-  <rd:ReportID>da6231e0-6634-448a-9620-8a81e1a0acae</rd:ReportID>
+  <rd:ReportID>216a3773-c4dd-4451-8e37-75650fa24278</rd:ReportID>
 </Report>

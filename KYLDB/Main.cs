@@ -13,6 +13,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using KYLDB.Reports.YearEndPayrollFrm;
+using KYLDB.Reports.PayrollRepNumFrm;
 
 namespace KYLDB
 {
@@ -95,6 +97,20 @@ namespace KYLDB
             QuarterlyProfitLossFrm qpl = QuarterlyProfitLossFrm.GetInstance();
             qpl.MdiParent = this;
             qpl.Show();
+        }
+
+        private void yearEndPayrollToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            YearEndPayrollFrm yep = YearEndPayrollFrm.GetInstance();
+            yep.MdiParent = this;
+            yep.Show();
+        }
+
+        private void payrollRepNumToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PayrollRepNumFrm prf = PayrollRepNumFrm.GetInstance();
+            prf.MdiParent = this;
+            prf.Show();
         }
     }
 }

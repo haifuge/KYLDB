@@ -97,9 +97,11 @@
     </Compile>
     <Compile Include="Model\BaseRepModel.cs" />
     <Compile Include="Model\ClientPayroll.cs" />
+    <Compile Include="Model\PayrollRepNum.cs" />
     <Compile Include="Model\QuarterlyProfitLoss.cs" />
     <Compile Include="Model\SalesTaxRep.cs" />
     <Compile Include="Model\QuarterPayroll.cs" />
+    <Compile Include="Model\YearEndPayroll.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reports\ClientPayroll\ClientPayrollRep.cs">
@@ -113,6 +115,12 @@
     </Compile>
     <Compile Include="Reports\MonthlySaleTax\MonthlySaleTax.Designer.cs">
       <DependentUpon>MonthlySaleTax.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\PayrollRepNumFrm\PayrollRepNumFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\PayrollRepNumFrm\PayrollRepNumFrm.Designer.cs">
+      <DependentUpon>PayrollRepNumFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\QuarterlyPayroll\QuarterlyPayroll.cs">
       <SubType>Form</SubType>
@@ -137,6 +145,12 @@
     </Compile>
     <Compile Include="Reports\StatisticReport\StatisticReport.Designer.cs">
       <DependentUpon>StatisticReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\YearEndPayrollFrm\YearEndPayrollFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\YearEndPayrollFrm\YearEndPayrollFrm.Designer.cs">
+      <DependentUpon>YearEndPayrollFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="Forms\AccountViewList.resx">
@@ -172,6 +186,10 @@
       <DependentUpon>MonthlySaleTax.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\MonthlySaleTax\Report1.rdlc" />
+    <EmbeddedResource Include="Reports\PayrollRepNumFrm\PayrollRepNumFrm.resx">
+      <DependentUpon>PayrollRepNumFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PayrollRepNumFrm\Report1.rdlc" />
     <EmbeddedResource Include="Reports\QuarterlyPayroll\QuarterlyPayroll.resx">
       <DependentUpon>QuarterlyPayroll.cs</DependentUpon>
     </EmbeddedResource>
@@ -188,13 +206,19 @@
     <EmbeddedResource Include="Reports\StatisticReport\StatisticReport.resx">
       <DependentUpon>StatisticReport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\YearEndPayrollFrm\Report1.rdlc" />
+    <EmbeddedResource Include="Reports\YearEndPayrollFrm\YearEndPayrollFrm.resx">
+      <DependentUpon>YearEndPayrollFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\KYLDB.Model.AccountInfo.datasource" />
     <None Include="Properties\DataSources\KYLDB.Model.ClientPayroll.datasource" />
     <None Include="Properties\DataSources\KYLDB.Model.MonthlyRep.datasource" />
     <None Include="Properties\DataSources\KYLDB.Model.MonthlyRepTitle.datasource" />
+    <None Include="Properties\DataSources\KYLDB.Model.PayrollRepNum.datasource" />
     <None Include="Properties\DataSources\KYLDB.Model.QuarterlyProfitLoss.datasource" />
     <None Include="Properties\DataSources\KYLDB.Model.QuarterPayroll.datasource" />
+    <None Include="Properties\DataSources\KYLDB.Model.YearEndPayroll.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

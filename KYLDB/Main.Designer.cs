@@ -39,9 +39,11 @@
             this.monthlySalesTaxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quarterlySaleTaxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quarterlyPayrollToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.quarterlyPLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.yearEndPayrollToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.repManageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.repManageToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.quarterlyPLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.payrollRepNumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -104,7 +106,9 @@
             this.monthlySalesTaxToolStripMenuItem,
             this.quarterlySaleTaxToolStripMenuItem,
             this.quarterlyPayrollToolStripMenuItem,
-            this.quarterlyPLToolStripMenuItem});
+            this.quarterlyPLToolStripMenuItem,
+            this.yearEndPayrollToolStripMenuItem,
+            this.payrollRepNumToolStripMenuItem});
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
             this.reportsToolStripMenuItem.Size = new System.Drawing.Size(72, 24);
             this.reportsToolStripMenuItem.Text = "Reports";
@@ -137,6 +141,20 @@
             this.quarterlyPayrollToolStripMenuItem.Text = "Quarterly - Payroll";
             this.quarterlyPayrollToolStripMenuItem.Click += new System.EventHandler(this.quarterlyPayrollToolStripMenuItem_Click);
             // 
+            // quarterlyPLToolStripMenuItem
+            // 
+            this.quarterlyPLToolStripMenuItem.Name = "quarterlyPLToolStripMenuItem";
+            this.quarterlyPLToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
+            this.quarterlyPLToolStripMenuItem.Text = "Quarterly - P&L";
+            this.quarterlyPLToolStripMenuItem.Click += new System.EventHandler(this.quarterlyPLToolStripMenuItem_Click);
+            // 
+            // yearEndPayrollToolStripMenuItem
+            // 
+            this.yearEndPayrollToolStripMenuItem.Name = "yearEndPayrollToolStripMenuItem";
+            this.yearEndPayrollToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
+            this.yearEndPayrollToolStripMenuItem.Text = "Year End - Payroll";
+            this.yearEndPayrollToolStripMenuItem.Click += new System.EventHandler(this.yearEndPayrollToolStripMenuItem_Click);
+            // 
             // repManageToolStripMenuItem
             // 
             this.repManageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -152,12 +170,12 @@
             this.repManageToolStripMenuItem1.Text = "RepManage";
             this.repManageToolStripMenuItem1.Click += new System.EventHandler(this.repManageToolStripMenuItem1_Click);
             // 
-            // quarterlyPLToolStripMenuItem
+            // payrollRepNumToolStripMenuItem
             // 
-            this.quarterlyPLToolStripMenuItem.Name = "quarterlyPLToolStripMenuItem";
-            this.quarterlyPLToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
-            this.quarterlyPLToolStripMenuItem.Text = "Quarterly - P&L";
-            this.quarterlyPLToolStripMenuItem.Click += new System.EventHandler(this.quarterlyPLToolStripMenuItem_Click);
+            this.payrollRepNumToolStripMenuItem.Name = "payrollRepNumToolStripMenuItem";
+            this.payrollRepNumToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
+            this.payrollRepNumToolStripMenuItem.Text = "Payroll Rep - Num";
+            this.payrollRepNumToolStripMenuItem.Click += new System.EventHandler(this.payrollRepNumToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -195,6 +213,8 @@
         private System.Windows.Forms.ToolStripMenuItem quarterlySaleTaxToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quarterlyPayrollToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quarterlyPLToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem yearEndPayrollToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem payrollRepNumToolStripMenuItem;
     }
 }
 

@@ -48,7 +48,6 @@ namespace KYLDB.Reports.QuarterlyPayroll
             }
             comYear.SelectedIndex = 0;
             comboBox2.SelectedIndex = 0;
-            this.reportViewer1.RefreshReport();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -67,7 +66,6 @@ namespace KYLDB.Reports.QuarterlyPayroll
             reportViewer1.LocalReport.SetParameters(new ReportParameter[] { repTitle, repQuarter });
             ReportDataSource rds = new ReportDataSource("dsQuarterlyPayroll", items);
             reportViewer1.LocalReport.DataSources.Add(rds);
-
             reportViewer1.RefreshReport();
         }
 
