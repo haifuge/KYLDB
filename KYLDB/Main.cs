@@ -1,6 +1,7 @@
 ﻿using KYLDB.Forms;
 using KYLDB.Reports;
 using KYLDB.Reports.MonthlySaleTax;
+using KYLDB.Reports.QuarterlySalesTax;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -69,6 +70,13 @@ namespace KYLDB
         private void monthlySalesTaxToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MonthlySaleTax mst = MonthlySaleTax.GetInstance();
+            mst.MdiParent = this;
+            mst.Show();
+        }
+
+        private void quarterlySaleTaxToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QuarterlySalesTax mst = QuarterlySalesTax.GetInstance();
             mst.MdiParent = this;
             mst.Show();
         }

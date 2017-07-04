@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace KYLDB.Model
 {
-    public class MonthlyRep
+    public class SalesTaxRep
     {
         public string ID { get; set; }
         public string Company { get; set; }
         public string Contact { get; set; }
         public string Phone { get; set; }
         public string AltPhone { get; set; }
-        public double Balance { get; set; }
+        public string Balance { get; set; }
         public string SalesTax { get; set; }
         public string SalesTaxNum { get; set; }
         public string LiquorTax { get; set; }
