@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace KYLDB
 {
@@ -64,6 +65,15 @@ namespace KYLDB
                 objs.Add(obj);
             }
             return objs;
+        }
+
+        public static void SetComboxRepData(ComboBox comb)
+        {
+            string sql = "select Rep, FirstName+' '+ LastName as 'Name' from Representative order by FirstName, LastName";
+            DataTable dt = DBOperator.QuerySql(sql);
+            comb.DataSource = dt;
+            comb.ValueMember = "Rep";
+            comb.DisplayMember = "Name";
         }
     }
 }

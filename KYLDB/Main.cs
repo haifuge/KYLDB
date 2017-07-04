@@ -3,6 +3,7 @@ using KYLDB.Reports;
 using KYLDB.Reports.MonthlySaleTax;
 using KYLDB.Reports.QuarterlyPayroll;
 using KYLDB.Reports.QuarterlySalesTax;
+using KYLDB.Reports.QuarterlyProfitALoss;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -87,6 +88,13 @@ namespace KYLDB
             QuarterlyPayroll mst = QuarterlyPayroll.GetInstance();
             mst.MdiParent = this;
             mst.Show();
+        }
+
+        private void quarterlyPLToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QuarterlyProfitLossFrm qpl = QuarterlyProfitLossFrm.GetInstance();
+            qpl.MdiParent = this;
+            qpl.Show();
         }
     }
 }
