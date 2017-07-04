@@ -40,6 +40,7 @@
             this.repManageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.repManageToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.quarterlySaleTaxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.quarterlyPayrollToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -100,7 +101,8 @@
             this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ClientPayrollToolStripMenuItem,
             this.monthlySalesTaxToolStripMenuItem,
-            this.quarterlySaleTaxToolStripMenuItem});
+            this.quarterlySaleTaxToolStripMenuItem,
+            this.quarterlyPayrollToolStripMenuItem});
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
             this.reportsToolStripMenuItem.Size = new System.Drawing.Size(72, 24);
             this.reportsToolStripMenuItem.Text = "Reports";
@@ -141,6 +143,13 @@
             this.quarterlySaleTaxToolStripMenuItem.Text = "Quarterly - Sale Tax";
             this.quarterlySaleTaxToolStripMenuItem.Click += new System.EventHandler(this.quarterlySaleTaxToolStripMenuItem_Click);
             // 
+            // quarterlyPayrollToolStripMenuItem
+            // 
+            this.quarterlyPayrollToolStripMenuItem.Name = "quarterlyPayrollToolStripMenuItem";
+            this.quarterlyPayrollToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
+            this.quarterlyPayrollToolStripMenuItem.Text = "Quarterly - Payroll";
+            this.quarterlyPayrollToolStripMenuItem.Click += new System.EventHandler(this.quarterlyPayrollToolStripMenuItem_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -175,6 +184,7 @@
         private System.Windows.Forms.ToolStripMenuItem repManageToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem monthlySalesTaxToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quarterlySaleTaxToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem quarterlyPayrollToolStripMenuItem;
     }
 }
 
