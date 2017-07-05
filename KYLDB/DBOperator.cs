@@ -75,5 +75,13 @@ namespace KYLDB
             comb.ValueMember = "Rep";
             comb.DisplayMember = "Name";
         }
+        public static void SetComboxRepDataFirstName(ComboBox comb)
+        {
+            string sql = "select Rep, FirstName as 'Name' from Representative order by FirstName, LastName";
+            DataTable dt = DBOperator.QuerySql(sql);
+            comb.DataSource = dt;
+            comb.ValueMember = "Rep";
+            comb.DisplayMember = "Name";
+        }
     }
 }

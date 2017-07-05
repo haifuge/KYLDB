@@ -44,6 +44,7 @@
             this.repManageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.repManageToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.payrollRepNumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.repReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -108,7 +109,8 @@
             this.quarterlyPayrollToolStripMenuItem,
             this.quarterlyPLToolStripMenuItem,
             this.yearEndPayrollToolStripMenuItem,
-            this.payrollRepNumToolStripMenuItem});
+            this.payrollRepNumToolStripMenuItem,
+            this.repReportToolStripMenuItem});
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
             this.reportsToolStripMenuItem.Size = new System.Drawing.Size(72, 24);
             this.reportsToolStripMenuItem.Text = "Reports";
@@ -177,6 +179,13 @@
             this.payrollRepNumToolStripMenuItem.Text = "Payroll Rep - Num";
             this.payrollRepNumToolStripMenuItem.Click += new System.EventHandler(this.payrollRepNumToolStripMenuItem_Click);
             // 
+            // repReportToolStripMenuItem
+            // 
+            this.repReportToolStripMenuItem.Name = "repReportToolStripMenuItem";
+            this.repReportToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
+            this.repReportToolStripMenuItem.Text = "Rep Report";
+            this.repReportToolStripMenuItem.Click += new System.EventHandler(this.repReportToolStripMenuItem_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -215,6 +224,7 @@
         private System.Windows.Forms.ToolStripMenuItem quarterlyPLToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem yearEndPayrollToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem payrollRepNumToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem repReportToolStripMenuItem;
     }
 }
 
