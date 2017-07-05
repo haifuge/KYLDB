@@ -37,6 +37,12 @@ namespace KYLDB.Reports.CkRepFrm
             DBOperator.SetComboxRepDataFirstName(cmbRep);
             cmbRep.SelectedIndex = 0;
             comMonth.SelectedIndex = 0;
+            int year = DateTime.Now.Year;
+            for(int i = 0; i < 5; i++)
+            {
+                comYear.Items.Add(year--);
+            }
+            comYear.SelectedIndex = 0;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -51,6 +57,40 @@ namespace KYLDB.Reports.CkRepFrm
                             where CkRep='" + cmbRep.Text + "'";
             DataTable dt = DBOperator.QuerySql(sql);
             List<CkRep> items=DBOperator.getListFromTable<CkRep>(dt);
+            for (int i = 0; i < items.Count; i++)
+            {
+                string payFreq = items[i].PayFreq;
+                DateTime date = DateTime.Parse(items[i].CkDate);
+                string checkDate = "";
+                switch (payFreq)
+                {
+                    case "Monthly":
+                        date = date.AddMonths(comMonth.SelectedIndex);
+                        checkDate = date.ToString("M/d");
+                        break;
+                    case "Semi-monthly":
+                        date = new DateTime(DateTime.Now.Year - comYear.SelectedIndex, comMonth.SelectedIndex + 1, 15);
+                        checkDate = date.ToString("M/d");
+                        date = new DateTime(DateTime.Now.Year - comYear.SelectedIndex, comMonth.SelectedIndex + 1, 1).AddMonths(1).AddDays(-1);
+                        checkDate += ", " + date.ToString("M/d");
+                        break;
+                    case "Bi-Weekly":
+                        DateTime cMonth = new DateTime(DateTime.Now.Year - comYear.SelectedIndex, comMonth.SelectedIndex + 1, 1);
+                        while (date < cMonth)
+                        {
+                            date = date.AddDays(14);
+                        }
+                        cMonth = cMonth.AddMonths(1);
+                        while (date < cMonth)
+                        {
+                            checkDate += date.ToString("M/d") + ", ";
+                            date = date.AddDays(14);
+                        }
+                        checkDate = checkDate.Substring(0, checkDate.Length - 2);
+                        break;
+                }
+                items[i].CkDate = checkDate;
+            }
             reportViewer1.LocalReport.DataSources.Clear();
             ReportDataSource rds = new ReportDataSource("dsCkRep", items);
             reportViewer1.LocalReport.DataSources.Add(rds);
