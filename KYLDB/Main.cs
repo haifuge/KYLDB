@@ -16,6 +16,7 @@ using System.Windows.Forms;
 using KYLDB.Reports.YearEndPayrollFrm;
 using KYLDB.Reports.PayrollRepNumFrm;
 using KYLDB.Reports.RepReportFrm;
+using KYLDB.Reports.CkRepFrm;
 
 namespace KYLDB
 {
@@ -119,6 +120,13 @@ namespace KYLDB
             RepReportFrm rrf = RepReportFrm.GetInstance();
             rrf.MdiParent = this;
             rrf.Show();
+        }
+
+        private void ckRepToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CkRepFrm crf = CkRepFrm.GetInstance();
+            crf.MdiParent = this;
+            crf.Show();
         }
     }
 }

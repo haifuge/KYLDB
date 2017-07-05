@@ -41,10 +41,11 @@
             this.quarterlyPayrollToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quarterlyPLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yearEndPayrollToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.repManageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.repManageToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.payrollRepNumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.repReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.repManageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.repManageToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ckRepToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -110,7 +111,8 @@
             this.quarterlyPLToolStripMenuItem,
             this.yearEndPayrollToolStripMenuItem,
             this.payrollRepNumToolStripMenuItem,
-            this.repReportToolStripMenuItem});
+            this.repReportToolStripMenuItem,
+            this.ckRepToolStripMenuItem});
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
             this.reportsToolStripMenuItem.Size = new System.Drawing.Size(72, 24);
             this.reportsToolStripMenuItem.Text = "Reports";
@@ -157,6 +159,20 @@
             this.yearEndPayrollToolStripMenuItem.Text = "Year End - Payroll";
             this.yearEndPayrollToolStripMenuItem.Click += new System.EventHandler(this.yearEndPayrollToolStripMenuItem_Click);
             // 
+            // payrollRepNumToolStripMenuItem
+            // 
+            this.payrollRepNumToolStripMenuItem.Name = "payrollRepNumToolStripMenuItem";
+            this.payrollRepNumToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
+            this.payrollRepNumToolStripMenuItem.Text = "Payroll Rep - Num";
+            this.payrollRepNumToolStripMenuItem.Click += new System.EventHandler(this.payrollRepNumToolStripMenuItem_Click);
+            // 
+            // repReportToolStripMenuItem
+            // 
+            this.repReportToolStripMenuItem.Name = "repReportToolStripMenuItem";
+            this.repReportToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
+            this.repReportToolStripMenuItem.Text = "Rep Report";
+            this.repReportToolStripMenuItem.Click += new System.EventHandler(this.repReportToolStripMenuItem_Click);
+            // 
             // repManageToolStripMenuItem
             // 
             this.repManageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -172,19 +188,12 @@
             this.repManageToolStripMenuItem1.Text = "RepManage";
             this.repManageToolStripMenuItem1.Click += new System.EventHandler(this.repManageToolStripMenuItem1_Click);
             // 
-            // payrollRepNumToolStripMenuItem
+            // ckRepToolStripMenuItem
             // 
-            this.payrollRepNumToolStripMenuItem.Name = "payrollRepNumToolStripMenuItem";
-            this.payrollRepNumToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
-            this.payrollRepNumToolStripMenuItem.Text = "Payroll Rep - Num";
-            this.payrollRepNumToolStripMenuItem.Click += new System.EventHandler(this.payrollRepNumToolStripMenuItem_Click);
-            // 
-            // repReportToolStripMenuItem
-            // 
-            this.repReportToolStripMenuItem.Name = "repReportToolStripMenuItem";
-            this.repReportToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
-            this.repReportToolStripMenuItem.Text = "Rep Report";
-            this.repReportToolStripMenuItem.Click += new System.EventHandler(this.repReportToolStripMenuItem_Click);
+            this.ckRepToolStripMenuItem.Name = "ckRepToolStripMenuItem";
+            this.ckRepToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
+            this.ckRepToolStripMenuItem.Text = "Ck Rep";
+            this.ckRepToolStripMenuItem.Click += new System.EventHandler(this.ckRepToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -225,6 +234,7 @@
         private System.Windows.Forms.ToolStripMenuItem yearEndPayrollToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem payrollRepNumToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem repReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ckRepToolStripMenuItem;
     }
 }
 
