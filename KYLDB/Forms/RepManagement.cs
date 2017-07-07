@@ -117,6 +117,7 @@ namespace KYLDB.Forms
             dataGridView1.Rows.Clear();
             dataGridView1.Columns.Clear();
             dataGridView1.DataSource = dt;
+            rows = dt.Rows.Count;
 
             dataGridView1.Columns.Remove("Save");
             dataGridView1.Columns.Remove("Delete");

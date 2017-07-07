@@ -128,5 +128,12 @@ namespace KYLDB
             crf.MdiParent = this;
             crf.Show();
         }
+
+        private void payCheckToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PayCheckFrm pcf = PayCheckFrm.GetInstance();
+            pcf.MdiParent = this;
+            pcf.Show();
+        }
     }
 }
