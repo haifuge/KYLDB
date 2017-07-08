@@ -18,6 +18,7 @@ using KYLDB.Reports.PayrollRepNumFrm;
 using KYLDB.Reports.RepReportFrm;
 using KYLDB.Reports.CkRepFrm;
 using KYLDB.Reports.QuarterBillFrm;
+using KYLDB.Model;
 
 namespace KYLDB
 {
@@ -27,11 +28,11 @@ namespace KYLDB
         {
             InitializeComponent();
         }
-
+        public User cUser = new User();
         private void Form1_Load(object sender, EventArgs e)
         {
-            //DataTable dt = DBOperator.ExecSQL("select * from detection");
-            //MessageBox.Show("there are " + dt.Rows.Count + " lines in detection.");
+            Login l = new Login(this);
+            l.ShowDialog();
         }
 
         private void clientInfoToolStripMenuItem_Click(object sender, EventArgs e)
