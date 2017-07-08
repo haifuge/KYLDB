@@ -17,6 +17,7 @@ using KYLDB.Reports.YearEndPayrollFrm;
 using KYLDB.Reports.PayrollRepNumFrm;
 using KYLDB.Reports.RepReportFrm;
 using KYLDB.Reports.CkRepFrm;
+using KYLDB.Reports.QuarterBillFrm;
 
 namespace KYLDB
 {
@@ -134,6 +135,13 @@ namespace KYLDB
             PayCheckFrm pcf = PayCheckFrm.GetInstance();
             pcf.MdiParent = this;
             pcf.Show();
+        }
+
+        private void quarterBillToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QuarterBillFrm qbf = QuarterBillFrm.GetInstance();
+            qbf.MdiParent = this;
+            qbf.Show();
         }
     }
 }

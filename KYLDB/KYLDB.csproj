@@ -105,6 +105,7 @@
     <Compile Include="Model\CkRep.cs" />
     <Compile Include="Model\ClientPayroll.cs" />
     <Compile Include="Model\PayrollRepNum.cs" />
+    <Compile Include="Model\QuarterBill.cs" />
     <Compile Include="Model\QuarterlyProfitLoss.cs" />
     <Compile Include="Model\RepReport.cs" />
     <Compile Include="Model\SalesTaxRep.cs" />
@@ -135,6 +136,12 @@
     </Compile>
     <Compile Include="Reports\PayrollRepNumFrm\PayrollRepNumFrm.Designer.cs">
       <DependentUpon>PayrollRepNumFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\QuarterBillFrm\QuarterBillFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\QuarterBillFrm\QuarterBillFrm.Designer.cs">
+      <DependentUpon>QuarterBillFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\QuarterlyPayroll\QuarterlyPayroll.cs">
       <SubType>Form</SubType>
@@ -216,6 +223,10 @@
       <DependentUpon>PayrollRepNumFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\PayrollRepNumFrm\Report1.rdlc" />
+    <EmbeddedResource Include="Reports\QuarterBillFrm\QuarterBillFrm.resx">
+      <DependentUpon>QuarterBillFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\QuarterBillFrm\Report1.rdlc" />
     <EmbeddedResource Include="Reports\QuarterlyPayroll\QuarterlyPayroll.resx">
       <DependentUpon>QuarterlyPayroll.cs</DependentUpon>
     </EmbeddedResource>
@@ -247,6 +258,7 @@
     <None Include="Properties\DataSources\KYLDB.Model.MonthlyRep.datasource" />
     <None Include="Properties\DataSources\KYLDB.Model.MonthlyRepTitle.datasource" />
     <None Include="Properties\DataSources\KYLDB.Model.PayrollRepNum.datasource" />
+    <None Include="Properties\DataSources\KYLDB.Model.QuarterBill.datasource" />
     <None Include="Properties\DataSources\KYLDB.Model.QuarterlyProfitLoss.datasource" />
     <None Include="Properties\DataSources\KYLDB.Model.QuarterPayroll.datasource" />
     <None Include="Properties\DataSources\KYLDB.Model.RepReport.datasource" />
