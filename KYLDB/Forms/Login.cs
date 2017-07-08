@@ -45,5 +45,11 @@ namespace KYLDB.Forms
                 MessageBox.Show("Username or Password is wrong!");
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            parent.Close();
+        }
     }
 }
