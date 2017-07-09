@@ -484,7 +484,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!CkFee.Value</Value>
+                                  <Value>="$"+Fields!CkFee.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -516,7 +516,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!BillAmt.Value</Value>
+                                  <Value>="$"+Fields!BillAmt.Value</Value>
                                   <Style>
                                     <Color>=switch(Fields!NumOfCkLastQtr.Value=Fields!NumOfCkThisQtr.Value,"black",
 Fields!NumOfCkLastQtr.Value&gt;Fields!NumOfCkThisQtr.Value,"orange",

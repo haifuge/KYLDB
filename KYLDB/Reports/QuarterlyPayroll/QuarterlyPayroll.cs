@@ -52,15 +52,16 @@ namespace KYLDB.Reports.QuarterlyPayroll
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string rep = "Quarterly Query - " + cmbRep.SelectedValue.ToString();
+            User cu = ((Main)this.MdiParent).cUser;
+            string rep = "Quarterly Query - " + cu.Rep;
             string quarter = "Quarter: " + comboBox2.Text + ", " + comYear.Text;
             string sql = @"select AccNum as 'ID', Entity as 'Company', isnull(Contact1, Contact2) as 'Contact', Contact1Tel1 as 'Phone', Contact1Tel2 as 'AltPhone',
-                            '0' as 'Balance', 'Yes (3)' as 'PayrollLocal', PayRep as 'PayrollRep', CkRep as 'PaycheckRep', '' as MemoForUpdate
-                            from ClientPayroll
-                            where AccNum = 'C1026'";
+                                  cd.[BalanceTotal] as 'Balance', cd.[Payroll] as 'PayrollLocal', PayRep as 'PayrollRep', CkRep as 'PaycheckRep', '' as MemoForUpdate
+                           from ClientPayroll cp 
+                           inner join ClientDetail cd on cp.AccNum=cd.AccountNo
+                           where cd.Rep='"+rep+"'";
             DataTable dt = DBOperator.QuerySql(sql);
             List<QuarterPayroll> items = DBOperator.getListFromTable<QuarterPayroll>(dt);
-
             ReportParameter repTitle = new ReportParameter("repTitle", rep);
             ReportParameter repQuarter = new ReportParameter("repQuarter", quarter);
             reportViewer1.LocalReport.SetParameters(new ReportParameter[] { repTitle, repQuarter });

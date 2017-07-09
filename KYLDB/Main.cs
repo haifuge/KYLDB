@@ -37,6 +37,9 @@ namespace KYLDB
             if (cUser == null) { this.Close(); }
             this.Text = "KYL - " + cUser.FirstName;
 #endif
+#if DEBUG
+            cUser = new User() { Rep = "C", LastName = "Chow", FirstName = "Charles", UserLevel = -1 };
+#endif
         }
 
         private void clientInfoToolStripMenuItem_Click(object sender, EventArgs e)

@@ -39,7 +39,8 @@ namespace KYLDB.Reports.QuarterlyProfitALoss
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string rep = "Profit and Loss - " + cmbRep.SelectedValue.ToString();
+            User cu = ((Main)this.MdiParent).cUser;
+            string rep = "Profit and Loss - " + cu.Rep;
             string month = "Month: "+monthPicker.Text.ToString();
             string sql = @"select Accountno as 'ID', Customer as 'Company', Contact, Phone, AltPhone, BalanceTotal as 'Balance', SalesTax, SalesTaxNum, 
                                   LiquorTax_Phila as 'LiquorTax', U_OTax from ClientDetail 

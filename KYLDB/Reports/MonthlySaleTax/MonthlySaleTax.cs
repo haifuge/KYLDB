@@ -35,7 +35,6 @@ namespace KYLDB.Reports.MonthlySaleTax
 
         private void MonthlySaleTax_Load(object sender, EventArgs e)
         {
-            DBOperator.SetComboxRepData(cmbRep);
         }
 
         private void MonthlySaleTax_FormClosed(object sender, FormClosedEventArgs e)
@@ -45,11 +44,15 @@ namespace KYLDB.Reports.MonthlySaleTax
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string rep = cmbRep.SelectedValue.ToString();
-            string month = monthPicker.Text.ToString();
+            User cu = ((Main)this.MdiParent).cUser;
+            string rep = cu.Rep;
+            string month = comboBox2.Text;
             string sql = @"select Accountno as 'ID', Customer as 'Company', Contact, Phone, AltPhone, BalanceTotal as 'Balance', SalesTax, SalesTaxNum, 
                                   LiquorTax_Phila as 'LiquorTax', U_OTax from ClientDetail 
-                            where Accountno = 'C1000'";
+                            where Rep='"+cu.Rep+ @"'  
+                             and (JobStatus='pending' 
+                                  or (SalesTax in ('Monthly','Monthly(w/ Prepay)','Monthly(Sugar)') and JobStatus='current') 
+                                  or (JobStatus<>'closed' and (LiquorTax_Phila='Yes' or U_OTax like 'Yes%')) )";
             DataTable dt = DBOperator.QuerySql(sql);
             List<SalesTaxRep> items = DBOperator.getListFromTable<SalesTaxRep>(dt);
             

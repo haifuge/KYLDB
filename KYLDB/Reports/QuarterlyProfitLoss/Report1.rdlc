@@ -80,7 +80,7 @@
                   <Width>0.6in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.1in</Width>
+                  <Width>1.98333in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.9in</Width>
@@ -95,7 +95,7 @@
                   <Width>1.1in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>1.1in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -111,7 +111,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>ID</Value>
+                                  <Value>ID  </Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -320,7 +320,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Memo For Update</Value>
+                                  <Value>Memo For_____                Update</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -344,7 +344,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.25in</Height>
+                  <Height>0.20833in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -368,6 +368,9 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BottomBorder>
+                              <Style>None</Style>
+                            </BottomBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -468,26 +471,29 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="PLPreparedBy">
+                        <Textbox Name="Textbox1">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!PLPreparedBy.Value</Value>
+                                  <Value>                  Forms</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>PLPreparedBy</rd:DefaultName>
+                          <rd:DefaultName>Textbox1</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BottomBorder>
+                              <Style>None</Style>
+                            </BottomBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -498,26 +504,29 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="ClientProvideBy">
+                        <Textbox Name="Textbox2">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!ClientProvideBy.Value</Value>
+                                  <Value>             Form</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>ClientProvideBy</rd:DefaultName>
+                          <rd:DefaultName>Textbox2</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BottomBorder>
+                              <Style>None</Style>
+                            </BottomBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -528,26 +537,29 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="MemoForUpdate">
+                        <Textbox Name="Textbox4">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!MemoForUpdate.Value</Value>
+                                  <Value />
                                   <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>MemoForUpdate</rd:DefaultName>
+                          <rd:DefaultName>Textbox4</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BottomBorder>
+                              <Style>None</Style>
+                            </BottomBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -559,7 +571,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.25in</Height>
+                  <Height>0.20833in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -583,6 +595,9 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <TopBorder>
+                              <Style>None</Style>
+                            </TopBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -690,7 +705,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>      Bank+receipts</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -703,6 +718,9 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <TopBorder>
+                              <Style>None</Style>
+                            </TopBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -720,7 +738,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>             PL/QB</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -733,6 +751,9 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <TopBorder>
+                              <Style>None</Style>
+                            </TopBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -763,6 +784,9 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <TopBorder>
+                              <Style>None</Style>
+                            </TopBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -803,8 +827,8 @@
             <DataSetName>QuarterlyProfitLoss</DataSetName>
             <Top>0.04in</Top>
             <Left>0.2in</Left>
-            <Height>0.875in</Height>
-            <Width>7.9in</Width>
+            <Height>0.79167in</Height>
+            <Width>7.88333in</Width>
             <Style>
               <Border>
                 <Style>None</Style>

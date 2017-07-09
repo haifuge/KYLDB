@@ -34,7 +34,6 @@ namespace KYLDB.Reports.YearEndPayrollFrm
 
         private void YearEndPayrollFrm_Load(object sender, EventArgs e)
         {
-            DBOperator.SetComboxRepData(cmbRep);
             DateTime time = DateTime.Now;
             int year = time.Year;
             for (int i = 0; i < 5; i++)
@@ -43,17 +42,22 @@ namespace KYLDB.Reports.YearEndPayrollFrm
                 year--;
             }
             comYear.SelectedIndex = 0;
-            cmbRep.SelectedIndex = 0;
+            comboBox2.SelectedIndex = 0;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string rep = "Year End Payroll - " + cmbRep.SelectedValue.ToString();
+            User cu = ((Main)this.MdiParent).cUser;
+            string rep = "Year End Payroll - " + cu.Rep;
             string quarter = "Year: " + comYear.Text;
-            string sql = @"select AccNum as 'ID', Entity as 'Company', isnull(Contact1, Contact2) as 'Contact', Contact1Tel1 as 'Phone', Contact1Tel2 as 'AltPhone',
-                            '0' as 'Balance', 'Yes (3)' as 'PayrollW2', PayRep as 'Payrollrep', CkRep as 'Paycheck', '' as MemoForUpdate
-                            from ClientPayroll
-                            where AccNum = 'C1026'";
+            string sql = @"select Accountno as 'ID', Customer as 'Company', Contact, Phone, AltPhone, BalanceTotal as 'Balance',
+                                  Payroll as 'PayrollW2', PayRep as 'Payrollrep', CkRep as 'Paycheck', '' as MemoForUpdate
+                            from clientdetail cd left join ClientPayroll cp on cd.AccountNo=cp.AccNum
+                            where Rep='" + cu.Rep + @"'  
+                             and (JobStatus='pending' 
+                                  or (SalesTax in ('Monthly','Monthly(w/ Prepay)','Monthly(Sugar)') and JobStatus='current') 
+                                  or (JobStatus<>'closed' and (LiquorTax_Phila='Yes' or U_OTax like 'Yes%'))
+                                  or (JobStatus='closed' and SalesTax='closed(" + comboBox2.Text + "/" + comYear.Text + ")'))";
             DataTable dt = DBOperator.QuerySql(sql);
             List<YearEndPayroll> items = DBOperator.getListFromTable<YearEndPayroll>(dt);
 

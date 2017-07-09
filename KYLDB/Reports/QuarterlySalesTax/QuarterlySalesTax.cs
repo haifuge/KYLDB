@@ -36,9 +36,6 @@ namespace KYLDB.Reports.QuarterlySalesTax
         {
             string sql = "select Rep, FirstName+' '+ LastName as 'Name' from Representative order by FirstName, LastName";
             DataTable dt = DBOperator.QuerySql(sql);
-            cmbRep.DataSource = dt;
-            cmbRep.ValueMember = "Rep";
-            cmbRep.DisplayMember = "Name";
             DateTime time = DateTime.Now;
             int year = time.Year;
             for(int i = 0; i < 5; i++)
@@ -57,11 +54,16 @@ namespace KYLDB.Reports.QuarterlySalesTax
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string rep = "Quarterly Query - "+cmbRep.SelectedValue.ToString();
+            User cu = ((Main)this.MdiParent).cUser;
+            string rep = "Quarterly Query - "+cu.Rep;
             string quarter = "Quarter: " + comboBox2.Text + ", " + comYear.Text;
             string sql = @"select Accountno as 'ID', Customer as 'Company', Contact, Phone, AltPhone, BalanceTotal as 'Balance', SalesTax, SalesTaxNum, 
                                   LiquorTax_Phila as 'LiquorTax', U_OTax from ClientDetail 
-                            where Accountno = 'C1000'";
+                            where Rep='" + cu.Rep + @"'  
+                             and (JobStatus='pending' 
+                                  or (SalesTax in ('Monthly','Monthly(w/ Prepay)','Monthly(Sugar)') and JobStatus='current') 
+                                  or (JobStatus<>'closed' and (LiquorTax_Phila='Yes' or U_OTax like 'Yes%'))
+                                  or (JobStatus='closed' and SalesTax='closed("+ comboBox2.Text +"/"+comYear.Text+ ")'))";
             DataTable dt = DBOperator.QuerySql(sql);
             List<SalesTaxRep> items = DBOperator.getListFromTable<SalesTaxRep>(dt);
 

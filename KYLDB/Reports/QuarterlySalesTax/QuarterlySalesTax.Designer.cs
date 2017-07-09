@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cmbRep = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -50,29 +48,10 @@
             this.reportViewer1.Size = new System.Drawing.Size(992, 534);
             this.reportViewer1.TabIndex = 0;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(66, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 17);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Rep: ";
-            // 
-            // cmbRep
-            // 
-            this.cmbRep.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbRep.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbRep.FormattingEnabled = true;
-            this.cmbRep.Location = new System.Drawing.Point(112, 15);
-            this.cmbRep.Name = "cmbRep";
-            this.cmbRep.Size = new System.Drawing.Size(130, 24);
-            this.cmbRep.TabIndex = 2;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(267, 19);
+            this.label2.Location = new System.Drawing.Point(77, 19);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 17);
             this.label2.TabIndex = 3;
@@ -80,7 +59,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(647, 12);
+            this.button1.Location = new System.Drawing.Point(583, 11);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(140, 30);
             this.button1.TabIndex = 5;
@@ -92,13 +71,14 @@
             // 
             this.comboBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.comboBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
-            "One",
-            "Two",
-            "Three",
-            "Four"});
-            this.comboBox2.Location = new System.Drawing.Point(335, 15);
+            "1Q",
+            "2Q",
+            "3Q",
+            "4Q"});
+            this.comboBox2.Location = new System.Drawing.Point(145, 15);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 24);
             this.comboBox2.TabIndex = 2;
@@ -107,8 +87,9 @@
             // 
             this.comYear.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.comYear.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comYear.FormattingEnabled = true;
-            this.comYear.Location = new System.Drawing.Point(527, 15);
+            this.comYear.Location = new System.Drawing.Point(337, 15);
             this.comYear.Name = "comYear";
             this.comYear.Size = new System.Drawing.Size(100, 24);
             this.comYear.TabIndex = 2;
@@ -116,7 +97,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(477, 19);
+            this.label3.Location = new System.Drawing.Point(287, 19);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 17);
             this.label3.TabIndex = 3;
@@ -132,8 +113,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comYear);
             this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.cmbRep);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.reportViewer1);
             this.Name = "QuarterlySalesTax";
             this.Text = "Quarterly Sales Tax";
@@ -147,8 +126,6 @@
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cmbRep;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox comboBox2;
