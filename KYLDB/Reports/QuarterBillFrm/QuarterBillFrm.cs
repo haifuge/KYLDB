@@ -95,7 +95,8 @@ namespace KYLDB.Reports.QuarterBillFrm
             {
                 comYear.Items.Add(year - i);
             }
-            this.reportViewer1.RefreshReport();
+            comboBox1.SelectedIndex = 0;
+            comYear.SelectedIndex = 0;
         }
 
         private void QuarterBillFrm_FormClosed(object sender, FormClosedEventArgs e)

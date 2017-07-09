@@ -517,7 +517,11 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!BillAmt.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <Color>=switch(Fields!NumOfCkLastQtr.Value=Fields!NumOfCkThisQtr.Value,"black",
+Fields!NumOfCkLastQtr.Value&gt;Fields!NumOfCkThisQtr.Value,"orange",
+Fields!NumOfCkLastQtr.Value&lt;Fields!NumOfCkThisQtr.Value,"orange")</Color>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>

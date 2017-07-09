@@ -38,7 +38,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(99, 192);
+            this.button1.Location = new System.Drawing.Point(116, 186);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(81, 29);
             this.button1.TabIndex = 0;
@@ -48,7 +48,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(244, 192);
+            this.button2.Location = new System.Drawing.Point(261, 186);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(81, 29);
             this.button2.TabIndex = 1;
@@ -59,7 +59,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(96, 57);
+            this.label1.Location = new System.Drawing.Point(101, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 17);
             this.label1.TabIndex = 2;
@@ -68,7 +68,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(96, 110);
+            this.label2.Location = new System.Drawing.Point(101, 110);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 17);
             this.label2.TabIndex = 3;
@@ -76,14 +76,14 @@
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(190, 54);
+            this.txtUsername.Location = new System.Drawing.Point(195, 54);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(163, 22);
             this.txtUsername.TabIndex = 4;
             // 
             // txtPwd
             // 
-            this.txtPwd.Location = new System.Drawing.Point(190, 110);
+            this.txtPwd.Location = new System.Drawing.Point(195, 110);
             this.txtPwd.Name = "txtPwd";
             this.txtPwd.Size = new System.Drawing.Size(163, 22);
             this.txtPwd.TabIndex = 5;
@@ -92,13 +92,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(440, 324);
+            this.ClientSize = new System.Drawing.Size(458, 262);
             this.Controls.Add(this.txtPwd);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";

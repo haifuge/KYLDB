@@ -28,11 +28,15 @@ namespace KYLDB
         {
             InitializeComponent();
         }
-        public User cUser = new User();
+        public User cUser = null;
         private void Form1_Load(object sender, EventArgs e)
         {
+#if RELEASE
             Login l = new Login(this);
             l.ShowDialog();
+            if (cUser == null) { this.Close(); }
+            this.Text = "KYL - " + cUser.FirstName;
+#endif
         }
 
         private void clientInfoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -40,11 +44,6 @@ namespace KYLDB
             ClientPayroll ci = ClientPayroll.GetInstance();
             ci.MdiParent = this;
             ci.Show();
-        }
-
-        private void Main_Resize(object sender, EventArgs e)
-        {
-            
         }
 
         private void dataImportExportToolStripMenuItem_Click(object sender, EventArgs e)
