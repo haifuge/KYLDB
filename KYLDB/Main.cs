@@ -19,6 +19,7 @@ using KYLDB.Reports.RepReportFrm;
 using KYLDB.Reports.CkRepFrm;
 using KYLDB.Reports.QuarterBillFrm;
 using KYLDB.Model;
+using KYLDB.Reports.StatisticReport;
 
 namespace KYLDB
 {
@@ -145,6 +146,13 @@ namespace KYLDB
             QuarterBillFrm qbf = QuarterBillFrm.GetInstance();
             qbf.MdiParent = this;
             qbf.Show();
+        }
+
+        private void statisticReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StatisticReport sr = StatisticReport.GetInstance();
+            sr.MdiParent = this;
+            sr.Show();
         }
     }
 }

@@ -116,6 +116,7 @@
     <Compile Include="Model\RepReport.cs" />
     <Compile Include="Model\SalesTaxRep.cs" />
     <Compile Include="Model\QuarterPayroll.cs" />
+    <Compile Include="Model\StatisticRep.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Model\YearEndPayroll.cs" />
     <Compile Include="Program.cs" />
@@ -272,6 +273,8 @@
     <None Include="Properties\DataSources\KYLDB.Model.QuarterlyProfitLoss.datasource" />
     <None Include="Properties\DataSources\KYLDB.Model.QuarterPayroll.datasource" />
     <None Include="Properties\DataSources\KYLDB.Model.RepReport.datasource" />
+    <None Include="Properties\DataSources\KYLDB.Model.STPR.datasource" />
+    <None Include="Properties\DataSources\KYLDB.Model.TOTAL.datasource" />
     <None Include="Properties\DataSources\KYLDB.Model.YearEndPayroll.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

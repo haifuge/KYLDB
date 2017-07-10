@@ -45,9 +45,10 @@
             this.payrollRepNumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.repReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ckRepToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.quarterBillToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.repManageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.repManageToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.quarterBillToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statisticReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -123,7 +124,8 @@
             this.payrollRepNumToolStripMenuItem,
             this.repReportToolStripMenuItem,
             this.ckRepToolStripMenuItem,
-            this.quarterBillToolStripMenuItem});
+            this.quarterBillToolStripMenuItem,
+            this.statisticReportToolStripMenuItem});
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
             this.reportsToolStripMenuItem.Size = new System.Drawing.Size(72, 24);
             this.reportsToolStripMenuItem.Text = "Reports";
@@ -191,6 +193,13 @@
             this.ckRepToolStripMenuItem.Text = "Ck Rep";
             this.ckRepToolStripMenuItem.Click += new System.EventHandler(this.ckRepToolStripMenuItem_Click);
             // 
+            // quarterBillToolStripMenuItem
+            // 
+            this.quarterBillToolStripMenuItem.Name = "quarterBillToolStripMenuItem";
+            this.quarterBillToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
+            this.quarterBillToolStripMenuItem.Text = "Quarter Bill";
+            this.quarterBillToolStripMenuItem.Click += new System.EventHandler(this.quarterBillToolStripMenuItem_Click);
+            // 
             // repManageToolStripMenuItem
             // 
             this.repManageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -206,12 +215,12 @@
             this.repManageToolStripMenuItem1.Text = "RepManage";
             this.repManageToolStripMenuItem1.Click += new System.EventHandler(this.repManageToolStripMenuItem1_Click);
             // 
-            // quarterBillToolStripMenuItem
+            // statisticReportToolStripMenuItem
             // 
-            this.quarterBillToolStripMenuItem.Name = "quarterBillToolStripMenuItem";
-            this.quarterBillToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
-            this.quarterBillToolStripMenuItem.Text = "Quarter Bill";
-            this.quarterBillToolStripMenuItem.Click += new System.EventHandler(this.quarterBillToolStripMenuItem_Click);
+            this.statisticReportToolStripMenuItem.Name = "statisticReportToolStripMenuItem";
+            this.statisticReportToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
+            this.statisticReportToolStripMenuItem.Text = "Statistic Report";
+            this.statisticReportToolStripMenuItem.Click += new System.EventHandler(this.statisticReportToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -254,6 +263,7 @@
         private System.Windows.Forms.ToolStripMenuItem ckRepToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem payCheckToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quarterBillToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem statisticReportToolStripMenuItem;
     }
 }
 

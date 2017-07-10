@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KYLDB.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -200,8 +201,9 @@ namespace KYLDB.Forms
                 int.TryParse(dataGridView1.Rows[e.Row.Index-1].Cells[3].Value.ToString(), out ckEndNum);
                 dataGridView1.Rows[e.Row.Index].Cells[2].Value = ckEndNum + 1;
             }
+            User cu = ((Main)this.MdiParent).cUser;
             e.Row.Cells[0].Value = DateTime.Now.ToShortDateString();
-            e.Row.Cells[6].Value = cRep;
+            e.Row.Cells[6].Value = cu.Rep;
             e.Row.Cells[8].Value = "save";
             e.Row.Cells[9].Value = "delete";
         }
