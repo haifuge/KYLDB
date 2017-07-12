@@ -12,15 +12,32 @@ namespace KYLDB.Reports.ClientDetail
 {
     public partial class ClientDetailRep : Form
     {
-        public ClientDetailRep()
+        private static ClientDetailRep singleton = null;
+        public static ClientDetailRep GetInstance()
+        {
+            if (singleton == null)
+                singleton = new ClientDetailRep();
+            return singleton;
+        }
+        public new void Show()
+        {
+            this.Visible = true;
+            base.Show();
+            this.BringToFront();
+        }
+        private ClientDetailRep()
         {
             InitializeComponent();
         }
 
         private void ClientDetailRep_Load(object sender, EventArgs e)
         {
-
             this.reportViewer1.RefreshReport();
+        }
+
+        private void ClientDetailRep_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            singleton = null;
         }
     }
 }
