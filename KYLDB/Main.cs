@@ -154,5 +154,12 @@ namespace KYLDB
             sr.MdiParent = this;
             sr.Show();
         }
+
+        private void clientDetailToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Forms.ClientDetail cd = Forms.ClientDetail.GetInstance();
+            cd.MdiParent = this;
+            cd.Show();
+        }
     }
 }

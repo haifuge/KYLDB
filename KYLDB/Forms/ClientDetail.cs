@@ -53,6 +53,7 @@ namespace KYLDB.Forms
             var obj = from acc in details
                       where acc.Customer == comboBox2.Text
                       select acc;
+            setTxtValue(obj.First());
         }
 
         private void AccNumList_SelectedIndexChanged(object sender, EventArgs e)
@@ -60,11 +61,16 @@ namespace KYLDB.Forms
             var obj = from acc in details
                       where acc.AccountNo == AccNumList.Text
                       select acc;
+            setTxtValue(obj.First());
         }
 
         private void ClientDetail_FormClosed(object sender, FormClosedEventArgs e)
         {
             singleton = null;
+        }
+        private void setTxtValue(KYLDB.Model.ClientDetail detail)
+        {
+            
         }
     }
 }

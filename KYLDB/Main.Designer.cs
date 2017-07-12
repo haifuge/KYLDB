@@ -46,9 +46,10 @@
             this.repReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ckRepToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quarterBillToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statisticReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.repManageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.repManageToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.statisticReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientDetailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,7 +72,8 @@
             this.Client.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.clientInfoToolStripMenuItem,
             this.viewClientsToolStripMenuItem,
-            this.payCheckToolStripMenuItem});
+            this.payCheckToolStripMenuItem,
+            this.clientDetailToolStripMenuItem});
             this.Client.Name = "Client";
             this.Client.Size = new System.Drawing.Size(59, 24);
             this.Client.Text = "Client";
@@ -79,21 +81,21 @@
             // clientInfoToolStripMenuItem
             // 
             this.clientInfoToolStripMenuItem.Name = "clientInfoToolStripMenuItem";
-            this.clientInfoToolStripMenuItem.Size = new System.Drawing.Size(164, 26);
+            this.clientInfoToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.clientInfoToolStripMenuItem.Text = "Client Info";
             this.clientInfoToolStripMenuItem.Click += new System.EventHandler(this.clientInfoToolStripMenuItem_Click);
             // 
             // viewClientsToolStripMenuItem
             // 
             this.viewClientsToolStripMenuItem.Name = "viewClientsToolStripMenuItem";
-            this.viewClientsToolStripMenuItem.Size = new System.Drawing.Size(164, 26);
+            this.viewClientsToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.viewClientsToolStripMenuItem.Text = "View Clients";
             this.viewClientsToolStripMenuItem.Click += new System.EventHandler(this.viewClientsToolStripMenuItem_Click);
             // 
             // payCheckToolStripMenuItem
             // 
             this.payCheckToolStripMenuItem.Name = "payCheckToolStripMenuItem";
-            this.payCheckToolStripMenuItem.Size = new System.Drawing.Size(164, 26);
+            this.payCheckToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.payCheckToolStripMenuItem.Text = "Pay Check";
             this.payCheckToolStripMenuItem.Click += new System.EventHandler(this.payCheckToolStripMenuItem_Click);
             // 
@@ -200,6 +202,13 @@
             this.quarterBillToolStripMenuItem.Text = "Quarter Bill";
             this.quarterBillToolStripMenuItem.Click += new System.EventHandler(this.quarterBillToolStripMenuItem_Click);
             // 
+            // statisticReportToolStripMenuItem
+            // 
+            this.statisticReportToolStripMenuItem.Name = "statisticReportToolStripMenuItem";
+            this.statisticReportToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
+            this.statisticReportToolStripMenuItem.Text = "Statistic Report";
+            this.statisticReportToolStripMenuItem.Click += new System.EventHandler(this.statisticReportToolStripMenuItem_Click);
+            // 
             // repManageToolStripMenuItem
             // 
             this.repManageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -215,12 +224,12 @@
             this.repManageToolStripMenuItem1.Text = "RepManage";
             this.repManageToolStripMenuItem1.Click += new System.EventHandler(this.repManageToolStripMenuItem1_Click);
             // 
-            // statisticReportToolStripMenuItem
+            // clientDetailToolStripMenuItem
             // 
-            this.statisticReportToolStripMenuItem.Name = "statisticReportToolStripMenuItem";
-            this.statisticReportToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
-            this.statisticReportToolStripMenuItem.Text = "Statistic Report";
-            this.statisticReportToolStripMenuItem.Click += new System.EventHandler(this.statisticReportToolStripMenuItem_Click);
+            this.clientDetailToolStripMenuItem.Name = "clientDetailToolStripMenuItem";
+            this.clientDetailToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.clientDetailToolStripMenuItem.Text = "Client Detail";
+            this.clientDetailToolStripMenuItem.Click += new System.EventHandler(this.clientDetailToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -264,6 +273,7 @@
         private System.Windows.Forms.ToolStripMenuItem payCheckToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quarterBillToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem statisticReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clientDetailToolStripMenuItem;
     }
 }
 
