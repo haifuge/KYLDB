@@ -71,6 +71,12 @@
       <DependentUpon>AccountViewList.cs</DependentUpon>
     </Compile>
     <Compile Include="DBOperator.cs" />
+    <Compile Include="Forms\ClientDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ClientDetail.Designer.cs">
+      <DependentUpon>ClientDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ClientPayroll.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +115,7 @@
     </Compile>
     <Compile Include="Model\BaseRepModel.cs" />
     <Compile Include="Model\CkRep.cs" />
+    <Compile Include="Model\ClientDetail.cs" />
     <Compile Include="Model\ClientPayroll.cs" />
     <Compile Include="Model\PayrollRepNum.cs" />
     <Compile Include="Model\QuarterBill.cs" />
@@ -126,6 +133,12 @@
     </Compile>
     <Compile Include="Reports\CkRepFrm\CkRepFrm.Designer.cs">
       <DependentUpon>CkRepFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ClientDetail\ClientDetailRep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ClientDetail\ClientDetailRep.Designer.cs">
+      <DependentUpon>ClientDetailRep.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\ClientPayroll\ClientPayrollRep.cs">
       <SubType>Form</SubType>
@@ -190,6 +203,9 @@
     <EmbeddedResource Include="Forms\AccountViewList.resx">
       <DependentUpon>AccountViewList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ClientDetail.resx">
+      <DependentUpon>ClientDetail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClientPayroll.resx">
       <DependentUpon>ClientPayroll.cs</DependentUpon>
     </EmbeddedResource>
@@ -221,6 +237,10 @@
       <DependentUpon>CkRepFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\CkRepFrm\Report1.rdlc" />
+    <EmbeddedResource Include="Reports\ClientDetail\ClientDetailRep.resx">
+      <DependentUpon>ClientDetailRep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ClientDetail\Report1.rdlc" />
     <EmbeddedResource Include="Reports\ClientPayroll\ClientPayrollRep.resx">
       <DependentUpon>ClientPayrollRep.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -265,6 +285,7 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\KYLDB.Model.AccountInfo.datasource" />
     <None Include="Properties\DataSources\KYLDB.Model.CkRep.datasource" />
+    <None Include="Properties\DataSources\KYLDB.Model.ClientDetail.datasource" />
     <None Include="Properties\DataSources\KYLDB.Model.ClientPayroll.datasource" />
     <None Include="Properties\DataSources\KYLDB.Model.MonthlyRep.datasource" />
     <None Include="Properties\DataSources\KYLDB.Model.MonthlyRepTitle.datasource" />
@@ -318,8 +339,6 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Reports\ClientDetail\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

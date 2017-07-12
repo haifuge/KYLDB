@@ -112,7 +112,13 @@ namespace KYLDB.Forms
                             // FirstCheckDate, PayClosedDate, BankStartDate ,PayStartDate
                             if ((j == 80 || j == 40 || j == 35 || j == 28) && cell != "")
                             {
-                                cell = DateTime.FromOADate(double.Parse(cell)).ToShortDateString();
+                                try
+                                {
+                                    cell = DateTime.FromOADate(double.Parse(cell)).ToShortDateString();
+                                }
+                                catch {
+                                    
+                                }
                             }
                             dr[j - 1] = cell;
                         }
@@ -269,9 +275,20 @@ namespace KYLDB.Forms
                 xlApp.Quit();
             }
         }
+
+
         #endregion
 
-        
-        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBoxButtons messButton = MessageBoxButtons.OKCancel;
+            DialogResult dr = MessageBox.Show("Are you sure to delete data of "+ cTableList.Text+"!", "Delete Data", messButton);
+            if(dr==DialogResult.OK)
+            {
+                string sql = "delete " + cTableList.Text;
+                DBOperator.ExecuteSql(sql);
+                MessageBox.Show("Data of " + cTableList.Text + "has been cleaned.");
+            }
+        }
     }
 }
