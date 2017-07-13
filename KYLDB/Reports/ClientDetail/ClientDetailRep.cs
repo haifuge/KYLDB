@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Reporting.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,9 +30,16 @@ namespace KYLDB.Reports.ClientDetail
         {
             InitializeComponent();
         }
-
+        KYLDB.Model.ClientDetail data;
+        public void setData(KYLDB.Model.ClientDetail cd)
+        {
+            data = cd;
+        }
         private void ClientDetailRep_Load(object sender, EventArgs e)
         {
+            //ReportDataSource rds = new ReportDataSource("dsClientDetail", data);
+            //reportViewer1.LocalReport.DataSources.Add(rds);
+            ClientDetailBindingSource.DataSource = data;
             this.reportViewer1.RefreshReport();
         }
 
