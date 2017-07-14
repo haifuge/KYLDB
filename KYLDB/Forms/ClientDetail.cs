@@ -48,7 +48,7 @@ namespace KYLDB.Forms
             comboBox2.SelectedIndex = 0;
             AccNumList.SelectedIndexChanged += AccNumList_SelectedIndexChanged;
             comboBox2.SelectedIndexChanged += ComboBox2_SelectedIndexChanged;
-            enableTxt(false);
+            enableTxt(true);
         }
 
         private void ComboBox2_SelectedIndexChanged(object sender, EventArgs e)

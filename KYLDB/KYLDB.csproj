@@ -146,6 +146,18 @@
     <Compile Include="Reports\ClientPayroll\ClientPayrollRep.Designer.cs">
       <DependentUpon>ClientPayrollRep.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\LabelFolderReport\LabelFolderReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\LabelFolderReport\LabelFolderReport.Designer.cs">
+      <DependentUpon>LabelFolderReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\LabelMailingReport\LabelMailingReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\LabelMailingReport\LabelMailingReport.Designer.cs">
+      <DependentUpon>LabelMailingReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\MonthlySaleTax\MonthlySaleTax.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -246,6 +258,14 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\ClientPayroll\Report1.rdlc" />
+    <EmbeddedResource Include="Reports\LabelFolderReport\LabelFolderReport.resx">
+      <DependentUpon>LabelFolderReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LabelFolderReport\Report1.rdlc" />
+    <EmbeddedResource Include="Reports\LabelMailingReport\LabelMailingReport.resx">
+      <DependentUpon>LabelMailingReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LabelMailingReport\Report1.rdlc" />
     <EmbeddedResource Include="Reports\MonthlySaleTax\MonthlySaleTax.resx">
       <DependentUpon>MonthlySaleTax.cs</DependentUpon>
     </EmbeddedResource>
