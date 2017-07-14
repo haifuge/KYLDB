@@ -32,7 +32,9 @@ namespace KYLDB.Reports.LabelFolderReport
 
         private void LabelFolderReport_Load(object sender, EventArgs e)
         {
-
+            string sql = @"select AccountNo, Rep, Company, Customer, Mailto3, Mailto4, Phone, Fax, AltPhone 
+                          from ClientDetail where AccountNo='C1000' and Rep='C'";
+            DataTable dt = DBOperator.QuerySql(sql);
             this.reportViewer1.RefreshReport();
         }
 

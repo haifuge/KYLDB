@@ -37,7 +37,8 @@ namespace KYLDB.Reports.LabelMailingReport
 
         private void LabelMailingReport_Load(object sender, EventArgs e)
         {
-
+            string sql = @"select Company, Mailto3, Mailto4 from ClientDetail";
+            DataTable dt = DBOperator.QuerySql(sql);
             this.reportViewer1.RefreshReport();
         }
     }
