@@ -20,6 +20,8 @@ using KYLDB.Reports.CkRepFrm;
 using KYLDB.Reports.QuarterBillFrm;
 using KYLDB.Model;
 using KYLDB.Reports.StatisticReport;
+using KYLDB.Reports.LabelMailingReport;
+using KYLDB.Reports.LabelFolderReport;
 
 namespace KYLDB
 {
@@ -29,14 +31,24 @@ namespace KYLDB
         {
             InitializeComponent();
         }
-        public User cUser = null;
+        public static User cUser = null;
         private void Form1_Load(object sender, EventArgs e)
         {
 #if RELEASE
-            Login l = new Login(this);
+            Login l = new Login();
             l.ShowDialog();
             if (cUser == null) { this.Close(); }
             this.Text = "KYL - " + cUser.FirstName;
+                        if(cUser.UserLevel==-1)
+            {
+                repManageToolStripMenuItem.Visible = true;
+                dataToolStripMenuItem.Visible = true;
+            }
+            else if(cUser.UserLevel==0)
+            {
+                repManageToolStripMenuItem.Visible = false;
+                dataToolStripMenuItem.Visible = false;
+            }
 #endif
 #if DEBUG
             cUser = new User() { Rep = "C", LastName = "Chow", FirstName = "Charles", UserLevel = -1 };
@@ -160,6 +172,27 @@ namespace KYLDB
             Forms.ClientDetail cd = Forms.ClientDetail.GetInstance();
             cd.MdiParent = this;
             cd.Show();
+        }
+
+        private void labelMailingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LabelMailingReport lmp = LabelMailingReport.GetInstance();
+            lmp.MdiParent = this;
+            lmp.Show();
+        }
+
+        private void labelFolderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LabelFolderReport lfp = LabelFolderReport.GetInstance();
+            lfp.MdiParent = this;
+            lfp.Show();
+        }
+
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangePassword cp = ChangePassword.GetInstance();
+            cp.MdiParent = this;
+            cp.Show();
         }
     }
 }

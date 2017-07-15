@@ -33,6 +33,7 @@
             this.clientInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewClientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.payCheckToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientDetailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataImportExportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,7 +50,10 @@
             this.statisticReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.repManageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.repManageToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.clientDetailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.labelMailingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.labelFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.personalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,9 +62,10 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Client,
-            this.dataToolStripMenuItem,
             this.reportsToolStripMenuItem,
-            this.repManageToolStripMenuItem});
+            this.repManageToolStripMenuItem,
+            this.dataToolStripMenuItem,
+            this.personalToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1122, 28);
@@ -70,10 +75,10 @@
             // Client
             // 
             this.Client.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.clientInfoToolStripMenuItem,
             this.viewClientsToolStripMenuItem,
-            this.payCheckToolStripMenuItem,
-            this.clientDetailToolStripMenuItem});
+            this.clientInfoToolStripMenuItem,
+            this.clientDetailToolStripMenuItem,
+            this.payCheckToolStripMenuItem});
             this.Client.Name = "Client";
             this.Client.Size = new System.Drawing.Size(59, 24);
             this.Client.Text = "Client";
@@ -98,6 +103,13 @@
             this.payCheckToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.payCheckToolStripMenuItem.Text = "Pay Check";
             this.payCheckToolStripMenuItem.Click += new System.EventHandler(this.payCheckToolStripMenuItem_Click);
+            // 
+            // clientDetailToolStripMenuItem
+            // 
+            this.clientDetailToolStripMenuItem.Name = "clientDetailToolStripMenuItem";
+            this.clientDetailToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.clientDetailToolStripMenuItem.Text = "Client Detail";
+            this.clientDetailToolStripMenuItem.Click += new System.EventHandler(this.clientDetailToolStripMenuItem_Click);
             // 
             // dataToolStripMenuItem
             // 
@@ -127,7 +139,9 @@
             this.repReportToolStripMenuItem,
             this.ckRepToolStripMenuItem,
             this.quarterBillToolStripMenuItem,
-            this.statisticReportToolStripMenuItem});
+            this.statisticReportToolStripMenuItem,
+            this.labelMailingToolStripMenuItem,
+            this.labelFolderToolStripMenuItem});
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
             this.reportsToolStripMenuItem.Size = new System.Drawing.Size(72, 24);
             this.reportsToolStripMenuItem.Text = "Reports";
@@ -220,16 +234,38 @@
             // repManageToolStripMenuItem1
             // 
             this.repManageToolStripMenuItem1.Name = "repManageToolStripMenuItem1";
-            this.repManageToolStripMenuItem1.Size = new System.Drawing.Size(164, 26);
+            this.repManageToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
             this.repManageToolStripMenuItem1.Text = "RepManage";
             this.repManageToolStripMenuItem1.Click += new System.EventHandler(this.repManageToolStripMenuItem1_Click);
             // 
-            // clientDetailToolStripMenuItem
+            // labelMailingToolStripMenuItem
             // 
-            this.clientDetailToolStripMenuItem.Name = "clientDetailToolStripMenuItem";
-            this.clientDetailToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.clientDetailToolStripMenuItem.Text = "Client Detail";
-            this.clientDetailToolStripMenuItem.Click += new System.EventHandler(this.clientDetailToolStripMenuItem_Click);
+            this.labelMailingToolStripMenuItem.Name = "labelMailingToolStripMenuItem";
+            this.labelMailingToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
+            this.labelMailingToolStripMenuItem.Text = "Label - Mailing";
+            this.labelMailingToolStripMenuItem.Click += new System.EventHandler(this.labelMailingToolStripMenuItem_Click);
+            // 
+            // labelFolderToolStripMenuItem
+            // 
+            this.labelFolderToolStripMenuItem.Name = "labelFolderToolStripMenuItem";
+            this.labelFolderToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
+            this.labelFolderToolStripMenuItem.Text = "Label - Folder";
+            this.labelFolderToolStripMenuItem.Click += new System.EventHandler(this.labelFolderToolStripMenuItem_Click);
+            // 
+            // personalToolStripMenuItem
+            // 
+            this.personalToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.changePasswordToolStripMenuItem});
+            this.personalToolStripMenuItem.Name = "personalToolStripMenuItem";
+            this.personalToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
+            this.personalToolStripMenuItem.Text = "Personal";
+            // 
+            // changePasswordToolStripMenuItem
+            // 
+            this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
+            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(199, 26);
+            this.changePasswordToolStripMenuItem.Text = "Change Password";
+            this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -274,6 +310,10 @@
         private System.Windows.Forms.ToolStripMenuItem quarterBillToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem statisticReportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clientDetailToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem labelMailingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem labelFolderToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem personalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem changePasswordToolStripMenuItem;
     }
 }
 

@@ -44,12 +44,11 @@ namespace KYLDB.Reports.MonthlySaleTax
 
         private void button1_Click(object sender, EventArgs e)
         {
-            User cu = ((Main)this.MdiParent).cUser;
-            string rep = cu.Rep;
+            string rep = Main.cUser.Rep;
             string month = comboBox2.Text;
             string sql = @"select Accountno as 'ID', Customer as 'Company', Contact, Phone, AltPhone, BalanceTotal as 'Balance', SalesTax, SalesTaxNum, 
                                   LiquorTax_Phila as 'LiquorTax', U_OTax from ClientDetail 
-                            where Rep='"+cu.Rep+ @"'  
+                            where Rep='"+rep+ @"'  
                              and (JobStatus='pending' 
                                   or (SalesTax in ('Monthly','Monthly(w/ Prepay)','Monthly(Sugar)') and JobStatus='current') 
                                   or (JobStatus<>'closed' and (LiquorTax_Phila='Yes' or U_OTax like 'Yes%')) )";

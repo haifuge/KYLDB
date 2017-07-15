@@ -12,5 +12,6 @@ namespace KYLDB.Model
         public string LastName { get; set; }
         public string FirstName { get; set; }
         public int UserLevel { get; set; }
+        public string UserName { get; set; }
     }
 }

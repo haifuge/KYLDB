@@ -25,10 +25,6 @@ namespace KYLDB.Forms
                 singleton = new AccountViewList();
             return singleton;
         }
-        public new void Close()
-        {
-            this.Visible = false;
-        }
         public new void Show()
         {
             this.Visible = true;
@@ -36,21 +32,21 @@ namespace KYLDB.Forms
             this.BringToFront();
         }
         DataTable dt;
-        List<Model.ClientPayroll> ClientPayrolls = new List<Model.ClientPayroll>();
+        List<Model.ClientDetail> ClientDetails = new List<Model.ClientDetail>();
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            var searchList = from ac in ClientPayrolls
-                             where ac.Entity.Contains(textBox1.Text.Trim())
+            var searchList = from ac in ClientDetails
+                             where ac.Customer.Contains(textBox1.Text.Trim())
                              select new
                              {
-                                 id = ac.AccNum,
-                                 Rep = ac.AccRep,
-                                 Status = "Current",
-                                 Customer = ac.Entity,
-                                 Contact = ac.Contact1,
-                                 BalanceTotal = 0,
-                                 Phone = ac.Contact1Tel1,
-                                 AltPhone = ac.Contact1Tel2,
+                                 id = ac.AccountNo,
+                                 Rep = ac.Rep,
+                                 Status = ac.JobStatus,
+                                 Customer = ac.Customer,
+                                 Contact = ac.Contact,
+                                 BalanceTotal = ac.BalanceTotal,
+                                 Phone = ac.Phone,
+                                 AltPhone = ac.AltPhone,
                                  ClientDetail = "Detail",
                                  ClientPayroll = "Payroll Detail",
                                  Paycheck = "Paycheck"
@@ -60,21 +56,21 @@ namespace KYLDB.Forms
 
         private void AccountViewList_Load(object sender, EventArgs e)
         {
-            string sql = "select * from ClientPayroll";
+            string sql = "select * from ClientDetail";
             dt = DBOperator.QuerySql(sql);
-            ClientPayrolls = DBOperator.getListFromTable<Model.ClientPayroll>(dt);
+            ClientDetails = DBOperator.getListFromTable<Model.ClientDetail>(dt);
             
-            var searchList = from ac in ClientPayrolls
+            var searchList = from ac in ClientDetails
                              select new
                              {
-                                 id = ac.AccNum,
-                                 Rep = ac.AccRep,
-                                 Status = "Current",
-                                 Customer = ac.Entity,
-                                 Contact = ac.Contact1,
-                                 BalanceTotal = 0,
-                                 Phone = ac.Contact1Tel1,
-                                 AltPhone = ac.Contact1Tel2,
+                                 id = ac.AccountNo,
+                                 Rep = ac.Rep,
+                                 Status = ac.JobStatus,
+                                 Customer = ac.Customer,
+                                 Contact = ac.Contact,
+                                 BalanceTotal = ac.BalanceTotal,
+                                 Phone = ac.Phone,
+                                 AltPhone = ac.AltPhone,
                                  ClientDetail = "Detail",
                                  ClientPayroll = "Payroll Detail",
                                  Paycheck = "Paycheck"
@@ -82,31 +78,31 @@ namespace KYLDB.Forms
             dataGridView1.DataSource = searchList.ToArray();
             setLinkColumns();
 
-            var acclist = from ac in ClientPayrolls
-                          select ac.AccNum;
+            var acclist = from ac in ClientDetails
+                          select ac.AccountNo;
             comboBox1.DataSource = acclist.ToArray();
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
 
-            var enList = from ac in ClientPayrolls
-                          select ac.Entity;
+            var enList = from ac in ClientDetails
+                          select ac.Customer;
             comboBox2.DataSource = enList.ToArray();
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var searchList = from ac in ClientPayrolls
-                             where ac.AccNum==comboBox1.Text
+            var searchList = from ac in ClientDetails
+                             where ac.AccountNo==comboBox1.Text
                              select new
                              {
-                                 id = ac.AccNum,
-                                 Rep = ac.AccRep,
-                                 Status = "Current",
-                                 Customer = ac.Entity,
-                                 Contact = ac.Contact1,
-                                 BalanceTotal = 0,
-                                 Phone = ac.Contact1Tel1,
-                                 AltPhone = ac.Contact1Tel2,
+                                 id = ac.AccountNo,
+                                 Rep = ac.Rep,
+                                 Status = ac.JobStatus,
+                                 Customer = ac.Customer,
+                                 Contact = ac.Contact,
+                                 BalanceTotal = ac.BalanceTotal,
+                                 Phone = ac.Phone,
+                                 AltPhone = ac.AltPhone,
                                  ClientDetail = "Detail",
                                  ClientPayroll = "Payroll Detail",
                                  Paycheck = "Paycheck"
@@ -184,18 +180,18 @@ namespace KYLDB.Forms
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var searchList = from ac in ClientPayrolls
-                             where ac.Entity == comboBox2.Text
+            var searchList = from ac in ClientDetails
+                             where ac.Customer == comboBox2.Text
                              select new
                              {
-                                 id = ac.AccNum,
-                                 Rep = ac.AccRep,
-                                 Status = "Current",
-                                 Customer = ac.Entity,
-                                 Contact = ac.Contact1,
-                                 BalanceTotal = 0,
-                                 Phone = ac.Contact1Tel1,
-                                 AltPhone = ac.Contact1Tel2,
+                                 id = ac.AccountNo,
+                                 Rep = ac.Rep,
+                                 Status = ac.JobStatus,
+                                 Customer = ac.Customer,
+                                 Contact = ac.Contact,
+                                 BalanceTotal = ac.BalanceTotal,
+                                 Phone = ac.Phone,
+                                 AltPhone = ac.AltPhone,
                                  ClientDetail = "Detail",
                                  ClientPayroll = "Payroll Detail",
                                  Paycheck = "Paycheck"

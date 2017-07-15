@@ -54,14 +54,13 @@ namespace KYLDB.Reports.QuarterlySalesTax
 
         private void button1_Click(object sender, EventArgs e)
         {
-            User cu = ((Main)this.MdiParent).cUser;
-            string rep = "Quarterly Query - "+cu.Rep;
+            string rep = "Quarterly Query - "+ Main.cUser.Rep;
             string quarter = "Quarter: " + comboBox2.Text + ", " + comYear.Text;
             string sql = @"select Accountno as 'ID', Customer as 'Company', Contact, Phone, AltPhone, BalanceTotal as 'Balance', SalesTax, SalesTaxNum, 
                                   LiquorTax_Phila as 'LiquorTax', U_OTax from ClientDetail 
-                            where Rep='" + cu.Rep + @"'  
+                            where Rep='" + rep + @"'  
                              and (JobStatus='pending' 
-                                  or (SalesTax in ('Monthly','Monthly(w/ Prepay)','Monthly(Sugar)') and JobStatus='current') 
+                                  or (SalesTax in ('Monthly','Monthly(w/ Prepay)','Monthly(Sugar)') and JobStatus='Current') 
                                   or (JobStatus<>'closed' and (LiquorTax_Phila='Yes' or U_OTax like 'Yes%'))
                                   or (JobStatus='closed' and SalesTax='closed("+ comboBox2.Text +"/"+comYear.Text+ ")'))";
             DataTable dt = DBOperator.QuerySql(sql);

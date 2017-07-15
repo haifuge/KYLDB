@@ -223,7 +223,9 @@
                                   <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                             <Paragraph>
                               <TextRuns>
@@ -232,7 +234,9 @@
                                   <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox9</rd:DefaultName>
@@ -478,11 +482,13 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>                  Forms</Value>
+                                  <Value>Forms</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox1</rd:DefaultName>
@@ -511,11 +517,13 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>             Form</Value>
+                                  <Value>Form</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox2</rd:DefaultName>
@@ -679,7 +687,9 @@
                                   <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>PL_QB</rd:DefaultName>
@@ -705,11 +715,13 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>      Bank+receipts</Value>
+                                  <Value>Bank+receipts</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox23</rd:DefaultName>
@@ -738,11 +750,13 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>             PL/QB</Value>
+                                  <Value>PL/QB</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox24</rd:DefaultName>
@@ -827,7 +841,7 @@
             <DataSetName>QuarterlyProfitLoss</DataSetName>
             <Top>0.04in</Top>
             <Left>0.2in</Left>
-            <Height>0.79167in</Height>
+            <Height>0.79166in</Height>
             <Width>7.88333in</Width>
             <Style>
               <Border>

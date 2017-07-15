@@ -37,9 +37,9 @@ namespace KYLDB.Reports.StatisticReport
             string sql = @"select *, I+P+C+CS as 'Total' from (
                             select r.Rep, count(cdi.Rep) as 'I', count(cdp.Rep) as 'P', count(cdc.Rep) as 'C', COUNT(cdcs.Rep) as 'CS'
                             from Representative r 
-                            left join clientDetail cdi on r.Rep=cdi.Rep and cdi.CustomerType in ('Individual', 'SINGLE MEMBER LLC', 'SOLE PROPRIETORSHIP')
+                            left join ClientDetail cdi on r.Rep=cdi.Rep and cdi.CustomerType in ('Individual', 'SINGLE MEMBER LLC', 'SOLE PROPRIETORSHIP')
                             left join ClientDetail cdp on r.rep=cdp.Rep and cdp.CustomerType in ('GENERAL PARTNER LLC','PARTNERSHIP','Limited Partnership')
-                            left join clientDetail cdc on r.Rep=cdc.Rep and cdc.CustomerType in ('CORP.','CORP.LLC','Corporate')
+                            left join ClientDetail cdc on r.Rep=cdc.Rep and cdc.CustomerType in ('CORP.','CORP.LLC','Corporate')
                             left join ClientDetail cdcs on r.Rep=cdcs.Rep and cdcs.CustomerType in ('S Corp.')
                             group by r.Rep) a";
             DataTable dt = DBOperator.QuerySql(sql);
@@ -58,24 +58,60 @@ namespace KYLDB.Reports.StatisticReport
             sql = @"select *, I+P+C+CS as 'Total' from (
                         select r.Rep, count(cdi.Rep) as 'I', count(cdp.Rep) as 'P', count(cdc.Rep) as 'C', COUNT(cdcs.Rep) as 'CS'
                         from Representative r 
-                        left join clientDetail cdi on r.Rep=cdi.Rep and cdi.CustomerType in ('Individual', 'SINGLE MEMBER LLC', 'SOLE PROPRIETORSHIP')
-                        left join ClientDetail cdp on r.rep=cdp.Rep and cdp.CustomerType in ('GENERAL PARTNER LLC','PARTNERSHIP','Limited Partnership')
-                        left join clientDetail cdc on r.Rep=cdc.Rep and cdc.CustomerType in ('CORP.','CORP.LLC','Corporate')
-                        left join ClientDetail cdcs on r.Rep=cdcs.Rep and cdcs.CustomerType in ('S Corp.')
+                        left join ClientDetail cdi on r.Rep=cdi.Rep and cdi.JobStatus = 'Pending' and cdi.CustomerType in ('Individual', 'SINGLE MEMBER LLC', 'SOLE PROPRIETORSHIP')
+                        left join ClientDetail cdp on r.rep=cdp.Rep and cdp.JobStatus = 'Pending' and cdp.CustomerType in ('GENERAL PARTNER LLC','PARTNERSHIP','Limited Partnership')
+                        left join ClientDetail cdc on r.Rep=cdc.Rep and cdc.JobStatus = 'Pending' and cdc.CustomerType in ('CORP.','CORP.LLC','Corporate')
+                        left join ClientDetail cdcs on r.Rep=cdcs.Rep and cdcs.JobStatus = 'Pending' and cdcs.CustomerType in ('S Corp.')
                         group by r.Rep) a";
             List<TOTAL> items = DBOperator.getListFromTable<TOTAL>(dt);
             ReportDataSource peding = new ReportDataSource("dsPending", items);
             reportViewer1.LocalReport.DataSources.Add(peding);
 
+            sql = @"select *, I+P+C+CS as 'Total' from (
+                        select r.Rep, count(cdi.Rep) as 'I', count(cdp.Rep) as 'P', count(cdc.Rep) as 'C', COUNT(cdcs.Rep) as 'CS'
+                        from Representative r 
+                        left join ClientDetail cdi on r.Rep=cdi.Rep and cdi.JobStatus = 'Yearly' and cdi.CustomerType in ('Individual', 'SINGLE MEMBER LLC', 'SOLE PROPRIETORSHIP')
+                        left join ClientDetail cdp on r.rep=cdp.Rep and cdp.JobStatus = 'Yearly' and cdp.CustomerType in ('GENERAL PARTNER LLC','PARTNERSHIP','Limited Partnership')
+                        left join ClientDetail cdc on r.Rep=cdc.Rep and cdc.JobStatus = 'Yearly' and cdc.CustomerType in ('CORP.','CORP.LLC','Corporate')
+                        left join ClientDetail cdcs on r.Rep=cdcs.Rep and cdcs.JobStatus = 'Yearly' and cdcs.CustomerType in ('S Corp.')
+                        group by r.Rep) a";
+            items = DBOperator.getListFromTable<TOTAL>(dt);
             ReportDataSource yearly = new ReportDataSource("dsYearly", items);
             reportViewer1.LocalReport.DataSources.Add(yearly);
 
+            sql = @"select *, I+P+C+CS as 'Total' from (
+                        select r.Rep, count(cdi.Rep) as 'I', count(cdp.Rep) as 'P', count(cdc.Rep) as 'C', COUNT(cdcs.Rep) as 'CS'
+                        from Representative r 
+                        left join ClientDetail cdi on r.Rep=cdi.Rep and cdi.JobStatus = 'Current' and cdi.CustomerType in ('Individual', 'SINGLE MEMBER LLC', 'SOLE PROPRIETORSHIP')
+                        left join ClientDetail cdp on r.rep=cdp.Rep and cdp.JobStatus = 'Current' and cdp.CustomerType in ('GENERAL PARTNER LLC','PARTNERSHIP','Limited Partnership')
+                        left join ClientDetail cdc on r.Rep=cdc.Rep and cdc.JobStatus = 'Current' and cdc.CustomerType in ('CORP.','CORP.LLC','Corporate')
+                        left join ClientDetail cdcs on r.Rep=cdcs.Rep and cdcs.JobStatus = 'Current' and cdcs.CustomerType in ('S Corp.')
+                        group by r.Rep) a";
+            items = DBOperator.getListFromTable<TOTAL>(dt);
             ReportDataSource current = new ReportDataSource("dsCurrent", items);
             reportViewer1.LocalReport.DataSources.Add(current);
 
+            sql = @"select *, I+P+C+CS as 'Total' from (
+                        select r.Rep, count(cdi.Rep) as 'I', count(cdp.Rep) as 'P', count(cdc.Rep) as 'C', COUNT(cdcs.Rep) as 'CS'
+                        from Representative r 
+                        left join ClientDetail cdi on r.Rep=cdi.Rep and cdi.JobStatus = 'Current' and cdi.CustomerType in ('Individual', 'SINGLE MEMBER LLC', 'SOLE PROPRIETORSHIP')
+                        left join ClientDetail cdp on r.rep=cdp.Rep and cdp.JobStatus = 'Current' and cdp.CustomerType in ('GENERAL PARTNER LLC','PARTNERSHIP','Limited Partnership')
+                        left join ClientDetail cdc on r.Rep=cdc.Rep and cdc.JobStatus = 'Current' and cdc.CustomerType in ('CORP.','CORP.LLC','Corporate')
+                        left join ClientDetail cdcs on r.Rep=cdcs.Rep and cdcs.JobStatus = 'Current' and cdcs.CustomerType in ('S Corp.')
+                        group by r.Rep) a";
+            items = DBOperator.getListFromTable<TOTAL>(dt);
             ReportDataSource done = new ReportDataSource("dsDone", items);
             reportViewer1.LocalReport.DataSources.Add(done);
 
+            sql = @"select *, I+P+C+CS as 'Total' from (
+                        select r.Rep, count(cdi.Rep) as 'I', count(cdp.Rep) as 'P', count(cdc.Rep) as 'C', COUNT(cdcs.Rep) as 'CS'
+                        from Representative r 
+                        left join ClientDetail cdi on r.Rep=cdi.Rep and cdi.JobStatus = 'Current' and cdi.CustomerType in ('Individual', 'SINGLE MEMBER LLC', 'SOLE PROPRIETORSHIP')
+                        left join ClientDetail cdp on r.rep=cdp.Rep and cdp.JobStatus = 'Current' and cdp.CustomerType in ('GENERAL PARTNER LLC','PARTNERSHIP','Limited Partnership')
+                        left join ClientDetail cdc on r.Rep=cdc.Rep and cdc.JobStatus = 'Current' and cdc.CustomerType in ('CORP.','CORP.LLC','Corporate')
+                        left join ClientDetail cdcs on r.Rep=cdcs.Rep and cdcs.JobStatus = 'Current' and cdcs.CustomerType in ('S Corp.')
+                        group by r.Rep) a";
+            items = DBOperator.getListFromTable<TOTAL>(dt);
             ReportDataSource notdone = new ReportDataSource("dsNotDone", items);
             reportViewer1.LocalReport.DataSources.Add(notdone);
 

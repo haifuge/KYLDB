@@ -47,13 +47,12 @@ namespace KYLDB.Reports.YearEndPayrollFrm
 
         private void button1_Click(object sender, EventArgs e)
         {
-            User cu = ((Main)this.MdiParent).cUser;
-            string rep = "Year End Payroll - " + cu.Rep;
+            string rep = "Year End Payroll - " + Main.cUser.Rep;
             string quarter = "Year: " + comYear.Text;
             string sql = @"select Accountno as 'ID', Customer as 'Company', Contact, Phone, AltPhone, BalanceTotal as 'Balance',
                                   Payroll as 'PayrollW2', PayRep as 'Payrollrep', CkRep as 'Paycheck', '' as MemoForUpdate
                             from clientdetail cd left join ClientPayroll cp on cd.AccountNo=cp.AccNum
-                            where Rep='" + cu.Rep + @"'  
+                            where Rep='" + rep + @"'  
                              and (JobStatus='pending' 
                                   or (SalesTax in ('Monthly','Monthly(w/ Prepay)','Monthly(Sugar)') and JobStatus='current') 
                                   or (JobStatus<>'closed' and (LiquorTax_Phila='Yes' or U_OTax like 'Yes%'))
