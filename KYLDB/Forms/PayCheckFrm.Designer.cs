@@ -48,6 +48,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtLocalTaxFreq = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.comCkFee = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,7 +87,7 @@
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(470, 15);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(214, 24);
+            this.comboBox2.Size = new System.Drawing.Size(343, 24);
             this.comboBox2.TabIndex = 1;
             // 
             // label3
@@ -120,7 +121,7 @@
             this.txtCustomer.Location = new System.Drawing.Point(470, 58);
             this.txtCustomer.Name = "txtCustomer";
             this.txtCustomer.ReadOnly = true;
-            this.txtCustomer.Size = new System.Drawing.Size(214, 22);
+            this.txtCustomer.Size = new System.Drawing.Size(343, 22);
             this.txtCustomer.TabIndex = 3;
             // 
             // label5
@@ -193,7 +194,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(766, 12);
+            this.button1.Location = new System.Drawing.Point(838, 11);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(123, 28);
             this.button1.TabIndex = 4;
@@ -231,13 +232,25 @@
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
+            this.dataGridView1.CurrentCellChanged += new System.EventHandler(this.dataGridView1_CurrentCellChanged);
             this.dataGridView1.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataGridView1_DefaultValuesNeeded);
+            // 
+            // comCkFee
+            // 
+            this.comCkFee.FormattingEnabled = true;
+            this.comCkFee.Location = new System.Drawing.Point(838, 61);
+            this.comCkFee.Name = "comCkFee";
+            this.comCkFee.Size = new System.Drawing.Size(121, 24);
+            this.comCkFee.TabIndex = 6;
+            this.comCkFee.Visible = false;
+            this.comCkFee.SelectedIndexChanged += new System.EventHandler(this.comCkFee_SelectedIndexChanged);
             // 
             // PayCheckFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(973, 568);
+            this.Controls.Add(this.comCkFee);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtLocalTaxFreq);
@@ -290,5 +303,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtLocalTaxFreq;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ComboBox comCkFee;
     }
 }

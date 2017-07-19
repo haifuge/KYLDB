@@ -56,7 +56,7 @@ namespace KYLDB.Forms
 
         private void AccountViewList_Load(object sender, EventArgs e)
         {
-            string sql = "select * from ClientDetail";
+            string sql = "select * from ClientDetail where Rep='"+Main.cUser.Rep+ "' or PaycheckRep='" + Main.cUser.FirstName + "' or PayrollRep='" + Main.cUser.FirstName + "'";
             dt = DBOperator.QuerySql(sql);
             ClientDetails = DBOperator.getListFromTable<Model.ClientDetail>(dt);
             
@@ -119,7 +119,10 @@ namespace KYLDB.Forms
             if (e.ColumnIndex == 8)
             {
                 // detail
-                
+                ClientDetail cd = ClientDetail.GetInstance();
+                cd.MdiParent = this.MdiParent;
+                cd.Show();
+                cd.SetData(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
             }
             else if (e.ColumnIndex==9)
             {
@@ -132,6 +135,10 @@ namespace KYLDB.Forms
             else if (e.ColumnIndex==10)
             {
                 // paycheck
+                PayCheckFrm pcf = PayCheckFrm.GetInstance();
+                pcf.MdiParent = this.MdiParent;
+                pcf.Show();
+                pcf.SetAccNum(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
             }
         }
 

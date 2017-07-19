@@ -40,7 +40,7 @@ namespace KYLDB.Forms
         List<Model.ClientPayroll> ClientPayrolls = new List<Model.ClientPayroll>();
         private void PayCheckFrm_Load(object sender, EventArgs e)
         {
-            string sql = "select * from ClientPayroll";
+            string sql = "select * from ClientPayroll where AccRep='"+Main.cUser.Rep+"' or PayRep='"+Main.cUser.FirstName+"' or CkRep='"+Main.cUser.FirstName+"'";
             DataTable dt = DBOperator.QuerySql(sql);
             ClientPayrolls = DBOperator.getListFromTable<Model.ClientPayroll>(dt);
             var acclist = from ac in ClientPayrolls
@@ -54,6 +54,12 @@ namespace KYLDB.Forms
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             comboBox1.SelectedIndex = 0;
+
+            sql = "select * from CkfeeTypePrice";
+            dt = DBOperator.QuerySql(sql);
+            comCkFee.ValueMember = "Price";
+            comCkFee.DisplayMember = "CkfeeType";
+            comCkFee.DataSource = dt;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -182,18 +188,18 @@ namespace KYLDB.Forms
 
         private void dataGridView1_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
         {
-            for(int i = 0; i < e.Row.Index; i++)
-            {
-                string date = dataGridView1.Rows[i].Cells[0].Value.ToString();
-                date = date.Split(' ')[0];
-                string today = DateTime.Now.ToShortDateString();
-                if (date == today)
-                {
-                    MessageBox.Show("There already is a Check Issue today");
-                    e.Row.ReadOnly = true;
-                    return;
-                }
-            }
+            //for(int i = 0; i < e.Row.Index; i++)
+            //{
+            //    string date = dataGridView1.Rows[i].Cells[0].Value.ToString();
+            //    date = date.Split(' ')[0];
+            //    string today = DateTime.Now.ToShortDateString();
+            //    if (date == today)
+            //    {
+            //        MessageBox.Show("There already is a Check Issue today");
+            //        e.Row.ReadOnly = true;
+            //        return;
+            //    }
+            //}
             e.Row.ReadOnly = false;
             if (e.Row.Index>0)
             {
@@ -228,6 +234,32 @@ namespace KYLDB.Forms
                 dataGridView1.Rows[e.RowIndex].Cells[4].Value = ckEndNum - ckStartNum;
             }
         }
+        public void SetAccNum(string accNum)
+        {
+            comboBox1.Text = accNum;
+        }
 
+        private void dataGridView1_CurrentCellChanged(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentCell.ColumnIndex == 6)
+            {
+                Rectangle rect = dataGridView1.GetCellDisplayRectangle(dataGridView1.CurrentCell.ColumnIndex, dataGridView1.CurrentCell.RowIndex, false);
+                string cFee = dataGridView1.CurrentCell.Value.ToString();
+                comCkFee.Text = cFee;
+                comCkFee.Left = rect.Left;
+                comCkFee.Top = rect.Top;
+                comCkFee.Width = rect.Width;
+                comCkFee.Height = rect.Height;
+                comCkFee.Visible = true;
+            }
+            else
+                comCkFee.Visible = false;
+        }
+
+        private void comCkFee_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dataGridView1.CurrentCell.Value = comCkFee.SelectedText;
+            dataGridView1.CurrentCell.Tag = comCkFee.SelectedValue;
+        }
     }
 }
