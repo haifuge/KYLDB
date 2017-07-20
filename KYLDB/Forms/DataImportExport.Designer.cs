@@ -45,7 +45,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cExportTable = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.tabpage.SuspendLayout();
             this.DataImport.SuspendLayout();
             this.DataExport.SuspendLayout();
@@ -64,7 +63,6 @@
             // 
             // DataImport
             // 
-            this.DataImport.Controls.Add(this.button1);
             this.DataImport.Controls.Add(this.progressBar1);
             this.DataImport.Controls.Add(this.btnSelectFile);
             this.DataImport.Controls.Add(this.tFilePath);
@@ -227,16 +225,6 @@
             this.cExportTable.Size = new System.Drawing.Size(172, 24);
             this.cExportTable.TabIndex = 6;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(564, 68);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 28);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Clear Data";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // DataImportExport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -275,6 +263,5 @@
         private System.Windows.Forms.ComboBox cExportTable;
         private System.Windows.Forms.ProgressBar progressBar2;
         private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.Button button1;
     }
 }

@@ -80,6 +80,7 @@ namespace KYLDB.Forms
                 }
                 sql = sql.Substring(0, sql.Length - 1) + "); ";
             }
+            sql = "delete "+ tableName+"; " + sql;
             DBOperator.ExecuteSql(sql);
         }
         private DataTable ReadExcelToDataTable(string filePath, string tableName)
@@ -278,17 +279,6 @@ namespace KYLDB.Forms
 
 
         #endregion
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            MessageBoxButtons messButton = MessageBoxButtons.OKCancel;
-            DialogResult dr = MessageBox.Show("Are you sure to delete data of "+ cTableList.Text+"!", "Delete Data", messButton);
-            if(dr==DialogResult.OK)
-            {
-                string sql = "delete " + cTableList.Text;
-                DBOperator.ExecuteSql(sql);
-                MessageBox.Show("Data of " + cTableList.Text + "has been cleaned.");
-            }
-        }
+        
     }
 }

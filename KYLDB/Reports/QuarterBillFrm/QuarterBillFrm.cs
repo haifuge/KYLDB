@@ -66,19 +66,18 @@ namespace KYLDB.Reports.QuarterBillFrm
                     break;
             }
             string sql = @"select a.AccNum, a.Customer, a.NumOfCkThisQtr, a.NumOfCkLastQtr, 
-                                  a.NumOfCkThisQtr-a.NumOfCkLastQtr as 'Difference', a.CkFee, 
-                                  Convert(varchar(20),convert(money,a.CkFee)*a.NumOfCkThisQtr) as 'BillAmt'
+                                  a.NumOfCkThisQtr-a.NumOfCkLastQtr as 'Difference', convert(varchar(20),a.BillAmt) as 'BillAmt'
                              from(
 	                            select cp.AccNum, cp.Entity as 'Customer', ISNULL(SUM(p.NumOfCk),0) as NumOfCkThisQtr, 
-                                       ISNULL(SUM(p2.NumOfCk),0) as NumOfCkLastQtr, isnull(p.CkFee,0) as 'CkFee'
+                                       ISNULL(SUM(p2.NumOfCk),0) as NumOfCkLastQtr, 
+                                       sum(case when p.BillAmount is null then 0 else Convert(money,REPLACE(p.BillAmount,'$','')) end) as 'BillAmt'
 	                            from ClientPayroll cp 
 	                            left join PayCheck p on cp.AccNum=p.AccNum and p.PostDate between '" + thisQStart + "' and '"+ thisQEnd + @"'
 	                            left join PayCheck p2 on cp.AccNum=p2.AccNum and p2.PostDate between '"+ lastQStart + "' and '"+ lastQEnd + @"'
-                                group by cp.AccNum, cp.Entity, p.CkFee
+                                group by cp.AccNum, cp.Entity
                             ) a order by a.AccNum";
             DataTable dt = DBOperator.QuerySql(sql);
             List<QuarterBill> items = DBOperator.getListFromTable<QuarterBill>(dt);
-
             ReportParameter yearP = new ReportParameter("year", year.ToString());
             ReportParameter quarter = new ReportParameter("quarter", comboBox1.Text);
             reportViewer1.LocalReport.SetParameters(new ReportParameter[] { yearP, quarter });

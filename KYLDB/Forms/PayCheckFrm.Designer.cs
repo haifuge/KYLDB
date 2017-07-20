@@ -225,10 +225,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 153);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 142);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(949, 403);
+            this.dataGridView1.Size = new System.Drawing.Size(974, 427);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
@@ -237,13 +237,13 @@
             // 
             // comCkFee
             // 
+            this.comCkFee.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comCkFee.FormattingEnabled = true;
             this.comCkFee.Location = new System.Drawing.Point(838, 61);
             this.comCkFee.Name = "comCkFee";
             this.comCkFee.Size = new System.Drawing.Size(121, 24);
             this.comCkFee.TabIndex = 6;
             this.comCkFee.Visible = false;
-            this.comCkFee.SelectedIndexChanged += new System.EventHandler(this.comCkFee_SelectedIndexChanged);
             // 
             // PayCheckFrm
             // 

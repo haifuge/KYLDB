@@ -56,7 +56,7 @@
                   <Width>0.76667in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.65833in</Width>
+                  <Width>3.05833in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>1.23333in</Width>
@@ -65,7 +65,7 @@
                   <Width>1.30833in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.05in</Width>
+                  <Width>1.46667in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -422,9 +422,9 @@
             </TablixRowHierarchy>
             <DataSetName>dsCkRep</DataSetName>
             <Top>0.04in</Top>
-            <Left>0.62667in</Left>
+            <Left>0.16834in</Left>
             <Height>0.5in</Height>
-            <Width>7.01667in</Width>
+            <Width>7.83333in</Width>
             <Style>
               <Border>
                 <Style>None</Style>

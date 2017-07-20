@@ -43,6 +43,10 @@ namespace KYLDB.Reports.PayrollRepNumFrm
                             order by r.FirstName";
             DataTable dt = DBOperator.QuerySql(sql);
             List<PayrollRepNum> reps = DBOperator.getListFromTable<PayrollRepNum>(dt);
+            sql = "select count(1) from ClientPayroll";
+            string total = DBOperator.QuerySql(sql).Rows[0][0].ToString();
+            ReportParameter totalParameter = new ReportParameter("total", total);
+            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { totalParameter });
             //ReportDataSource rds = new ReportDataSource("dsPayrollRepNum", reps);
             //reportViewer1.LocalReport.DataSources.Add(rds);
             PayrollRepNumBindingSource.DataSource = reps;

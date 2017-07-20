@@ -60,6 +60,7 @@ namespace KYLDB.Forms
             comCkFee.ValueMember = "Price";
             comCkFee.DisplayMember = "CkfeeType";
             comCkFee.DataSource = dt;
+            this.comCkFee.SelectedIndexChanged += new System.EventHandler(this.comCkFee_SelectedIndexChanged);
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -107,11 +108,14 @@ namespace KYLDB.Forms
             dataGridView1.DataSource = null;
             dataGridView1.Columns.Clear();
 
-            string sql = @"select PostDate, CkDate, CkStartNum, CkEndNum, NumOfCk, CkFee, Preparer, Comment, 'Save' as 'Save', 'Delete' as 'Delete'
+            string sql = @"select Id, PostDate, CkDate, CkStartNum, CkEndNum, NumOfCk, CkFee, BillAmount, Preparer, Comment, 'Save' as 'Save', 'Delete' as 'Delete'
                            from PayCheck where AccNum='" + accNum + "'";
             DataTable dt = DBOperator.QuerySql(sql);
             dataGridView1.DataSource = dt;
-            dataGridView1.Columns[0].ReadOnly = true;
+            dataGridView1.Columns[1].ReadOnly = true;
+            dataGridView1.Columns[5].ReadOnly = true;
+            dataGridView1.Columns[7].ReadOnly = true;
+            dataGridView1.Columns[0].Visible = false;
             rows = dt.Rows.Count;
             dataGridView1.Columns.Remove("Save");
             dataGridView1.Columns.Remove("Delete");
@@ -140,41 +144,43 @@ namespace KYLDB.Forms
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string sql = "";
-            if (e.ColumnIndex == 8)
+            if (e.ColumnIndex == 10)
             {
                 // save
                 if (dataGridView1.CurrentRow.Index >= rows)
                 {
                     sql = @" insert into PayCheck 
                              values('" + cRep + @"',
-                                    '" + dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString() + @"',
                                     '" + dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString() + @"',
-                                    " + dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString() + @",
+                                    '" + dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString() + @"',
                                     " + dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString() + @",
                                     " + dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString() + @",
-                                    '" + dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString() + @"',
+                                    " + dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString() + @",
                                     '" + dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString() + @"',
-                                    '" + dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString() + "'); ";
+                                    '" + dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString() + @"',
+                                    '" + dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString() + @"',
+                                    '" + dataGridView1.Rows[e.RowIndex].Cells[9].Value.ToString() + "'); ";
                 }
                 else
                 {
                     sql = @" update PayCheck 
-                                set CkDate='" + dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString() + @"', 
-                                    CkStartNum=" + dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString() + @", 
-                                    CkEndNum=" + dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString() + @", 
-                                    NumOfCk=" + dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString() + @", 
-                                    CkFee='" + dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString() + @"',
-                                    Preparer='" + dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString() + @"', 
-                                    Comment='" + dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString() + @"'
-                                where AccNum='" + cRep + "' and PostDate ='" + dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString()+"'";
+                                set CkDate='" + dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString() + @"', 
+                                    CkStartNum=" + dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString() + @", 
+                                    CkEndNum=" + dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString() + @", 
+                                    NumOfCk=" + dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString() + @", 
+                                    CkFee='" + dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString() + @"',
+                                    BillAmount='" + dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString() + @"', 
+                                    Preparer='" + dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString() + @"', 
+                                    Comment='" + dataGridView1.Rows[e.RowIndex].Cells[9].Value.ToString() + @"'
+                                where Id =" + dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
                 }
                 DBOperator.ExecuteSql(sql);
                 MessageBox.Show("data is saved.");
             }
-            else if (e.ColumnIndex == 9)
+            else if (e.ColumnIndex == 11)
             {
                 // delete
-                sql = " delete PayCheck where AccNum='" + cRep + "' and PostDate ='" + dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString()+"'";
+                sql = " delete PayCheck where Id =" + dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
                 DBOperator.ExecuteSql(sql);
                 MessageBox.Show("data is deleted.");
             }
@@ -204,34 +210,34 @@ namespace KYLDB.Forms
             if (e.Row.Index>0)
             {
                 int ckEndNum = 0;
-                int.TryParse(dataGridView1.Rows[e.Row.Index-1].Cells[3].Value.ToString(), out ckEndNum);
-                dataGridView1.Rows[e.Row.Index].Cells[2].Value = ckEndNum + 1;
+                int.TryParse(dataGridView1.Rows[e.Row.Index-1].Cells[4].Value.ToString(), out ckEndNum);
+                dataGridView1.Rows[e.Row.Index].Cells[3].Value = ckEndNum + 1;
             }
-            e.Row.Cells[0].Value = DateTime.Now.ToShortDateString();
-            e.Row.Cells[6].Value = Main.cUser.Rep;
-            e.Row.Cells[8].Value = "save";
-            e.Row.Cells[9].Value = "delete";
+            e.Row.Cells[1].Value = DateTime.Now.ToShortDateString();
+            e.Row.Cells[8].Value = Main.cUser.Rep;
+            e.Row.Cells[10].Value = "save";
+            e.Row.Cells[11].Value = "delete";
         }
 
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex==3)
+            if (e.ColumnIndex==4)
             {
                 int ckStartNum = 0;
-                if (!int.TryParse(dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString(), out ckStartNum))
+                if (!int.TryParse(dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString(), out ckStartNum))
                 {
                     MessageBox.Show("Please input a number in CkStartNum");
                     dataGridView1.CurrentCell = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex];
                     return;
                 }
                 int ckEndNum = 0;
-                if (!int.TryParse(dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString(), out ckEndNum))
+                if (!int.TryParse(dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString(), out ckEndNum))
                 {
                     MessageBox.Show("Please input a number in CkEndNum");
                     dataGridView1.CurrentCell = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex];
                     return;
                 }
-                dataGridView1.Rows[e.RowIndex].Cells[4].Value = ckEndNum - ckStartNum;
+                dataGridView1.Rows[e.RowIndex].Cells[5].Value = ckEndNum - ckStartNum;
             }
         }
         public void SetAccNum(string accNum)
@@ -241,25 +247,36 @@ namespace KYLDB.Forms
 
         private void dataGridView1_CurrentCellChanged(object sender, EventArgs e)
         {
-            if (dataGridView1.CurrentCell.ColumnIndex == 6)
+            try
             {
-                Rectangle rect = dataGridView1.GetCellDisplayRectangle(dataGridView1.CurrentCell.ColumnIndex, dataGridView1.CurrentCell.RowIndex, false);
-                string cFee = dataGridView1.CurrentCell.Value.ToString();
-                comCkFee.Text = cFee;
-                comCkFee.Left = rect.Left;
-                comCkFee.Top = rect.Top;
-                comCkFee.Width = rect.Width;
-                comCkFee.Height = rect.Height;
-                comCkFee.Visible = true;
+                if (dataGridView1.CurrentCell.ColumnIndex == 6)
+                {
+                    Rectangle rect = dataGridView1.GetCellDisplayRectangle(dataGridView1.CurrentCell.ColumnIndex, dataGridView1.CurrentCell.RowIndex, false);
+                    string cFee = dataGridView1.CurrentCell.Value.ToString();
+                    comCkFee.Text = cFee;
+                    comCkFee.Left = rect.Left + dataGridView1.Location.X;
+                    comCkFee.Top = rect.Top + dataGridView1.Location.Y;
+                    comCkFee.Width = rect.Width;
+                    comCkFee.Height = rect.Height+1;
+                    comCkFee.Visible = true;
+                }
+                else
+                {
+                    comCkFee.Visible = false;
+                }
             }
-            else
-                comCkFee.Visible = false;
+            catch { }
         }
 
         private void comCkFee_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dataGridView1.CurrentCell.Value = comCkFee.SelectedText;
-            dataGridView1.CurrentCell.Tag = comCkFee.SelectedValue;
+            try
+            {
+                dataGridView1.CurrentCell.Value = comCkFee.Text;
+                dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[7].Value = "$"+(decimal.Parse(comCkFee.SelectedValue.ToString()) * decimal.Parse(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[5].Value.ToString())).ToString("0.00");
+            }
+            catch { }
+            //dataGridView1.CurrentCell.Tag = comCkFee.;
         }
     }
 }
