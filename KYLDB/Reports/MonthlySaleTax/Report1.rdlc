@@ -77,25 +77,25 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>3.125in</Width>
+                  <Width>3.19792in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.61667in</Width>
+                  <Width>1.73125in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.6in</Width>
+                  <Width>0.55625in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>1.13958in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.7in</Width>
+                  <Width>0.72292in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.7in</Width>
+                  <Width>0.56458in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.2in</Width>
+                  <Width>1.41458in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -318,7 +318,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Memo__________ </Value>
+                                  <Value>Memo___________</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -331,7 +331,9 @@
                                   <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox15</rd:DefaultName>
@@ -826,7 +828,7 @@
               <TablixMembers>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>0.6in</Size>
+                    <Size>0.67292in</Size>
                     <CellContents>
                       <Textbox Name="Textbox1">
                         <CanGrow>true</CanGrow>
@@ -873,7 +875,7 @@
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
-                    <Size>0.6in</Size>
+                    <Size>0.67292in</Size>
                     <CellContents>
                       <Textbox Name="ID1">
                         <CanGrow>true</CanGrow>
@@ -916,10 +918,8 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>dsMonthlySalesTax</DataSetName>
-            <Top>0.04in</Top>
-            <Left>0.3375in</Left>
             <Height>0.79167in</Height>
-            <Width>9.54166in</Width>
+            <Width>10in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -927,17 +927,17 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>18in</Height>
+        <Height>2in</Height>
         <Style>
           <Border>
-            <Style>Solid</Style>
+            <Style>None</Style>
           </Border>
         </Style>
       </Body>
-      <Width>10.2in</Width>
+      <Width>10in</Width>
       <Page>
         <PageHeader>
-          <Height>0.45in</Height>
+          <Height>0.4in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -959,8 +959,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>repTitle</rd:DefaultName>
-              <Top>0.1in</Top>
-              <Left>1in</Left>
+              <Top>0.075in</Top>
+              <Left>0.5in</Left>
               <Height>0.25in</Height>
               <Width>2.40833in</Width>
               <Style>
@@ -991,11 +991,43 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>repMonth</rd:DefaultName>
-              <Top>0.1in</Top>
-              <Left>4.5in</Left>
+              <Top>0.075in</Top>
+              <Left>3.125in</Left>
               <Height>0.25in</Height>
               <Width>2.04167in</Width>
               <ZIndex>1</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="ExecutionTime">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Globals!ExecutionTime</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>ExecutionTime</rd:DefaultName>
+              <Top>0.075in</Top>
+              <Left>6.69167in</Left>
+              <Height>0.25in</Height>
+              <Width>2.2in</Width>
+              <ZIndex>2</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -1013,12 +1045,10 @@
             </Border>
           </Style>
         </PageHeader>
-        <PageHeight>11.69in</PageHeight>
-        <PageWidth>8.27in</PageWidth>
+        <PageHeight>13in</PageHeight>
+        <PageWidth>11in</PageWidth>
         <LeftMargin>0.5in</LeftMargin>
         <RightMargin>0.5in</RightMargin>
-        <TopMargin>0.5in</TopMargin>
-        <BottomMargin>0.5in</BottomMargin>
         <Style />
       </Page>
     </ReportSection>
