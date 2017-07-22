@@ -927,7 +927,7 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>2in</Height>
+        <Height>1in</Height>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1023,8 +1023,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>ExecutionTime</rd:DefaultName>
-              <Top>0.075in</Top>
-              <Left>6.69167in</Left>
+              <Top>0.1in</Top>
+              <Left>7.37917in</Left>
               <Height>0.25in</Height>
               <Width>2.2in</Width>
               <ZIndex>2</ZIndex>
