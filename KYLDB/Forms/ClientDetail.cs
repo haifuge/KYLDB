@@ -176,6 +176,17 @@ namespace KYLDB.Forms
         public void SetData(string accNum)
         {
             AccNumList.Text = accNum;
+            //AccNumList.SelectedText = accNum;
+            var obj = from acc in details
+                      where acc.AccountNo == AccNumList.Text
+                      select acc;
+            cAcc = obj.First();
+            setTxtValue(cAcc);
+        }
+
+        private void btnMain_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

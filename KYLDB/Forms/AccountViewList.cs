@@ -36,7 +36,7 @@ namespace KYLDB.Forms
         private void btnSearch_Click(object sender, EventArgs e)
         {
             var searchList = from ac in ClientDetails
-                             where ac.Customer.Contains(textBox1.Text.Trim())
+                             where ac.Customer.Contains(textBox1.Text.Trim().ToUpper())
                              select new
                              {
                                  id = ac.AccountNo,
@@ -77,6 +77,7 @@ namespace KYLDB.Forms
                              };
             dataGridView1.DataSource = searchList.ToArray();
             setLinkColumns();
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
             var acclist = from ac in ClientDetails
                           select ac.AccountNo;
@@ -87,6 +88,8 @@ namespace KYLDB.Forms
                           select ac.Customer;
             comboBox2.DataSource = enList.ToArray();
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
