@@ -35,33 +35,30 @@ namespace KYLDB.Reports.MonthlySaleTax
 
         private void MonthlySaleTax_Load(object sender, EventArgs e)
         {
-        }
-
-        private void MonthlySaleTax_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            singleton = null;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
             string rep = Main.cUser.Rep;
-            string month = comboBox2.Text;
+            string month = DateTime.Now.AddMonths(-1).ToString("MMMM, yyyy");
             string sql = @"select Accountno as 'ID', Customer as 'Company', Contact, Phone, AltPhone, BalanceTotal as 'Balance', SalesTax, SalesTaxNum, 
                                   LiquorTax_Phila as 'LiquorTax', U_OTax from ClientDetail 
-                            where Rep='"+rep+ @"'  
+                            where Rep='" + rep + @"'  
                              and (JobStatus='pending' 
                                   or (SalesTax in ('Monthly','Monthly(w/ Prepay)','Monthly(Sugar)') and JobStatus='current') 
                                   or (JobStatus<>'closed' and (LiquorTax_Phila='Yes' or U_OTax like 'Yes%')) )";
             DataTable dt = DBOperator.QuerySql(sql);
             List<SalesTaxRep> items = DBOperator.getListFromTable<SalesTaxRep>(dt);
-            
-            ReportParameter repTitle = new ReportParameter("repTitle", rep);
+
+            ReportParameter repTitle = new ReportParameter("repTitle", "Monthly Query - " + rep);
             ReportParameter repMonth = new ReportParameter("repMonth", month);
             reportViewer1.LocalReport.SetParameters(new ReportParameter[] { repTitle, repMonth });
             ReportDataSource rds = new ReportDataSource("dsMonthlySalesTax", items);
             reportViewer1.LocalReport.DataSources.Add(rds);
-            
+
             reportViewer1.RefreshReport();
+            this.WindowState = FormWindowState.Maximized;
+        }
+
+        private void MonthlySaleTax_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            singleton = null;
         }
     }
 }

@@ -51,7 +51,7 @@ namespace KYLDB
             }
 #endif
 #if DEBUG
-            cUser = new User() { Rep = "C", LastName = "Chow", FirstName = "Charles", UserLevel = -1 };
+            cUser = new User() { Rep = "C", LastName = "Chow", FirstName = "Charles", UserLevel = 10 };
 #endif
         }
 

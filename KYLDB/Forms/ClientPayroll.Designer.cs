@@ -1032,9 +1032,9 @@
             // tEFTPS
             // 
             this.tEFTPS.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tEFTPS.Location = new System.Drawing.Point(343, 507);
+            this.tEFTPS.Location = new System.Drawing.Point(337, 507);
             this.tEFTPS.Name = "tEFTPS";
-            this.tEFTPS.Size = new System.Drawing.Size(71, 24);
+            this.tEFTPS.Size = new System.Drawing.Size(79, 24);
             this.tEFTPS.TabIndex = 43;
             this.tEFTPS.Text = "Batch";
             // 
@@ -1042,7 +1042,7 @@
             // 
             this.label43.AutoSize = true;
             this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.Location = new System.Drawing.Point(273, 510);
+            this.label43.Location = new System.Drawing.Point(267, 510);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(60, 18);
             this.label43.TabIndex = 132;
@@ -1092,9 +1092,9 @@
             // tEFTPSPw
             // 
             this.tEFTPSPw.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tEFTPSPw.Location = new System.Drawing.Point(855, 507);
+            this.tEFTPSPw.Location = new System.Drawing.Point(871, 507);
             this.tEFTPSPw.Name = "tEFTPSPw";
-            this.tEFTPSPw.Size = new System.Drawing.Size(83, 24);
+            this.tEFTPSPw.Size = new System.Drawing.Size(93, 24);
             this.tEFTPSPw.TabIndex = 46;
             this.tEFTPSPw.Text = "Batch";
             // 
@@ -1102,7 +1102,7 @@
             // 
             this.label46.AutoSize = true;
             this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label46.Location = new System.Drawing.Point(766, 510);
+            this.label46.Location = new System.Drawing.Point(782, 510);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(81, 18);
             this.label46.TabIndex = 139;
@@ -1418,9 +1418,9 @@
             // tLocalPw
             // 
             this.tLocalPw.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tLocalPw.Location = new System.Drawing.Point(653, 682);
+            this.tLocalPw.Location = new System.Drawing.Point(675, 682);
             this.tLocalPw.Name = "tLocalPw";
-            this.tLocalPw.Size = new System.Drawing.Size(123, 24);
+            this.tLocalPw.Size = new System.Drawing.Size(149, 24);
             this.tLocalPw.TabIndex = 64;
             this.tLocalPw.Text = "Batch";
             // 
@@ -1542,7 +1542,7 @@
             // tLSTPW
             // 
             this.tLSTPW.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tLSTPW.Location = new System.Drawing.Point(670, 752);
+            this.tLSTPW.Location = new System.Drawing.Point(675, 752);
             this.tLSTPW.Name = "tLSTPW";
             this.tLSTPW.Size = new System.Drawing.Size(149, 24);
             this.tLSTPW.TabIndex = 70;
@@ -1585,7 +1585,7 @@
             this.cUCPayType.Items.AddRange(new object[] {
             "",
             "Quarterly"});
-            this.cUCPayType.Location = new System.Drawing.Point(674, 787);
+            this.cUCPayType.Location = new System.Drawing.Point(675, 787);
             this.cUCPayType.Name = "cUCPayType";
             this.cUCPayType.Size = new System.Drawing.Size(149, 24);
             this.cUCPayType.TabIndex = 73;
@@ -1790,9 +1790,10 @@
             this.dFirstCheckDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dFirstCheckDate.Location = new System.Drawing.Point(600, 890);
             this.dFirstCheckDate.Name = "dFirstCheckDate";
-            this.dFirstCheckDate.Size = new System.Drawing.Size(114, 24);
+            this.dFirstCheckDate.Size = new System.Drawing.Size(176, 24);
             this.dFirstCheckDate.TabIndex = 80;
             this.dFirstCheckDate.Value = new System.DateTime(2017, 6, 15, 21, 36, 28, 0);
+            this.dFirstCheckDate.ValueChanged += new System.EventHandler(this.dFirstCheckDate_ValueChanged);
             // 
             // comboBox2
             // 

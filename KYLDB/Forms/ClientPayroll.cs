@@ -42,17 +42,23 @@ namespace KYLDB
         }
         private void ClientInfo_Load(object sender, EventArgs e)
         {
-            string sql = "select * from ClientPayroll";
+            string sql = @"select cp.*, ccd.FirstCheckDate 
+                           from ClientPayroll cp left join ClientCheckDate ccd on cp.AccNum=ccd.AccNum";
             DataTable dt = DBOperator.QuerySql(sql);
             ClientPayrolls = DBOperator.getListFromTable<Model.ClientPayroll>(dt);
             var acclist = from ac in ClientPayrolls
                           select ac.AccNum;
             AccNumList.DataSource = acclist.ToArray();
-
+            
             var enList = from ac in ClientPayrolls
                          select ac.Entity;
             comboBox2.DataSource = enList.ToArray();
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+
+            if (Main.cUser.UserLevel >= 10)
+            {
+                dFirstCheckDate.Enabled = true;
+            }
         }
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -226,7 +232,7 @@ namespace KYLDB
             tPAUCQ1.Text = acc.PAUCQ1;
             tPAUCQ2.Text = acc.PAUCQ2;
             tPAUCQ3.Text = acc.PAUCQ3;
-            dFirstCheckDate.Text = acc.FirstCheckDate;
+            dFirstCheckDate.Text = acc.FirstCheckDate.Trim()==""?"1/1/"+DateTime.Now.Year.ToString(): acc.FirstCheckDate.Trim();
         }
         private void btnMain_Click(object sender, EventArgs e)
         {
@@ -361,6 +367,19 @@ namespace KYLDB
         private void ClientInfo_FormClosed(object sender, FormClosedEventArgs e)
         {
             singleton = null;
+        }
+
+        private void dFirstCheckDate_ValueChanged(object sender, EventArgs e)
+        {
+            string accNum = tAccNum.Text;
+            string sql = "delete ClientCheckDate where AccNum='" + accNum + @"'; 
+                         insert into ClientCheckDate values('" + accNum + "','" + dFirstCheckDate.Text + "');";
+            DBOperator.ExecuteSql(sql);
+
+            var acc = (from ac in ClientPayrolls
+                       where ac.AccNum == accNum
+                       select ac).First();
+            acc.FirstCheckDate = dFirstCheckDate.Text;
         }
     }
 }

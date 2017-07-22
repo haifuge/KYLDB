@@ -110,8 +110,8 @@ namespace KYLDB.Forms
                         {
                             object obj = xlRange.Cells[row, j].Value2;
                             string cell = obj == null ? "" : obj.ToString();
-                            // FirstCheckDate, PayClosedDate, BankStartDate ,PayStartDate
-                            if ((j == 80 || j == 40 || j == 35 || j == 28) && cell != "")
+                            //  PayClosedDate, BankStartDate ,PayStartDate
+                            if ((j == 40 || j == 35 || j == 28) && cell != "")
                             {
                                 try
                                 {

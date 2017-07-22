@@ -40,7 +40,8 @@ namespace KYLDB.Forms
         List<Model.ClientPayroll> ClientPayrolls = new List<Model.ClientPayroll>();
         private void PayCheckFrm_Load(object sender, EventArgs e)
         {
-            string sql = "select * from ClientPayroll where AccRep='"+Main.cUser.Rep+"' or PayRep='"+Main.cUser.FirstName+"' or CkRep='"+Main.cUser.FirstName+"'";
+            string sql = @"select * from ClientPayroll 
+                           where (AccRep='"+Main.cUser.Rep+"' or PayRep='"+Main.cUser.FirstName+"' or CkRep='"+Main.cUser.FirstName+ "') and PayFreq<>'Quarterly'";
             DataTable dt = DBOperator.QuerySql(sql);
             ClientPayrolls = DBOperator.getListFromTable<Model.ClientPayroll>(dt);
             var acclist = from ac in ClientPayrolls
@@ -243,6 +244,18 @@ namespace KYLDB.Forms
         public void SetAccNum(string accNum)
         {
             comboBox1.Text = accNum;
+            var acc = (from ac in ClientPayrolls
+                       where ac.AccNum == comboBox1.Text
+                       select ac).First();
+            txtAccNum.Text = acc.AccNum;
+            txtCustomer.Text = acc.Entity;
+            txtPayType.Text = acc.PayType;
+            txtPayFreq.Text = acc.PayFreq;
+            txtFedTaxFreq.Text = acc.FedTaxFreq;
+            txtStateTaxFreq.Text = acc.StateTaxFreq;
+            txtLocalTaxFreq.Text = acc.LocalTaxFreq;
+            cRep = acc.AccNum;
+            fillGridview(cRep);
         }
 
         private void dataGridView1_CurrentCellChanged(object sender, EventArgs e)
@@ -278,5 +291,6 @@ namespace KYLDB.Forms
             catch { }
             //dataGridView1.CurrentCell.Tag = comCkFee.;
         }
+        
     }
 }

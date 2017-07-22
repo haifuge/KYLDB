@@ -130,6 +130,13 @@ namespace KYLDB.Forms
             else if (e.ColumnIndex==9)
             {
                 // payroll
+                string accNum = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+                string sql = "select * from ClientPayroll where AccNum='" + accNum + "'";
+                if(DBOperator.QuerySql(sql).Rows.Count==0)
+                {
+                    MessageBox.Show("This client doesn't have Payroll");
+                    return;
+                }
                 ClientPayroll ci = ClientPayroll.GetInstance();
                 ci.MdiParent = this.MdiParent;
                 ci.Show();
@@ -137,6 +144,13 @@ namespace KYLDB.Forms
             }
             else if (e.ColumnIndex==10)
             {
+                string accNum = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+                string sql = "select * from ClientPayroll where AccNum='" + accNum + "' and PayFreq<>'Quarterly'";
+                if (DBOperator.QuerySql(sql).Rows.Count == 0)
+                {
+                    MessageBox.Show("This client doesn't need Paycheck");
+                    return;
+                }
                 // paycheck
                 PayCheckFrm pcf = PayCheckFrm.GetInstance();
                 pcf.MdiParent = this.MdiParent;

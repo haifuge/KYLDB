@@ -77,13 +77,13 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>2.1in</Width>
+                  <Width>3.125in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.9in</Width>
+                  <Width>1.61667in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.8in</Width>
+                  <Width>0.6in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>1in</Width>
@@ -421,7 +421,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Balance.Value</Value>
+                                  <Value>="$"+Fields!Balance.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -917,9 +917,9 @@
             </TablixRowHierarchy>
             <DataSetName>dsMonthlySalesTax</DataSetName>
             <Top>0.04in</Top>
-            <Left>0.2in</Left>
+            <Left>0.3375in</Left>
             <Height>0.79167in</Height>
-            <Width>8in</Width>
+            <Width>9.54166in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -927,10 +927,14 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>11.69in</Height>
-        <Style />
+        <Height>18in</Height>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
       </Body>
-      <Width>9.2in</Width>
+      <Width>10.2in</Width>
       <Page>
         <PageHeader>
           <Height>0.45in</Height>
