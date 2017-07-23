@@ -35,7 +35,7 @@ namespace KYLDB.Reports.YearEndPayrollFrm
         private void YearEndPayrollFrm_Load(object sender, EventArgs e)
         {
             string rep = Main.cUser.Rep;
-            string quarter = "Year: " + DateTime.Now.Year;
+            string quarter = DateTime.Now.Year.ToString();
             string sql = @"select Accountno as 'ID', Customer as 'Company', Contact, Phone, AltPhone, BalanceTotal as 'Balance',
                                   Payroll as 'PayrollW2', PayRep as 'Payrollrep', CkRep as 'Paycheck', '' as MemoForUpdate
                             from clientdetail cd left join ClientPayroll cp on cd.AccountNo=cp.AccNum
@@ -43,12 +43,12 @@ namespace KYLDB.Reports.YearEndPayrollFrm
                              and (JobStatus='pending' 
                                   or (SalesTax in ('Monthly','Monthly(w/ Prepay)','Monthly(Sugar)') and JobStatus='current') 
                                   or (JobStatus<>'closed' and (LiquorTax_Phila='Yes' or U_OTax like 'Yes%'))
-                                  or (JobStatus='closed' and SalesTax='closed(" + comboBox2.Text + "/" + comYear.Text + ")'))";
+                                  or (JobStatus='closed' and SalesTax='closed(" + rep + "/" + quarter + ")'))";
             DataTable dt = DBOperator.QuerySql(sql);
             List<YearEndPayroll> items = DBOperator.getListFromTable<YearEndPayroll>(dt);
 
             ReportParameter repTitle = new ReportParameter("repTitle", "Year End Payroll - " + rep);
-            ReportParameter repYear = new ReportParameter("repYear", quarter);
+            ReportParameter repYear = new ReportParameter("repYear", "Year: " + quarter);
             reportViewer1.LocalReport.SetParameters(new ReportParameter[] { repTitle, repYear });
             ReportDataSource rds = new ReportDataSource("dsYearEndPayroll", items);
             reportViewer1.LocalReport.DataSources.Add(rds);

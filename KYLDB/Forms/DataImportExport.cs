@@ -33,7 +33,7 @@ namespace KYLDB.Forms
         }
         private void DataImportExport_Load(object sender, EventArgs e)
         {
-            string sql = "select * from KLYTables";
+            string sql = "select * from KYLTables";
             DataTable dt = DBOperator.QuerySql(sql);
             
             var tableList = from row in dt.AsEnumerable()
