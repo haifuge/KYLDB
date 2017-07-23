@@ -53,19 +53,19 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>0.76667in</Width>
+                  <Width>1.2in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.05833in</Width>
+                  <Width>3.49166in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.23333in</Width>
+                  <Width>1.66666in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.30833in</Width>
+                  <Width>1.74166in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.46667in</Width>
+                  <Width>1.9in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -421,10 +421,8 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>dsCkRep</DataSetName>
-            <Top>0.04in</Top>
-            <Left>0.16834in</Left>
             <Height>0.5in</Height>
-            <Width>7.83333in</Width>
+            <Width>10in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -432,10 +430,10 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>11.69in</Height>
+        <Height>0.78333in</Height>
         <Style />
       </Body>
-      <Width>8.27in</Width>
+      <Width>10in</Width>
       <Page>
         <PageHeader>
           <Height>0.45in</Height>
@@ -481,12 +479,10 @@
             </Border>
           </Style>
         </PageHeader>
-        <PageHeight>11.69in</PageHeight>
-        <PageWidth>8.27in</PageWidth>
-        <LeftMargin>1in</LeftMargin>
-        <RightMargin>1in</RightMargin>
-        <TopMargin>1in</TopMargin>
-        <BottomMargin>1in</BottomMargin>
+        <PageHeight>13in</PageHeight>
+        <PageWidth>11in</PageWidth>
+        <LeftMargin>0.5in</LeftMargin>
+        <RightMargin>0.5in</RightMargin>
         <Style />
       </Page>
     </ReportSection>

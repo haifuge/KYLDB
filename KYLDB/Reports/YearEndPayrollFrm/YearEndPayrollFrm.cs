@@ -34,21 +34,8 @@ namespace KYLDB.Reports.YearEndPayrollFrm
 
         private void YearEndPayrollFrm_Load(object sender, EventArgs e)
         {
-            DateTime time = DateTime.Now;
-            int year = time.Year;
-            for (int i = 0; i < 5; i++)
-            {
-                comYear.Items.Add(year);
-                year--;
-            }
-            comYear.SelectedIndex = 0;
-            comboBox2.SelectedIndex = 0;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string rep = "Year End Payroll - " + Main.cUser.Rep;
-            string quarter = "Year: " + comYear.Text;
+            string rep = Main.cUser.Rep;
+            string quarter = "Year: " + DateTime.Now.Year;
             string sql = @"select Accountno as 'ID', Customer as 'Company', Contact, Phone, AltPhone, BalanceTotal as 'Balance',
                                   Payroll as 'PayrollW2', PayRep as 'Payrollrep', CkRep as 'Paycheck', '' as MemoForUpdate
                             from clientdetail cd left join ClientPayroll cp on cd.AccountNo=cp.AccNum
@@ -60,12 +47,13 @@ namespace KYLDB.Reports.YearEndPayrollFrm
             DataTable dt = DBOperator.QuerySql(sql);
             List<YearEndPayroll> items = DBOperator.getListFromTable<YearEndPayroll>(dt);
 
-            ReportParameter repTitle = new ReportParameter("repTitle", rep);
+            ReportParameter repTitle = new ReportParameter("repTitle", "Year End Payroll - " + rep);
             ReportParameter repYear = new ReportParameter("repYear", quarter);
             reportViewer1.LocalReport.SetParameters(new ReportParameter[] { repTitle, repYear });
             ReportDataSource rds = new ReportDataSource("dsYearEndPayroll", items);
             reportViewer1.LocalReport.DataSources.Add(rds);
             reportViewer1.RefreshReport();
         }
+        
     }
 }
