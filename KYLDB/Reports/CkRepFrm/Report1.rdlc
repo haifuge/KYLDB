@@ -422,7 +422,7 @@
             </TablixRowHierarchy>
             <DataSetName>dsCkRep</DataSetName>
             <Height>0.5in</Height>
-            <Width>10in</Width>
+            <Width>9.99998in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -436,7 +436,7 @@
       <Width>10in</Width>
       <Page>
         <PageHeader>
-          <Height>0.45in</Height>
+          <Height>0.4in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -458,10 +458,42 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>0.09306in</Top>
+              <Top>0.08056in</Top>
               <Left>0.62667in</Left>
               <Height>0.25in</Height>
-              <Width>1.53333in</Width>
+              <Width>1.925in</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="ExecutionTime">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Globals!ExecutionTime</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>ExecutionTime</rd:DefaultName>
+              <Top>0.09389in</Top>
+              <Left>7.10832in</Left>
+              <Height>0.25in</Height>
+              <Width>2.62168in</Width>
+              <ZIndex>1</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
