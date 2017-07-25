@@ -564,7 +564,7 @@
         </TablixRowHierarchy>
         <DataSetName>dtSTPR</DataSetName>
         <Top>0.005in</Top>
-        <Left>3.83833in</Left>
+        <Left>3.78833in</Left>
         <Height>0.65667in</Height>
         <Width>3.00835in</Width>
         <Style>
@@ -2384,7 +2384,7 @@
         </TablixRowHierarchy>
         <DataSetName>dsYearly</DataSetName>
         <Top>2.24578cm</Top>
-        <Left>9.74937cm</Left>
+        <Left>9.62237cm</Left>
         <Height>1.65cm</Height>
         <Width>7.89518cm</Width>
         <ZIndex>3</ZIndex>
@@ -4409,7 +4409,7 @@
         </TablixRowHierarchy>
         <DataSetName>dsNotDone</DataSetName>
         <Top>4.5847cm</Top>
-        <Left>9.74937cm</Left>
+        <Left>9.62237cm</Left>
         <Height>1.65cm</Height>
         <Width>7.89518cm</Width>
         <ZIndex>6</ZIndex>
