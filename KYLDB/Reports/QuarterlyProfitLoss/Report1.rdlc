@@ -890,7 +890,7 @@
               </Paragraphs>
               <rd:DefaultName>repTitle</rd:DefaultName>
               <Top>0.1in</Top>
-              <Left>1in</Left>
+              <Left>0.375in</Left>
               <Height>0.25in</Height>
               <Width>2.40833in</Width>
               <Style>
@@ -922,7 +922,7 @@
               </Paragraphs>
               <rd:DefaultName>repMonth</rd:DefaultName>
               <Top>0.1in</Top>
-              <Left>4.5in</Left>
+              <Left>2.875in</Left>
               <Height>0.25in</Height>
               <Width>2.48333in</Width>
               <ZIndex>1</ZIndex>

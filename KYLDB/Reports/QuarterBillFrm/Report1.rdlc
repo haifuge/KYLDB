@@ -61,22 +61,22 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>0.89583in</Width>
+                  <Width>1.29166in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.34583in</Width>
+                  <Width>3.74167in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.82083in</Width>
+                  <Width>1.21666in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.87083in</Width>
+                  <Width>1.26667in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.8125in</Width>
+                  <Width>1.20833in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.87917in</Width>
+                  <Width>1.27501in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -523,9 +523,8 @@ Fields!NumOfCkLastQtr.Value&lt;Fields!NumOfCkThisQtr.Value,"orange")</Color>
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>dsQtrBill</DataSetName>
-            <Left>0.255in</Left>
             <Height>0.59167in</Height>
-            <Width>7.625in</Width>
+            <Width>10in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -533,13 +532,13 @@ Fields!NumOfCkLastQtr.Value&lt;Fields!NumOfCkThisQtr.Value,"orange")</Color>
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>11.69in</Height>
+        <Height>1in</Height>
         <Style />
       </Body>
-      <Width>8.27in</Width>
+      <Width>10in</Width>
       <Page>
         <PageHeader>
-          <Height>0.455in</Height>
+          <Height>0.4in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -562,7 +561,7 @@ Fields!NumOfCkLastQtr.Value&lt;Fields!NumOfCkThisQtr.Value,"orange")</Color>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
               <Top>0.09306in</Top>
-              <Left>0.58in</Left>
+              <Left>0.33in</Left>
               <Height>0.25in</Height>
               <Width>1in</Width>
               <Style>
@@ -594,7 +593,7 @@ Fields!NumOfCkLastQtr.Value&lt;Fields!NumOfCkThisQtr.Value,"orange")</Color>
               </Paragraphs>
               <rd:DefaultName>year</rd:DefaultName>
               <Top>0.09306in</Top>
-              <Left>1.58in</Left>
+              <Left>1.33in</Left>
               <Height>0.25in</Height>
               <Width>1in</Width>
               <ZIndex>1</ZIndex>
@@ -627,10 +626,42 @@ Fields!NumOfCkLastQtr.Value&lt;Fields!NumOfCkThisQtr.Value,"orange")</Color>
               </Paragraphs>
               <rd:DefaultName>quarter</rd:DefaultName>
               <Top>0.09306in</Top>
-              <Left>2.59667in</Left>
+              <Left>2.34667in</Left>
               <Height>0.25in</Height>
               <Width>1in</Width>
               <ZIndex>2</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="ExecutionTime">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Globals!ExecutionTime</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>ExecutionTime</rd:DefaultName>
+              <Top>0.08056in</Top>
+              <Left>7.14667in</Left>
+              <Height>0.25in</Height>
+              <Width>2.75in</Width>
+              <ZIndex>3</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -648,12 +679,10 @@ Fields!NumOfCkLastQtr.Value&lt;Fields!NumOfCkThisQtr.Value,"orange")</Color>
             </Border>
           </Style>
         </PageHeader>
-        <PageHeight>11.69in</PageHeight>
-        <PageWidth>8.27in</PageWidth>
-        <LeftMargin>1in</LeftMargin>
-        <RightMargin>1in</RightMargin>
-        <TopMargin>1in</TopMargin>
-        <BottomMargin>1in</BottomMargin>
+        <PageHeight>13in</PageHeight>
+        <PageWidth>11in</PageWidth>
+        <LeftMargin>0.5in</LeftMargin>
+        <RightMargin>0.5in</RightMargin>
         <Style />
       </Page>
     </ReportSection>

@@ -116,25 +116,25 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>0.66667in</Width>
+                  <Width>0.70191in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.45in</Width>
+                  <Width>3.5219in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>1.03524in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>1.03524in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>1.03524in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.41667in</Width>
+                  <Width>1.45191in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.18333in</Width>
+                  <Width>1.21857in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -621,9 +621,8 @@
             </TablixRowHierarchy>
             <DataSetName>dsPayrollRep</DataSetName>
             <Top>0.35in</Top>
-            <Left>0.24667in</Left>
             <Height>0.5in</Height>
-            <Width>7.71667in</Width>
+            <Width>10in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -649,9 +648,8 @@
             </Paragraphs>
             <rd:DefaultName>Textbox16</rd:DefaultName>
             <Top>0.0625in</Top>
-            <Left>0.24667in</Left>
             <Height>0.25in</Height>
-            <Width>1.67083in</Width>
+            <Width>1.9175in</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -682,9 +680,8 @@
             </Paragraphs>
             <rd:DefaultName>Textbox16</rd:DefaultName>
             <Top>1.22833in</Top>
-            <Left>0.24667in</Left>
             <Height>0.25in</Height>
-            <Width>1.67083in</Width>
+            <Width>1.9175in</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -700,25 +697,25 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>0.67917in</Width>
+                  <Width>0.71441in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.45in</Width>
+                  <Width>3.5094in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>1.03524in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>1.03524in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>1.03524in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.41667in</Width>
+                  <Width>1.45191in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.18333in</Width>
+                  <Width>1.21857in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -1205,9 +1202,8 @@
             </TablixRowHierarchy>
             <DataSetName>dsCheckRep</DataSetName>
             <Top>1.52278in</Top>
-            <Left>0.24667in</Left>
             <Height>0.5in</Height>
-            <Width>7.72917in</Width>
+            <Width>10in</Width>
             <ZIndex>3</ZIndex>
             <Style>
               <Border>
@@ -1233,9 +1229,8 @@
             </Paragraphs>
             <rd:DefaultName>Textbox40</rd:DefaultName>
             <Top>0.86806in</Top>
-            <Left>0.24667in</Left>
             <Height>0.19167in</Height>
-            <Width>1.65833in</Width>
+            <Width>1.905in</Width>
             <ZIndex>4</ZIndex>
             <Style>
               <Border>
@@ -1265,9 +1260,8 @@
             </Paragraphs>
             <rd:DefaultName>Textbox41</rd:DefaultName>
             <Top>2.03667in</Top>
-            <Left>0.24667in</Left>
             <Height>0.19167in</Height>
-            <Width>1.65833in</Width>
+            <Width>1.905in</Width>
             <ZIndex>5</ZIndex>
             <Style>
               <Border>
@@ -1280,13 +1274,13 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>11.69in</Height>
+        <Height>2.5in</Height>
         <Style />
       </Body>
-      <Width>8.27in</Width>
+      <Width>10in</Width>
       <Page>
         <PageHeader>
-          <Height>0.45in</Height>
+          <Height>0.4in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -1309,9 +1303,41 @@
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
               <Top>0.0925in</Top>
-              <Left>0.905in</Left>
+              <Left>0.28in</Left>
               <Height>0.25in</Height>
-              <Width>1in</Width>
+              <Width>2.20833in</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="ExecutionTime">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Globals!ExecutionTime</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>ExecutionTime</rd:DefaultName>
+              <Top>0.08056in</Top>
+              <Left>6.01334in</Left>
+              <Height>0.25in</Height>
+              <Width>3.675in</Width>
+              <ZIndex>1</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -1329,12 +1355,10 @@
             </Border>
           </Style>
         </PageHeader>
-        <PageHeight>11.69in</PageHeight>
-        <PageWidth>8.27in</PageWidth>
-        <LeftMargin>1in</LeftMargin>
-        <RightMargin>1in</RightMargin>
-        <TopMargin>1in</TopMargin>
-        <BottomMargin>1in</BottomMargin>
+        <PageHeight>13in</PageHeight>
+        <PageWidth>11in</PageWidth>
+        <LeftMargin>0.5in</LeftMargin>
+        <RightMargin>0.5in</RightMargin>
         <Style />
       </Page>
     </ReportSection>

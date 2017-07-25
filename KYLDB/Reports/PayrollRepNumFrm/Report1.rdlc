@@ -646,13 +646,13 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>11.69in</Height>
+        <Height>1.3in</Height>
         <Style />
       </Body>
       <Width>8.27in</Width>
       <Page>
         <PageHeader>
-          <Height>0.45in</Height>
+          <Height>0.4in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -674,10 +674,42 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>0.11333in</Top>
-              <Left>1.19667in</Left>
+              <Top>0.0625in</Top>
+              <Left>0.32167in</Left>
               <Height>0.25in</Height>
               <Width>2.15833in</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="ExecutionTime">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Globals!ExecutionTime</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>ExecutionTime</rd:DefaultName>
+              <Top>0.1in</Top>
+              <Left>5.455in</Left>
+              <Height>0.25in</Height>
+              <Width>2.55833in</Width>
+              <ZIndex>1</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>

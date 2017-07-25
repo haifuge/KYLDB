@@ -1005,7 +1005,7 @@
               </Paragraphs>
               <rd:DefaultName>repTitle</rd:DefaultName>
               <Top>0.1in</Top>
-              <Left>1in</Left>
+              <Left>0.375in</Left>
               <Height>0.25in</Height>
               <Width>2.39167in</Width>
               <Style>
@@ -1037,7 +1037,7 @@
               </Paragraphs>
               <rd:DefaultName>repQuarter</rd:DefaultName>
               <Top>0.1in</Top>
-              <Left>4.5in</Left>
+              <Left>2.75in</Left>
               <Height>0.25in</Height>
               <Width>2.30833in</Width>
               <ZIndex>1</ZIndex>

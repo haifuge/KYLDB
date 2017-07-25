@@ -34,35 +34,53 @@ namespace KYLDB.Reports.QuarterBillFrm
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int year = int.Parse(comYear.Text);
-            int qtr = comboBox1.SelectedIndex + 1;
+            
+        }
+
+        private void QuarterBillFrm_Load(object sender, EventArgs e)
+        {
+            int year = DateTime.Now.Year;
+            int month = DateTime.Now.Month;
+            string quarter = "";
             string thisQStart = "", thisQEnd = "";
             string lastQStart = "", lastQEnd = "";
-            switch (qtr)
+            switch (month)
             {
                 case 1:
+                case 2:
+                case 3:
                     thisQStart = "1/1/" + year;
                     thisQEnd = "3/31/" + year;
                     lastQStart = "10/1/" + (year - 1);
                     lastQEnd = "12/31/" + (year - 1);
+                    quarter = "Q4";
                     break;
-                case 2:
+                case 4:
+                case 5:
+                case 6:
                     thisQStart = "4/1/" + year;
                     thisQEnd = "6/30/" + year;
                     lastQStart = "1/1/" + year;
                     lastQEnd = "3/31/" + year;
+                    quarter = "Q1";
                     break;
-                case 3:
+                case 7:
+                case 8:
+                case 9:
                     thisQStart = "7/1/" + year;
                     thisQEnd = "9/30/" + year;
                     lastQStart = "4/1/" + year;
                     lastQEnd = "6/30/" + year;
+                    quarter = "Q2";
                     break;
-                case 4:
+                case 10:
+                case 11:
+                case 12:
                     thisQStart = "10/1/" + year;
                     thisQEnd = "12/31/" + year;
                     lastQStart = "7/1/" + year;
                     lastQEnd = "9/30/" + year;
+                    quarter = "Q3";
                     break;
             }
             string sql = @"select a.AccNum, a.Customer, a.NumOfCkThisQtr, a.NumOfCkLastQtr, 
@@ -72,30 +90,19 @@ namespace KYLDB.Reports.QuarterBillFrm
                                        ISNULL(SUM(p2.NumOfCk),0) as NumOfCkLastQtr, 
                                        sum(case when p.BillAmount is null then 0 else Convert(money,REPLACE(p.BillAmount,'$','')) end) as 'BillAmt'
 	                            from ClientPayroll cp 
-	                            left join PayCheck p on cp.AccNum=p.AccNum and p.PostDate between '" + thisQStart + "' and '"+ thisQEnd + @"'
-	                            left join PayCheck p2 on cp.AccNum=p2.AccNum and p2.PostDate between '"+ lastQStart + "' and '"+ lastQEnd + @"'
+	                            left join PayCheck p on cp.AccNum=p.AccNum and p.PostDate between '" + thisQStart + "' and '" + thisQEnd + @"'
+	                            left join PayCheck p2 on cp.AccNum=p2.AccNum and p2.PostDate between '" + lastQStart + "' and '" + lastQEnd + @"'
                                 group by cp.AccNum, cp.Entity
                             ) a order by a.AccNum";
             DataTable dt = DBOperator.QuerySql(sql);
             List<QuarterBill> items = DBOperator.getListFromTable<QuarterBill>(dt);
             ReportParameter yearP = new ReportParameter("year", year.ToString());
-            ReportParameter quarter = new ReportParameter("quarter", comboBox1.Text);
-            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { yearP, quarter });
+            ReportParameter quarterp = new ReportParameter("quarter", quarter);
+            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { yearP, quarterp });
             ReportDataSource rds = new ReportDataSource("dsQtrBill", items);
             reportViewer1.LocalReport.DataSources.Add(rds);
 
             reportViewer1.RefreshReport();
-        }
-
-        private void QuarterBillFrm_Load(object sender, EventArgs e)
-        {
-            int year = DateTime.Now.Year;
-            for(int i = 0; i < 5; i++)
-            {
-                comYear.Items.Add(year - i);
-            }
-            comboBox1.SelectedIndex = 0;
-            comYear.SelectedIndex = 0;
         }
 
         private void QuarterBillFrm_FormClosed(object sender, FormClosedEventArgs e)
