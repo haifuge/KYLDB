@@ -44,9 +44,9 @@ namespace KYLDB.Reports.RepReportFrm
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string sql = @"select AccNum, Entity as 'Name', AccRep, PayRep, CkRep, PayType, PayFreq 
-                            from ClientPayroll
-                            where PayRep='"+cmbRep.Text+"'";
+            string sql = @"select cp.AccNum, cp.Entity as 'Name', cp.AccRep, cp.PayRep, cp.CkRep, cp.PayType, cp.PayFreq 
+                            from ClientPayroll cp inner join ClientDetail cd on cp.accnum=cd.AccountNo 
+                            where cd.JobStatus='Current' and cp.PayRep='" + cmbRep.Text + "' order by cp.AccNum";
             DataTable dt = DBOperator.QuerySql(sql);
             List<RepReport> payRep = DBOperator.getListFromTable<RepReport>(dt);
             ReportParameter rep = new ReportParameter("rep", cmbRep.Text);
@@ -55,9 +55,9 @@ namespace KYLDB.Reports.RepReportFrm
             ReportDataSource dsRep = new ReportDataSource("dsPayrollRep", payRep);
             reportViewer1.LocalReport.DataSources.Clear();
             reportViewer1.LocalReport.DataSources.Add(dsRep);
-            sql = @"select AccNum, Entity as 'Name', AccRep, PayRep, CkRep, PayType, PayFreq 
-                            from ClientPayroll
-                            where CkRep='" + cmbRep.Text + "'";
+            sql = @"select cp.AccNum, cp.Entity as 'Name', cp.AccRep, cp.PayRep, cp.CkRep, cp.PayType, cp.PayFreq 
+                    from ClientPayroll cp inner join ClientDetail cd on cp.accnum=cd.AccountNo 
+                    where cd.JobStatus='Current' and cp.CkRep='" + cmbRep.Text + "'  order by cp.AccNum";
             dt = DBOperator.QuerySql(sql);
 
             ReportParameter ckrepn = new ReportParameter("ckRepn", dt.Rows.Count.ToString());

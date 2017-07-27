@@ -52,6 +52,7 @@ namespace KYLDB.Reports.QuarterlyPayroll
             int year = DateTime.Now.Year;
             string quarter = "";
             DateTime now = DateTime.Now;
+            string closed = "";
             switch (month)
             {
                 case 1:
@@ -59,21 +60,25 @@ namespace KYLDB.Reports.QuarterlyPayroll
                 case 3:
                     quarter = "Q4";
                     year = year - 1;
+                    closed = "Closed(Q1/" + year + "), Closed(Q2/" + year + "), Closed(Q3/" + year + "), Closed(Q4/" + year + ")";
                     break;
                 case 4:
                 case 5:
                 case 6:
                     quarter = "Q1";
+                    closed = "Closed(Q1/" + year + ")";
                     break;
                 case 7:
                 case 8:
                 case 9:
                     quarter = "Q2";
+                    closed = "Closed(Q1/" + year + "), Closed(Q2/" + year + ")";
                     break;
                 case 10:
                 case 11:
                 case 12:
                     quarter = "Q3";
+                    closed = "Closed(Q1/" + year + "), Closed(Q2/" + year + "), Closed(Q3/" + year + ")";
                     break;
             }
             string rep = Main.cUser.Rep;
@@ -81,7 +86,10 @@ namespace KYLDB.Reports.QuarterlyPayroll
             string sql = @"select AccountNo as 'ID', Company, Contact, Phone, AltPhone, '' as MemoForUpdate,
                                   BalanceTotal as 'Balance', Payroll as 'PayrollLocal', PayrollRep, PaycheckRep
                            from ClientDetail
-                           where Rep='" + rep + "' and payroll like 'Yes%'";
+                           where Rep='" + rep + @"' 
+                             and ((JobStatus='Pending')
+                                or (JobStatus='Current' and Payroll like 'Yes%')
+                                or (Payroll in ("+closed+") and JobStatus in ('Closed', 'Current') ))";
             DataTable dt = DBOperator.QuerySql(sql);
             List<QuarterPayroll> items = DBOperator.getListFromTable<QuarterPayroll>(dt);
             ReportParameter repTitle = new ReportParameter("repTitle", "Quarterly Query - " + rep);

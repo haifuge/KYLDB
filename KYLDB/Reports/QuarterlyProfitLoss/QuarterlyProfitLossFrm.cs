@@ -36,12 +36,13 @@ namespace KYLDB.Reports.QuarterlyProfitALoss
         {
             string rep = Main.cUser.Rep;
             string month = DateTime.Now.AddMonths(-1).ToString("MMMMM, yyyy");
-            string year = DateTime.Now.Year.ToString();
+            string year = (DateTime.Now.Year-1).ToString();
             string sql = @"select AccountNo as 'ID', Company, Contact, Phone, AltPhone
                             from ClientDetail
                             where Rep = '" + Main.cUser.Rep + @"' 
                              and (JobStatus in ('Current', 'Yearly','Pending') 
-                                  or ((SalesTax in ('Closed(1Q/2016)','Closed(2Q/2016)','Closed(3Q/2016)','Closed(4Q/2016)') or Payroll in ('Closed(1Q/2016)','Closed(2Q/2016)','Closed(3Q/2016)','Closed(4Q/2016)')) 
+                                  or ((SalesTax in ('Closed(1Q/"+ year + ")','Closed(2Q/" + year + ")','Closed(3Q/" + year + ")','Closed(4Q/" + year + @")') 
+                                        or Payroll in ('Closed(1Q/" + year + ")','Closed(2Q/" + year + ")','Closed(3Q/" + year + ")','Closed(4Q/" + year + @")')) 
                                         and JobStatus = 'Closed' and EndDate between '1/1/"+year+"' and '12/31/"+year+"'))";
             DataTable dt = DBOperator.QuerySql(sql);
             List<QuarterlyProfitLoss> items = DBOperator.getListFromTable<QuarterlyProfitLoss>(dt);
