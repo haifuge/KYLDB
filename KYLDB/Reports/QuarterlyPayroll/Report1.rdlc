@@ -85,7 +85,10 @@
                   <Width>0.73571in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.90238in</Width>
+                  <Width>0.53429in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>0.3681in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.95238in</Width>
@@ -251,7 +254,9 @@
                                   <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox78</rd:DefaultName>
@@ -266,8 +271,10 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <ColSpan>2</ColSpan>
                       </CellContents>
                     </TablixCell>
+                    <TablixCell />
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Textbox81">
@@ -353,7 +360,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.25in</Height>
+                  <Height>0.22in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -518,6 +525,32 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
+                        <Rectangle Name="Rectangle1">
+                          <ReportItems>
+                            <Rectangle Name="Rectangle2">
+                              <KeepTogether>true</KeepTogether>
+                              <Top>0.0375in</Top>
+                              <Left>0.0375in</Left>
+                              <Height>0.13in</Height>
+                              <Width>0.2in</Width>
+                              <Style>
+                                <Border>
+                                  <Style>Solid</Style>
+                                </Border>
+                              </Style>
+                            </Rectangle>
+                          </ReportItems>
+                          <KeepTogether>true</KeepTogether>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                          </Style>
+                        </Rectangle>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
                         <Textbox Name="PayrollRep">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -584,7 +617,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.25in</Height>
+                  <Height>0.22in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -749,6 +782,32 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
+                        <Rectangle Name="Rectangle3">
+                          <ReportItems>
+                            <Rectangle Name="Rectangle4">
+                              <KeepTogether>true</KeepTogether>
+                              <Top>0.0375in</Top>
+                              <Left>0.0375in</Left>
+                              <Height>0.13in</Height>
+                              <Width>0.2in</Width>
+                              <Style>
+                                <Border>
+                                  <Style>Solid</Style>
+                                </Border>
+                              </Style>
+                            </Rectangle>
+                          </ReportItems>
+                          <KeepTogether>true</KeepTogether>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                          </Style>
+                        </Rectangle>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
                         <Textbox Name="PaycheckRep">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -825,6 +884,7 @@
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
+                <TablixMember />
               </TablixMembers>
             </TablixColumnHierarchy>
             <TablixRowHierarchy>
@@ -842,8 +902,8 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>dsQuarterlyPayroll</DataSetName>
-            <Height>0.88333in</Height>
-            <Width>9.99999in</Width>
+            <Height>0.82333in</Height>
+            <Width>10in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -851,7 +911,7 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>1in</Height>
+        <Height>1.06333in</Height>
         <Style />
       </Body>
       <Width>10in</Width>

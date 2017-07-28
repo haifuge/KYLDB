@@ -77,25 +77,34 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>3.19792in</Width>
+                  <Width>3.02811in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.73125in</Width>
+                  <Width>1.63265in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.55625in</Width>
+                  <Width>0.66352in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.13958in</Width>
+                  <Width>0.65519in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.72292in</Width>
+                  <Width>0.33936in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.56458in</Width>
+                  <Width>0.55936in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.41458in</Width>
+                  <Width>0.35394in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>0.62186in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>0.34395in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.26352in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -193,7 +202,9 @@
                                   <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox27</rd:DefaultName>
@@ -223,7 +234,9 @@
                                   <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                             <Paragraph>
                               <TextRuns>
@@ -232,7 +245,9 @@
                                   <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox9</rd:DefaultName>
@@ -247,8 +262,10 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <ColSpan>2</ColSpan>
                       </CellContents>
                     </TablixCell>
+                    <TablixCell />
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Textbox11">
@@ -262,7 +279,9 @@
                                   <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox11</rd:DefaultName>
@@ -277,8 +296,10 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <ColSpan>2</ColSpan>
                       </CellContents>
                     </TablixCell>
+                    <TablixCell />
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Textbox13">
@@ -292,7 +313,9 @@
                                   <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox13</rd:DefaultName>
@@ -307,8 +330,10 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <ColSpan>2</ColSpan>
                       </CellContents>
                     </TablixCell>
+                    <TablixCell />
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Textbox15">
@@ -322,12 +347,14 @@
                                   <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
                             </Paragraph>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>           For Update</Value>
+                                  <Value>For Update</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -353,7 +380,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.225in</Height>
+                  <Height>0.20167in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -471,12 +498,47 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BottomBorder>
+                              <Style>None</Style>
+                            </BottomBorder>
+                            <RightBorder>
+                              <Style>None</Style>
+                            </RightBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Rectangle Name="Rectangle5">
+                          <ReportItems>
+                            <Rectangle Name="Rectangle6">
+                              <KeepTogether>true</KeepTogether>
+                              <Top>0.04667in</Top>
+                              <Left>0.0375in</Left>
+                              <Height>0.13in</Height>
+                              <Width>0.2in</Width>
+                              <Visibility>
+                                <Hidden>=IIF(Fields!SalesTax.Value="",True,False)</Hidden>
+                              </Visibility>
+                              <Style>
+                                <Border>
+                                  <Style>Solid</Style>
+                                </Border>
+                              </Style>
+                            </Rectangle>
+                          </ReportItems>
+                          <KeepTogether>true</KeepTogether>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                          </Style>
+                        </Rectangle>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -506,12 +568,44 @@
                             <BottomBorder>
                               <Style>None</Style>
                             </BottomBorder>
+                            <RightBorder>
+                              <Style>None</Style>
+                            </RightBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Rectangle Name="Rectangle3">
+                          <ReportItems>
+                            <Rectangle Name="Rectangle4">
+                              <KeepTogether>true</KeepTogether>
+                              <Top>0.04667in</Top>
+                              <Left>0.06749in</Left>
+                              <Height>0.13in</Height>
+                              <Width>0.2in</Width>
+                              <Visibility>
+                                <Hidden>=IIF(Fields!LiquorTax.Value="",True,False)</Hidden>
+                              </Visibility>
+                              <Style>
+                                <Border>
+                                  <Style>Solid</Style>
+                                </Border>
+                              </Style>
+                            </Rectangle>
+                          </ReportItems>
+                          <KeepTogether>true</KeepTogether>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                          </Style>
+                        </Rectangle>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -541,12 +635,44 @@
                             <BottomBorder>
                               <Style>None</Style>
                             </BottomBorder>
+                            <RightBorder>
+                              <Style>None</Style>
+                            </RightBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Rectangle Name="Rectangle7">
+                          <ReportItems>
+                            <Rectangle Name="Rectangle8">
+                              <KeepTogether>true</KeepTogether>
+                              <Top>0.03417in</Top>
+                              <Left>0.08251in</Left>
+                              <Height>0.13in</Height>
+                              <Width>0.2in</Width>
+                              <Visibility>
+                                <Hidden>=IIF(Fields!U_OTax.Value="",True,False)</Hidden>
+                              </Visibility>
+                              <Style>
+                                <Border>
+                                  <Style>Solid</Style>
+                                </Border>
+                              </Style>
+                            </Rectangle>
+                          </ReportItems>
+                          <KeepTogether>true</KeepTogether>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                          </Style>
+                        </Rectangle>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -585,7 +711,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.21667in</Height>
+                  <Height>0.2in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -708,8 +834,10 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <ColSpan>2</ColSpan>
                       </CellContents>
                     </TablixCell>
+                    <TablixCell />
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Textbox23">
@@ -735,6 +863,45 @@
                             <TopBorder>
                               <Style>None</Style>
                             </TopBorder>
+                            <RightBorder>
+                              <Style>None</Style>
+                            </RightBorder>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox34">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox34</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Style>None</Style>
+                            </TopBorder>
+                            <LeftBorder>
+                              <Style>None</Style>
+                            </LeftBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -768,6 +935,45 @@
                             <TopBorder>
                               <Style>None</Style>
                             </TopBorder>
+                            <RightBorder>
+                              <Style>None</Style>
+                            </RightBorder>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox40">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox40</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Style>None</Style>
+                            </TopBorder>
+                            <LeftBorder>
+                              <Style>None</Style>
+                            </LeftBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -822,13 +1028,16 @@
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
               </TablixMembers>
             </TablixColumnHierarchy>
             <TablixRowHierarchy>
               <TablixMembers>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>0.67292in</Size>
+                    <Size>0.53853in</Size>
                     <CellContents>
                       <Textbox Name="Textbox1">
                         <CanGrow>true</CanGrow>
@@ -875,7 +1084,7 @@
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
-                    <Size>0.67292in</Size>
+                    <Size>0.53853in</Size>
                     <CellContents>
                       <Textbox Name="ID1">
                         <CanGrow>true</CanGrow>
@@ -918,7 +1127,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>dsMonthlySalesTax</DataSetName>
-            <Height>0.79167in</Height>
+            <Height>0.75167in</Height>
             <Width>10in</Width>
             <Style>
               <Border>
@@ -927,7 +1136,7 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>1in</Height>
+        <Height>0.99667in</Height>
         <Style>
           <Border>
             <Style>None</Style>
