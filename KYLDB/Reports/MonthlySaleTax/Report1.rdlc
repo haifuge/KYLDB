@@ -522,9 +522,6 @@
                               <Left>0.0375in</Left>
                               <Height>0.13in</Height>
                               <Width>0.2in</Width>
-                              <Visibility>
-                                <Hidden>=IIF(Fields!SalesTax.Value="",True,False)</Hidden>
-                              </Visibility>
                               <Style>
                                 <Border>
                                   <Style>Solid</Style>
@@ -589,9 +586,6 @@
                               <Left>0.06749in</Left>
                               <Height>0.13in</Height>
                               <Width>0.2in</Width>
-                              <Visibility>
-                                <Hidden>=IIF(Fields!LiquorTax.Value="",True,False)</Hidden>
-                              </Visibility>
                               <Style>
                                 <Border>
                                   <Style>Solid</Style>
@@ -656,9 +650,6 @@
                               <Left>0.08251in</Left>
                               <Height>0.13in</Height>
                               <Width>0.2in</Width>
-                              <Visibility>
-                                <Hidden>=IIF(Fields!U_OTax.Value="",True,False)</Hidden>
-                              </Visibility>
                               <Style>
                                 <Border>
                                   <Style>Solid</Style>

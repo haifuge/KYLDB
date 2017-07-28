@@ -34,6 +34,19 @@ namespace KYLDB.Reports.QuarterlySalesTax
 
         private void QuarterlySalesTax_Load(object sender, EventArgs e)
         {
+            DBOperator.SetComboxRepData(comboBox1);
+            string repCond = "";
+            if (Main.cUser.UserLevel >= 10)
+            {
+                comboBox1.Enabled = true;
+                comboBox1.SelectedIndex = 0;
+            }
+            else
+            {
+                comboBox1.Enabled = false;
+                comboBox1.Text = Main.cUser.Rep;
+                repCond = " Rep = '" + Main.cUser.Rep + "' and ";
+            }
             string rep = Main.cUser.Rep;
             //string quarter = "Quarter: " + comboBox2.Text + ", " + comYear.Text;
             int month = DateTime.Now.Month;
@@ -66,8 +79,7 @@ namespace KYLDB.Reports.QuarterlySalesTax
             }
             string sql = @"select Accountno as 'ID', Customer as 'Company', Contact, Phone, AltPhone, BalanceTotal as 'Balance', SalesTax, SalesTaxNum, 
                                   LiquorTax_Phila as 'LiquorTax', U_OTax from ClientDetail 
-                            where Rep='" + rep + @"'  
-                             and (JobStatus='pending' 
+                            where " + repCond + @" (JobStatus='pending' 
                                   or (SalesTax in ('Monthly','Monthly(w/ Prepay)','Monthly(Sugar)') and JobStatus='Current') 
                                   or (JobStatus<>'closed' and (LiquorTax_Phila='Yes' or U_OTax like 'Yes%'))
                                   or (JobStatus='closed' and SalesTax='closed(" + quarter + "/" + year.ToString() + ")'))";
@@ -87,6 +99,56 @@ namespace KYLDB.Reports.QuarterlySalesTax
         {
             singleton = null;
         }
-        
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string rep = comboBox1.Text;
+            //string quarter = "Quarter: " + comboBox2.Text + ", " + comYear.Text;
+            int month = DateTime.Now.Month;
+            int year = DateTime.Now.Year;
+            string quarter = "";
+            DateTime now = DateTime.Now;
+            switch (month)
+            {
+                case 1:
+                case 2:
+                case 3:
+                    quarter = "Q4";
+                    year = year - 1;
+                    break;
+                case 4:
+                case 5:
+                case 6:
+                    quarter = "Q1";
+                    break;
+                case 7:
+                case 8:
+                case 9:
+                    quarter = "Q2";
+                    break;
+                case 10:
+                case 11:
+                case 12:
+                    quarter = "Q3";
+                    break;
+            }
+            string sql = @"select Accountno as 'ID', Customer as 'Company', Contact, Phone, AltPhone, BalanceTotal as 'Balance', SalesTax, SalesTaxNum, 
+                                  LiquorTax_Phila as 'LiquorTax', U_OTax from ClientDetail 
+                            where Rep = '" + comboBox1.Text + @"' 
+                             and  (JobStatus='pending' 
+                                  or (SalesTax in ('Monthly','Monthly(w/ Prepay)','Monthly(Sugar)') and JobStatus='Current') 
+                                  or (JobStatus<>'closed' and (LiquorTax_Phila='Yes' or U_OTax like 'Yes%'))
+                                  or (JobStatus='closed' and SalesTax='closed(" + quarter + "/" + year.ToString() + ")'))";
+            DataTable dt = DBOperator.QuerySql(sql);
+            List<SalesTaxRep> items = DBOperator.getListFromTable<SalesTaxRep>(dt);
+
+            ReportParameter repTitle = new ReportParameter("repTitle", "Quarterly Query - " + rep);
+            ReportParameter repQuarter = new ReportParameter("repQuarter", "Quarter: " + quarter + ", " + year.ToString());
+            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { repTitle, repQuarter });
+            ReportDataSource rds = new ReportDataSource("dsQuarterlySalesTax", items);
+            reportViewer1.LocalReport.DataSources.Add(rds);
+
+            reportViewer1.RefreshReport();
+        }
     }
 }

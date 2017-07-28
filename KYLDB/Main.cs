@@ -34,23 +34,40 @@ namespace KYLDB
         public static User cUser = null;
         private void Form1_Load(object sender, EventArgs e)
         {
-#if RELEASE
+#if DEBUG
             Login l = new Login();
             l.ShowDialog();
             if (cUser == null) { this.Close(); }
             this.Text = "KYL - " + cUser.FirstName;
-                        if(cUser.UserLevel==-1)
+            if(cUser.UserLevel>=10)
             {
                 repManageToolStripMenuItem.Visible = true;
-                dataToolStripMenuItem.Visible = true;
+                dataToolStripMenuItem.Visible = true; 
+                statisticReportToolStripMenuItem.Visible=true;
+                payrollRepNumToolStripMenuItem.Visible = true;
+                quarterBillToolStripMenuItem.Visible = true;
             }
             else if(cUser.UserLevel==0)
             {
                 repManageToolStripMenuItem.Visible = false;
                 dataToolStripMenuItem.Visible = false;
+                statisticReportToolStripMenuItem.Visible = false;
+                payrollRepNumToolStripMenuItem.Visible = false;
+                quarterBillToolStripMenuItem.Visible = false;
             }
+            if (cUser.UserLevel >= 5)
+            {
+                reportsToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                reportsToolStripMenuItem.Visible = false;
+            }
+            payCheckToolStripMenuItem.Visible = false;
+            clientDetailToolStripMenuItem.Visible = false;
+            clientInfoToolStripMenuItem.Visible = false;
 #endif
-#if DEBUG
+#if RELEASE
             cUser = new User() { Rep = "C", LastName = "Chow", FirstName = "Charles", UserLevel = 10 };
 #endif
         }

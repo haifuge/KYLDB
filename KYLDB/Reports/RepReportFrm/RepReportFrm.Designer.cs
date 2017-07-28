@@ -30,7 +30,6 @@
         {
             this.cmbRep = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SuspendLayout();
             // 
@@ -39,8 +38,9 @@
             this.cmbRep.FormattingEnabled = true;
             this.cmbRep.Location = new System.Drawing.Point(109, 12);
             this.cmbRep.Name = "cmbRep";
-            this.cmbRep.Size = new System.Drawing.Size(121, 24);
+            this.cmbRep.Size = new System.Drawing.Size(134, 24);
             this.cmbRep.TabIndex = 4;
+            this.cmbRep.SelectedIndexChanged += new System.EventHandler(this.cmbRep_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -50,16 +50,6 @@
             this.label1.Size = new System.Drawing.Size(38, 17);
             this.label1.TabIndex = 3;
             this.label1.Text = "Rep:";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(275, 9);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(140, 30);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Generate Report";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // reportViewer1
             // 
@@ -79,7 +69,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(956, 592);
             this.Controls.Add(this.reportViewer1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.cmbRep);
             this.Controls.Add(this.label1);
             this.Name = "RepReportFrm";
@@ -95,7 +84,6 @@
 
         private System.Windows.Forms.ComboBox cmbRep;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }

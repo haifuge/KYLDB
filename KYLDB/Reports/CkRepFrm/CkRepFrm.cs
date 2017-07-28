@@ -35,7 +35,7 @@ namespace KYLDB.Reports.CkRepFrm
         private void CkRepFrm_Load(object sender, EventArgs e)
         {
             DBOperator.SetComboxRepDataFirstName(cmbRep);
-            cmbRep.SelectedIndex = 0;
+            cmbRep.SelectedIndex = DateTime.Now.Month-1;
             comMonth.SelectedIndex = 0;
             int year = DateTime.Now.Year;
             for(int i = 0; i < 5; i++)
@@ -43,6 +43,16 @@ namespace KYLDB.Reports.CkRepFrm
                 comYear.Items.Add(year--);
             }
             comYear.SelectedIndex = 0;
+            if (Main.cUser.UserLevel >= 10)
+            {
+                cmbRep.Enabled = true;
+                cmbRep.SelectedIndex = 0;
+            }
+            else
+            {
+                cmbRep.Enabled = false;
+                cmbRep.Text = Main.cUser.Rep;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
