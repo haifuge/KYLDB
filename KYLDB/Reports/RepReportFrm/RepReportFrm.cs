@@ -36,7 +36,7 @@ namespace KYLDB.Reports.RepReportFrm
         {
             DBOperator.SetComboxRepDataFirstName(cmbRep);
             string repCond = "";
-            if (Main.cUser.UserLevel >= 10)
+            if (Main.cUser.UserLevel >= Setting.ReporterLevel)
             {
                 cmbRep.Enabled = true;
                 cmbRep.SelectedIndex = 0;
@@ -80,12 +80,24 @@ namespace KYLDB.Reports.RepReportFrm
 
         private void cmbRep_SelectedIndexChanged(object sender, EventArgs e)
         {
+            string Paycondition = "";
+            string CkCondition = "";
+            string re = cmbRep.Text;
+            if (re == "All")
+            {
+                Paycondition = "";
+            }
+            else
+            {
+                Paycondition = " and cp.PayRep='" + cmbRep.Text + "' ";
+                CkCondition = " and cp.CkRep='" + cmbRep.Text + "' ";
+            }
             string sql = @"select cp.AccNum, cp.Entity as 'Name', cp.AccRep, cp.PayRep, cp.CkRep, cp.PayType, cp.PayFreq 
                             from ClientPayroll cp inner join ClientDetail cd on cp.accnum=cd.AccountNo 
-                            where cd.JobStatus='Current' and cp.PayRep='" + cmbRep.Text + "' order by cp.AccNum";
+                            where cd.JobStatus='Current' "+Paycondition+" order by cp.AccNum";
             DataTable dt = DBOperator.QuerySql(sql);
             List<RepReport> payRep = DBOperator.getListFromTable<RepReport>(dt);
-            ReportParameter rep = new ReportParameter("rep", cmbRep.Text);
+            ReportParameter rep = new ReportParameter("rep", re);
             ReportParameter repn = new ReportParameter("payRepn", dt.Rows.Count.ToString());
 
             ReportDataSource dsRep = new ReportDataSource("dsPayrollRep", payRep);
@@ -93,7 +105,7 @@ namespace KYLDB.Reports.RepReportFrm
             reportViewer1.LocalReport.DataSources.Add(dsRep);
             sql = @"select cp.AccNum, cp.Entity as 'Name', cp.AccRep, cp.PayRep, cp.CkRep, cp.PayType, cp.PayFreq 
                     from ClientPayroll cp inner join ClientDetail cd on cp.accnum=cd.AccountNo 
-                    where cd.JobStatus='Current' and cp.CkRep='" + cmbRep.Text + "'  order by cp.AccNum";
+                    where cd.JobStatus='Current' "+CkCondition+"  order by cp.AccNum";
             dt = DBOperator.QuerySql(sql);
 
             ReportParameter ckrepn = new ReportParameter("ckRepn", dt.Rows.Count.ToString());

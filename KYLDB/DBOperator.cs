@@ -71,6 +71,10 @@ namespace KYLDB
         {
             string sql = "select Rep, FirstName+' '+ LastName as 'Name' from Representative order by FirstName, LastName";
             DataTable dt = DBOperator.QuerySql(sql);
+            DataRow dr = dt.NewRow();
+            dr["Rep"] = "All";
+            dr["Name"] = "All";
+            dt.Rows.InsertAt(dr, 0);
             comb.DataSource = dt;
             comb.ValueMember = "Rep";
             comb.DisplayMember = "Name";
@@ -79,6 +83,10 @@ namespace KYLDB
         {
             string sql = "select Rep, FirstName as 'Name' from Representative order by FirstName, LastName";
             DataTable dt = DBOperator.QuerySql(sql);
+            DataRow dr = dt.NewRow();
+            dr["Rep"] = "All";
+            dr["Name"] = "All";
+            dt.Rows.InsertAt(dr, 0);
             comb.DataSource = dt;
             comb.ValueMember = "Rep";
             comb.DisplayMember = "Name";

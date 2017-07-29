@@ -218,6 +218,7 @@
     <Compile Include="Reports\YearEndPayrollFrm\YearEndPayrollFrm.Designer.cs">
       <DependentUpon>YearEndPayrollFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Setting.cs" />
     <EmbeddedResource Include="Forms\AccountViewList.resx">
       <DependentUpon>AccountViewList.cs</DependentUpon>
     </EmbeddedResource>

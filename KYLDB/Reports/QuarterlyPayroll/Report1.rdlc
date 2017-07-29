@@ -76,16 +76,16 @@
                   <Width>0.77738in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.90714in</Width>
+                  <Width>3.23882in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.04762in</Width>
+                  <Width>1.88178in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.73571in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.53429in</Width>
+                  <Width>0.70096in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.3681in</Width>
@@ -94,7 +94,7 @@
                   <Width>0.95238in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.67738in</Width>
+                  <Width>1.34487in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -325,7 +325,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Memo _______________</Value>
+                                  <Value>Memo ___________</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -334,7 +334,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>__________ For Update</Value>
+                                  <Value>_______For Update</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -515,6 +515,9 @@
                             <BottomBorder>
                               <Style>None</Style>
                             </BottomBorder>
+                            <RightBorder>
+                              <Style>None</Style>
+                            </RightBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -772,6 +775,9 @@
                             <TopBorder>
                               <Style>None</Style>
                             </TopBorder>
+                            <RightBorder>
+                              <Style>None</Style>
+                            </RightBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>

@@ -37,7 +37,7 @@ namespace KYLDB.Reports.MonthlySaleTax
         {
             DBOperator.SetComboxRepData(comboBox1);
             string repCond = "";
-            if (Main.cUser.UserLevel >= 10)
+            if (Main.cUser.UserLevel >= Setting.ReporterLevel)
             {
                 comboBox1.Enabled = true;
                 comboBox1.SelectedIndex = 0;
@@ -75,17 +75,22 @@ namespace KYLDB.Reports.MonthlySaleTax
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string rep = comboBox1.Text;
+            string rep = comboBox1.SelectedValue.ToString();
             string month = DateTime.Now.AddMonths(-1).ToString("MMMM, yyyy");
+            string condition = "";
+            if (rep != "All")
+            {
+                condition = " Rep = '" + rep + "' and ";
+            }
             string sql = @"select Accountno as 'ID', Customer as 'Company', Contact, Phone, AltPhone, BalanceTotal as 'Balance', SalesTax, SalesTaxNum, 
                                   LiquorTax_Phila as 'LiquorTax', U_OTax from ClientDetail 
-                            where  Rep = '" + comboBox1.Text + @"' 
-                             and  (JobStatus='pending' 
+                            where " + condition + @"  (JobStatus='pending' 
                                   or (SalesTax in ('Monthly','Monthly(w/ Prepay)','Monthly(Sugar)') and JobStatus='current') 
                                   or (JobStatus<>'closed' and (LiquorTax_Phila='Yes' or U_OTax like 'Yes%')) )";
             DataTable dt = DBOperator.QuerySql(sql);
             List<SalesTaxRep> items = DBOperator.getListFromTable<SalesTaxRep>(dt);
 
+            reportViewer1.LocalReport.DataSources.Clear();
             ReportParameter repTitle = new ReportParameter("repTitle", "Monthly Query - " + rep);
             ReportParameter repMonth = new ReportParameter("repMonth", month);
             reportViewer1.LocalReport.SetParameters(new ReportParameter[] { repTitle, repMonth });

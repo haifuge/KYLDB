@@ -34,9 +34,10 @@ namespace KYLDB.Reports.QuarterlyPayroll
 
         private void QuarterPayroll_Load(object sender, EventArgs e)
         {
+            WindowState = FormWindowState.Maximized;
             DBOperator.SetComboxRepData(comboBox1);
             string repCond = "";
-            if (Main.cUser.UserLevel >= 10)
+            if (Main.cUser.UserLevel >= Setting.ReporterLevel)
             {
                 comboBox1.Enabled = true;
                 comboBox1.SelectedIndex = 0;
@@ -59,25 +60,25 @@ namespace KYLDB.Reports.QuarterlyPayroll
                 case 3:
                     quarter = "Q4";
                     year = year - 1;
-                    closed = "Closed(Q1/" + year + "), Closed(Q2/" + year + "), Closed(Q3/" + year + "), Closed(Q4/" + year + ")";
+                    closed = "'Closed(Q1/" + year + ")', 'Closed(Q2/" + year + ")', 'Closed(Q3/" + year + ")', 'Closed(Q4/" + year + ")'";
                     break;
                 case 4:
                 case 5:
                 case 6:
                     quarter = "Q1";
-                    closed = "Closed(Q1/" + year + ")";
+                    closed = "'Closed(Q1/" + year + ")'";
                     break;
                 case 7:
                 case 8:
                 case 9:
                     quarter = "Q2";
-                    closed = "Closed(Q1/" + year + "), Closed(Q2/" + year + ")";
+                    closed = "'Closed(Q1/" + year + ")', 'Closed(Q2/" + year + ")'";
                     break;
                 case 10:
                 case 11:
                 case 12:
                     quarter = "Q3";
-                    closed = "Closed(Q1/" + year + "), Closed(Q2/" + year + "), Closed(Q3/" + year + ")";
+                    closed = "'Closed(Q1/" + year + ")', 'Closed(Q2/" + year + ")', 'Closed(Q3/" + year + ")'";
                     break;
             }
             string rep = Main.cUser.Rep;
@@ -122,36 +123,41 @@ namespace KYLDB.Reports.QuarterlyPayroll
                 case 3:
                     quarter = "Q4";
                     year = year - 1;
-                    closed = "Closed(Q1/" + year + "), Closed(Q2/" + year + "), Closed(Q3/" + year + "), Closed(Q4/" + year + ")";
+                    closed = "'Closed(Q1/" + year + ")', 'Closed(Q2/" + year + ")', 'Closed(Q3/" + year + ")', 'Closed(Q4/" + year + ")'";
                     break;
                 case 4:
                 case 5:
                 case 6:
                     quarter = "Q1";
-                    closed = "Closed(Q1/" + year + ")";
+                    closed = "'Closed(Q1/" + year + ")'";
                     break;
                 case 7:
                 case 8:
                 case 9:
                     quarter = "Q2";
-                    closed = "Closed(Q1/" + year + "), Closed(Q2/" + year + ")";
+                    closed = "'Closed(Q1/" + year + ")', 'Closed(Q2/" + year + ")'";
                     break;
                 case 10:
                 case 11:
                 case 12:
                     quarter = "Q3";
-                    closed = "Closed(Q1/" + year + "), Closed(Q2/" + year + "), Closed(Q3/" + year + ")";
+                    closed = "'Closed(Q1/" + year + ")', 'Closed(Q2/" + year + ")', 'Closed(Q3/" + year + ")'";
                     break;
             }
-            string rep = comboBox1.Text;
+            string rep = comboBox1.SelectedValue.ToString();
+            string condition = "";
+            if (rep != "All")
+            {
+                condition = " Rep = '" + rep + "' and ";
+            }
             string sql = @"select AccountNo as 'ID', Company, Contact, Phone, AltPhone, '' as MemoForUpdate,
                                   BalanceTotal as 'Balance', Payroll as 'PayrollLocal', PayrollRep, PaycheckRep
                            from ClientDetail
-                           where  Rep = '" + comboBox1.Text + @"' 
-                             and  ((JobStatus='Pending')
+                           where " + condition + @"  ((JobStatus='Pending')
                                 or (JobStatus='Current' and Payroll like 'Yes%')
                                 or (Payroll in (" + closed + ") and JobStatus in ('Closed', 'Current') ))";
             DataTable dt = DBOperator.QuerySql(sql);
+            reportViewer1.LocalReport.DataSources.Clear();
             List<QuarterPayroll> items = DBOperator.getListFromTable<QuarterPayroll>(dt);
             ReportParameter repTitle = new ReportParameter("repTitle", "Quarterly Query - " + rep);
             ReportParameter repQuarter = new ReportParameter("repQuarter", quarter);

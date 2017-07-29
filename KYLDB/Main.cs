@@ -39,7 +39,7 @@ namespace KYLDB
             l.ShowDialog();
             if (cUser == null) { this.Close(); }
             this.Text = "KYL - " + cUser.FirstName;
-            if(cUser.UserLevel>=10)
+            if(cUser.UserLevel>= Setting.AdminLevel)
             {
                 repManageToolStripMenuItem.Visible = true;
                 dataToolStripMenuItem.Visible = true; 
@@ -47,7 +47,7 @@ namespace KYLDB
                 payrollRepNumToolStripMenuItem.Visible = true;
                 quarterBillToolStripMenuItem.Visible = true;
             }
-            else if(cUser.UserLevel==0)
+            else 
             {
                 repManageToolStripMenuItem.Visible = false;
                 dataToolStripMenuItem.Visible = false;
@@ -55,7 +55,7 @@ namespace KYLDB
                 payrollRepNumToolStripMenuItem.Visible = false;
                 quarterBillToolStripMenuItem.Visible = false;
             }
-            if (cUser.UserLevel >= 5)
+            if (cUser.UserLevel >= Setting.ReporterLevel)
             {
                 reportsToolStripMenuItem.Visible = true;
             }
@@ -66,6 +66,7 @@ namespace KYLDB
             payCheckToolStripMenuItem.Visible = false;
             clientDetailToolStripMenuItem.Visible = false;
             clientInfoToolStripMenuItem.Visible = false;
+            ClientPayrollToolStripMenuItem.Visible = false;
 #endif
 #if RELEASE
             cUser = new User() { Rep = "C", LastName = "Chow", FirstName = "Charles", UserLevel = 10 };

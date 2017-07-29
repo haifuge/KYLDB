@@ -36,7 +36,7 @@ namespace KYLDB.Reports.YearEndPayrollFrm
         {
             DBOperator.SetComboxRepData(comboBox1);
             string repCond = "";
-            if (Main.cUser.UserLevel >= 10)
+            if (Main.cUser.UserLevel >= Setting.ReporterLevel)
             {
                 comboBox1.Enabled = true;
                 comboBox1.SelectedIndex = 0;
@@ -72,7 +72,12 @@ namespace KYLDB.Reports.YearEndPayrollFrm
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string rep = comboBox1.Text;
+            string rep = comboBox1.SelectedValue.ToString();
+            string condition = "";
+            if (rep != "All")
+            {
+                condition = " Rep='" + rep + "' and";
+            }
             int year = DateTime.Now.Year;
             int month = DateTime.Now.Month;
             if (month != 12)
@@ -80,8 +85,7 @@ namespace KYLDB.Reports.YearEndPayrollFrm
             string sql = @"select Accountno as 'ID', Customer as 'Company', Contact, Phone, AltPhone, BalanceTotal as 'Balance',
                                   Payroll as 'PayrollW2', PayRep as 'Payrollrep', CkRep as 'Paycheck', '' as MemoForUpdate
                             from clientdetail cd left join ClientPayroll cp on cd.AccountNo=cp.AccNum
-                            where Rep='" + rep + @"'  
-                             and (JobStatus='pending' 
+                            where "+condition+@" (JobStatus='pending' 
                                   or (SalesTax in ('Monthly','Monthly(w/ Prepay)','Monthly(Sugar)') and JobStatus='current') 
                                   or (JobStatus<>'closed' and (LiquorTax_Phila='Yes' or U_OTax like 'Yes%'))
                                   or (JobStatus='closed' and SalesTax in ('closed(Q1/" + year + ")', 'closed(Q2/" + year + ")','closed(Q3/" + year + ")','closed(Q4/" + year + ")')))";

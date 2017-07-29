@@ -34,9 +34,10 @@ namespace KYLDB.Reports.QuarterlyProfitALoss
 
         private void QuarterlyProfitLoss_Load(object sender, EventArgs e)
         {
+            WindowState = FormWindowState.Maximized;
             DBOperator.SetComboxRepData(comboBox1);
             string repCond = "";
-            if (Main.cUser.UserLevel >= 10)
+            if (Main.cUser.UserLevel >= Setting.ReporterLevel)
             {
                 comboBox1.Enabled = true;
                 comboBox1.SelectedIndex = 0;
@@ -75,19 +76,24 @@ namespace KYLDB.Reports.QuarterlyProfitALoss
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string rep = comboBox1.Text;
+            string rep = comboBox1.SelectedValue.ToString();
+            string condition = "";
+            if (rep != "All")
+            {
+                condition = " Rep = '" + rep + "' and ";
+            }
             string month = DateTime.Now.AddMonths(-1).ToString("MMMMM, yyyy");
             string year = (DateTime.Now.Year - 1).ToString();
             string sql = @"select AccountNo as 'ID', Company, Contact, Phone, AltPhone
                             from ClientDetail
-                            where Rep = '" + rep + @"' 
-                             and (JobStatus in ('Current', 'Yearly','Pending') 
+                            where " + condition + @"  (JobStatus in ('Current', 'Yearly','Pending') 
                                   or ((SalesTax in ('Closed(1Q/" + year + ")','Closed(2Q/" + year + ")','Closed(3Q/" + year + ")','Closed(4Q/" + year + @")') 
                                         or Payroll in ('Closed(1Q/" + year + ")','Closed(2Q/" + year + ")','Closed(3Q/" + year + ")','Closed(4Q/" + year + @")')) 
                                         and JobStatus = 'Closed' and EndDate between '1/1/" + year + "' and '12/31/" + year + "'))";
             DataTable dt = DBOperator.QuerySql(sql);
             List<QuarterlyProfitLoss> items = DBOperator.getListFromTable<QuarterlyProfitLoss>(dt);
 
+            reportViewer1.LocalReport.DataSources.Clear();
             ReportParameter repTitle = new ReportParameter("repTitle", "Profit and Loss - " + rep);
             ReportParameter repMonth = new ReportParameter("repMonth", "Month: " + month);
             reportViewer1.LocalReport.SetParameters(new ReportParameter[] { repTitle, repMonth });

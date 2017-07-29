@@ -34,6 +34,7 @@ namespace KYLDB.Reports.CkRepFrm
 
         private void CkRepFrm_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
             DBOperator.SetComboxRepDataFirstName(cmbRep);
             cmbRep.SelectedIndex = DateTime.Now.Month-1;
             comMonth.SelectedIndex = 0;
@@ -43,7 +44,7 @@ namespace KYLDB.Reports.CkRepFrm
                 comYear.Items.Add(year--);
             }
             comYear.SelectedIndex = 0;
-            if (Main.cUser.UserLevel >= 10)
+            if (Main.cUser.UserLevel >= Setting.ReporterLevel)
             {
                 cmbRep.Enabled = true;
                 cmbRep.SelectedIndex = 0;
@@ -53,18 +54,24 @@ namespace KYLDB.Reports.CkRepFrm
                 cmbRep.Enabled = false;
                 cmbRep.Text = Main.cUser.Rep;
             }
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ReportParameter rep = new ReportParameter("rep", cmbRep.Text);
+            string re = cmbRep.Text;
+            ReportParameter rep = new ReportParameter("rep", re);
+            string condition = "";
+            if (re != "All")
+            {
+                condition = " where cp.CkRep = '" + re + "' ";
+            }
             reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rep });
             string sql = @"select cp.AccNum, cp.Entity as 'Name', cp.PayType, cp.PayFreq, 
 	                            case when ccd.FirstCheckDate='' then CONVERT(VARCHAR(20), DATEADD(year, DATEDIFF(year, '', getdate()), ''), 101) 
 		                             when ccd.FirstCheckDate is null then CONVERT(VARCHAR(20), DATEADD(year, DATEDIFF(year, '', getdate()), ''), 101) 
 		                             else ccd.FirstCheckDate end as 'CkDate'
-                            from ClientPayroll cp left join ClientCheckDate ccd on cp.AccNum=ccd.AccNum
-                            where cp.CkRep='" + cmbRep.Text + "'";
+                            from ClientPayroll cp left join ClientCheckDate ccd on cp.AccNum=ccd.AccNum" +condition;
             DataTable dt = DBOperator.QuerySql(sql);
             List<CkRep> items=DBOperator.getListFromTable<CkRep>(dt);
             for (int i = 0; i < items.Count; i++)
