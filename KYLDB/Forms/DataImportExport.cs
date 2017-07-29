@@ -82,6 +82,13 @@ namespace KYLDB.Forms
             }
             sql = "delete "+ tableName+"; " + sql;
             DBOperator.ExecuteSql(sql);
+            if (tableName == "ClientDetail")
+            {
+                sql = @"update ClientPayroll set EIN=cd.EIN, AccRep=cd.Rep, Entity=cd.Customer, TradeName=cd.Company, BusAdd1=cd.BusAdd1,
+						                         BusAdd2=cd.BusAdd2, BusCity=cd.BusAdd3, BusSt=cd.BusAdd4 , BusZip=cd.BusAdd5, Fax=cd.Fax
+                        from ClientDetail cd where AccNum=cd.AccountNo";
+                DBOperator.ExecuteSql(sql);
+            }
         }
         private DataTable ReadExcelToDataTable(string filePath, string tableName)
         {
