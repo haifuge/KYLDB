@@ -88,6 +88,17 @@ namespace KYLDB.Model
         public string PAUCQ1 { get; set; }
         public string PAUCQ2 { get; set; }
         public string PAUCQ3 { get; set; }
-        public string FirstCheckDate { get; set; }
+        private string _firstcheckdate;
+        public string FirstCheckDate
+        {
+            get { return _firstcheckdate; }
+            set
+            {
+                if (value == "" || value == null)
+                    _firstcheckdate = "1/1/" + DateTime.Now.Year.ToString();
+                else
+                    _firstcheckdate = value;
+            }
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using KYLDB.Model;
+using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -49,10 +50,19 @@ namespace KYLDB.Reports
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var acc = from ac in ClientPayrolls
+            var acc = (from ac in ClientPayrolls
                       where ac.AccNum==comboBox1.Text
-                      select ac;
+                      select ac).First();
             this.ClientPayrollBindingSource.DataSource = acc;
+            string sql = "select FirstCheckDate from ClientCheckDate where AccNum='"+acc.AccNum+"'";
+            string firstCheckDate = "";
+            DataTable dt = DBOperator.QuerySql(sql);
+            if (dt.Rows.Count == 0)
+                firstCheckDate = "1/1/" + DateTime.Now.Year.ToString();
+            else
+                firstCheckDate = dt.Rows[0][0].ToString();
+            ReportParameter fcd = new ReportParameter("firstCheckDate", firstCheckDate);
+            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { fcd });
             this.reportViewer1.RefreshReport();
         }
 

@@ -35,6 +35,9 @@
             // 
             // reportViewer1
             // 
+            this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "KYLDB.Reports.QuarterlyProfitLoss.Report1.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 46);
             this.reportViewer1.Name = "reportViewer1";

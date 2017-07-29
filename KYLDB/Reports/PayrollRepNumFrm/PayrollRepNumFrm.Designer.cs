@@ -29,28 +29,30 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.PayrollRepNumBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.PayrollRepNumBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
+            // PayrollRepNumBindingSource
+            // 
+            this.PayrollRepNumBindingSource.DataSource = typeof(KYLDB.Model.PayrollRepNum);
+            // 
             // reportViewer1
             // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource2.Name = "dsPayrollRepNum";
-            reportDataSource2.Value = this.PayrollRepNumBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            reportDataSource1.Name = "dsPayrollRepNum";
+            reportDataSource1.Value = this.PayrollRepNumBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "KYLDB.Reports.PayrollRepNumFrm.Report1.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(1039, 600);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // PayrollRepNumBindingSource
-            // 
-            this.PayrollRepNumBindingSource.DataSource = typeof(KYLDB.Model.PayrollRepNum);
             // 
             // PayrollRepNumFrm
             // 
