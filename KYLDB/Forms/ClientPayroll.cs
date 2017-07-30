@@ -22,6 +22,9 @@ namespace KYLDB
             InitializeComponent();
             editControls(false);
             AutoScroll = true;
+            DBOperator.SetComboxRepData(tAccRep);
+            DBOperator.SetComboxRepDataFirstName(tPayRep);
+            DBOperator.SetComboxRepDataFirstName(tCkRep);
         }
         private static ClientPayroll singleton = null;
         public static ClientPayroll GetInstance()
@@ -55,10 +58,21 @@ namespace KYLDB
             comboBox2.DataSource = enList.ToArray();
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
 
+            editControls(true);
             if (Main.cUser.UserLevel >= 10)
             {
-                dFirstCheckDate.Enabled = true;
+                tAccRep.Enabled = true;
+                tPayRep.Enabled = true;
+                tCkRep.Enabled = true;
             }
+            else
+            {
+                dFirstCheckDate.Enabled = false;
+                tAccRep.Enabled = false;
+                tPayRep.Enabled = false;
+                tCkRep.Enabled = false;
+            }
+            dFirstCheckDate.Enabled = true;
         }
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -258,24 +272,24 @@ namespace KYLDB
         private void editControls(bool flag)
         {
             //tAccNum.Enabled = flag;
-            tEIN.Enabled = flag;
-            tEntity.Enabled = flag;
-            tTradeName.Enabled = flag;
-            tPayRep.Enabled = flag;
-            tCkRep.Enabled = flag;
-            tAccRep.Enabled = flag;
-            tBusAdd1.Enabled = flag;
-            tBusAdd2.Enabled = flag;
-            tBusCity.Enabled = flag;
-            tBusSt.Enabled = flag;
-            tBusZip.Enabled = flag;
+            //tEIN.Enabled = flag;
+            //tEntity.Enabled = flag;
+            //tTradeName.Enabled = flag;
+            //tPayRep.Enabled = flag;
+            //tCkRep.Enabled = flag;
+            //tAccRep.Enabled = flag;
+            //tBusAdd1.Enabled = flag;
+            //tBusAdd2.Enabled = flag;
+            //tBusCity.Enabled = flag;
+            //tBusSt.Enabled = flag;
+            //tBusZip.Enabled = flag;
             tMailAdd1.Enabled = flag;
             tMailAdd2.Enabled = flag;
             tMailCity.Enabled = flag;
             tMailSt.Enabled = flag;
             tMailZip.Enabled = flag;
             tHomeAdd.Enabled = flag;
-            tFax.Enabled = flag;
+            //tFax.Enabled = flag;
             tEmail.Enabled = flag;
             tLanguage.Enabled = flag;
             tContact1.Enabled = flag;
@@ -380,6 +394,12 @@ namespace KYLDB
                        where ac.AccNum == accNum
                        select ac).First();
             acc.FirstCheckDate = dFirstCheckDate.Text;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            saveCurentItem();
+            MessageBox.Show("Client payroll is saved");
         }
     }
 }

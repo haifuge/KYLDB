@@ -37,7 +37,12 @@ namespace KYLDB
 #if DEBUG
             Login l = new Login();
             l.ShowDialog();
-            if (cUser == null) { this.Close(); }
+            if (cUser == null)
+            {
+                this.Close();
+                Application.Exit();
+                return;
+            }
             this.Text = "KYL - " + cUser.FirstName;
             if(cUser.UserLevel>= Setting.AdminLevel)
             {

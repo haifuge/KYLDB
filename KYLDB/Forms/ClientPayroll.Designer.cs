@@ -194,13 +194,14 @@
             this.tPayRep = new System.Windows.Forms.ComboBox();
             this.tCkRep = new System.Windows.Forms.ComboBox();
             this.tEFTPS = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnMain
             // 
-            this.btnMain.Location = new System.Drawing.Point(759, 24);
+            this.btnMain.Location = new System.Drawing.Point(716, 23);
             this.btnMain.Name = "btnMain";
-            this.btnMain.Size = new System.Drawing.Size(93, 27);
+            this.btnMain.Size = new System.Drawing.Size(60, 27);
             this.btnMain.TabIndex = 81;
             this.btnMain.Text = "Main";
             this.btnMain.UseVisualStyleBackColor = true;
@@ -219,9 +220,9 @@
             // 
             // btnPrint
             // 
-            this.btnPrint.Location = new System.Drawing.Point(885, 24);
+            this.btnPrint.Location = new System.Drawing.Point(803, 23);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(93, 27);
+            this.btnPrint.Size = new System.Drawing.Size(60, 27);
             this.btnPrint.TabIndex = 85;
             this.btnPrint.Text = "Print";
             this.btnPrint.UseVisualStyleBackColor = true;
@@ -768,6 +769,7 @@
             // 
             this.cPayFreq.FormattingEnabled = true;
             this.cPayFreq.Items.AddRange(new object[] {
+            "",
             "Weekly",
             "Biweekly",
             "Semi-monthly",
@@ -782,6 +784,7 @@
             // 
             this.cTaxDepType.FormattingEnabled = true;
             this.cTaxDepType.Items.AddRange(new object[] {
+            "",
             "Estimate",
             "Exact"});
             this.cTaxDepType.Location = new System.Drawing.Point(645, 327);
@@ -793,6 +796,7 @@
             // 
             this.cPayType.FormattingEnabled = true;
             this.cPayType.Items.AddRange(new object[] {
+            "",
             "Actual Check",
             "Paper Check",
             "PDF",
@@ -938,6 +942,7 @@
             // 
             this.cDateOut.FormattingEnabled = true;
             this.cDateOut.Items.AddRange(new object[] {
+            "",
             "Call Client",
             "Fax Out",
             "Call to pick up",
@@ -1141,7 +1146,7 @@
             // 
             this.label50.AutoSize = true;
             this.label50.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label50.Location = new System.Drawing.Point(191, 545);
+            this.label50.Location = new System.Drawing.Point(187, 545);
             this.label50.Name = "label50";
             this.label50.Size = new System.Drawing.Size(100, 18);
             this.label50.TabIndex = 143;
@@ -1785,7 +1790,7 @@
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(337, 25);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(377, 24);
+            this.comboBox2.Size = new System.Drawing.Size(348, 24);
             this.comboBox2.TabIndex = 161;
             // 
             // label81
@@ -1833,6 +1838,16 @@
             this.tEFTPS.Name = "tEFTPS";
             this.tEFTPS.Size = new System.Drawing.Size(103, 24);
             this.tEFTPS.TabIndex = 44;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(882, 22);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(60, 27);
+            this.button1.TabIndex = 85;
+            this.button1.Text = "Save";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ClientPayroll
             // 
@@ -2002,6 +2017,7 @@
             this.Controls.Add(this.tAccNum);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.AccNumList);
             this.Controls.Add(this.btnMain);
@@ -2182,5 +2198,6 @@
         private System.Windows.Forms.ComboBox tPayRep;
         private System.Windows.Forms.ComboBox tCkRep;
         private System.Windows.Forms.ComboBox tEFTPS;
+        private System.Windows.Forms.Button button1;
     }
 }
