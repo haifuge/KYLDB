@@ -15,17 +15,18 @@
                     <TextRuns>
                       <TextRun>
                         <Value>=Parameters!contact.Value</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>contact</rd:DefaultName>
-                <Top>0.2in</Top>
-                <Left>0.20917in</Left>
+                <Top>0.4in</Top>
                 <Height>0.2in</Height>
-                <Width>2.10833in</Width>
+                <Width>2.41667in</Width>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -94,17 +95,18 @@
                     <TextRuns>
                       <TextRun>
                         <Value>=Parameters!customer.Value</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>customer</rd:DefaultName>
-                <Top>0.4in</Top>
-                <Left>0.20917in</Left>
+                <Top>0.2in</Top>
                 <Height>0.2in</Height>
-                <Width>2.10833in</Width>
+                <Width>3.025in</Width>
                 <ZIndex>3</ZIndex>
                 <Style>
                   <Border>
@@ -120,7 +122,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>=Parameters!company.Value</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -128,9 +132,8 @@
                 </Paragraphs>
                 <rd:DefaultName>company</rd:DefaultName>
                 <Top>0.6in</Top>
-                <Left>0.20917in</Left>
                 <Height>0.2in</Height>
-                <Width>2.10833in</Width>
+                <Width>2.41667in</Width>
                 <ZIndex>4</ZIndex>
                 <Style>
                   <Border>
@@ -146,7 +149,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>=Parameters!mailto1.Value</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -154,9 +159,8 @@
                 </Paragraphs>
                 <rd:DefaultName>mailto1</rd:DefaultName>
                 <Top>0.8in</Top>
-                <Left>0.20917in</Left>
                 <Height>0.2in</Height>
-                <Width>2.10833in</Width>
+                <Width>2.41667in</Width>
                 <ZIndex>5</ZIndex>
                 <Style>
                   <Border>
@@ -172,7 +176,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>=Parameters!mailto2.Value</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -180,9 +186,8 @@
                 </Paragraphs>
                 <rd:DefaultName>mailto2</rd:DefaultName>
                 <Top>1in</Top>
-                <Left>0.20917in</Left>
                 <Height>0.2in</Height>
-                <Width>2.10833in</Width>
+                <Width>2.41667in</Width>
                 <ZIndex>6</ZIndex>
                 <Style>
                   <Border>
@@ -206,9 +211,8 @@
                 </Paragraphs>
                 <rd:DefaultName>mailto3</rd:DefaultName>
                 <Top>1.2in</Top>
-                <Left>0.20917in</Left>
                 <Height>0.2in</Height>
-                <Width>2.10833in</Width>
+                <Width>2.41667in</Width>
                 <ZIndex>7</ZIndex>
                 <Style>
                   <Border>
@@ -234,7 +238,7 @@
                 </Paragraphs>
                 <rd:DefaultName>yearEnd</rd:DefaultName>
                 <Top>0.225in</Top>
-                <Left>3.48833in</Left>
+                <Left>3.41333in</Left>
                 <Height>0.2in</Height>
                 <Width>1in</Width>
                 <ZIndex>8</ZIndex>
@@ -252,7 +256,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>=Parameters!phone.Value</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -260,9 +266,9 @@
                 </Paragraphs>
                 <rd:DefaultName>phone</rd:DefaultName>
                 <Top>0.5in</Top>
-                <Left>3.07583in</Left>
+                <Left>2.98833in</Left>
                 <Height>0.2in</Height>
-                <Width>1.4in</Width>
+                <Width>1.44583in</Width>
                 <ZIndex>9</ZIndex>
                 <Style>
                   <Border>
@@ -278,7 +284,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>=Parameters!fax.Value</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -286,9 +294,9 @@
                 </Paragraphs>
                 <rd:DefaultName>fax</rd:DefaultName>
                 <Top>0.7in</Top>
-                <Left>3.07583in</Left>
+                <Left>2.98833in</Left>
                 <Height>0.2in</Height>
-                <Width>1.4in</Width>
+                <Width>1.44583in</Width>
                 <ZIndex>10</ZIndex>
                 <Style>
                   <Border>
@@ -304,7 +312,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>=Parameters!altphone.Value</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -312,9 +322,9 @@
                 </Paragraphs>
                 <rd:DefaultName>altphone</rd:DefaultName>
                 <Top>0.9in</Top>
-                <Left>3.07583in</Left>
+                <Left>2.98833in</Left>
                 <Height>0.2in</Height>
-                <Width>1.4in</Width>
+                <Width>1.44583in</Width>
                 <ZIndex>11</ZIndex>
                 <Style>
                   <Border>
@@ -330,7 +340,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>TEL:</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -338,7 +350,7 @@
                 </Paragraphs>
                 <rd:DefaultName>Textbox15</rd:DefaultName>
                 <Top>0.5in</Top>
-                <Left>2.56194in</Left>
+                <Left>2.47444in</Left>
                 <Height>0.2in</Height>
                 <Width>0.45833in</Width>
                 <ZIndex>12</ZIndex>
@@ -356,7 +368,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>FAX:</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -364,7 +378,7 @@
                 </Paragraphs>
                 <rd:DefaultName>Textbox16</rd:DefaultName>
                 <Top>0.7in</Top>
-                <Left>2.56194in</Left>
+                <Left>2.47444in</Left>
                 <Height>0.2in</Height>
                 <Width>0.44444in</Width>
                 <ZIndex>13</ZIndex>
@@ -382,7 +396,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>CELL:</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -390,7 +406,7 @@
                 </Paragraphs>
                 <rd:DefaultName>Textbox17</rd:DefaultName>
                 <Top>0.9in</Top>
-                <Left>2.56194in</Left>
+                <Left>2.47444in</Left>
                 <Height>0.2in</Height>
                 <Width>0.49167in</Width>
                 <ZIndex>14</ZIndex>
@@ -418,9 +434,9 @@
                 </Paragraphs>
                 <rd:DefaultName>fee</rd:DefaultName>
                 <Top>0in</Top>
-                <Left>3.52166in</Left>
+                <Left>2.8764in</Left>
                 <Height>0.2in</Height>
-                <Width>1in</Width>
+                <Width>1.57026in</Width>
                 <ZIndex>15</ZIndex>
                 <Style>
                   <Border>
@@ -431,9 +447,9 @@
             </ReportItems>
             <KeepTogether>true</KeepTogether>
             <Top>0.1in</Top>
-            <Left>0.19167in</Left>
+            <Left>0.11724in</Left>
             <Height>1.4in</Height>
-            <Width>4.52166in</Width>
+            <Width>4.45859in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -451,7 +467,7 @@
                       <TextRun>
                         <Value>=Parameters!contact.Value</Value>
                         <Style>
-                          <FontWeight>Bold</FontWeight>
+                          <FontWeight>Normal</FontWeight>
                         </Style>
                       </TextRun>
                     </TextRuns>
@@ -459,7 +475,7 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>contact</rd:DefaultName>
-                <Top>0.2in</Top>
+                <Top>0.4in</Top>
                 <Height>0.2in</Height>
                 <Width>2.41667in</Width>
                 <Style>
@@ -489,9 +505,9 @@
                 </Paragraphs>
                 <rd:DefaultName>rep</rd:DefaultName>
                 <Top>0.0125in</Top>
-                <Left>4.14305in</Left>
+                <Left>3.93055in</Left>
                 <Height>0.2in</Height>
-                <Width>0.36667in</Width>
+                <Width>0.49167in</Width>
                 <ZIndex>1</ZIndex>
                 <Style>
                   <Border>
@@ -516,7 +532,6 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>accountNo</rd:DefaultName>
-                <Top>0.0125in</Top>
                 <Height>0.2in</Height>
                 <Width>1in</Width>
                 <ZIndex>2</ZIndex>
@@ -534,16 +549,19 @@
                     <TextRuns>
                       <TextRun>
                         <Value>=Parameters!customer.Value</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>customer</rd:DefaultName>
-                <Top>0.4in</Top>
+                <Top>0.2in</Top>
                 <Height>0.2in</Height>
-                <Width>2.41667in</Width>
+                <Width>3.42501in</Width>
                 <ZIndex>3</ZIndex>
                 <Style>
                   <Border>
@@ -559,7 +577,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>=Parameters!company.Value</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -584,7 +604,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>=Parameters!mailto1.Value</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -609,7 +631,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>=Parameters!mailto2.Value</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -634,7 +658,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>=Parameters!mailto3.Value</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -669,7 +695,7 @@
                 </Paragraphs>
                 <rd:DefaultName>yearEnd</rd:DefaultName>
                 <Top>0.205in</Top>
-                <Left>3.74305in</Left>
+                <Left>3.65555in</Left>
                 <Height>0.2in</Height>
                 <Width>0.74528in</Width>
                 <ZIndex>8</ZIndex>
@@ -743,7 +769,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>=Parameters!altphone.Value</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -751,7 +779,7 @@
                 </Paragraphs>
                 <rd:DefaultName>altphone</rd:DefaultName>
                 <Top>0.405in</Top>
-                <Left>3.12165in</Left>
+                <Left>3.02165in</Left>
                 <Height>0.2in</Height>
                 <Width>1.4in</Width>
                 <ZIndex>11</ZIndex>
@@ -779,7 +807,6 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox15</rd:DefaultName>
-                <Top>0.01611in</Top>
                 <Left>0.67722in</Left>
                 <Height>0.2in</Height>
                 <Width>0.45833in</Width>
@@ -827,7 +854,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>CELL:</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -835,7 +864,7 @@
                 </Paragraphs>
                 <rd:DefaultName>Textbox17</rd:DefaultName>
                 <Top>0.405in</Top>
-                <Left>2.60776in</Left>
+                <Left>2.50776in</Left>
                 <Height>0.2in</Height>
                 <Width>0.49167in</Width>
                 <ZIndex>14</ZIndex>
@@ -853,7 +882,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>=Parameters!corpNum.Value</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -861,9 +892,9 @@
                 </Paragraphs>
                 <rd:DefaultName>corpNum</rd:DefaultName>
                 <Top>0.605in</Top>
-                <Left>3.49666in</Left>
+                <Left>3.39666in</Left>
                 <Height>0.2in</Height>
-                <Width>1in</Width>
+                <Width>1.02501in</Width>
                 <ZIndex>15</ZIndex>
                 <Style>
                   <Border>
@@ -879,7 +910,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>=Parameters!ein.Value</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -887,9 +920,9 @@
                 </Paragraphs>
                 <rd:DefaultName>ein</rd:DefaultName>
                 <Top>1.005in</Top>
-                <Left>3.49666in</Left>
+                <Left>3.39666in</Left>
                 <Height>0.2in</Height>
-                <Width>1in</Width>
+                <Width>1.02501in</Width>
                 <ZIndex>16</ZIndex>
                 <Style>
                   <Border>
@@ -905,7 +938,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>=Parameters!saleTaxNum.Value</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -913,9 +948,9 @@
                 </Paragraphs>
                 <rd:DefaultName>saleTaxNum</rd:DefaultName>
                 <Top>0.805in</Top>
-                <Left>3.49666in</Left>
+                <Left>3.39666in</Left>
                 <Height>0.2in</Height>
-                <Width>1in</Width>
+                <Width>1.02501in</Width>
                 <ZIndex>17</ZIndex>
                 <Style>
                   <Border>
@@ -931,7 +966,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>=Parameters!startDate.Value</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -939,9 +976,9 @@
                 </Paragraphs>
                 <rd:DefaultName>startDate</rd:DefaultName>
                 <Top>1.205in</Top>
-                <Left>3.49666in</Left>
+                <Left>3.39666in</Left>
                 <Height>0.2in</Height>
-                <Width>1in</Width>
+                <Width>1.02501in</Width>
                 <ZIndex>18</ZIndex>
                 <Style>
                   <Border>
@@ -957,7 +994,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>CORP BOX#</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -965,7 +1004,7 @@
                 </Paragraphs>
                 <rd:DefaultName>Textbox38</rd:DefaultName>
                 <Top>0.605in</Top>
-                <Left>2.60776in</Left>
+                <Left>2.50776in</Left>
                 <Height>0.2in</Height>
                 <Width>1in</Width>
                 <ZIndex>19</ZIndex>
@@ -983,7 +1022,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>EIN#</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -991,7 +1032,7 @@
                 </Paragraphs>
                 <rd:DefaultName>Textbox39</rd:DefaultName>
                 <Top>0.81889in</Top>
-                <Left>2.60776in</Left>
+                <Left>2.50776in</Left>
                 <Height>0.2in</Height>
                 <Width>1in</Width>
                 <ZIndex>20</ZIndex>
@@ -1009,7 +1050,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>SALES TAX#</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -1017,7 +1060,7 @@
                 </Paragraphs>
                 <rd:DefaultName>Textbox40</rd:DefaultName>
                 <Top>1.02167in</Top>
-                <Left>2.60776in</Left>
+                <Left>2.50776in</Left>
                 <Height>0.2in</Height>
                 <Width>1in</Width>
                 <ZIndex>21</ZIndex>
@@ -1035,7 +1078,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>BUS DATE</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -1043,7 +1088,7 @@
                 </Paragraphs>
                 <rd:DefaultName>Textbox41</rd:DefaultName>
                 <Top>1.205in</Top>
-                <Left>2.60776in</Left>
+                <Left>2.50776in</Left>
                 <Height>0.2in</Height>
                 <Width>1in</Width>
                 <ZIndex>22</ZIndex>
@@ -1056,9 +1101,9 @@
             </ReportItems>
             <KeepTogether>true</KeepTogether>
             <Top>1.6in</Top>
-            <Left>0.19167in</Left>
+            <Left>0.11724in</Left>
             <Height>1.405in</Height>
-            <Width>4.52165in</Width>
+            <Width>4.45859in</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -1077,7 +1122,7 @@
                       <TextRun>
                         <Value>=Parameters!contact.Value</Value>
                         <Style>
-                          <FontWeight>Bold</FontWeight>
+                          <FontWeight>Normal</FontWeight>
                         </Style>
                       </TextRun>
                     </TextRuns>
@@ -1085,7 +1130,7 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>contact</rd:DefaultName>
-                <Top>0.19389in</Top>
+                <Top>0.4in</Top>
                 <Height>0.2in</Height>
                 <Width>2.41667in</Width>
                 <Style>
@@ -1115,9 +1160,9 @@
                 </Paragraphs>
                 <rd:DefaultName>rep</rd:DefaultName>
                 <Top>0.00639in</Top>
-                <Left>4.14305in</Left>
+                <Left>3.90555in</Left>
                 <Height>0.2in</Height>
-                <Width>0.36667in</Width>
+                <Width>0.49167in</Width>
                 <ZIndex>1</ZIndex>
                 <Style>
                   <Border>
@@ -1142,7 +1187,7 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>accountNo</rd:DefaultName>
-                <Top>0.00639in</Top>
+                <Left>0in</Left>
                 <Height>0.2in</Height>
                 <Width>1in</Width>
                 <ZIndex>2</ZIndex>
@@ -1160,16 +1205,20 @@
                     <TextRuns>
                       <TextRun>
                         <Value>=Parameters!customer.Value</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>customer</rd:DefaultName>
-                <Top>0.39389in</Top>
+                <Top>0.2in</Top>
+                <Left>0in</Left>
                 <Height>0.2in</Height>
-                <Width>2.41667in</Width>
+                <Width>3.42501in</Width>
                 <ZIndex>3</ZIndex>
                 <Style>
                   <Border>
@@ -1185,7 +1234,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>=Parameters!company.Value</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -1193,6 +1244,7 @@
                 </Paragraphs>
                 <rd:DefaultName>company</rd:DefaultName>
                 <Top>0.59389in</Top>
+                <Left>0in</Left>
                 <Height>0.2in</Height>
                 <Width>2.41667in</Width>
                 <ZIndex>4</ZIndex>
@@ -1210,7 +1262,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>=Parameters!mailto1.Value</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -1218,6 +1272,7 @@
                 </Paragraphs>
                 <rd:DefaultName>mailto1</rd:DefaultName>
                 <Top>0.79389in</Top>
+                <Left>0in</Left>
                 <Height>0.2in</Height>
                 <Width>2.41667in</Width>
                 <ZIndex>5</ZIndex>
@@ -1235,7 +1290,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>=Parameters!mailto2.Value</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -1243,6 +1300,7 @@
                 </Paragraphs>
                 <rd:DefaultName>mailto2</rd:DefaultName>
                 <Top>0.99389in</Top>
+                <Left>0in</Left>
                 <Height>0.2in</Height>
                 <Width>2.41667in</Width>
                 <ZIndex>6</ZIndex>
@@ -1260,7 +1318,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>=Parameters!mailto3.Value</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -1268,6 +1328,7 @@
                 </Paragraphs>
                 <rd:DefaultName>mailto3</rd:DefaultName>
                 <Top>1.19389in</Top>
+                <Left>0in</Left>
                 <Height>0.2in</Height>
                 <Width>2.41667in</Width>
                 <ZIndex>7</ZIndex>
@@ -1295,7 +1356,7 @@
                 </Paragraphs>
                 <rd:DefaultName>yearEnd</rd:DefaultName>
                 <Top>0.19889in</Top>
-                <Left>3.74305in</Left>
+                <Left>3.66805in</Left>
                 <Height>0.2in</Height>
                 <Width>0.74528in</Width>
                 <ZIndex>8</ZIndex>
@@ -1367,7 +1428,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>=Parameters!altphone.Value</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -1375,9 +1438,9 @@
                 </Paragraphs>
                 <rd:DefaultName>altphone</rd:DefaultName>
                 <Top>0.39889in</Top>
-                <Left>3.12165in</Left>
+                <Left>3.02165in</Left>
                 <Height>0.2in</Height>
-                <Width>1.4in</Width>
+                <Width>1.40001in</Width>
                 <ZIndex>11</ZIndex>
                 <Style>
                   <Border>
@@ -1451,7 +1514,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>CELL:</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -1459,7 +1524,7 @@
                 </Paragraphs>
                 <rd:DefaultName>Textbox17</rd:DefaultName>
                 <Top>0.39889in</Top>
-                <Left>2.60776in</Left>
+                <Left>2.50776in</Left>
                 <Height>0.2in</Height>
                 <Width>0.49167in</Width>
                 <ZIndex>14</ZIndex>
@@ -1477,7 +1542,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>=Parameters!corpNum.Value</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -1485,9 +1552,9 @@
                 </Paragraphs>
                 <rd:DefaultName>corpNum</rd:DefaultName>
                 <Top>0.59889in</Top>
-                <Left>3.49666in</Left>
+                <Left>3.39666in</Left>
                 <Height>0.2in</Height>
-                <Width>1in</Width>
+                <Width>1.025in</Width>
                 <ZIndex>15</ZIndex>
                 <Style>
                   <Border>
@@ -1503,7 +1570,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>=Parameters!ein.Value</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -1511,9 +1580,9 @@
                 </Paragraphs>
                 <rd:DefaultName>ein</rd:DefaultName>
                 <Top>0.99889in</Top>
-                <Left>3.49666in</Left>
+                <Left>3.39666in</Left>
                 <Height>0.2in</Height>
-                <Width>1in</Width>
+                <Width>1.025in</Width>
                 <ZIndex>16</ZIndex>
                 <Style>
                   <Border>
@@ -1529,7 +1598,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>=Parameters!saleTaxNum.Value</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -1537,9 +1608,9 @@
                 </Paragraphs>
                 <rd:DefaultName>saleTaxNum</rd:DefaultName>
                 <Top>0.79889in</Top>
-                <Left>3.49666in</Left>
+                <Left>3.39666in</Left>
                 <Height>0.2in</Height>
-                <Width>1in</Width>
+                <Width>1.025in</Width>
                 <ZIndex>17</ZIndex>
                 <Style>
                   <Border>
@@ -1555,7 +1626,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>=Parameters!startDate.Value</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -1563,9 +1636,9 @@
                 </Paragraphs>
                 <rd:DefaultName>startDate</rd:DefaultName>
                 <Top>1.19889in</Top>
-                <Left>3.49666in</Left>
+                <Left>3.39666in</Left>
                 <Height>0.2in</Height>
-                <Width>1in</Width>
+                <Width>1.025in</Width>
                 <ZIndex>18</ZIndex>
                 <Style>
                   <Border>
@@ -1581,7 +1654,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>CORP BOX#</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -1589,7 +1664,7 @@
                 </Paragraphs>
                 <rd:DefaultName>Textbox38</rd:DefaultName>
                 <Top>0.59889in</Top>
-                <Left>2.60776in</Left>
+                <Left>2.50776in</Left>
                 <Height>0.2in</Height>
                 <Width>1in</Width>
                 <ZIndex>19</ZIndex>
@@ -1607,7 +1682,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>EIN#</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -1615,7 +1692,7 @@
                 </Paragraphs>
                 <rd:DefaultName>Textbox39</rd:DefaultName>
                 <Top>0.81278in</Top>
-                <Left>2.60776in</Left>
+                <Left>2.50776in</Left>
                 <Height>0.2in</Height>
                 <Width>1in</Width>
                 <ZIndex>20</ZIndex>
@@ -1633,7 +1710,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>SALES TAX#</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -1641,7 +1720,7 @@
                 </Paragraphs>
                 <rd:DefaultName>Textbox40</rd:DefaultName>
                 <Top>1.01556in</Top>
-                <Left>2.60776in</Left>
+                <Left>2.50776in</Left>
                 <Height>0.2in</Height>
                 <Width>1in</Width>
                 <ZIndex>21</ZIndex>
@@ -1659,7 +1738,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>BUS DATE</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -1667,7 +1748,7 @@
                 </Paragraphs>
                 <rd:DefaultName>Textbox41</rd:DefaultName>
                 <Top>1.19889in</Top>
-                <Left>2.60776in</Left>
+                <Left>2.50776in</Left>
                 <Height>0.2in</Height>
                 <Width>1in</Width>
                 <ZIndex>22</ZIndex>
@@ -1680,9 +1761,9 @@
             </ReportItems>
             <KeepTogether>true</KeepTogether>
             <Top>3.1in</Top>
-            <Left>0.19167in</Left>
+            <Left>0.11724in</Left>
             <Height>1.40208in</Height>
-            <Width>4.52165in</Width>
+            <Width>4.45859in</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -1701,7 +1782,7 @@
                       <TextRun>
                         <Value>=Parameters!contact.Value</Value>
                         <Style>
-                          <FontWeight>Bold</FontWeight>
+                          <FontWeight>Normal</FontWeight>
                         </Style>
                       </TextRun>
                     </TextRuns>
@@ -1709,9 +1790,9 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>contact</rd:DefaultName>
-                <Top>0.19389in</Top>
+                <Top>0.4in</Top>
                 <Height>0.2in</Height>
-                <Width>2.44166in</Width>
+                <Width>2.41667in</Width>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -1739,9 +1820,9 @@
                 </Paragraphs>
                 <rd:DefaultName>rep</rd:DefaultName>
                 <Top>0.00639in</Top>
-                <Left>4.14305in</Left>
+                <Left>3.93055in</Left>
                 <Height>0.2in</Height>
-                <Width>0.36667in</Width>
+                <Width>0.49167in</Width>
                 <ZIndex>1</ZIndex>
                 <Style>
                   <Border>
@@ -1766,7 +1847,6 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>accountNo</rd:DefaultName>
-                <Top>0.00639in</Top>
                 <Height>0.2in</Height>
                 <Width>1in</Width>
                 <ZIndex>2</ZIndex>
@@ -1784,16 +1864,19 @@
                     <TextRuns>
                       <TextRun>
                         <Value>=Parameters!customer.Value</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>customer</rd:DefaultName>
-                <Top>0.39389in</Top>
+                <Top>0.2in</Top>
                 <Height>0.2in</Height>
-                <Width>2.44166in</Width>
+                <Width>3.42501in</Width>
                 <ZIndex>3</ZIndex>
                 <Style>
                   <Border>
@@ -1809,7 +1892,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>=Parameters!company.Value</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -1818,7 +1903,7 @@
                 <rd:DefaultName>company</rd:DefaultName>
                 <Top>0.59389in</Top>
                 <Height>0.2in</Height>
-                <Width>2.44166in</Width>
+                <Width>2.41667in</Width>
                 <ZIndex>4</ZIndex>
                 <Style>
                   <Border>
@@ -1834,7 +1919,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>=Parameters!mailto1.Value</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -1843,7 +1930,7 @@
                 <rd:DefaultName>mailto1</rd:DefaultName>
                 <Top>0.79389in</Top>
                 <Height>0.2in</Height>
-                <Width>2.44166in</Width>
+                <Width>2.41667in</Width>
                 <ZIndex>5</ZIndex>
                 <Style>
                   <Border>
@@ -1859,7 +1946,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>=Parameters!mailto2.Value</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -1868,7 +1957,7 @@
                 <rd:DefaultName>mailto2</rd:DefaultName>
                 <Top>0.99389in</Top>
                 <Height>0.2in</Height>
-                <Width>2.44166in</Width>
+                <Width>2.41667in</Width>
                 <ZIndex>6</ZIndex>
                 <Style>
                   <Border>
@@ -1884,7 +1973,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>=Parameters!mailto3.Value</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -1893,7 +1984,7 @@
                 <rd:DefaultName>mailto3</rd:DefaultName>
                 <Top>1.19389in</Top>
                 <Height>0.2in</Height>
-                <Width>2.44166in</Width>
+                <Width>2.41667in</Width>
                 <ZIndex>7</ZIndex>
                 <Style>
                   <Border>
@@ -1919,7 +2010,7 @@
                 </Paragraphs>
                 <rd:DefaultName>yearEnd</rd:DefaultName>
                 <Top>0.19889in</Top>
-                <Left>3.74305in</Left>
+                <Left>3.65555in</Left>
                 <Height>0.2in</Height>
                 <Width>0.74528in</Width>
                 <ZIndex>8</ZIndex>
@@ -1948,7 +2039,7 @@
                 <rd:DefaultName>phone</rd:DefaultName>
                 <Left>1.06611in</Left>
                 <Height>0.2in</Height>
-                <Width>1.54638in</Width>
+                <Width>1.52139in</Width>
                 <ZIndex>9</ZIndex>
                 <Style>
                   <Border>
@@ -1991,7 +2082,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>=Parameters!altphone.Value</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -1999,7 +2092,7 @@
                 </Paragraphs>
                 <rd:DefaultName>altphone</rd:DefaultName>
                 <Top>0.39889in</Top>
-                <Left>3.12165in</Left>
+                <Left>3.02165in</Left>
                 <Height>0.2in</Height>
                 <Width>1.4in</Width>
                 <ZIndex>11</ZIndex>
@@ -2075,7 +2168,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>CELL:</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -2083,7 +2178,7 @@
                 </Paragraphs>
                 <rd:DefaultName>Textbox17</rd:DefaultName>
                 <Top>0.39889in</Top>
-                <Left>2.60776in</Left>
+                <Left>2.50776in</Left>
                 <Height>0.2in</Height>
                 <Width>0.49167in</Width>
                 <ZIndex>14</ZIndex>
@@ -2101,7 +2196,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>=Parameters!corpNum.Value</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -2109,9 +2206,9 @@
                 </Paragraphs>
                 <rd:DefaultName>corpNum</rd:DefaultName>
                 <Top>0.59889in</Top>
-                <Left>3.49666in</Left>
+                <Left>3.38472in</Left>
                 <Height>0.2in</Height>
-                <Width>1in</Width>
+                <Width>1.03693in</Width>
                 <ZIndex>15</ZIndex>
                 <Style>
                   <Border>
@@ -2127,7 +2224,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>=Parameters!ein.Value</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -2135,9 +2234,9 @@
                 </Paragraphs>
                 <rd:DefaultName>ein</rd:DefaultName>
                 <Top>0.99889in</Top>
-                <Left>3.49666in</Left>
+                <Left>3.38472in</Left>
                 <Height>0.2in</Height>
-                <Width>1in</Width>
+                <Width>1.03693in</Width>
                 <ZIndex>16</ZIndex>
                 <Style>
                   <Border>
@@ -2153,7 +2252,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>=Parameters!saleTaxNum.Value</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -2161,9 +2262,9 @@
                 </Paragraphs>
                 <rd:DefaultName>saleTaxNum</rd:DefaultName>
                 <Top>0.79889in</Top>
-                <Left>3.49666in</Left>
+                <Left>3.38472in</Left>
                 <Height>0.2in</Height>
-                <Width>1in</Width>
+                <Width>1.03693in</Width>
                 <ZIndex>17</ZIndex>
                 <Style>
                   <Border>
@@ -2179,7 +2280,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>=Parameters!startDate.Value</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -2187,9 +2290,9 @@
                 </Paragraphs>
                 <rd:DefaultName>startDate</rd:DefaultName>
                 <Top>1.19889in</Top>
-                <Left>3.49666in</Left>
+                <Left>3.38472in</Left>
                 <Height>0.2in</Height>
-                <Width>1in</Width>
+                <Width>1.03693in</Width>
                 <ZIndex>18</ZIndex>
                 <Style>
                   <Border>
@@ -2205,7 +2308,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>CORP BOX#</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -2213,7 +2318,7 @@
                 </Paragraphs>
                 <rd:DefaultName>Textbox38</rd:DefaultName>
                 <Top>0.59889in</Top>
-                <Left>2.60776in</Left>
+                <Left>2.50776in</Left>
                 <Height>0.2in</Height>
                 <Width>1in</Width>
                 <ZIndex>19</ZIndex>
@@ -2231,7 +2336,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>EIN#</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -2239,7 +2346,7 @@
                 </Paragraphs>
                 <rd:DefaultName>Textbox39</rd:DefaultName>
                 <Top>0.81278in</Top>
-                <Left>2.60776in</Left>
+                <Left>2.50776in</Left>
                 <Height>0.2in</Height>
                 <Width>1in</Width>
                 <ZIndex>20</ZIndex>
@@ -2257,7 +2364,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>SALES TAX#</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -2265,7 +2374,7 @@
                 </Paragraphs>
                 <rd:DefaultName>Textbox40</rd:DefaultName>
                 <Top>1.01556in</Top>
-                <Left>2.60776in</Left>
+                <Left>2.50776in</Left>
                 <Height>0.2in</Height>
                 <Width>1in</Width>
                 <ZIndex>21</ZIndex>
@@ -2283,7 +2392,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>BUS DATE</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -2291,7 +2402,7 @@
                 </Paragraphs>
                 <rd:DefaultName>Textbox41</rd:DefaultName>
                 <Top>1.19889in</Top>
-                <Left>2.60776in</Left>
+                <Left>2.50776in</Left>
                 <Height>0.2in</Height>
                 <Width>1in</Width>
                 <ZIndex>22</ZIndex>
@@ -2303,10 +2414,10 @@
               </Textbox>
             </ReportItems>
             <KeepTogether>true</KeepTogether>
-            <Top>4.6in</Top>
-            <Left>0.16668in</Left>
+            <Top>4.60167in</Top>
+            <Left>0.11724in</Left>
             <Height>1.40208in</Height>
-            <Width>4.52165in</Width>
+            <Width>4.45859in</Width>
             <ZIndex>3</ZIndex>
             <Style>
               <Border>
@@ -2318,7 +2429,7 @@
         <Height>12in</Height>
         <Style />
       </Body>
-      <Width>4.75in</Width>
+      <Width>4.74167in</Width>
       <Page>
         <PageHeight>12in</PageHeight>
         <PageWidth>4.75in</PageWidth>
