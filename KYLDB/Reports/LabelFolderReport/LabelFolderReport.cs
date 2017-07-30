@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Reporting.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -32,15 +33,49 @@ namespace KYLDB.Reports.LabelFolderReport
 
         private void LabelFolderReport_Load(object sender, EventArgs e)
         {
-            string sql = @"select AccountNo, Rep, Company, Customer, Mailto3, Mailto4, Phone, Fax, AltPhone 
-                          from ClientDetail where AccountNo='C1000' and Rep='C'";
+            string sql = "select AccountNo from ClientDetail;";
             DataTable dt = DBOperator.QuerySql(sql);
-            this.reportViewer1.RefreshReport();
+            comboBox1.DataSource = dt;
+            comboBox1.DisplayMember = "AccountNo";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            comboBox1.SelectedIndex = 0;
+            WindowState = FormWindowState.Maximized;
         }
 
         private void LabelFolderReport_FormClosed(object sender, FormClosedEventArgs e)
         {
             singleton = null;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string sql = @"select AccountNo, Contact, Customer, Company, Mailto1, Mailto2, Mailto3, Fee, 
+                                  YearEnd, Phone, AltPhone,Fax, EIN, SalesTaxNum, StartDate, '2016' as 'corpNum' 
+                           from ClientDetail where AccountNo='" + comboBox1.Text+"'";
+            DataTable dt = DBOperator.QuerySql(sql);
+            reportViewer1.LocalReport.DataSources.Clear();
+            ReportParameter accountNo = new ReportParameter("accountNo", dt.Rows[0][0].ToString());
+            ReportParameter contact = new ReportParameter("contact", dt.Rows[0][1].ToString());
+            ReportParameter customer = new ReportParameter("customer", dt.Rows[0][2].ToString());
+            ReportParameter company = new ReportParameter("company", "DBA:"+dt.Rows[0][3].ToString());
+            ReportParameter mailto1 = new ReportParameter("mailto1", dt.Rows[0][4].ToString());
+            ReportParameter mailto2 = new ReportParameter("mailto2", dt.Rows[0][5].ToString());
+            ReportParameter mailto3 = new ReportParameter("mailto3", dt.Rows[0][6].ToString());
+            ReportParameter fee = new ReportParameter("fee", dt.Rows[0][7].ToString());
+            ReportParameter yearEnd = new ReportParameter("yearEnd", dt.Rows[0][8].ToString());
+            ReportParameter phone = new ReportParameter("phone", dt.Rows[0][9].ToString());
+            ReportParameter altphone = new ReportParameter("altphone", dt.Rows[0][10].ToString());
+            ReportParameter fax = new ReportParameter("fax", dt.Rows[0][11].ToString());
+            ReportParameter ein = new ReportParameter("ein", dt.Rows[0][12].ToString());
+            ReportParameter saleTaxNum = new ReportParameter("saleTaxNum", dt.Rows[0][13].ToString());
+            ReportParameter startDate = new ReportParameter("startDate", dt.Rows[0][14].ToString());
+            ReportParameter corpNum = new ReportParameter("corpNum", dt.Rows[0][15].ToString());
+            ReportParameter rep = new ReportParameter("rep", comboBox1.Text);
+            reportViewer1.LocalReport.SetParameters(
+                new ReportParameter[] {
+                    accountNo, contact, customer, company, mailto1, mailto2, mailto3, fee, yearEnd, phone, altphone, fax, ein, saleTaxNum, startDate, corpNum, rep
+                });
+            this.reportViewer1.RefreshReport();
         }
     }
 }
