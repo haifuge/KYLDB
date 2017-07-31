@@ -266,6 +266,21 @@ namespace KYLDB.Forms
                         }
                     }
                     break;
+                case "ClientDetail":
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string data = dt.Rows[i][j].ToString();
+                            // StartDate, end Date
+                            if ((j == 41 || j == 42) && data != "")
+                            {
+                                data = DateTime.Parse(data).ToShortDateString();
+                            }
+                            xlWorksheet.Cells[j + 1][i + 2] = data;
+                        }
+                    }
+                    break;
             }
 
             try
