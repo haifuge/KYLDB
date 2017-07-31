@@ -12,11 +12,12 @@ namespace KYLDB
 {
     public class DBOperator
     {
+        private static string connString = "Data Source=108.52.45.69,1434;Initial Catalog=test;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=64212917@Asiankitchen";
         public static DataTable QuerySql(string sql)
         {
             using(SqlConnection conn=new SqlConnection())
             {
-                conn.ConnectionString= System.Configuration.ConfigurationManager.ConnectionStrings["Local"].ConnectionString;
+                conn.ConnectionString = connString;//System.Configuration.ConfigurationManager.ConnectionStrings["Local"].ConnectionString;
                 conn.Open();
                 SqlCommand comd = new SqlCommand(sql, conn);
                 SqlDataReader reader = comd.ExecuteReader();
@@ -29,7 +30,7 @@ namespace KYLDB
         {
             using (SqlConnection conn = new SqlConnection())
             {
-                conn.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Local"].ConnectionString;
+                conn.ConnectionString = connString;//System.Configuration.ConfigurationManager.ConnectionStrings["Local"].ConnectionString;
                 conn.Open();
                 SqlCommand comd = new SqlCommand(sql, conn);
                 comd.ExecuteNonQuery();
