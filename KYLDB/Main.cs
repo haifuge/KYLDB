@@ -34,7 +34,7 @@ namespace KYLDB
         public static User cUser = null;
         private void Form1_Load(object sender, EventArgs e)
         {
-#if DEBUG
+
             Login l = new Login();
             l.ShowDialog();
             if (cUser == null)
@@ -72,10 +72,9 @@ namespace KYLDB
             clientDetailToolStripMenuItem.Visible = false;
             clientInfoToolStripMenuItem.Visible = false;
             ClientPayrollToolStripMenuItem.Visible = false;
-#endif
-#if RELEASE
-            cUser = new User() { Rep = "C", LastName = "Chow", FirstName = "Charles", UserLevel = 10 };
-#endif
+
+            //cUser = new User() { Rep = "C", LastName = "Chow", FirstName = "Charles", UserLevel = 10 };
+
         }
 
         private void clientInfoToolStripMenuItem_Click(object sender, EventArgs e)

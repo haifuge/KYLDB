@@ -66,5 +66,9 @@ namespace KYLDB.Reports.LabelMailingReport
             reportViewer1.LocalReport.SetParameters(new ReportParameter[] { mailto1, mailto2, mailto3 });
             this.reportViewer1.RefreshReport();
         }
+        public void setAccNum(string aNum)
+        {
+            comboBox1.Text = aNum;
+        }
     }
 }

@@ -1,4 +1,6 @@
 ﻿using KYLDB.Reports.ClientDetail;
+using KYLDB.Reports.LabelFolderReport;
+using KYLDB.Reports.LabelMailingReport;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -187,6 +189,22 @@ namespace KYLDB.Forms
         private void btnMain_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LabelMailingReport lmr = LabelMailingReport.GetInstance();
+            lmr.MdiParent = this.MdiParent;
+            lmr.Show();
+            lmr.setAccNum(txtAccNum.Text);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            LabelFolderReport lfp = LabelFolderReport.GetInstance();
+            lfp.MdiParent = this.MdiParent;
+            lfp.Show();
+            lfp.setAccNum(txtAccNum.Text);
         }
     }
 }

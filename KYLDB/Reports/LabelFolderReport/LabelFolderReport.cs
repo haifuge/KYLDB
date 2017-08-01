@@ -77,5 +77,9 @@ namespace KYLDB.Reports.LabelFolderReport
                 });
             this.reportViewer1.RefreshReport();
         }
+        public void setAccNum(string aNum)
+        {
+            comboBox1.Text = aNum;
+        }
     }
 }
