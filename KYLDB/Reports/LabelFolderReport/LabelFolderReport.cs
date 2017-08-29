@@ -33,7 +33,20 @@ namespace KYLDB.Reports.LabelFolderReport
 
         private void LabelFolderReport_Load(object sender, EventArgs e)
         {
-            string sql = "select AccountNo from ClientDetail;";
+            string sql = "select AccountNo from ClientDetail ";
+            string condition = "";
+            if (Main.cUser.UserLevel >= Setting.ReporterLevel)
+            {
+                comboBox1.Enabled = true;
+                comboBox1.SelectedIndex = 0;
+            }
+            else
+            {
+                comboBox1.Enabled = false;
+                comboBox1.Text = Main.cUser.Rep;
+                condition = " where Rep='" + Main.cUser.Rep + "'";
+            }
+            sql += condition;
             DataTable dt = DBOperator.QuerySql(sql);
             comboBox1.DataSource = dt;
             comboBox1.DisplayMember = "AccountNo";

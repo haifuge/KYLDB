@@ -34,11 +34,11 @@ namespace KYLDB.Reports.PayrollRepNumFrm
 
         private void PayrollRepNumFrm_Load(object sender, EventArgs e)
         {
-            string sql = @"select r.FirstName as 'Rep', count(ar.AccRep) as 'AccRep', count(pr.PayRep) as 'PayRep', COUNT(cr.CkRep) as 'CkRep'
+            string sql = @"select r.Rep as 'Rep', count(ar.AccRep) as 'AccRep', count(pr.PayRep) as 'PayRep', COUNT(cr.CkRep) as 'CkRep'
                             from Representative r 
-                            left join ClientPayroll ar on r.FirstName=ar.AccRep
-                            left join ClientPayroll pr on r.FirstName=pr.PayRep
-                            left join ClientPayroll cr on r.FirstName=cr.CkRep
+                            left join ClientPayroll ar on r.Rep=ar.AccRep and ar.JosStatus='Current' and ar.Payroll like 'Yes%'
+                            left join ClientPayroll pr on r.Rep=pr.PayRep and pr.JosStatus='Current' and pr.Payroll like 'Yes%'
+                            left join ClientPayroll cr on r.Rep=cr.CkRep and cr.JosStatus='Current' and cr.Payroll like 'Yes%'
                             group by r.FirstName
                             order by r.FirstName";
             DataTable dt = DBOperator.QuerySql(sql);

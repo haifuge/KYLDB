@@ -60,14 +60,7 @@ namespace KYLDB
                 payrollRepNumToolStripMenuItem.Visible = false;
                 quarterBillToolStripMenuItem.Visible = false;
             }
-            if (cUser.UserLevel >= Setting.ReporterLevel)
-            {
-                reportsToolStripMenuItem.Visible = true;
-            }
-            else
-            {
-                reportsToolStripMenuItem.Visible = false;
-            }
+            reportsToolStripMenuItem.Visible = true;
             payCheckToolStripMenuItem.Visible = false;
             clientDetailToolStripMenuItem.Visible = false;
             clientInfoToolStripMenuItem.Visible = false;

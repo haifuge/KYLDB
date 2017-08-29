@@ -60,7 +60,7 @@ namespace KYLDB.Reports.QuarterlyPayroll
                 case 3:
                     quarter = "Q4";
                     year = year - 1;
-                    closed = "'Closed(Q1/" + year + ")', 'Closed(Q2/" + year + ")', 'Closed(Q3/" + year + ")', 'Closed(Q4/" + year + ")'";
+                    closed = "'Closed(Q4/" + year + ")'";
                     break;
                 case 4:
                 case 5:
@@ -72,13 +72,13 @@ namespace KYLDB.Reports.QuarterlyPayroll
                 case 8:
                 case 9:
                     quarter = "Q2";
-                    closed = "'Closed(Q1/" + year + ")', 'Closed(Q2/" + year + ")'";
+                    closed = "'Closed(Q2/" + year + ")'";
                     break;
                 case 10:
                 case 11:
                 case 12:
                     quarter = "Q3";
-                    closed = "'Closed(Q1/" + year + ")', 'Closed(Q2/" + year + ")', 'Closed(Q3/" + year + ")'";
+                    closed = "'Closed(Q3/" + year + ")'";
                     break;
             }
             string rep = Main.cUser.Rep;

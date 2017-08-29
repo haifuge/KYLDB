@@ -56,7 +56,11 @@ namespace KYLDB.Forms
 
         private void AccountViewList_Load(object sender, EventArgs e)
         {
-            string sql = "select * from ClientDetail where Rep='"+Main.cUser.Rep+ "' or PaycheckRep='" + Main.cUser.FirstName + "' or PayrollRep='" + Main.cUser.FirstName + "'";
+            string sql;
+            if (Main.cUser.UserLevel == 10)
+                sql = "select * from ClientDetail";
+            else
+                sql = "select * from ClientDetail where Rep='"+Main.cUser.Rep+ "' or PaycheckRep='" + Main.cUser.FirstName + "' or PayrollRep='" + Main.cUser.FirstName + "'";
             dt = DBOperator.QuerySql(sql);
             ClientDetails = DBOperator.getListFromTable<Model.ClientDetail>(dt);
             

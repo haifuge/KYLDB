@@ -17,7 +17,7 @@ namespace KYLDB
         {
             using(SqlConnection conn=new SqlConnection())
             {
-                conn.ConnectionString = connString;//System.Configuration.ConfigurationManager.ConnectionStrings["Local"].ConnectionString;
+                conn.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Local"].ConnectionString;
                 conn.Open();
                 SqlCommand comd = new SqlCommand(sql, conn);
                 SqlDataReader reader = comd.ExecuteReader();
@@ -30,7 +30,7 @@ namespace KYLDB
         {
             using (SqlConnection conn = new SqlConnection())
             {
-                conn.ConnectionString = connString;//System.Configuration.ConfigurationManager.ConnectionStrings["Local"].ConnectionString;
+                conn.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Local"].ConnectionString;
                 conn.Open();
                 SqlCommand comd = new SqlCommand(sql, conn);
                 comd.ExecuteNonQuery();

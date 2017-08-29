@@ -45,6 +45,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cExportTable = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.tabpage.SuspendLayout();
             this.DataImport.SuspendLayout();
             this.DataExport.SuspendLayout();
@@ -67,6 +68,7 @@
             this.DataImport.Controls.Add(this.btnSelectFile);
             this.DataImport.Controls.Add(this.tFilePath);
             this.DataImport.Controls.Add(this.btnImport);
+            this.DataImport.Controls.Add(this.label5);
             this.DataImport.Controls.Add(this.label2);
             this.DataImport.Controls.Add(this.label1);
             this.DataImport.Controls.Add(this.cTableList);
@@ -225,6 +227,15 @@
             this.cExportTable.Size = new System.Drawing.Size(172, 24);
             this.cExportTable.TabIndex = 6;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(347, 311);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(78, 17);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Processing";
+            // 
             // DataImportExport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -263,5 +274,6 @@
         private System.Windows.Forms.ComboBox cExportTable;
         private System.Windows.Forms.ProgressBar progressBar2;
         private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Label label5;
     }
 }

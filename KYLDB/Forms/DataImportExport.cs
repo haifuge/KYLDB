@@ -58,7 +58,7 @@ namespace KYLDB.Forms
 
             string tableName = cTableList.Text;
             string filePath = tFilePath.Text;
-            await Task.Run(() => importData(filePath, tableName));
+            await Task.Run(() => importData(filePath, tableName, label5));
 
             MessageBox.Show("Import success");
             cTableList.Enabled = true;
@@ -67,21 +67,36 @@ namespace KYLDB.Forms
             btnSelectFile.Enabled = true;
             progressBar1.Visible = false;
         }
-        private void importData(string filePath, string tableName)
+        private void importData(string filePath, string tableName, Label tMessage)
         {
+            Label.CheckForIllegalCrossThreadCalls = false;
+            tMessage.Text = "Reading data from excel";
             DataTable dt = ReadExcelToDataTable(filePath, tableName);
+            int total = dt.Rows.Count;
+            tMessage.Text = "Data has been read, there are "+ total + " records.";
             string sql = "";
+            sql = "delete " + tableName + "; ";
+            DBOperator.ExecuteSql(sql);
+            sql = "insert into " + tableName + " values";
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                sql += "insert into " + tableName + " values(";
+                sql += "(";
                 for (int j = 0; j < dt.Columns.Count; j++)
                 {
                     sql += "'" + dt.Rows[i][j].ToString().Replace("'", "''") + "',";
                 }
-                sql = sql.Substring(0, sql.Length - 1) + "); ";
+                sql = sql.Substring(0, sql.Length - 1) + "), ";
+                if(i%10==0)
+                {
+                    sql = sql.Substring(0, sql.Length - 2);
+                    DBOperator.ExecuteSql(sql);
+                    sql = "insert into " + tableName + " values";
+                    tMessage.Text = i + " records has been imported, "+(total-i)+" left.";
+                }
             }
-            sql = "delete "+ tableName+"; " + sql;
+            sql = sql.Substring(0, sql.Length - 2);
             DBOperator.ExecuteSql(sql);
+            tMessage.Text = "begin to update ClientPayroll with new data of ClientDetail.";
             if (tableName == "ClientDetail")
             {
                 sql = @"update ClientPayroll set EIN=cd.EIN, AccRep=cd.Rep, Entity=cd.Customer, TradeName=cd.Company, BusAdd1=cd.BusAdd1,
