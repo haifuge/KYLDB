@@ -88,7 +88,8 @@ namespace KYLDB.Reports.QuarterlyPayroll
                            from ClientDetail
                            where "+ repCond+@" ((JobStatus='Pending')
                                 or (JobStatus='Current' and Payroll like 'Yes%')
-                                or (Payroll in ("+closed+") and JobStatus in ('Closed', 'Current') ))";
+                                or (Payroll in ("+closed+@") and JobStatus in ('Closed', 'Current') ))
+                           order by JobStatus, Accountno";
             DataTable dt = DBOperator.QuerySql(sql);
             List<QuarterPayroll> items = DBOperator.getListFromTable<QuarterPayroll>(dt);
             ReportParameter repTitle = new ReportParameter("repTitle", "Quarterly Query - " + rep);
@@ -155,7 +156,8 @@ namespace KYLDB.Reports.QuarterlyPayroll
                            from ClientDetail
                            where " + condition + @"  ((JobStatus='Pending')
                                 or (JobStatus='Current' and Payroll like 'Yes%')
-                                or (Payroll in (" + closed + ") and JobStatus in ('Closed', 'Current') ))";
+                                or (Payroll in (" + closed + @") and JobStatus in ('Closed', 'Current') ))
+                           order by JobStatus, Accountno";
             DataTable dt = DBOperator.QuerySql(sql);
             reportViewer1.LocalReport.DataSources.Clear();
             List<QuarterPayroll> items = DBOperator.getListFromTable<QuarterPayroll>(dt);

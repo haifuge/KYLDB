@@ -52,9 +52,10 @@ namespace KYLDB.Reports.MonthlySaleTax
             string month = DateTime.Now.AddMonths(-1).ToString("MMMM, yyyy");
             string sql = @"select Accountno as 'ID', Customer as 'Company', Contact, Phone, AltPhone, BalanceTotal as 'Balance', SalesTax, SalesTaxNum, 
                                   LiquorTax_Phila as 'LiquorTax', U_OTax from ClientDetail 
-                            where "+repCond+@" (JobStatus='pending' 
+                            where "+repCond+ @" (JobStatus='pending' 
                                   or (SalesTax in ('Monthly','Monthly(w/ Prepay)','Monthly(Sugar)') and JobStatus='current') 
-                                  or (JobStatus<>'closed' and (LiquorTax_Phila='Yes' or U_OTax like 'Yes%')) )";
+                                  or (JobStatus<>'closed' and (LiquorTax_Phila='Yes' or U_OTax like 'Yes%')) )
+                            order by JobStatus, Accountno";
             DataTable dt = DBOperator.QuerySql(sql);
             List<SalesTaxRep> items = DBOperator.getListFromTable<SalesTaxRep>(dt);
 
@@ -86,7 +87,8 @@ namespace KYLDB.Reports.MonthlySaleTax
                                   LiquorTax_Phila as 'LiquorTax', U_OTax from ClientDetail 
                             where " + condition + @"  (JobStatus='pending' 
                                   or (SalesTax in ('Monthly','Monthly(w/ Prepay)','Monthly(Sugar)') and JobStatus='current') 
-                                  or (JobStatus<>'closed' and (LiquorTax_Phila='Yes' or U_OTax like 'Yes%')) )";
+                                  or (JobStatus<>'closed' and (LiquorTax_Phila='Yes' or U_OTax like 'Yes%')) )
+                            order by JobStatus, Accountno";
             DataTable dt = DBOperator.QuerySql(sql);
             List<SalesTaxRep> items = DBOperator.getListFromTable<SalesTaxRep>(dt);
 

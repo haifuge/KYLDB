@@ -71,7 +71,7 @@ namespace KYLDB.Reports.CkRepFrm
 	                            case when ccd.FirstCheckDate='' then CONVERT(VARCHAR(20), DATEADD(year, DATEDIFF(year, '', getdate()), ''), 101) 
 		                             when ccd.FirstCheckDate is null then CONVERT(VARCHAR(20), DATEADD(year, DATEDIFF(year, '', getdate()), ''), 101) 
 		                             else ccd.FirstCheckDate end as 'CkDate'
-                            from ClientPayroll cp left join ClientCheckDate ccd on cp.AccNum=ccd.AccNum" +condition;
+                            from ClientPayroll cp left join ClientCheckDate ccd on cp.AccNum=ccd.AccNum" +condition + " order by cp.AccNum";
             DataTable dt = DBOperator.QuerySql(sql);
             List<CkRep> items=DBOperator.getListFromTable<CkRep>(dt);
             for (int i = 0; i < items.Count; i++)

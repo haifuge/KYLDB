@@ -58,7 +58,8 @@ namespace KYLDB.Reports.YearEndPayrollFrm
                             where "+ repCond+@" (JobStatus='pending' 
                                   or (SalesTax in ('Monthly','Monthly(w/ Prepay)','Monthly(Sugar)') and JobStatus='current') 
                                   or (JobStatus<>'closed' and (LiquorTax_Phila='Yes' or U_OTax like 'Yes%'))
-                                  or (JobStatus='closed' and SalesTax in ('closed(Q1/" + year + ")', 'closed(Q2/" + year + ")','closed(Q3/" + year + ")','closed(Q4/" + year + ")')))";
+                                  or (JobStatus='closed' and SalesTax in ('closed(Q1/" + year + ")', 'closed(Q2/" + year + ")','closed(Q3/" + year + ")','closed(Q4/" + year + @")')))
+                            order by cd.JobStatus, cd.Accountno";
             DataTable dt = DBOperator.QuerySql(sql);
             List<YearEndPayroll> items = DBOperator.getListFromTable<YearEndPayroll>(dt);
 
@@ -88,7 +89,8 @@ namespace KYLDB.Reports.YearEndPayrollFrm
                             where "+condition+@" (JobStatus='pending' 
                                   or (SalesTax in ('Monthly','Monthly(w/ Prepay)','Monthly(Sugar)') and JobStatus='current') 
                                   or (JobStatus<>'closed' and (LiquorTax_Phila='Yes' or U_OTax like 'Yes%'))
-                                  or (JobStatus='closed' and SalesTax in ('closed(Q1/" + year + ")', 'closed(Q2/" + year + ")','closed(Q3/" + year + ")','closed(Q4/" + year + ")')))";
+                                  or (JobStatus='closed' and SalesTax in ('closed(Q1/" + year + ")', 'closed(Q2/" + year + ")','closed(Q3/" + year + ")','closed(Q4/" + year + @")')))
+                            order by cd.JobStatus, cd.Accountno";
             DataTable dt = DBOperator.QuerySql(sql);
             List<YearEndPayroll> items = DBOperator.getListFromTable<YearEndPayroll>(dt);
 

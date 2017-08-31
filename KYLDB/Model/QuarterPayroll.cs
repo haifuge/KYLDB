@@ -28,9 +28,9 @@ namespace KYLDB.Model
             set
             {
                 phone = value;
-                if (phone.IndexOf('(') != -1)
+                if (phone.Length>12)
                 {
-                    phone = phone.Substring(0, phone.IndexOf('('));
+                    phone = phone.Substring(0, 12).Trim();
                 }
             }
         }
@@ -41,9 +41,9 @@ namespace KYLDB.Model
             set
             {
                 aphone = value;
-                if (aphone.IndexOf('(') != -1)
+                if (aphone.Length > 12)
                 {
-                    aphone = aphone.Substring(0, aphone.IndexOf('('));
+                    aphone = aphone.Substring(0, 12).Trim();
                 }
             }
         }

@@ -80,10 +80,10 @@
                   <Width>0.62527in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.33837in</Width>
+                  <Width>2.38837in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.0836in</Width>
+                  <Width>1.51693in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.66217in</Width>
@@ -889,7 +889,7 @@
             </TablixRowHierarchy>
             <DataSetName>dsYearEndPayroll</DataSetName>
             <Height>0.79in</Height>
-            <Width>10in</Width>
+            <Width>8.48333in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -897,10 +897,10 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>1.05501in</Height>
+        <Height>0.90501in</Height>
         <Style />
       </Body>
-      <Width>10in</Width>
+      <Width>8.5in</Width>
       <Page>
         <PageHeader>
           <Height>0.4in</Height>
@@ -990,7 +990,7 @@
               </Paragraphs>
               <rd:DefaultName>ExecutionTime</rd:DefaultName>
               <Top>0.1in</Top>
-              <Left>7.36905in</Left>
+              <Left>5.86905in</Left>
               <Height>0.25in</Height>
               <Width>2.39429in</Width>
               <ZIndex>2</ZIndex>
@@ -1011,10 +1011,11 @@
             </Border>
           </Style>
         </PageHeader>
-        <PageHeight>13in</PageHeight>
-        <PageWidth>11in</PageWidth>
-        <LeftMargin>0.5in</LeftMargin>
-        <RightMargin>0.5in</RightMargin>
+        <PageWidth>10.5in</PageWidth>
+        <LeftMargin>1in</LeftMargin>
+        <RightMargin>1in</RightMargin>
+        <TopMargin>1in</TopMargin>
+        <BottomMargin>1in</BottomMargin>
         <Style />
       </Page>
     </ReportSection>

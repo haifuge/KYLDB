@@ -78,11 +78,13 @@ namespace KYLDB.Reports.QuarterlySalesTax
                     break;
             }
             string sql = @"select Accountno as 'ID', Customer as 'Company', Contact, Phone, AltPhone, BalanceTotal as 'Balance', SalesTax, SalesTaxNum, 
-                                  LiquorTax_Phila as 'LiquorTax', U_OTax from ClientDetail 
+                                  LiquorTax_Phila as 'LiquorTax', U_OTax 
+                            from ClientDetail 
                             where " + repCond + @" (JobStatus='pending' 
                                   or (SalesTax in ('Monthly','Monthly(w/ Prepay)','Monthly(Sugar)') and JobStatus='Current') 
                                   or (JobStatus<>'closed' and (LiquorTax_Phila='Yes' or U_OTax like 'Yes%'))
-                                  or (JobStatus='closed' and SalesTax='closed(" + quarter + "/" + year.ToString() + ")'))";
+                                  or (JobStatus='closed' and SalesTax='closed(" + quarter + "/" + year.ToString() + @")'))
+                            order by JobStatus, Accountno";
             DataTable dt = DBOperator.QuerySql(sql);
             List<SalesTaxRep> items = DBOperator.getListFromTable<SalesTaxRep>(dt);
 
@@ -138,11 +140,13 @@ namespace KYLDB.Reports.QuarterlySalesTax
                 condition = " Rep = '" + rep + "' and ";
             }
             string sql = @"select Accountno as 'ID', Customer as 'Company', Contact, Phone, AltPhone, BalanceTotal as 'Balance', SalesTax, SalesTaxNum, 
-                                  LiquorTax_Phila as 'LiquorTax', U_OTax from ClientDetail 
+                                  LiquorTax_Phila as 'LiquorTax', U_OTax 
+                            from ClientDetail 
                             where "+ condition+@" (JobStatus='pending' 
                                   or (SalesTax in ('Monthly','Monthly(w/ Prepay)','Monthly(Sugar)') and JobStatus='Current') 
                                   or (JobStatus<>'closed' and (LiquorTax_Phila='Yes' or U_OTax like 'Yes%'))
-                                  or (JobStatus='closed' and SalesTax='closed(" + quarter + "/" + year.ToString() + ")'))";
+                                  or (JobStatus='closed' and SalesTax='closed(" + quarter + "/" + year.ToString() + @")'))
+                            order by JobStatus, Accountno";
             DataTable dt = DBOperator.QuerySql(sql);
             List<SalesTaxRep> items = DBOperator.getListFromTable<SalesTaxRep>(dt);
 

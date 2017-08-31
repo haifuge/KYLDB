@@ -56,7 +56,8 @@ namespace KYLDB.Reports.QuarterlyProfitALoss
                             where "+repCond+@" (JobStatus in ('Current', 'Yearly','Pending') 
                                   or ((SalesTax in ('Closed(1Q/" + year + ")','Closed(2Q/" + year + ")','Closed(3Q/" + year + ")','Closed(4Q/" + year + @")') 
                                         or Payroll in ('Closed(1Q/" + year + ")','Closed(2Q/" + year + ")','Closed(3Q/" + year + ")','Closed(4Q/" + year + @")')) 
-                                        and JobStatus = 'Closed' and EndDate between '1/1/"+year+"' and '12/31/"+year+"'))";
+                                        and JobStatus = 'Closed' and EndDate between '1/1/"+year+"' and '12/31/"+year+ @"'))
+                            order by JobStatus, Accountno";
             DataTable dt = DBOperator.QuerySql(sql);
             List<QuarterlyProfitLoss> items = DBOperator.getListFromTable<QuarterlyProfitLoss>(dt);
 
@@ -89,7 +90,8 @@ namespace KYLDB.Reports.QuarterlyProfitALoss
                             where " + condition + @"  (JobStatus in ('Current', 'Yearly','Pending') 
                                   or ((SalesTax in ('Closed(1Q/" + year + ")','Closed(2Q/" + year + ")','Closed(3Q/" + year + ")','Closed(4Q/" + year + @")') 
                                         or Payroll in ('Closed(1Q/" + year + ")','Closed(2Q/" + year + ")','Closed(3Q/" + year + ")','Closed(4Q/" + year + @")')) 
-                                        and JobStatus = 'Closed' and EndDate between '1/1/" + year + "' and '12/31/" + year + "'))";
+                                        and JobStatus = 'Closed' and EndDate between '1/1/" + year + "' and '12/31/" + year + @"'))
+                            order by JobStatus, Accountno";
             DataTable dt = DBOperator.QuerySql(sql);
             List<QuarterlyProfitLoss> items = DBOperator.getListFromTable<QuarterlyProfitLoss>(dt);
 
