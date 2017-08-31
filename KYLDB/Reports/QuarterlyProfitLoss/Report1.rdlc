@@ -83,7 +83,7 @@
                   <Width>2.38613in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.12615in</Width>
+                  <Width>1.03449in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.97072in</Width>
@@ -98,7 +98,7 @@
                   <Width>0.37424in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.68732in</Width>
+                  <Width>0.95399in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.47897in</Width>
@@ -107,7 +107,7 @@
                   <Width>0.62385in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.19923in</Width>
+                  <Width>1.0409in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -348,7 +348,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Memo__________  For Update</Value>
+                                  <Value>Memo_______  For Update</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -633,7 +633,7 @@
                             <Rectangle Name="Rectangle12">
                               <KeepTogether>true</KeepTogether>
                               <Top>0.0375in</Top>
-                              <Left>0.15in</Left>
+                              <Left>0.075in</Left>
                               <Height>0.13in</Height>
                               <Width>0.2in</Width>
                               <Style>
@@ -1011,7 +1011,7 @@
                             <Rectangle Name="Rectangle14">
                               <KeepTogether>true</KeepTogether>
                               <Top>0.0375in</Top>
-                              <Left>0.15in</Left>
+                              <Left>0.075in</Left>
                               <Height>0.13in</Height>
                               <Width>0.2in</Width>
                               <Style>
@@ -1147,7 +1147,7 @@
             </TablixRowHierarchy>
             <DataSetName>QuarterlyProfitLoss</DataSetName>
             <Height>0.81777in</Height>
-            <Width>8.48333in</Width>
+            <Width>8.5in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
