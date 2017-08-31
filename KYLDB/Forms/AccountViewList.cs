@@ -114,6 +114,7 @@ namespace KYLDB.Forms
                                  ClientPayroll = "Payroll Detail",
                                  Paycheck = "Paycheck"
                              };
+            comboBox2.Text = searchList.FirstOrDefault().Customer;
             dataGridView1.DataSource = null;
             dataGridView1.Rows.Clear();
             dataGridView1.Columns.Clear();
@@ -224,6 +225,7 @@ namespace KYLDB.Forms
                                  ClientPayroll = "Payroll Detail",
                                  Paycheck = "Paycheck"
                              };
+            comboBox1.Text = searchList.FirstOrDefault().id;
             dataGridView1.DataSource = searchList.ToArray();
             //setLinkColumns();
         }

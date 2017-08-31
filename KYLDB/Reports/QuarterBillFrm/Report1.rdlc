@@ -61,22 +61,25 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1.29166in</Width>
+                  <Width>1.05833in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>2.55834in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.04666in</Width>
+                  <Width>0.89666in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.125in</Width>
+                  <Width>0.75833in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.20833in</Width>
+                  <Width>0.79166in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.27501in</Width>
+                  <Width>1.225in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.08334in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -267,6 +270,38 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
+                        <Textbox Name="Textbox2">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Ck fee</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox2</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
                         <Textbox Name="Textbox16">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -300,7 +335,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.25in</Height>
+                  <Height>0.22in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -464,6 +499,38 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
+                        <Textbox Name="CkFee">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!CkFee.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>CkFee</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
                         <Textbox Name="BillAmt">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -473,6 +540,9 @@
                                 <TextRun>
                                   <Value>="$"+Fields!BillAmt.Value</Value>
                                   <Style>
+                                    <FontWeight>=switch(Fields!NumOfCkLastQtr.Value=Fields!NumOfCkThisQtr.Value,"Normal",
+Fields!NumOfCkLastQtr.Value&gt;Fields!NumOfCkThisQtr.Value,"Bold",
+Fields!NumOfCkLastQtr.Value&lt;Fields!NumOfCkThisQtr.Value,"Bold")</FontWeight>
                                     <Color>=switch(Fields!NumOfCkLastQtr.Value=Fields!NumOfCkThisQtr.Value,"black",
 Fields!NumOfCkLastQtr.Value&gt;Fields!NumOfCkThisQtr.Value,"orange",
 Fields!NumOfCkLastQtr.Value&lt;Fields!NumOfCkThisQtr.Value,"orange")</Color>
@@ -510,6 +580,7 @@ Fields!NumOfCkLastQtr.Value&lt;Fields!NumOfCkThisQtr.Value,"orange")</Color>
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
+                <TablixMember />
               </TablixMembers>
             </TablixColumnHierarchy>
             <TablixRowHierarchy>
@@ -523,8 +594,10 @@ Fields!NumOfCkLastQtr.Value&lt;Fields!NumOfCkThisQtr.Value,"orange")</Color>
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>dsQtrBill</DataSetName>
-            <Height>0.59167in</Height>
-            <Width>8.505in</Width>
+            <Top>0.0125in</Top>
+            <Left>0.025in</Left>
+            <Height>0.56167in</Height>
+            <Width>8.37167in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -535,7 +608,7 @@ Fields!NumOfCkLastQtr.Value&lt;Fields!NumOfCkThisQtr.Value,"orange")</Color>
         <Height>0.64167in</Height>
         <Style />
       </Body>
-      <Width>8.505in</Width>
+      <Width>8.5in</Width>
       <Page>
         <PageHeader>
           <Height>0.4in</Height>
@@ -563,7 +636,7 @@ Fields!NumOfCkLastQtr.Value&lt;Fields!NumOfCkThisQtr.Value,"orange")</Color>
               <Top>0.09306in</Top>
               <Left>0.33in</Left>
               <Height>0.25in</Height>
-              <Width>1in</Width>
+              <Width>1.425in</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -593,7 +666,7 @@ Fields!NumOfCkLastQtr.Value&lt;Fields!NumOfCkThisQtr.Value,"orange")</Color>
               </Paragraphs>
               <rd:DefaultName>year</rd:DefaultName>
               <Top>0.09306in</Top>
-              <Left>1.33in</Left>
+              <Left>1.955in</Left>
               <Height>0.25in</Height>
               <Width>1in</Width>
               <ZIndex>1</ZIndex>
@@ -626,7 +699,7 @@ Fields!NumOfCkLastQtr.Value&lt;Fields!NumOfCkThisQtr.Value,"orange")</Color>
               </Paragraphs>
               <rd:DefaultName>quarter</rd:DefaultName>
               <Top>0.09306in</Top>
-              <Left>2.34667in</Left>
+              <Left>2.97167in</Left>
               <Height>0.25in</Height>
               <Width>1in</Width>
               <ZIndex>2</ZIndex>

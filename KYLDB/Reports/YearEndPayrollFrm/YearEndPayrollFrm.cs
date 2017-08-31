@@ -44,7 +44,7 @@ namespace KYLDB.Reports.YearEndPayrollFrm
             else
             {
                 comboBox1.Enabled = false;
-                comboBox1.Text = Main.cUser.Rep;
+                comboBox1.SelectedValue = Main.cUser.Rep;
                 repCond = " Rep = '" + Main.cUser.Rep + "' and ";
             }
             string rep = Main.cUser.Rep;

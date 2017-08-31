@@ -20,7 +20,17 @@ namespace KYLDB.Model
                     _company = _company.Substring(0, 22) + "...";
             }
         }
-        public string Contact { get; set; }
+        private string contact;
+        public string Contact
+        {
+            get { return contact; }
+            set
+            {
+                contact = value;
+                if (contact.Length > 25)
+                    contact = contact.Substring(0, 22) + "...";
+            }
+        }
         private string phone;
         public string Phone
         {
