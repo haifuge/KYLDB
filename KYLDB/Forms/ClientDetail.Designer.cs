@@ -672,7 +672,7 @@
             // 
             this.txtCustomerType.Location = new System.Drawing.Point(641, 449);
             this.txtCustomerType.Name = "txtCustomerType";
-            this.txtCustomerType.Size = new System.Drawing.Size(152, 22);
+            this.txtCustomerType.Size = new System.Drawing.Size(249, 22);
             this.txtCustomerType.TabIndex = 169;
             // 
             // txtEIN
@@ -712,7 +712,7 @@
             this.txtNote.Location = new System.Drawing.Point(107, 595);
             this.txtNote.Multiline = true;
             this.txtNote.Name = "txtNote";
-            this.txtNote.Size = new System.Drawing.Size(912, 40);
+            this.txtNote.Size = new System.Drawing.Size(912, 122);
             this.txtNote.TabIndex = 169;
             // 
             // label34
@@ -769,7 +769,7 @@
             // 
             this.txtTaxPrepared.Location = new System.Drawing.Point(641, 482);
             this.txtTaxPrepared.Name = "txtTaxPrepared";
-            this.txtTaxPrepared.Size = new System.Drawing.Size(152, 22);
+            this.txtTaxPrepared.Size = new System.Drawing.Size(249, 22);
             this.txtTaxPrepared.TabIndex = 169;
             // 
             // txtSalesTaxNum
@@ -849,7 +849,7 @@
             // 
             this.txtOwnerSS.Location = new System.Drawing.Point(641, 548);
             this.txtOwnerSS.Name = "txtOwnerSS";
-            this.txtOwnerSS.Size = new System.Drawing.Size(152, 22);
+            this.txtOwnerSS.Size = new System.Drawing.Size(249, 22);
             this.txtOwnerSS.TabIndex = 169;
             // 
             // txtEndDate
@@ -895,7 +895,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1029, 669);
+            this.ClientSize = new System.Drawing.Size(1029, 729);
             this.Controls.Add(this.txtPayroll);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.txtMailto1);

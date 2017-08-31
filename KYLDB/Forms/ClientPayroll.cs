@@ -80,6 +80,7 @@ namespace KYLDB
             var acc = (from ac in ClientPayrolls
                        where ac.Entity == entity
                        select ac).First();
+            AccNumList.Text = acc.AccNum;
             tAccNum.Text = acc.AccNum;
             tEIN.Text = acc.EIN;
             tEntity.Text = acc.Entity;
@@ -167,6 +168,7 @@ namespace KYLDB
             var acc = (from ac in ClientPayrolls
                        where ac.AccNum == accNum
                        select ac).First();
+            comboBox2.Text = acc.EIN;
             tAccNum.Text = acc.AccNum;
             tEIN.Text = acc.EIN;
             tEntity.Text = acc.Entity;

@@ -77,6 +77,7 @@ namespace KYLDB.Forms
             txtStateTaxFreq.Text = acc.StateTaxFreq;
             txtLocalTaxFreq.Text = acc.LocalTaxFreq;
             cRep = acc.AccNum;
+            comboBox2.Text = acc.Entity;
             fillGridview(cRep);
         }
 
@@ -93,6 +94,7 @@ namespace KYLDB.Forms
             txtStateTaxFreq.Text = acc.StateTaxFreq;
             txtLocalTaxFreq.Text = acc.LocalTaxFreq;
             cRep = acc.AccNum;
+            comboBox1.Text = acc.AccNum;
             fillGridview(cRep);
         }
 
@@ -238,7 +240,7 @@ namespace KYLDB.Forms
                     dataGridView1.CurrentCell = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex];
                     return;
                 }
-                dataGridView1.Rows[e.RowIndex].Cells[5].Value = ckEndNum - ckStartNum;
+                dataGridView1.Rows[e.RowIndex].Cells[5].Value = ckEndNum - ckStartNum + 1;
             }
         }
         public void SetAccNum(string accNum)

@@ -41,7 +41,7 @@
             this.button1.Location = new System.Drawing.Point(116, 186);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(81, 29);
-            this.button1.TabIndex = 0;
+            this.button1.TabIndex = 3;
             this.button1.Text = "Cancel";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -51,7 +51,7 @@
             this.button2.Location = new System.Drawing.Point(261, 186);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(81, 29);
-            this.button2.TabIndex = 1;
+            this.button2.TabIndex = 2;
             this.button2.Text = "Login";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -79,14 +79,15 @@
             this.txtUsername.Location = new System.Drawing.Point(195, 54);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(163, 22);
-            this.txtUsername.TabIndex = 4;
+            this.txtUsername.TabIndex = 0;
             // 
             // txtPwd
             // 
             this.txtPwd.Location = new System.Drawing.Point(195, 110);
             this.txtPwd.Name = "txtPwd";
             this.txtPwd.Size = new System.Drawing.Size(163, 22);
-            this.txtPwd.TabIndex = 5;
+            this.txtPwd.TabIndex = 1;
+            this.txtPwd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPwd_KeyDown);
             // 
             // Login
             // 

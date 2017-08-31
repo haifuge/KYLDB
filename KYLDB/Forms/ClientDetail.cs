@@ -59,6 +59,7 @@ namespace KYLDB.Forms
                       where acc.Customer == comboBox2.Text
                       select acc;
             cAcc = obj.First();
+            AccNumList.Text = cAcc.AccountNo;
             setTxtValue(cAcc);
         }
 
@@ -68,6 +69,7 @@ namespace KYLDB.Forms
                       where acc.AccountNo == AccNumList.Text
                       select acc;
             cAcc = obj.First();
+            comboBox2.Text = cAcc.Customer;
             setTxtValue(cAcc);
         }
 
@@ -118,7 +120,7 @@ namespace KYLDB.Forms
             txtUOTax.Text = detail.U_OTax;
             txtStartDate.Text = detail.StartDate;
             txtEndDate.Text = detail.EndDate;
-            lblOwnerSS.Text = detail.OwnerSS;
+            txtOwnerSS.Text = detail.OwnerSS;
             txtNote.Text = detail.Note;
         }
         private void enableTxt(bool bl)

@@ -232,5 +232,13 @@ namespace KYLDB.Forms
         {
             singleton = null;
         }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode==Keys.Enter)
+            {
+                btnSearch_Click(btnSearch, new EventArgs());
+            }
+        }
     }
 }

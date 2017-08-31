@@ -49,5 +49,13 @@ namespace KYLDB.Forms
         {
             this.Close();
         }
+
+        private void txtPwd_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode==Keys.Enter)
+            {
+                button2_Click(button2, new EventArgs());
+            }
+        }
     }
 }

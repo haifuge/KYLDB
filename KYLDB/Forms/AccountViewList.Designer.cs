@@ -44,7 +44,7 @@
             this.btnSearch.Location = new System.Drawing.Point(263, 22);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 0;
+            this.btnSearch.TabIndex = 1;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -54,7 +54,8 @@
             this.textBox1.Location = new System.Drawing.Point(117, 22);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(140, 22);
-            this.textBox1.TabIndex = 1;
+            this.textBox1.TabIndex = 0;
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
             // dataGridView1
             // 
@@ -69,7 +70,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1094, 562);
-            this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // comboBox1
@@ -80,7 +81,7 @@
             this.comboBox1.Location = new System.Drawing.Point(452, 21);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(162, 24);
-            this.comboBox1.TabIndex = 3;
+            this.comboBox1.TabIndex = 2;
             // 
             // label1
             // 
@@ -108,7 +109,7 @@
             this.comboBox2.Location = new System.Drawing.Point(752, 21);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(239, 24);
-            this.comboBox2.TabIndex = 6;
+            this.comboBox2.TabIndex = 3;
             // 
             // label3
             // 

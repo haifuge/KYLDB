@@ -39,8 +39,8 @@ namespace KYLDB.Reports.PayrollRepNumFrm
                             left join ClientPayroll ar on r.Rep=ar.AccRep and ar.JosStatus='Current' and ar.Payroll like 'Yes%'
                             left join ClientPayroll pr on r.Rep=pr.PayRep and pr.JosStatus='Current' and pr.Payroll like 'Yes%'
                             left join ClientPayroll cr on r.Rep=cr.CkRep and cr.JosStatus='Current' and cr.Payroll like 'Yes%'
-                            group by r.FirstName
-                            order by r.FirstName";
+                            group by r.Rep
+                            order by r.Rep";
             DataTable dt = DBOperator.QuerySql(sql);
             List<PayrollRepNum> reps = DBOperator.getListFromTable<PayrollRepNum>(dt);
             sql = "select count(1) from ClientPayroll";
