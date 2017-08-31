@@ -56,13 +56,13 @@
                   <Width>1.2in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.49166in</Width>
+                  <Width>2.59166in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.66666in</Width>
+                  <Width>1.42833in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.74166in</Width>
+                  <Width>1.38001in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>1.9in</Width>
@@ -422,7 +422,7 @@
             </TablixRowHierarchy>
             <DataSetName>dsCkRep</DataSetName>
             <Height>0.5in</Height>
-            <Width>9.99998in</Width>
+            <Width>8.5in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -433,7 +433,7 @@
         <Height>0.78333in</Height>
         <Style />
       </Body>
-      <Width>10in</Width>
+      <Width>8.5in</Width>
       <Page>
         <PageHeader>
           <Height>0.4in</Height>
@@ -490,7 +490,7 @@
               </Paragraphs>
               <rd:DefaultName>ExecutionTime</rd:DefaultName>
               <Top>0.09389in</Top>
-              <Left>7.10832in</Left>
+              <Left>5.60832in</Left>
               <Height>0.25in</Height>
               <Width>2.62168in</Width>
               <ZIndex>1</ZIndex>
@@ -511,10 +511,11 @@
             </Border>
           </Style>
         </PageHeader>
-        <PageHeight>13in</PageHeight>
-        <PageWidth>11in</PageWidth>
-        <LeftMargin>0.5in</LeftMargin>
-        <RightMargin>0.5in</RightMargin>
+        <PageWidth>10.5in</PageWidth>
+        <LeftMargin>1in</LeftMargin>
+        <RightMargin>1in</RightMargin>
+        <TopMargin>1in</TopMargin>
+        <BottomMargin>1in</BottomMargin>
         <Style />
       </Page>
     </ReportSection>
