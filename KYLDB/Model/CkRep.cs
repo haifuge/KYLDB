@@ -16,12 +16,17 @@ namespace KYLDB.Model
             set
             {
                 _name = value;
-                if (_name.Length > 25)
-                    _name = _name.Substring(0, 22) + "...";
+                if (_name.Length > 20)
+                    _name = _name.Substring(0, 17) + "...";
             }
         }
         public string PayType { get; set; }
         public string PayFreq { get; set; }
         public string CkDate { get; set; }
+        public string FedTaxFreq { get; set; }
+        public string StateTaxFreq { get; set; }
+        public string PhilaTaxFreq { get; set; }
+        public string Datain { get; set; }
+        public string Dataout { get; set; }
     }
 }
