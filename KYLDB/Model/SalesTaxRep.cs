@@ -37,11 +37,8 @@ namespace KYLDB.Model
             get { return phone; }
             set
             {
-                phone = value;
-                if (phone.IndexOf('(') != -1)
-                {
-                    phone = phone.Substring(0, phone.IndexOf('('));
-                }
+                phone = value == null ? "" : value;
+                phone = phone.Length > 12 ? phone.Substring(0, 12) : phone;
             }
         }
         private string aphone;
@@ -50,11 +47,8 @@ namespace KYLDB.Model
             get { return aphone; }
             set
             {
-                aphone = value;
-                if (aphone.IndexOf('(') != -1)
-                {
-                    aphone = aphone.Substring(0, aphone.IndexOf('('));
-                }
+                aphone = value == null ? "" : value;
+                aphone=aphone.Length>12?aphone.Substring(0, 12):aphone;
             }
         }
         public string Balance { get; set; }

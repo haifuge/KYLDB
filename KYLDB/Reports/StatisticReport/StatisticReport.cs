@@ -129,16 +129,16 @@ namespace KYLDB.Reports.StatisticReport
                     set @year=Year(getdate())-1
                     select i.Rep, i.I, p.P, c.C, cs.CS, i.I+ p.P+c.C+cs.CS as 'Total' from
                     (select r.Rep, count(cdi.Rep) as 'I'
-                    from Representative r left join ClientDetail cdi on r.Rep=cdi.Rep and cdi.TaxPrepared = @year and cdi.CustomerType in ('Individual', 'SINGLE MEMBER LLC', 'SOLE PROPRIETORSHIP')
+                    from Representative r left join ClientDetail cdi on r.Rep=cdi.Rep and cdi.TaxPrepared = convert(varchar(10),@year) and cdi.CustomerType in ('Individual', 'SINGLE MEMBER LLC', 'SOLE PROPRIETORSHIP')
                     group by r.Rep) i,
                     (select r.Rep,count(cdp.Rep) as 'P'
-                    from Representative r left join ClientDetail cdp on r.rep=cdp.Rep and cdp.TaxPrepared = @year and cdp.CustomerType in ('GERNERAL PARTNER LLC','PARTNERSHIP','Limited Partnership')
+                    from Representative r left join ClientDetail cdp on r.rep=cdp.Rep and cdp.TaxPrepared = convert(varchar(10),@year) and cdp.CustomerType in ('GERNERAL PARTNER LLC','PARTNERSHIP','Limited Partnership')
                     group by r.Rep) p,
                     (select r.Rep,count(cdc.Rep) as 'C'
-                    from Representative r left join ClientDetail cdc on r.Rep=cdc.Rep and cdc.TaxPrepared = @year and cdc.CustomerType in ('CORP.','CORP.LLC','Corporate')
+                    from Representative r left join ClientDetail cdc on r.Rep=cdc.Rep and cdc.TaxPrepared = convert(varchar(10),@year) and cdc.CustomerType in ('CORP.','CORP.LLC','Corporate')
                     group by r.Rep) c,
                     (select r.Rep, COUNT(cdcs.Rep) as 'CS'
-                    from Representative r left join ClientDetail cdcs on r.Rep=cdcs.Rep and cdcs.TaxPrepared = @year and cdcs.CustomerType in ('S Corp.')
+                    from Representative r left join ClientDetail cdcs on r.Rep=cdcs.Rep and cdcs.TaxPrepared = convert(varchar(10),@year) and cdcs.CustomerType in ('S Corp.')
                     group by r.Rep) cs
                     where i.Rep=p.Rep and p.Rep=c.Rep and c.Rep=cs.Rep";
             dt = DBOperator.QuerySql(sql);
@@ -150,16 +150,16 @@ namespace KYLDB.Reports.StatisticReport
                     set @year=Year(getdate())-1
                     select i.Rep, i.I, p.P, c.C, cs.CS, i.I+ p.P+c.C+cs.CS as 'Total' from
                     (select r.Rep, count(cdi.Rep) as 'I'
-                    from Representative r left join ClientDetail cdi on r.Rep=cdi.Rep and (cdi.TaxPrepared <> @year or cdi.TaxPrepared='' or cdi.TaxPrepared is null) and ((cdi.JobStatus='Closed' and Year(cdi.EndDate)=@year) or (cdi.JobStatus<>'Closed' and Year(cdi.EndDate)<Year(getdate()))) and cdi.CustomerType in ('Individual', 'SINGLE MEMBER LLC', 'SOLE PROPRIETORSHIP')
+                    from Representative r left join ClientDetail cdi on r.Rep=cdi.Rep and (cdi.TaxPrepared <> convert(varchar(10),@year) or cdi.TaxPrepared='' or cdi.TaxPrepared is null) and ((cdi.JobStatus='Closed' and Year(cdi.EndDate)=@year) or (cdi.JobStatus<>'Closed' and Year(cdi.EndDate)<Year(getdate()))) and cdi.CustomerType in ('Individual', 'SINGLE MEMBER LLC', 'SOLE PROPRIETORSHIP')
                     group by r.Rep) i,
                     (select r.Rep,count(cdp.Rep) as 'P'
-                    from Representative r left join ClientDetail cdp on r.rep=cdp.Rep and (cdp.TaxPrepared <> @year or cdp.TaxPrepared='' or cdp.TaxPrepared is null) and ((cdp.JobStatus='Closed' and Year(cdp.EndDate)=@year) or (cdp.JobStatus<>'Closed' and Year(cdp.EndDate)<Year(getdate()))) and cdp.CustomerType in ('GERNERAL PARTNER LLC','PARTNERSHIP','Limited Partnership')
+                    from Representative r left join ClientDetail cdp on r.rep=cdp.Rep and (cdp.TaxPrepared <> convert(varchar(10),@year) or cdp.TaxPrepared='' or cdp.TaxPrepared is null) and ((cdp.JobStatus='Closed' and Year(cdp.EndDate)=@year) or (cdp.JobStatus<>'Closed' and Year(cdp.EndDate)<Year(getdate()))) and cdp.CustomerType in ('GERNERAL PARTNER LLC','PARTNERSHIP','Limited Partnership')
                     group by r.Rep) p,
                     (select r.Rep,count(cdc.Rep) as 'C'
-                    from Representative r left join ClientDetail cdc on r.Rep=cdc.Rep and (cdc.TaxPrepared <> @year or cdc.TaxPrepared='' or cdc.TaxPrepared is null) and ((cdc.JobStatus='Closed' and Year(cdc.EndDate)=@year) or (cdc.JobStatus<>'Closed' and Year(cdc.EndDate)<Year(getdate()))) and cdc.CustomerType in ('CORP.','CORP.LLC','Corporate')
+                    from Representative r left join ClientDetail cdc on r.Rep=cdc.Rep and (cdc.TaxPrepared <> convert(varchar(10),@year) or cdc.TaxPrepared='' or cdc.TaxPrepared is null) and ((cdc.JobStatus='Closed' and Year(cdc.EndDate)=@year) or (cdc.JobStatus<>'Closed' and Year(cdc.EndDate)<Year(getdate()))) and cdc.CustomerType in ('CORP.','CORP.LLC','Corporate')
                     group by r.Rep) c,
                     (select r.Rep, COUNT(cdcs.Rep) as 'CS'
-                    from Representative r left join ClientDetail cdcs on r.Rep=cdcs.Rep and (cdcs.TaxPrepared <> @year or cdcs.TaxPrepared='' or cdcs.TaxPrepared is null) and ((cdcs.JobStatus='Closed' and Year(cdcs.EndDate)=@year) or (cdcs.JobStatus<>'Closed' and Year(cdcs.EndDate)<Year(getdate()))) and cdcs.CustomerType in ('S Corp.')
+                    from Representative r left join ClientDetail cdcs on r.Rep=cdcs.Rep and (cdcs.TaxPrepared <> convert(varchar(10),@year) or cdcs.TaxPrepared='' or cdcs.TaxPrepared is null) and ((cdcs.JobStatus='Closed' and Year(cdcs.EndDate)=@year) or (cdcs.JobStatus<>'Closed' and Year(cdcs.EndDate)<Year(getdate()))) and cdcs.CustomerType in ('S Corp.')
                     group by r.Rep) cs
                     where i.Rep=p.Rep and p.Rep=c.Rep and c.Rep=cs.Rep";
             dt = DBOperator.QuerySql(sql);

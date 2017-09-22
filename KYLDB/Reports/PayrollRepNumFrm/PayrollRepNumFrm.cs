@@ -36,11 +36,13 @@ namespace KYLDB.Reports.PayrollRepNumFrm
         {
             string sql = @"select r.Rep as 'Rep', count(ar.AccRep) as 'AccRep', count(pr.PayRep) as 'PayRep', COUNT(cr.CkRep) as 'CkRep'
                             from Representative r 
-                            left join ClientPayroll ar on r.Rep=ar.AccRep and ar.JosStatus='Current' and ar.Payroll like 'Yes%'
-                            left join ClientPayroll pr on r.Rep=pr.PayRep and pr.JosStatus='Current' and pr.Payroll like 'Yes%'
-                            left join ClientPayroll cr on r.Rep=cr.CkRep and cr.JosStatus='Current' and cr.Payroll like 'Yes%'
+                            left join ClientPayroll ar on r.Rep=ar.AccRep 
+                            left join ClientPayroll pr on r.Rep=pr.PayRep
+                            left join ClientPayroll cr on r.Rep=cr.CkRep
                             group by r.Rep
                             order by r.Rep";
+            //  and cr.JosStatus='Current' and cr.Payroll like 'Yes%'
+
             DataTable dt = DBOperator.QuerySql(sql);
             List<PayrollRepNum> reps = DBOperator.getListFromTable<PayrollRepNum>(dt);
             sql = "select count(1) from ClientPayroll";

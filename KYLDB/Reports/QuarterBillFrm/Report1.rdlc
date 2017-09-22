@@ -61,10 +61,10 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1.05833in</Width>
+                  <Width>0.59in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.55834in</Width>
+                  <Width>2.19833in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.89666in</Width>
@@ -79,7 +79,7 @@
                   <Width>1.225in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.08334in</Width>
+                  <Width>1.01502in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -96,7 +96,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>Acc Num</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -128,7 +130,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>Customer</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -160,7 +164,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>Num Of Ck </Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -171,7 +177,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>This Qtr</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -203,7 +211,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>Num Of Ck </Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -214,7 +224,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>Last Qtr</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -246,7 +258,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>Difference</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -278,7 +292,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>Ck fee</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -310,7 +326,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>Bill Amt</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -335,7 +353,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.22in</Height>
+                  <Height>0.2in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -347,7 +365,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!AccNum.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -596,8 +616,8 @@ Fields!NumOfCkLastQtr.Value&lt;Fields!NumOfCkThisQtr.Value,"orange")</Color>
             <DataSetName>dsQtrBill</DataSetName>
             <Top>0.0125in</Top>
             <Left>0.025in</Left>
-            <Height>0.56167in</Height>
-            <Width>8.37167in</Width>
+            <Height>0.54167in</Height>
+            <Width>7.475in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -608,7 +628,7 @@ Fields!NumOfCkLastQtr.Value&lt;Fields!NumOfCkThisQtr.Value,"orange")</Color>
         <Height>0.64167in</Height>
         <Style />
       </Body>
-      <Width>8.5in</Width>
+      <Width>7.5in</Width>
       <Page>
         <PageHeader>
           <Height>0.4in</Height>
@@ -731,7 +751,7 @@ Fields!NumOfCkLastQtr.Value&lt;Fields!NumOfCkThisQtr.Value,"orange")</Color>
               </Paragraphs>
               <rd:DefaultName>ExecutionTime</rd:DefaultName>
               <Top>0.08056in</Top>
-              <Left>5.64667in</Left>
+              <Left>4.52167in</Left>
               <Height>0.25in</Height>
               <Width>2.75in</Width>
               <ZIndex>3</ZIndex>
@@ -752,10 +772,10 @@ Fields!NumOfCkLastQtr.Value&lt;Fields!NumOfCkThisQtr.Value,"orange")</Color>
             </Border>
           </Style>
         </PageHeader>
-        <PageHeight>13in</PageHeight>
-        <PageWidth>11in</PageWidth>
         <LeftMargin>0.5in</LeftMargin>
         <RightMargin>0.5in</RightMargin>
+        <TopMargin>0.5in</TopMargin>
+        <BottomMargin>0.5in</BottomMargin>
         <Style />
       </Page>
     </ReportSection>

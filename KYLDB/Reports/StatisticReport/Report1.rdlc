@@ -6,16 +6,16 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>0.55in</Width>
+              <Width>0.48028in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.46343in</Width>
+              <Width>0.3in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.49943in</Width>
+              <Width>0.3in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.78167in</Width>
+              <Width>0.65083in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>0.53167in</Width>
@@ -36,6 +36,7 @@
                             <TextRun>
                               <Value>Rep</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -71,6 +72,7 @@
                             <TextRun>
                               <Value>S/T</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -106,6 +108,7 @@
                             <TextRun>
                               <Value>P/R</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -141,6 +144,7 @@
                             <TextRun>
                               <Value>LIQUOR</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -176,6 +180,7 @@
                             <TextRun>
                               <Value>U/O</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -216,6 +221,7 @@
                             <TextRun>
                               <Value>=Fields!Rep.Value</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -250,7 +256,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!ST.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -282,7 +290,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!PR.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -314,7 +324,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Liquor.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -346,7 +358,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!UO.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -384,6 +398,7 @@
                             <TextRun>
                               <Value>TOTAL</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -418,7 +433,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Sum(Fields!ST.Value)</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -450,7 +467,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Sum(Fields!PR.Value)</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -482,7 +501,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Sum(Fields!Liquor.Value)</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -514,7 +535,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Sum(Fields!UO.Value)</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -564,9 +587,9 @@
         </TablixRowHierarchy>
         <DataSetName>dtSTPR</DataSetName>
         <Top>0.005in</Top>
-        <Left>2.91333in</Left>
+        <Left>2.46333in</Left>
         <Height>0.65667in</Height>
-        <Width>2.8262in</Width>
+        <Width>2.26278in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -577,19 +600,19 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>0.77in</Width>
+              <Width>0.64041in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.3937in</Width>
+              <Width>0.3in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.3937in</Width>
+              <Width>0.3in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.3937in</Width>
+              <Width>0.3in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.3937in</Width>
+              <Width>0.3in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>0.49028in</Width>
@@ -597,7 +620,7 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.22in</Height>
+              <Height>0.2in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -610,6 +633,7 @@
                             <TextRun>
                               <Value>TOTAL</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -645,6 +669,7 @@
                             <TextRun>
                               <Value>I</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -680,6 +705,7 @@
                             <TextRun>
                               <Value>P</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -715,6 +741,7 @@
                             <TextRun>
                               <Value>C</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -750,6 +777,7 @@
                             <TextRun>
                               <Value>CS</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -785,6 +813,7 @@
                             <TextRun>
                               <Value>Total</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -812,7 +841,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.22in</Height>
+              <Height>0.2in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -825,6 +854,7 @@
                             <TextRun>
                               <Value>=Fields!Rep.Value</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -859,7 +889,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!I.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -891,7 +923,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!P.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -923,7 +957,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!C.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -955,7 +991,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!CS.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -987,7 +1025,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Total.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -1035,8 +1075,8 @@
         </TablixRowHierarchy>
         <DataSetName>dsTotal</DataSetName>
         <Top>0.005in</Top>
-        <Height>0.44in</Height>
-        <Width>2.83508in</Width>
+        <Height>0.4in</Height>
+        <Width>2.33069in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -1048,27 +1088,27 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.9558cm</Width>
+              <Width>1.61713cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1cm</Width>
+              <Width>0.72483cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1cm</Width>
+              <Width>0.80868cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1cm</Width>
+              <Width>0.762cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1cm</Width>
+              <Width>0.762cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.25482cm</Width>
+              <Width>1.24531cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.55cm</Height>
+              <Height>0.508cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -1081,6 +1121,7 @@
                             <TextRun>
                               <Value>PENDING</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -1116,6 +1157,7 @@
                             <TextRun>
                               <Value>I</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -1151,6 +1193,7 @@
                             <TextRun>
                               <Value>P</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -1186,6 +1229,7 @@
                             <TextRun>
                               <Value>C</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -1221,6 +1265,7 @@
                             <TextRun>
                               <Value>CS</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -1256,6 +1301,7 @@
                             <TextRun>
                               <Value>Total</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -1283,7 +1329,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.55cm</Height>
+              <Height>0.508cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -1296,6 +1342,7 @@
                             <TextRun>
                               <Value>=Fields!Rep.Value</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -1330,7 +1377,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!I.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -1362,7 +1411,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!P.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -1394,7 +1445,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!C.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -1426,7 +1479,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!CS.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -1458,7 +1513,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Total.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -1496,6 +1553,7 @@
                             <TextRun>
                               <Value>TOTAL</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -1530,7 +1588,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Sum(Fields!I.Value)</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -1562,7 +1622,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Sum(Fields!P.Value)</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -1594,7 +1656,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Sum(Fields!C.Value)</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -1626,7 +1690,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Sum(Fields!CS.Value)</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -1658,7 +1724,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Sum(Fields!Total.Value)</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -1708,10 +1776,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>dsPending</DataSetName>
-        <Top>2.24578cm</Top>
+        <Top>1.99178cm</Top>
         <Left>0cm</Left>
-        <Height>1.65cm</Height>
-        <Width>7.21062cm</Width>
+        <Height>1.566cm</Height>
+        <Width>5.91996cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -1723,19 +1791,19 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.397cm</Width>
+              <Width>1.2192cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1cm</Width>
+              <Width>0.762cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1cm</Width>
+              <Width>0.762cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1cm</Width>
+              <Width>0.762cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1cm</Width>
+              <Width>0.762cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.52753cm</Width>
@@ -1743,7 +1811,7 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.55cm</Height>
+              <Height>0.508cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -1756,6 +1824,7 @@
                             <TextRun>
                               <Value>Yearly</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -1791,6 +1860,7 @@
                             <TextRun>
                               <Value>I</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -1826,6 +1896,7 @@
                             <TextRun>
                               <Value>P</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -1861,6 +1932,7 @@
                             <TextRun>
                               <Value>C</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -1896,6 +1968,7 @@
                             <TextRun>
                               <Value>CS</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -1931,6 +2004,7 @@
                             <TextRun>
                               <Value>Total</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -1971,6 +2045,7 @@
                             <TextRun>
                               <Value>=Fields!Rep.Value</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -2005,7 +2080,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!I.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -2037,7 +2114,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!P.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -2069,7 +2148,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!C.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -2101,7 +2182,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!CS.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -2133,7 +2216,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Total.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -2171,6 +2256,7 @@
                             <TextRun>
                               <Value>TOTAL</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -2205,7 +2291,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Sum(Fields!I.Value)</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -2237,7 +2325,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Sum(Fields!P.Value)</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -2269,7 +2359,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Sum(Fields!C.Value)</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -2301,7 +2393,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Sum(Fields!CS.Value)</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -2333,7 +2427,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Sum(Fields!Total.Value)</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -2383,10 +2479,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>dsYearly</DataSetName>
-        <Top>2.24578cm</Top>
-        <Left>7.39987cm</Left>
-        <Height>1.65cm</Height>
-        <Width>6.92453cm</Width>
+        <Top>1.99178cm</Top>
+        <Left>6.25687cm</Left>
+        <Height>1.608cm</Height>
+        <Width>5.79473cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -2398,7 +2494,7 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.03186cm</Width>
+              <Width>1.73553cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>0.91236cm</Width>
@@ -2418,7 +2514,7 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.55cm</Height>
+              <Height>0.508cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -2431,6 +2527,7 @@
                             <TextRun>
                               <Value>CURRENT</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -2466,6 +2563,7 @@
                             <TextRun>
                               <Value>I</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -2501,6 +2599,7 @@
                             <TextRun>
                               <Value>P</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -2536,6 +2635,7 @@
                             <TextRun>
                               <Value>C</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -2571,6 +2671,7 @@
                             <TextRun>
                               <Value>CS</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -2606,6 +2707,7 @@
                             <TextRun>
                               <Value>Total</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -2633,7 +2735,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.55cm</Height>
+              <Height>0.508cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -2646,6 +2748,7 @@
                             <TextRun>
                               <Value>=Fields!Rep.Value</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -2680,7 +2783,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!I.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -2712,7 +2817,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!P.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -2744,7 +2851,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!C.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -2776,7 +2885,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!CS.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -2808,7 +2919,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Total.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -2833,7 +2946,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.55cm</Height>
+              <Height>0.508cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -2846,6 +2959,7 @@
                             <TextRun>
                               <Value>TOTAL</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -2880,7 +2994,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Sum(Fields!I.Value)</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -2912,7 +3028,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Sum(Fields!P.Value)</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -2944,7 +3062,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Sum(Fields!C.Value)</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -2976,7 +3096,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Sum(Fields!CS.Value)</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -3008,7 +3130,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Sum(Fields!Total.Value)</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -3058,10 +3182,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>dsCurrent</DataSetName>
-        <Top>2.24578cm</Top>
-        <Left>14.61537cm</Left>
-        <Height>1.65cm</Height>
-        <Width>6.97466cm</Width>
+        <Top>1.99178cm</Top>
+        <Left>12.32937cm</Left>
+        <Height>1.524cm</Height>
+        <Width>6.67833cm</Width>
         <ZIndex>4</ZIndex>
         <Style>
           <Border>
@@ -3073,19 +3197,19 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.9558cm</Width>
+              <Width>1.59597cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1cm</Width>
+              <Width>0.746cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1cm</Width>
+              <Width>0.80868cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1cm</Width>
+              <Width>0.762cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1cm</Width>
+              <Width>0.75249cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.25482cm</Width>
@@ -3093,7 +3217,7 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.55cm</Height>
+              <Height>0.508cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -3106,6 +3230,7 @@
                             <TextRun>
                               <Value>DONE</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -3141,6 +3266,7 @@
                             <TextRun>
                               <Value>I</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -3176,6 +3302,7 @@
                             <TextRun>
                               <Value>P</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -3211,6 +3338,7 @@
                             <TextRun>
                               <Value>C</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -3246,6 +3374,7 @@
                             <TextRun>
                               <Value>CS</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -3281,6 +3410,7 @@
                             <TextRun>
                               <Value>Total</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -3308,7 +3438,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.55cm</Height>
+              <Height>0.508cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -3321,6 +3451,7 @@
                             <TextRun>
                               <Value>=Fields!Rep.Value</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -3355,7 +3486,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!I.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -3387,7 +3520,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!P.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -3419,7 +3554,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!C.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -3451,7 +3588,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!CS.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -3483,7 +3622,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Total.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -3508,7 +3649,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.55cm</Height>
+              <Height>0.508cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -3521,6 +3662,7 @@
                             <TextRun>
                               <Value>TOTAL</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -3555,7 +3697,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Sum(Fields!I.Value)</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -3587,7 +3731,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Sum(Fields!P.Value)</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -3619,7 +3765,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Sum(Fields!C.Value)</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -3651,7 +3799,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Sum(Fields!CS.Value)</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -3683,7 +3833,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Sum(Fields!Total.Value)</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -3733,10 +3885,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>dsDone</DataSetName>
-        <Top>4.5847cm</Top>
+        <Top>3.9497cm</Top>
         <Left>0cm</Left>
-        <Height>1.65cm</Height>
-        <Width>7.21062cm</Width>
+        <Height>1.524cm</Height>
+        <Width>5.91996cm</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
@@ -3748,19 +3900,19 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.397cm</Width>
+              <Width>1.2192cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1cm</Width>
+              <Width>0.762cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1cm</Width>
+              <Width>0.762cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1cm</Width>
+              <Width>0.762cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1cm</Width>
+              <Width>0.762cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.52753cm</Width>
@@ -3768,7 +3920,7 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.55cm</Height>
+              <Height>0.508cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -3781,6 +3933,7 @@
                             <TextRun>
                               <Value>Rep</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -3816,6 +3969,7 @@
                             <TextRun>
                               <Value>I</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -3851,6 +4005,7 @@
                             <TextRun>
                               <Value>P</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -3886,6 +4041,7 @@
                             <TextRun>
                               <Value>C</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -3921,6 +4077,7 @@
                             <TextRun>
                               <Value>CS</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -3956,6 +4113,7 @@
                             <TextRun>
                               <Value>Total</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -3983,7 +4141,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.55cm</Height>
+              <Height>0.508cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -3996,6 +4154,7 @@
                             <TextRun>
                               <Value>=Fields!Rep.Value</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -4030,7 +4189,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!I.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -4062,7 +4223,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!P.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -4094,7 +4257,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!C.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -4126,7 +4291,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!CS.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -4158,7 +4325,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Total.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -4183,7 +4352,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.55cm</Height>
+              <Height>0.508cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -4196,6 +4365,7 @@
                             <TextRun>
                               <Value>TOTAL</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -4230,7 +4400,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Sum(Fields!I.Value)</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -4262,7 +4434,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Sum(Fields!P.Value)</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -4294,7 +4468,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Sum(Fields!C.Value)</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -4326,7 +4502,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Sum(Fields!CS.Value)</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -4358,7 +4536,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Sum(Fields!Total.Value)</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -4408,10 +4588,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>dsNotDone</DataSetName>
-        <Top>4.5847cm</Top>
-        <Left>7.39987cm</Left>
-        <Height>1.65cm</Height>
-        <Width>6.92453cm</Width>
+        <Top>3.9497cm</Top>
+        <Left>6.25687cm</Left>
+        <Height>1.524cm</Height>
+        <Width>5.79473cm</Width>
         <ZIndex>6</ZIndex>
         <Style>
           <Border>
@@ -4420,7 +4600,7 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>2.56667in</Height>
+    <Height>2.3in</Height>
     <Style>
       <Border>
         <Color>White</Color>
@@ -4428,7 +4608,7 @@
       </Border>
     </Style>
   </Body>
-  <Width>8.50001in</Width>
+  <Width>7.5in</Width>
   <Page>
     <PageHeader>
       <Height>0.4in</Height>
@@ -4485,7 +4665,7 @@
           </Paragraphs>
           <rd:DefaultName>ExecutionTime1</rd:DefaultName>
           <Top>0.18557cm</Top>
-          <Left>15.8407cm</Left>
+          <Left>12.3482cm</Left>
           <Height>0.6cm</Height>
           <Width>5.63267cm</Width>
           <ZIndex>1</ZIndex>

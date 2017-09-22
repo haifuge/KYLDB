@@ -38,6 +38,7 @@ namespace KYLDB.Reports.LabelMailingReport
 
         private void LabelMailingReport_Load(object sender, EventArgs e)
         {
+            DBOperator.SetComboxRepData(comboBox1);
             string sql = "select AccountNo from ClientDetail ";
             string condition = "";
             if (Main.cUser.UserLevel >= Setting.ReporterLevel)

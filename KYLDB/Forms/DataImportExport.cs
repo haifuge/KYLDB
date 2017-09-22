@@ -94,8 +94,11 @@ namespace KYLDB.Forms
                     tMessage.Text = i + " records has been imported, "+(total-i)+" left.";
                 }
             }
-            sql = sql.Substring(0, sql.Length - 2);
-            DBOperator.ExecuteSql(sql);
+            if (sql.Length > 40)
+            {
+                sql = sql.Substring(0, sql.Length - 2);
+                DBOperator.ExecuteSql(sql);
+            }
             tMessage.Text = "begin to update ClientPayroll with new data of ClientDetail.";
             if (tableName == "ClientDetail")
             {
@@ -263,9 +266,14 @@ namespace KYLDB.Forms
                         for (int j = 0; j < dt.Columns.Count; j++)
                         {
                             string data = dt.Rows[i][j].ToString();
-                            if ((j == 79 || j == 39 || j == 34 || j == 27) && data != "")
+                            //if ((j == 79 || j == 39 || j == 34 || j == 27) && data != "")
+                            if ((j == 39 || j == 27 || j == 34) && data != "")
                             {
-                                data = DateTime.Parse(data).ToShortDateString();
+                                try
+                                {
+                                    data = DateTime.Parse(data).ToShortDateString();
+                                }
+                                catch { }
                             }
                             xlWorksheet.Cells[j + 1][i + 2] = data;
                         }
@@ -288,7 +296,7 @@ namespace KYLDB.Forms
                         {
                             string data = dt.Rows[i][j].ToString();
                             // StartDate, end Date
-                            if ((j == 41 || j == 42) && data != "")
+                            if ((j == 41 || j == 41) && data != "")
                             {
                                 data = DateTime.Parse(data).ToShortDateString();
                             }

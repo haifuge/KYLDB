@@ -49,7 +49,7 @@ namespace KYLDB.Reports.RepReportFrm
             }
             string sql = @"select cp.AccNum, cp.Entity as 'Name', cp.AccRep, cp.PayRep, cp.CkRep, cp.PayType, cp.PayFreq 
                             from ClientPayroll cp inner join ClientDetail cd on cp.accnum=cd.AccountNo 
-                            where cd.JobStatus='Current' and cp.Payroll like 'Yes%' " + repCond+@" order by cp.AccNum";
+                            where cd.JobStatus='Current' and cd.Payroll like 'Yes%' " + repCond+@" order by cp.AccNum";
             DataTable dt = DBOperator.QuerySql(sql);
             List<RepReport> payRep = DBOperator.getListFromTable<RepReport>(dt);
             ReportParameter rep = new ReportParameter("rep", cmbRep.Text);

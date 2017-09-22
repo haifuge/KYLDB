@@ -73,39 +73,39 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>0.7in</Width>
+                  <Width>0.56in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.73361in</Width>
+                  <Width>1.9in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.74777in</Width>
+                  <Width>0.6in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.66473in</Width>
+                  <Width>0.56473in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.93472in</Width>
+                  <Width>0.68611in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.80556in</Width>
+                  <Width>0.66389in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.90972in</Width>
+                  <Width>0.74in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.91888in</Width>
+                  <Width>0.81055in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.47222in</Width>
+                  <Width>0.45in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.61278in</Width>
+                  <Width>0.52in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.25in</Height>
+                  <Height>0.2in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -117,7 +117,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>Acc Num</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -149,7 +151,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>Name</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -181,7 +185,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>Pay Type</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -213,7 +219,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>Pay Freq</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -245,7 +253,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>Ck Date</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -277,7 +287,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>FedTaxFreq</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -309,7 +321,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>StateTaxFreq</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -341,7 +355,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>PhilaTaxFreq</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -373,7 +389,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>Datain</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -405,7 +423,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>Dataout</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -430,7 +450,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.25in</Height>
+                  <Height>0.2in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -442,7 +462,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!AccNum.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -474,11 +496,13 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!Name.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Center</TextAlign>
+                                <TextAlign>Left</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -506,7 +530,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!PayType.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -538,7 +564,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!PayFreq.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -570,7 +598,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!CkDate.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -602,7 +632,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!FedTaxFreq.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -634,7 +666,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!StateTaxFreq.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -666,7 +700,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!PhilaTaxFreq.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -698,7 +734,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!Datain.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -730,7 +768,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!Dataout.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -781,8 +821,8 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>dsCkRep</DataSetName>
-            <Height>0.5in</Height>
-            <Width>8.5in</Width>
+            <Height>0.4in</Height>
+            <Width>7.49528in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -790,10 +830,10 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>0.69305in</Height>
+        <Height>0.46805in</Height>
         <Style />
       </Body>
-      <Width>8.5in</Width>
+      <Width>7.5in</Width>
       <Page>
         <PageHeader>
           <Height>0.4in</Height>
@@ -850,7 +890,7 @@
               </Paragraphs>
               <rd:DefaultName>ExecutionTime</rd:DefaultName>
               <Top>0.09389in</Top>
-              <Left>5.60832in</Left>
+              <Left>4.60832in</Left>
               <Height>0.25in</Height>
               <Width>2.62168in</Width>
               <ZIndex>1</ZIndex>
@@ -871,11 +911,10 @@
             </Border>
           </Style>
         </PageHeader>
-        <PageWidth>10.5in</PageWidth>
-        <LeftMargin>1in</LeftMargin>
-        <RightMargin>1in</RightMargin>
-        <TopMargin>1in</TopMargin>
-        <BottomMargin>1in</BottomMargin>
+        <LeftMargin>0.5in</LeftMargin>
+        <RightMargin>0.5in</RightMargin>
+        <TopMargin>0.5in</TopMargin>
+        <BottomMargin>0.5in</BottomMargin>
         <Style />
       </Page>
     </ReportSection>
