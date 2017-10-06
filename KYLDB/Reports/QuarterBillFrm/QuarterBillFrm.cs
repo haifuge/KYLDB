@@ -87,10 +87,10 @@ namespace KYLDB.Reports.QuarterBillFrm
             cmbYear.SelectedIndex = 0;
             string sql = @"select a.AccNum, a.Customer, a.NumOfCkThisQtr, a.NumOfCkLastQtr, a.CkFee,
                                   a.NumOfCkThisQtr-a.NumOfCkLastQtr as 'Difference', convert(varchar(20),a.BillAmt) as 'BillAmt'
-                             from(
+                            from(
 	                            select cp.AccNum, cp.Entity as 'Customer', ISNULL(SUM(p.NumOfCk),0) as NumOfCkThisQtr, 
-                                       ISNULL(SUM(p2.NumOfCk),0) as NumOfCkLastQtr, max(p.CkFee) as 'CkFee',
-                                       sum(case when p.BillAmount is null then 0 else Convert(money,REPLACE(p.BillAmount,'$','')) end) as 'BillAmt'
+                                        ISNULL(SUM(p2.NumOfCk),0) as NumOfCkLastQtr, max(p.CkFee) as 'CkFee',
+                                        sum(case when p.BillAmount is null then 0 else Convert(money,REPLACE(p.BillAmount,'$','')) end) as 'BillAmt'
 	                            from ClientPayroll cp 
 	                            left join PayCheck p on cp.AccNum=p.AccNum and p.PostDate between '" + thisQStart + "' and '" + thisQEnd + @"'
 	                            left join PayCheck p2 on cp.AccNum=p2.AccNum and p2.PostDate between '" + lastQStart + "' and '" + lastQEnd + @"'
