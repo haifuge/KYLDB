@@ -102,9 +102,10 @@ namespace KYLDB.Forms
             tMessage.Text = "begin to update ClientPayroll with new data of ClientDetail.";
             if (tableName == "ClientDetail")
             {
-                sql = @"update ClientPayroll set EIN=cd.EIN, AccRep=cd.Rep, Entity=cd.Customer, TradeName=cd.Company, BusAdd1=cd.BusAdd1,
+                sql = @"update ClientPayroll set EIN=cd.EIN, AccRep=cd.Rep, Entity=cd.Customer, TradeName=cd.Company, BusAdd1=cd.BusAdd1, 
+                                                 CkRep=cd.PaycheckRep, PayRep=cd.PayrollRep,
 						                         BusAdd2=cd.BusAdd2, BusCity=cd.BusAdd3, BusSt=cd.BusAdd4 , BusZip=cd.BusAdd5, Fax=cd.Fax
-                        from ClientDetail cd where AccNum=cd.AccountNo";
+                        from ClientDetail cd, ClientPayroll where AccNum=cd.AccountNo";
                 DBOperator.ExecuteSql(sql);
             }
         }
