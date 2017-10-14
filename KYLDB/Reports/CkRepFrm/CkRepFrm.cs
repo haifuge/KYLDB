@@ -70,7 +70,7 @@ namespace KYLDB.Reports.CkRepFrm
             string sql = @"select cp.AccNum, cp.Entity as 'Name', cp.PayType, cp.PayFreq, 
 	                            case when ccd.FirstCheckDate='' then CONVERT(VARCHAR(20), DATEADD(year, DATEDIFF(year, '', getdate()), ''), 101) 
 		                             when ccd.FirstCheckDate is null then CONVERT(VARCHAR(20), DATEADD(year, DATEDIFF(year, '', getdate()), ''), 101) 
-		                             else ccd.FirstCheckDate end as 'CkDate',FedTaxFreq, DateIn, DateOut, PhilaTaxFreq, StateTaxFreq
+		                             else ccd.FirstCheckDate end as 'CkDate',FedTaxFreq, DateIn as 'Datain', DateOut as 'Dataout', PhilaTaxFreq, StateTaxFreq
                             from ClientPayroll cp left join ClientCheckDate ccd on cp.AccNum=ccd.AccNum" + condition + " order by cp.AccNum";
             DataTable dt = DBOperator.QuerySql(sql);
             List<CkRep> items=DBOperator.getListFromTable<CkRep>(dt);

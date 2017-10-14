@@ -197,18 +197,6 @@ namespace KYLDB.Forms
 
         private void dataGridView1_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
         {
-            //for(int i = 0; i < e.Row.Index; i++)
-            //{
-            //    string date = dataGridView1.Rows[i].Cells[0].Value.ToString();
-            //    date = date.Split(' ')[0];
-            //    string today = DateTime.Now.ToShortDateString();
-            //    if (date == today)
-            //    {
-            //        MessageBox.Show("There already is a Check Issue today");
-            //        e.Row.ReadOnly = true;
-            //        return;
-            //    }
-            //}
             e.Row.ReadOnly = false;
             if (e.Row.Index>0)
             {
@@ -220,6 +208,11 @@ namespace KYLDB.Forms
             e.Row.Cells[8].Value = Main.cUser.Rep;
             e.Row.Cells[10].Value = "save";
             e.Row.Cells[11].Value = "delete";
+            if (e.Row.Index > 0)
+            {
+                string txt = dataGridView1.Rows[e.Row.Index - 1].Cells[6].Value.ToString();
+                comCkFee.Text = txt;
+            }
         }
 
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)

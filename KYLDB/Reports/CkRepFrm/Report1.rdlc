@@ -73,10 +73,10 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>0.56in</Width>
+                  <Width>0.65167in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.9in</Width>
+                  <Width>1.60833in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.6in</Width>
@@ -94,13 +94,13 @@
                   <Width>0.74in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.81055in</Width>
+                  <Width>0.71055in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.45in</Width>
+                  <Width>0.825in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.52in</Width>
+                  <Width>0.53667in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -468,7 +468,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Center</TextAlign>
+                                <TextAlign>Left</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -735,7 +735,7 @@
                                 <TextRun>
                                   <Value>=Fields!Datain.Value</Value>
                                   <Style>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8.5pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -756,6 +756,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -822,7 +823,7 @@
             </TablixRowHierarchy>
             <DataSetName>dsCkRep</DataSetName>
             <Height>0.4in</Height>
-            <Width>7.49528in</Width>
+            <Width>7.58695in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -833,7 +834,7 @@
         <Height>0.46805in</Height>
         <Style />
       </Body>
-      <Width>7.5in</Width>
+      <Width>7.58695in</Width>
       <Page>
         <PageHeader>
           <Height>0.4in</Height>

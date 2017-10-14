@@ -37,7 +37,11 @@ namespace KYLDB.Forms
         KYLDB.Model.ClientDetail cAcc;
         private void ClientDetail_Load(object sender, EventArgs e)
         {
-            string sql = "select * from ClientDetail where Rep='" + Main.cUser.Rep + "' or PaycheckRep='" + Main.cUser.FirstName + "' or PayrollRep='" + Main.cUser.FirstName + "'";
+            string sql;
+            if (Main.cUser.UserLevel >= 10)
+                sql = "select * from ClientDetail";
+            else
+                sql = "select * from ClientDetail where Rep='" + Main.cUser.Rep + "' or PaycheckRep='" + Main.cUser.FirstName + "' or PayrollRep='" + Main.cUser.FirstName + "'";
             DataTable dt = DBOperator.QuerySql(sql);
             details = DBOperator.getListFromTable<KYLDB.Model.ClientDetail>(dt);
             var accNum = from acc in details
