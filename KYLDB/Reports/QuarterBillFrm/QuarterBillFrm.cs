@@ -102,6 +102,7 @@ namespace KYLDB.Reports.QuarterBillFrm
             ReportParameter quarterp = new ReportParameter("quarter", quarter);
             reportViewer1.LocalReport.SetParameters(new ReportParameter[] { yearP, quarterp });
             ReportDataSource rds = new ReportDataSource("dsQtrBill", items);
+            reportViewer1.LocalReport.DataSources.Clear();
             reportViewer1.LocalReport.DataSources.Add(rds);
 
             reportViewer1.RefreshReport();
@@ -162,6 +163,7 @@ namespace KYLDB.Reports.QuarterBillFrm
             ReportParameter quarterp = new ReportParameter("quarter", quarter);
             reportViewer1.LocalReport.SetParameters(new ReportParameter[] { yearP, quarterp });
             ReportDataSource rds = new ReportDataSource("dsQtrBill", items);
+            reportViewer1.LocalReport.DataSources.Clear();
             reportViewer1.LocalReport.DataSources.Add(rds);
 
             reportViewer1.RefreshReport();

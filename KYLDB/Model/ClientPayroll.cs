@@ -39,7 +39,23 @@ namespace KYLDB.Model
         public string PayType { get; set; }
         public string PayFreq { get; set; }
         public string TaxDepType { get; set; }
-        public string PayStartDate { get; set; }
+        private string _paystartDate;
+        public string PayStartDate
+        {
+            get { return _paystartDate; }
+            set
+            {
+                try
+                {
+                    DateTime.Parse(value);
+                    _paystartDate = value;
+                }
+                catch
+                {
+                    _paystartDate = null;
+                }
+            }
+        }
         public string PayCloseDate { get; set; }
         public string Bank { get; set; }
         public string BankRtg { get; set; }

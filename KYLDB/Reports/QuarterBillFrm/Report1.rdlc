@@ -61,10 +61,10 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>0.59in</Width>
+                  <Width>0.69833in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.19833in</Width>
+                  <Width>2.09in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.89666in</Width>
@@ -76,10 +76,10 @@
                   <Width>0.79166in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.225in</Width>
+                  <Width>1.125in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.01502in</Width>
+                  <Width>1.11502in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -399,7 +399,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!Customer.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>

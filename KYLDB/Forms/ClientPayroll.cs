@@ -61,9 +61,9 @@ namespace KYLDB
             editControls(true);
             if (Main.cUser.UserLevel >= 10)
             {
-                tAccRep.Enabled = true;
-                tPayRep.Enabled = true;
-                tCkRep.Enabled = true;
+                tAccRep.Enabled = false;
+                tPayRep.Enabled = false;
+                tCkRep.Enabled = false;
             }
             else
             {
@@ -160,7 +160,7 @@ namespace KYLDB
             tPAUCQ1.Text = acc.PAUCQ1;
             tPAUCQ2.Text = acc.PAUCQ2;
             tPAUCQ3.Text = acc.PAUCQ3;
-            dFirstCheckDate.Text = acc.FirstCheckDate;
+            dFirstCheckDate.Text = acc.FirstCheckDate.Trim()==""?null: acc.FirstCheckDate.Trim();
         }
         private void AccNumList_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -168,7 +168,7 @@ namespace KYLDB
             var acc = (from ac in ClientPayrolls
                        where ac.AccNum == accNum
                        select ac).First();
-            comboBox2.Text = acc.EIN;
+            comboBox2.Text = acc.Entity;
             tAccNum.Text = acc.AccNum;
             tEIN.Text = acc.EIN;
             tEntity.Text = acc.Entity;
@@ -273,13 +273,13 @@ namespace KYLDB
 
         private void editControls(bool flag)
         {
-            //tAccNum.Enabled = flag;
-            //tEIN.Enabled = flag;
-            //tEntity.Enabled = flag;
-            //tTradeName.Enabled = flag;
-            //tPayRep.Enabled = flag;
-            //tCkRep.Enabled = flag;
-            //tAccRep.Enabled = flag;
+            tAccNum.Enabled = false;
+            tEIN.Enabled = false;
+            tEntity.Enabled = false;
+            tTradeName.Enabled = false;
+            tPayRep.Enabled = false;
+            tCkRep.Enabled = false;
+            tAccRep.Enabled = false;
             //tBusAdd1.Enabled = flag;
             //tBusAdd2.Enabled = flag;
             //tBusCity.Enabled = flag;
