@@ -49,19 +49,47 @@ namespace KYLDB.Reports.MonthlySaleTax
                 repCond = " Rep = '" + Main.cUser.Rep + "' and ";
             }
             string rep = Main.cUser.Rep;
+            int mon = DateTime.Now.Month;
+            string monthCond = "";
+            switch (mon)
+            {
+                case 1:
+                case 2:
+                case 4:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 11:
+                    monthCond = "SalesTax in ('Monthly','Monthly(w/ Prepay)','Monthly(Sugar)')";
+                    break;
+                case 3:
+                    monthCond = "SalesTax in ('Monthly','Monthly(w/ Prepay)','Monthly(Sugar)', 'Quarterly', 'Closed(1Q/" + DateTime.Now.AddMonths(-1).Year.ToString() + ")')";
+                    break;
+                case 9:
+                    monthCond = "SalesTax in ('Monthly','Monthly(w/ Prepay)','Monthly(Sugar)', 'Quarterly', 'Closed(3Q/" + DateTime.Now.AddMonths(-1).Year.ToString() + ")')";
+                    break;
+                case 6:
+                    monthCond = "SalesTax in ('Monthly','Monthly(w/ Prepay)','Monthly(Sugar)', 'Quarterly', 'Half-Year', 'Closed(2Q/" + DateTime.Now.AddMonths(-1).Year.ToString() + ")')";
+                    break;
+                case 12:
+                    monthCond = "SalesTax in ('Monthly','Monthly(w/ Prepay)','Monthly(Sugar)', 'Quarterly', 'Half-Year', 'Closed(4Q/" + DateTime.Now.AddMonths(-1).Year.ToString() + ")')";
+                    break;
+            }
             string month = DateTime.Now.AddMonths(-1).ToString("MMMM, yyyy");
             string sql = @"select Accountno as 'ID', Customer as 'Company', Contact, Phone, AltPhone, BalanceTotal as 'Balance', SalesTax, SalesTaxNum, 
                                   LiquorTax_Phila as 'LiquorTax', U_OTax from ClientDetail 
                             where "+repCond+ @" (JobStatus='pending' 
-                                  or (SalesTax in ('Monthly','Monthly(w/ Prepay)','Monthly(Sugar)') and JobStatus='current') 
+                                  or ("+ monthCond + @" and JobStatus='current') 
                                   or (JobStatus<>'closed' and (LiquorTax_Phila='Yes' or U_OTax like 'Yes%')) )
                             order by JobStatus, Accountno";
             DataTable dt = DBOperator.QuerySql(sql);
+            int total = dt.Rows.Count;
             List<SalesTaxRep> items = DBOperator.getListFromTable<SalesTaxRep>(dt);
-
             ReportParameter repTitle = new ReportParameter("repTitle", "Monthly Query - " + rep);
             ReportParameter repMonth = new ReportParameter("repMonth", month);
-            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { repTitle, repMonth });
+            ReportParameter totalPar = new ReportParameter("totalNum", "Total #: "+total.ToString());
+            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { repTitle, repMonth, totalPar });
             ReportDataSource rds = new ReportDataSource("dsMonthlySalesTax", items);
             reportViewer1.LocalReport.DataSources.Add(rds);
 
@@ -91,11 +119,12 @@ namespace KYLDB.Reports.MonthlySaleTax
                             order by JobStatus, Accountno";
             DataTable dt = DBOperator.QuerySql(sql);
             List<SalesTaxRep> items = DBOperator.getListFromTable<SalesTaxRep>(dt);
-
+            int total = dt.Rows.Count;
             reportViewer1.LocalReport.DataSources.Clear();
             ReportParameter repTitle = new ReportParameter("repTitle", "Monthly Query - " + rep);
             ReportParameter repMonth = new ReportParameter("repMonth", month);
-            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { repTitle, repMonth });
+            ReportParameter totalPar = new ReportParameter("totalNum", "Total #: " + total.ToString());
+            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { repTitle, repMonth, totalPar });
             ReportDataSource rds = new ReportDataSource("dsMonthlySalesTax", items);
             reportViewer1.LocalReport.DataSources.Add(rds);
 

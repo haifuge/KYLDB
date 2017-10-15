@@ -35,39 +35,39 @@ namespace KYLDB
         private void Form1_Load(object sender, EventArgs e)
         {
 
-            //Login l = new Login();
-            //l.ShowDialog();
-            //if (cUser == null)
-            //{
-            //    this.Close();
-            //    Application.Exit();
-            //    return;
-            //}
-            //this.Text = "KYL - " + cUser.FirstName;
-            //if(cUser.UserLevel>= Setting.AdminLevel)
-            //{
-            //    repManageToolStripMenuItem.Visible = true;
-            //    dataToolStripMenuItem.Visible = true; 
-            //    statisticReportToolStripMenuItem.Visible=true;
-            //    payrollRepNumToolStripMenuItem.Visible = true;
-            //    quarterBillToolStripMenuItem.Visible = true;
-            //}
-            //else 
-            //{
-            //    repManageToolStripMenuItem.Visible = false;
-            //    dataToolStripMenuItem.Visible = false;
-            //    statisticReportToolStripMenuItem.Visible = false;
-            //    payrollRepNumToolStripMenuItem.Visible = false;
-            //    quarterBillToolStripMenuItem.Visible = false;
-            //}
-            //reportsToolStripMenuItem.Visible = true;
-            //payCheckToolStripMenuItem.Visible = false;
-            //clientDetailToolStripMenuItem.Visible = false;
-            //clientInfoToolStripMenuItem.Visible = false;
-            //ClientPayrollToolStripMenuItem.Visible = false;
+            Login l = new Login();
+            l.ShowDialog();
+            if (cUser == null)
+            {
+                this.Close();
+                Application.Exit();
+                return;
+            }
+            this.Text = "KYL - " + cUser.FirstName;
+            if (cUser.UserLevel >= Setting.AdminLevel)
+            {
+                repManageToolStripMenuItem.Visible = true;
+                dataToolStripMenuItem.Visible = true;
+                statisticReportToolStripMenuItem.Visible = true;
+                payrollRepNumToolStripMenuItem.Visible = true;
+                quarterBillToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                repManageToolStripMenuItem.Visible = false;
+                dataToolStripMenuItem.Visible = false;
+                statisticReportToolStripMenuItem.Visible = false;
+                payrollRepNumToolStripMenuItem.Visible = false;
+                quarterBillToolStripMenuItem.Visible = false;
+            }
+            reportsToolStripMenuItem.Visible = true;
+            payCheckToolStripMenuItem.Visible = false;
+            clientDetailToolStripMenuItem.Visible = false;
+            clientInfoToolStripMenuItem.Visible = false;
+            ClientPayrollToolStripMenuItem.Visible = false;
 
-            cUser = new User() { Rep = "C", LastName = "Chow", FirstName = "Charles", UserLevel = 10 };
-
+            //cUser = new User() { Rep = "C", LastName = "Chow", FirstName = "Charles", UserLevel = 10 };
+            quarterlySaleTaxToolStripMenuItem.Visible = false;
         }
 
         private void clientInfoToolStripMenuItem_Click(object sender, EventArgs e)

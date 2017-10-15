@@ -52,7 +52,19 @@ namespace KYLDB.Model
             }
         }
         public string Balance { get; set; }
-        public string SalesTax { get; set; }
+        private string _saleTax;
+        public string SalesTax
+        {
+            get { return _saleTax; }
+            set
+            {
+                _saleTax = value;
+                if (_saleTax.Length > 9)
+                {
+                    _saleTax = _saleTax.Substring(0, 9);
+                }
+            }
+        }
         public string SalesTaxNum { get; set; }
         public string LiquorTax { get; set; }
         public string U_OTax { get; set; }
