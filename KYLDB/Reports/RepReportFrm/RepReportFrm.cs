@@ -45,7 +45,7 @@ namespace KYLDB.Reports.RepReportFrm
             {
                 cmbRep.Enabled = false;
                 cmbRep.Text = Main.cUser.Rep;
-                repCond = " and cp.PayRep = '" + Main.cUser.FirstName + "' ";
+                repCond = " and cp.PayRep = '" + Main.cUser.Rep + "' ";
             }
             string sql = @"select cp.AccNum, cp.Entity as 'Name', cp.AccRep, cp.PayRep, cp.CkRep, cp.PayType, cp.PayFreq 
                             from ClientPayroll cp inner join ClientDetail cd on cp.accnum=cd.AccountNo 

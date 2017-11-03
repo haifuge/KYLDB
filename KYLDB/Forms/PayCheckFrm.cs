@@ -41,7 +41,7 @@ namespace KYLDB.Forms
         private void PayCheckFrm_Load(object sender, EventArgs e)
         {
             string sql = @"select * from ClientPayroll 
-                           where (AccRep='"+Main.cUser.Rep+"' or PayRep='"+Main.cUser.FirstName+"' or CkRep='"+Main.cUser.FirstName+ "') and PayFreq<>'Quarterly'";
+                           where (AccRep='"+Main.cUser.Rep+"' or PayRep='"+Main.cUser.Rep+"' or CkRep='"+Main.cUser.Rep+ "') and PayFreq<>'Quarterly'";
             DataTable dt = DBOperator.QuerySql(sql);
             ClientPayrolls = DBOperator.getListFromTable<Model.ClientPayroll>(dt);
             var acclist = from ac in ClientPayrolls
@@ -67,8 +67,10 @@ namespace KYLDB.Forms
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             var acc = (from ac in ClientPayrolls
-                      where ac.AccNum == comboBox1.Text
-                      select ac).First();
+                       where ac.AccNum == comboBox1.Text
+                       select ac).FirstOrDefault();
+            if (acc == null)
+                return;
             txtAccNum.Text = acc.AccNum;
             txtCustomer.Text = acc.Entity;
             txtPayType.Text = acc.PayType;
@@ -84,8 +86,10 @@ namespace KYLDB.Forms
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             var acc = (from ac in ClientPayrolls
-                      where ac.Entity == comboBox2.Text
-                      select ac).First();
+                       where ac.Entity == comboBox2.Text
+                       select ac).FirstOrDefault();
+            if (acc == null)
+                return;
             txtAccNum.Text = acc.AccNum;
             txtCustomer.Text = acc.Entity;
             txtPayType.Text = acc.PayType;
@@ -239,9 +243,12 @@ namespace KYLDB.Forms
         public void SetAccNum(string accNum)
         {
             comboBox1.Text = accNum;
-            var acc = (from ac in ClientPayrolls
-                       where ac.AccNum == comboBox1.Text
-                       select ac).First();
+            string sql = @"select * from ClientPayroll where AccNum='" + comboBox1.Text + "'";
+            DataTable dt = DBOperator.QuerySql(sql);
+            if (dt.Rows.Count == 0)
+                return;
+            var cpr = DBOperator.getListFromTable<Model.ClientPayroll>(dt);
+            var acc = cpr[0];
             txtAccNum.Text = acc.AccNum;
             txtCustomer.Text = acc.Entity;
             txtPayType.Text = acc.PayType;

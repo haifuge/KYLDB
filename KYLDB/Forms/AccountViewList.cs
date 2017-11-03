@@ -60,7 +60,7 @@ namespace KYLDB.Forms
             if (Main.cUser.UserLevel == 10)
                 sql = "select * from ClientDetail";
             else
-                sql = "select * from ClientDetail where Rep='"+Main.cUser.Rep+ "' or PaycheckRep='" + Main.cUser.FirstName + "' or PayrollRep='" + Main.cUser.FirstName + "'";
+                sql = "select * from ClientDetail where Rep='"+Main.cUser.Rep+ "' or PaycheckRep='" + Main.cUser.Rep + "' or PayrollRep='" + Main.cUser.Rep + "'";
             dt = DBOperator.QuerySql(sql);
             ClientDetails = DBOperator.getListFromTable<Model.ClientDetail>(dt);
             

@@ -41,7 +41,7 @@ namespace KYLDB.Forms
             if (Main.cUser.UserLevel >= 10)
                 sql = "select * from ClientDetail";
             else
-                sql = "select * from ClientDetail where Rep='" + Main.cUser.Rep + "' or PaycheckRep='" + Main.cUser.FirstName + "' or PayrollRep='" + Main.cUser.FirstName + "'";
+                sql = "select * from ClientDetail where Rep='" + Main.cUser.Rep + "' or PaycheckRep='" + Main.cUser.Rep + "' or PayrollRep='" + Main.cUser.Rep + "'";
             DataTable dt = DBOperator.QuerySql(sql);
             details = DBOperator.getListFromTable<KYLDB.Model.ClientDetail>(dt);
             var accNum = from acc in details
