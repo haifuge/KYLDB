@@ -36,6 +36,17 @@ namespace KYLDB
                 comd.ExecuteNonQuery();
             }
         }
+        public static void ExecuteProc(string proc)
+        {
+            using (SqlConnection conn = new SqlConnection())
+            {
+                conn.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["KYL"].ConnectionString;
+                conn.Open();
+                SqlCommand comd = new SqlCommand(proc, conn);
+                comd.CommandType = CommandType.StoredProcedure;
+                comd.ExecuteNonQuery();
+            }
+        }
         public static List<T> getListFromTable<T>(DataTable dt)
         {
             List<T> objs = new List<T>();

@@ -1,0 +1,45 @@
+create proc SynchronizeClientDetail2ClientPayroll
+as
+declare cur_dp cursor Local for select AccountNo, EIN, Rep, Customer, Company, BusAdd1, PaycheckRep, PayrollRep, BusAdd2, BusAdd3, BusAdd4, BusAdd5, Fax from ClientDetail
+open cur_dp
+declare @accnum varchar(20)
+declare @ein varchar(200)
+declare @rep varchar(40)
+declare @customer varchar(200)
+declare @company varchar(200)
+declare @busaddr1 varchar(400)
+declare @busaddr2 varchar(400)
+declare @busaddr3 varchar(400)
+declare @busaddr4 varchar(400)
+declare @busaddr5 varchar(400)
+declare @PaycheckRep varchar(20)
+declare @PayrollRep varchar(20)
+declare @fax varchar(200)
+fetch next from cur_dp into @accnum, @ein, @rep, @customer, @company, @busaddr1, @PaycheckRep, @PayrollRep, @busaddr2, @busaddr3, @busaddr4, @busaddr5, @fax
+if exists(select * from ClientPayroll where AccNum=@accnum)
+			begin
+				update ClientPayroll set EIN=@ein, AccRep=@rep, Entity=@customer, TradeName=@company, BusAdd1=@busaddr1, 
+                                                         CkRep=@PaycheckRep, PayRep=@PayrollRep,
+						                                 BusAdd2=@busaddr2, BusCity=@busaddr3, BusSt=@busaddr4, BusZip=@busaddr5, Fax=@fax
+                where AccNum=@accnum
+			end
+		else
+			begin
+				insert into ClientPayroll(AccNum, EIN, AccRep, Entity, TradeName, BusAdd1, CkRep, PayRep, BusAdd2, BusCity, BusSt, BusZip, Fax, PayType) values(@accnum, @ein, @rep, @customer, @company, @busaddr1, @PaycheckRep, @PayrollRep, @busaddr2, @busaddr3, @busaddr4, @busaddr5, @fax, '')
+			end
+while @@FETCH_STATUS=0
+	begin
+		fetch next from cur_dp into @accnum, @ein, @rep, @customer, @company, @busaddr1, @PaycheckRep, @PayrollRep, @busaddr2, @busaddr3, @busaddr4, @busaddr5, @fax 
+		if exists(select * from ClientPayroll where AccNum=@accnum)
+			begin
+				update ClientPayroll set EIN=@ein, AccRep=@rep, Entity=@customer, TradeName=@company, BusAdd1=@busaddr1, 
+                                                         CkRep=@PaycheckRep, PayRep=@PayrollRep,
+						                                 BusAdd2=@busaddr2, BusCity=@busaddr3, BusSt=@busaddr4, BusZip=@busaddr5, Fax=@fax
+                where AccNum=@accnum
+			end
+		else
+			begin
+				insert into ClientPayroll(AccNum, EIN, AccRep, Entity, TradeName, BusAdd1, CkRep, PayRep, BusAdd2, BusCity, BusSt, BusZip, Fax) values(@accnum, @ein, @rep, @customer, @company, @busaddr1, @PaycheckRep, @PayrollRep, @busaddr2, @busaddr3, @busaddr4, @busaddr5, @fax)
+			end
+
+	end

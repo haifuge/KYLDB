@@ -72,7 +72,7 @@ namespace KYLDB.Reports.CkRepFrm
 		                             when ccd.FirstCheckDate is null then CONVERT(VARCHAR(20), DATEADD(year, DATEDIFF(year, '', getdate()), ''), 101) 
 		                             else ccd.FirstCheckDate end as 'CkDate',FedTaxFreq, DateIn as 'Datain', DateOut as 'Dataout', PhilaTaxFreq, StateTaxFreq
                             from ClientPayroll cp 
-                            inner join ClientDetail cd on cp.AccNum=cd.AccountNo and cd.JobStatus='Current' and cp.PayType in ('Actual Check', 'Paper Check', 'PDF', 'No Check', 'Check Register', 'Tax Deposit', '')
+                            inner join ClientDetail cd on cp.AccNum=cd.AccountNo and cd.JobStatus='Current' and cp.PayType in ('Actual Check', 'Paper Check', 'PDF', 'No Check', 'Check Register', 'Tax Deposit')
                             left join ClientCheckDate ccd on cp.AccNum=ccd.AccNum" + condition + " order by cp.AccNum";
             DataTable dt = DBOperator.QuerySql(sql);
             List<CkRep> items=DBOperator.getListFromTable<CkRep>(dt);
