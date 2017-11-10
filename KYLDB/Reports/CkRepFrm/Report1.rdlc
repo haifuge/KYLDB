@@ -97,7 +97,7 @@
                   <Width>0.71055in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.825in</Width>
+                  <Width>0.725in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.53667in</Width>
@@ -756,7 +756,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -823,7 +822,7 @@
             </TablixRowHierarchy>
             <DataSetName>dsCkRep</DataSetName>
             <Height>0.4in</Height>
-            <Width>7.58695in</Width>
+            <Width>7.48695in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -834,7 +833,7 @@
         <Height>0.46805in</Height>
         <Style />
       </Body>
-      <Width>7.58695in</Width>
+      <Width>7.5in</Width>
       <Page>
         <PageHeader>
           <Height>0.4in</Height>
