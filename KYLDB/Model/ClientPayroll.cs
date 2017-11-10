@@ -60,7 +60,23 @@ namespace KYLDB.Model
         public string Bank { get; set; }
         public string BankRtg { get; set; }
         public string BankAcc { get; set; }
-        public string BankStartDate { get; set; }
+        private string _bankStartDate;
+        public string BankStartDate
+        {
+            get { return _bankStartDate; }
+            set
+            {
+                try
+                {
+                    DateTime.Parse(value);
+                    _bankStartDate = value;
+                }
+                catch
+                {
+                    _bankStartDate = null;
+                }
+            }
+        }
         public string DateIn { get; set; }
         public string DateOut { get; set; }
         public string TimeToDone { get; set; }

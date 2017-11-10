@@ -167,7 +167,6 @@
             this.tLSTTaxFreq = new System.Windows.Forms.ComboBox();
             this.cLSTPayType = new System.Windows.Forms.ComboBox();
             this.cUCPayType = new System.Windows.Forms.ComboBox();
-            this.cUCUsername = new System.Windows.Forms.ComboBox();
             this.label71 = new System.Windows.Forms.Label();
             this.label72 = new System.Windows.Forms.Label();
             this.label73 = new System.Windows.Forms.Label();
@@ -195,6 +194,7 @@
             this.tCkRep = new System.Windows.Forms.ComboBox();
             this.tEFTPS = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.cUCUsername = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnMain
@@ -595,14 +595,15 @@
             // 
             // dPayStartDate
             // 
-            this.dPayStartDate.CustomFormat = "";
+            this.dPayStartDate.CustomFormat = " ";
             this.dPayStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dPayStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dPayStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dPayStartDate.Location = new System.Drawing.Point(129, 366);
             this.dPayStartDate.Name = "dPayStartDate";
-            this.dPayStartDate.Size = new System.Drawing.Size(114, 24);
+            this.dPayStartDate.Size = new System.Drawing.Size(139, 24);
             this.dPayStartDate.TabIndex = 31;
             this.dPayStartDate.Value = new System.DateTime(2017, 6, 15, 21, 36, 28, 0);
+            this.dPayStartDate.ValueChanged += new System.EventHandler(this.dPayStartDate_ValueChanged);
             // 
             // tContact1Tel2
             // 
@@ -767,6 +768,7 @@
             // 
             // cPayFreq
             // 
+            this.cPayFreq.BackColor = System.Drawing.Color.Yellow;
             this.cPayFreq.FormattingEnabled = true;
             this.cPayFreq.Items.AddRange(new object[] {
             "",
@@ -794,13 +796,14 @@
             // 
             // cPayType
             // 
+            this.cPayType.BackColor = System.Drawing.Color.Yellow;
             this.cPayType.FormattingEnabled = true;
             this.cPayType.Items.AddRange(new object[] {
             "",
             "Actual Check",
             "Paper Check",
             "PDF",
-            "No Check",
+            "Tax Deposit",
             "Check Register"});
             this.cPayType.Location = new System.Drawing.Point(102, 327);
             this.cPayType.Name = "cPayType";
@@ -866,14 +869,15 @@
             // 
             // dBankStartDate
             // 
-            this.dBankStartDate.CustomFormat = "";
+            this.dBankStartDate.CustomFormat = " ";
             this.dBankStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dBankStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dBankStartDate.Location = new System.Drawing.Point(850, 403);
+            this.dBankStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dBankStartDate.Location = new System.Drawing.Point(842, 403);
             this.dBankStartDate.Name = "dBankStartDate";
-            this.dBankStartDate.Size = new System.Drawing.Size(114, 24);
+            this.dBankStartDate.Size = new System.Drawing.Size(122, 24);
             this.dBankStartDate.TabIndex = 36;
             this.dBankStartDate.Value = new System.DateTime(2017, 6, 15, 21, 36, 28, 0);
+            this.dBankStartDate.ValueChanged += new System.EventHandler(this.dBankStartDate_ValueChanged);
             // 
             // label39
             // 
@@ -957,9 +961,9 @@
             // tAveNumEE
             // 
             this.tAveNumEE.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tAveNumEE.Location = new System.Drawing.Point(848, 437);
+            this.tAveNumEE.Location = new System.Drawing.Point(840, 437);
             this.tAveNumEE.Name = "tAveNumEE";
-            this.tAveNumEE.Size = new System.Drawing.Size(116, 24);
+            this.tAveNumEE.Size = new System.Drawing.Size(124, 24);
             this.tAveNumEE.TabIndex = 40;
             this.tAveNumEE.Text = "8617254293";
             // 
@@ -993,6 +997,7 @@
             // 
             // cFedTaxFreq
             // 
+            this.cFedTaxFreq.BackColor = System.Drawing.Color.Yellow;
             this.cFedTaxFreq.FormattingEnabled = true;
             this.cFedTaxFreq.Items.AddRange(new object[] {
             "",
@@ -1154,6 +1159,7 @@
             // 
             // cStateTaxFreq
             // 
+            this.cStateTaxFreq.BackColor = System.Drawing.Color.Yellow;
             this.cStateTaxFreq.FormattingEnabled = true;
             this.cStateTaxFreq.Items.AddRange(new object[] {
             "",
@@ -1255,6 +1261,7 @@
             // 
             // cPhilaTaxFreq
             // 
+            this.cPhilaTaxFreq.BackColor = System.Drawing.Color.Yellow;
             this.cPhilaTaxFreq.FormattingEnabled = true;
             this.cPhilaTaxFreq.Items.AddRange(new object[] {
             "",
@@ -1578,17 +1585,6 @@
             this.cUCPayType.Size = new System.Drawing.Size(170, 24);
             this.cUCPayType.TabIndex = 73;
             // 
-            // cUCUsername
-            // 
-            this.cUCUsername.FormattingEnabled = true;
-            this.cUCUsername.Items.AddRange(new object[] {
-            "",
-            "Online"});
-            this.cUCUsername.Location = new System.Drawing.Point(131, 822);
-            this.cUCUsername.Name = "cUCUsername";
-            this.cUCUsername.Size = new System.Drawing.Size(186, 24);
-            this.cUCUsername.TabIndex = 74;
-            // 
             // label71
             // 
             this.label71.AutoSize = true;
@@ -1744,7 +1740,7 @@
             // 
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(274, 369);
+            this.label30.Location = new System.Drawing.Point(298, 369);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(107, 18);
             this.label30.TabIndex = 71;
@@ -1752,14 +1748,15 @@
             // 
             // dPayCloseDate
             // 
-            this.dPayCloseDate.CustomFormat = "";
+            this.dPayCloseDate.CustomFormat = " ";
             this.dPayCloseDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dPayCloseDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dPayCloseDate.Location = new System.Drawing.Point(388, 366);
+            this.dPayCloseDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dPayCloseDate.Location = new System.Drawing.Point(412, 366);
             this.dPayCloseDate.Name = "dPayCloseDate";
-            this.dPayCloseDate.Size = new System.Drawing.Size(114, 24);
+            this.dPayCloseDate.Size = new System.Drawing.Size(141, 24);
             this.dPayCloseDate.TabIndex = 32;
             this.dPayCloseDate.Value = new System.DateTime(2017, 6, 15, 21, 36, 28, 0);
+            this.dPayCloseDate.ValueChanged += new System.EventHandler(this.dPayCloseDate_ValueChanged);
             // 
             // label80
             // 
@@ -1828,6 +1825,7 @@
             // 
             // tEFTPS
             // 
+            this.tEFTPS.BackColor = System.Drawing.Color.Yellow;
             this.tEFTPS.FormattingEnabled = true;
             this.tEFTPS.Items.AddRange(new object[] {
             "",
@@ -1848,6 +1846,15 @@
             this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // cUCUsername
+            // 
+            this.cUCUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cUCUsername.Location = new System.Drawing.Point(131, 822);
+            this.cUCUsername.Name = "cUCUsername";
+            this.cUCUsername.Size = new System.Drawing.Size(186, 24);
+            this.cUCUsername.TabIndex = 163;
+            this.cUCUsername.Text = "Batch";
             // 
             // ClientPayroll
             // 
@@ -2171,7 +2178,6 @@
         private System.Windows.Forms.ComboBox tLSTTaxFreq;
         private System.Windows.Forms.ComboBox cLSTPayType;
         private System.Windows.Forms.ComboBox cUCPayType;
-        private System.Windows.Forms.ComboBox cUCUsername;
         private System.Windows.Forms.Label label71;
         private System.Windows.Forms.Label label72;
         private System.Windows.Forms.Label label73;
@@ -2199,5 +2205,6 @@
         private System.Windows.Forms.ComboBox tCkRep;
         private System.Windows.Forms.ComboBox tEFTPS;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox cUCUsername;
     }
 }

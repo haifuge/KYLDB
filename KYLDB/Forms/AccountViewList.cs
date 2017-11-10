@@ -57,7 +57,7 @@ namespace KYLDB.Forms
         private void AccountViewList_Load(object sender, EventArgs e)
         {
             string sql;
-            if (Main.cUser.UserLevel == 10)
+            if (Main.cUser.UserLevel >= 8)
                 sql = "select * from ClientDetail";
             else
                 sql = "select * from ClientDetail where Rep='"+Main.cUser.Rep+ "' or PaycheckRep='" + Main.cUser.Rep + "' or PayrollRep='" + Main.cUser.Rep + "'";

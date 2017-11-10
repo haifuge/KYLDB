@@ -16,10 +16,17 @@ namespace KYLDB
     public partial class ClientPayroll : Form
     {
         List<Model.ClientPayroll> ClientPayrolls = new List<Model.ClientPayroll>();
-
+        DataTable dt_clients;
         private ClientPayroll()
         {
             InitializeComponent();
+            //dBankStartDate.Format = DateTimePickerFormat.Custom;
+            //dBankStartDate.CustomFormat = "";
+            //dPayCloseDate.Format = DateTimePickerFormat.Custom;
+            //dPayCloseDate.CustomFormat = "";
+            //dPayStartDate.Format = DateTimePickerFormat.Custom;
+            //dPayStartDate.CustomFormat = "";
+
             editControls(false);
             AutoScroll = true;
             DBOperator.SetComboxRepData(tAccRep);
@@ -45,16 +52,15 @@ namespace KYLDB
         }
         private void ClientInfo_Load(object sender, EventArgs e)
         {
-            string sql = @"select cp.*, ccd.FirstCheckDate 
-                           from ClientPayroll cp left join ClientCheckDate ccd on cp.AccNum=ccd.AccNum";
-            DataTable dt = DBOperator.QuerySql(sql);
-            ClientPayrolls = DBOperator.getListFromTable<Model.ClientPayroll>(dt);
-            var acclist = from ac in ClientPayrolls
-                          select ac.AccNum;
+            string sql = @" select cp.*, ccd.FirstCheckDate from ClientPayroll cp left join ClientCheckDate ccd on cp.AccNum=ccd.AccNum ";
+            dt_clients = DBOperator.QuerySql(sql);
+            //ClientPayrolls = DBOperator.getListFromTable<Model.ClientPayroll>(dt);
+            var acclist = from ac in dt_clients.AsEnumerable()
+                          select ac[0].ToString();
             AccNumList.DataSource = acclist.ToArray();
             
-            var enList = from ac in ClientPayrolls
-                         select ac.Entity;
+            var enList = from ac in dt_clients.AsEnumerable()
+                         select ac[1].ToString();
             comboBox2.DataSource = enList.ToArray();
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
 
@@ -77,9 +83,10 @@ namespace KYLDB
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             string entity = comboBox2.Text;
-            var acc = (from ac in ClientPayrolls
-                       where ac.Entity == entity
+            var row = (from ac in dt_clients.AsEnumerable()
+                       where ac[5].ToString() == entity
                        select ac).First();
+            var acc = DBOperator.getObjectFromRow<Model.ClientPayroll>(row);
             AccNumList.Text = acc.AccNum;
             tAccNum.Text = acc.AccNum;
             tEIN.Text = acc.EIN;
@@ -165,9 +172,10 @@ namespace KYLDB
         private void AccNumList_SelectedIndexChanged(object sender, EventArgs e)
         {
             string accNum = AccNumList.Text;
-            var acc = (from ac in ClientPayrolls
-                       where ac.AccNum == accNum
+            var row = (from ac in dt_clients.AsEnumerable()
+                       where ac[0].ToString() == accNum
                        select ac).First();
+            var acc = DBOperator.getObjectFromRow<Model.ClientPayroll>(row);
             comboBox2.Text = acc.Entity;
             tAccNum.Text = acc.AccNum;
             tEIN.Text = acc.EIN;
@@ -367,9 +375,8 @@ namespace KYLDB
                                                  StateTaxFreq = '" + cStateTaxFreq.Text + "', StateWH = '" + tStateWH.Text + "', StateUser = '" + tStateUser.Text + "', StatePw = '" + tStatePw.Text + @"'
                         where AccNum = '" + tAccNum.Text + "'";
             DBOperator.ExecuteSql(sql);
-            sql = "select * from ClientPayroll";
-            DataTable dt = DBOperator.QuerySql(sql);
-            ClientPayrolls = DBOperator.getListFromTable<Model.ClientPayroll>(dt);
+            sql = " select cp.*, ccd.FirstCheckDate from ClientPayroll cp left join ClientCheckDate ccd on cp.AccNum = ccd.AccNum ";
+            dt_clients = DBOperator.QuerySql(sql);
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
@@ -392,16 +399,32 @@ namespace KYLDB
                          insert into ClientCheckDate values('" + accNum + "','" + dFirstCheckDate.Text + "');";
             DBOperator.ExecuteSql(sql);
 
-            var acc = (from ac in ClientPayrolls
-                       where ac.AccNum == accNum
-                       select ac).First();
-            acc.FirstCheckDate = dFirstCheckDate.Text;
+            sql = " select cp.*, ccd.FirstCheckDate from ClientPayroll cp left join ClientCheckDate ccd on cp.AccNum = ccd.AccNum ";
+            dt_clients = DBOperator.QuerySql(sql);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             saveCurentItem();
             MessageBox.Show("Client payroll is saved");
+        }
+
+        private void dPayStartDate_ValueChanged(object sender, EventArgs e)
+        {
+            dPayStartDate.CustomFormat = null;
+            dPayStartDate.Format = DateTimePickerFormat.Short;
+        }
+
+        private void dPayCloseDate_ValueChanged(object sender, EventArgs e)
+        {
+            dPayCloseDate.CustomFormat = null;
+            dPayCloseDate.Format = DateTimePickerFormat.Short;
+        }
+
+        private void dBankStartDate_ValueChanged(object sender, EventArgs e)
+        {
+            dBankStartDate.CustomFormat = null;
+            dBankStartDate.Format = DateTimePickerFormat.Short;
         }
     }
 }

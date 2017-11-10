@@ -34,11 +34,11 @@ namespace KYLDB.Reports.PayrollRepNumFrm
 
         private void PayrollRepNumFrm_Load(object sender, EventArgs e)
         {
-            string sql = @"select r.Rep as 'Rep', count(ar.AccRep) as 'AccRep', count(pr.PayRep) as 'PayRep', COUNT(cr.CkRep) as 'CkRep'
+            string sql = @"select r.Rep as 'Rep', count(ar.Rep) as 'AccRep', count(pr.PayrollRep) as 'PayRep', COUNT(cr.PaycheckRep) as 'CkRep'
                             from Representative r 
-                            left join ClientPayroll ar on r.Rep=ar.AccRep 
-                            left join ClientPayroll pr on r.Rep=pr.PayRep
-                            left join ClientPayroll cr on r.Rep=cr.CkRep
+                            left join ClientDetail ar on r.Rep=ar.Rep and ar.JobStatus in ('Current', 'Yearly', 'Pending') and ar.Payroll like 'Yes%'
+                            left join ClientDetail pr on r.Rep=pr.PayrollRep and pr.JobStatus in ('Current', 'Yearly', 'Pending') and pr.Payroll like 'Yes%'
+                            left join ClientDetail cr on r.Rep=cr.PaycheckRep and cr.JobStatus in ('Current', 'Yearly', 'Pending') and cr.Payroll like 'Yes%'
                             group by r.Rep
                             order by r.Rep";
             //  and cr.JosStatus='Current' and cr.Payroll like 'Yes%'

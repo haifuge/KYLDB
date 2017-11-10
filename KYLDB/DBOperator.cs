@@ -78,6 +78,32 @@ namespace KYLDB
             }
             return objs;
         }
+        public static T getObjectFromRow<T>(DataRow dr)
+        {
+            Type temp = typeof(T);
+            T obj = Activator.CreateInstance<T>();
+                
+            foreach (DataColumn column in dr.Table.Columns)
+            {
+                foreach (PropertyInfo pro in temp.GetProperties())
+                {
+                    if (pro.Name.ToLower() == column.ColumnName.ToLower())
+                    {
+                        if (dr[column.ColumnName] == DBNull.Value)
+                        {
+                            pro.SetValue(obj, " ", null);
+                            break;
+                        }
+                        else
+                        {
+                            pro.SetValue(obj, dr[column.ColumnName], null);
+                            break;
+                        }
+                    }
+                }
+            }
+            return obj;
+        }
 
         public static void SetComboxRepData(ComboBox comb)
         {

@@ -1987,7 +1987,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>PayFreq:</Value>
+                    <Value>PhilaEZPw:</Value>
                     <Style>
                       <FontSize>8pt</FontSize>
                     </Style>
@@ -2019,7 +2019,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>TaxDepType:</Value>
+                    <Value>PhilaOnlinePin:</Value>
                     <Style>
                       <FontSize>8pt</FontSize>
                     </Style>
@@ -4424,7 +4424,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!PayFreq.Value, "dsClientPayroll")</Value>
+                    <Value>=First(Fields!PhilaEZPw.Value, "dsClientPayroll")</Value>
                     <Style>
                       <FontSize>8pt</FontSize>
                     </Style>
@@ -4456,7 +4456,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!TaxDepType.Value, "dsClientPayroll")</Value>
+                    <Value>=First(Fields!PhilaOnlinPin.Value, "dsClientPayroll")</Value>
                     <Style>
                       <FontSize>8pt</FontSize>
                     </Style>

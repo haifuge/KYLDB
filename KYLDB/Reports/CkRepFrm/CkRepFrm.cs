@@ -105,7 +105,8 @@ namespace KYLDB.Reports.CkRepFrm
                             checkDate += date.ToString("M/d") + ", ";
                             date = date.AddDays(14);
                         }
-                        checkDate = checkDate.Substring(0, checkDate.Length - 2);
+                        if(checkDate.Length>2)
+                            checkDate = checkDate.Substring(0, checkDate.Length - 2);
                         break;
                 }
                 items[i].CkDate = checkDate;

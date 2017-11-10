@@ -36,6 +36,7 @@ namespace KYLDB.Reports.RepReportFrm
         {
             DBOperator.SetComboxRepDataFirstName(cmbRep);
             string repCond = "";
+            string ckrepCond = "";
             if (Main.cUser.UserLevel >= Setting.ReporterLevel)
             {
                 cmbRep.Enabled = true;
@@ -46,6 +47,7 @@ namespace KYLDB.Reports.RepReportFrm
                 cmbRep.Enabled = false;
                 cmbRep.Text = Main.cUser.Rep;
                 repCond = " and cp.PayRep = '" + Main.cUser.Rep + "' ";
+                ckrepCond = " and cp.CkRep = '" + Main.cUser.Rep + "' ";
             }
             string sql = @"select cp.AccNum, cp.Entity as 'Name', cp.AccRep, cp.PayRep, cp.CkRep, cp.PayType, cp.PayFreq 
                             from ClientPayroll cp inner join ClientDetail cd on cp.accnum=cd.AccountNo 
@@ -60,7 +62,7 @@ namespace KYLDB.Reports.RepReportFrm
             reportViewer1.LocalReport.DataSources.Add(dsRep);
             sql = @"select cp.AccNum, cp.Entity as 'Name', cp.AccRep, cp.PayRep, cp.CkRep, cp.PayType, cp.PayFreq 
                     from ClientPayroll cp inner join ClientDetail cd on cp.accnum=cd.AccountNo 
-                    where cd.JobStatus='Current' " + repCond + @"  order by cp.AccNum";
+                    where cd.JobStatus='Current' " + ckrepCond + @"  order by cp.AccNum";
             dt = DBOperator.QuerySql(sql);
 
             ReportParameter ckrepn = new ReportParameter("ckRepn", dt.Rows.Count.ToString());

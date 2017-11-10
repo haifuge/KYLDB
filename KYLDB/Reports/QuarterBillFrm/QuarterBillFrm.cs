@@ -95,7 +95,7 @@ namespace KYLDB.Reports.QuarterBillFrm
 	                            left join PayCheck p on cp.AccNum=p.AccNum and p.PostDate between '" + thisQStart + "' and '" + thisQEnd + @"'
 	                            left join PayCheck p2 on cp.AccNum=p2.AccNum and p2.PostDate between '" + lastQStart + "' and '" + lastQEnd + @"'
                                 group by cp.AccNum, cp.Entity
-                            ) a order by a.AccNum";
+                            ) a where a.BillAmt>0 order by a.AccNum";
             DataTable dt = DBOperator.QuerySql(sql);
             List<QuarterBill> items = DBOperator.getListFromTable<QuarterBill>(dt);
             ReportParameter yearP = new ReportParameter("year", year.ToString());
