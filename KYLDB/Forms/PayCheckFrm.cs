@@ -293,6 +293,18 @@ namespace KYLDB.Forms
             catch { }
             //dataGridView1.CurrentCell.Tag = comCkFee.;
         }
-        
+
+        private void dataGridView1_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyData == Keys.Tab && dataGridView1.CurrentCell.ColumnIndex==6)
+                {
+                    dataGridView1.CurrentCell.Value = comCkFee.Text;
+                    dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[7].Value = "$" + (decimal.Parse(comCkFee.SelectedValue.ToString()) * decimal.Parse(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[5].Value.ToString())).ToString("0.00");
+                }
+            }
+            catch { }
+        }
     }
 }
