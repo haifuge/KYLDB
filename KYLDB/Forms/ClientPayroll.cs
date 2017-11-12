@@ -20,12 +20,6 @@ namespace KYLDB
         private ClientPayroll()
         {
             InitializeComponent();
-            //dBankStartDate.Format = DateTimePickerFormat.Custom;
-            //dBankStartDate.CustomFormat = "";
-            //dPayCloseDate.Format = DateTimePickerFormat.Custom;
-            //dPayCloseDate.CustomFormat = "";
-            //dPayStartDate.Format = DateTimePickerFormat.Custom;
-            //dPayStartDate.CustomFormat = "";
 
             editControls(false);
             AutoScroll = true;
@@ -60,7 +54,7 @@ namespace KYLDB
             AccNumList.DataSource = acclist.ToArray();
             
             var enList = from ac in dt_clients.AsEnumerable()
-                         select ac[1].ToString();
+                         select ac[5].ToString();
             comboBox2.DataSource = enList.ToArray();
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
 
@@ -118,12 +112,12 @@ namespace KYLDB
             cPayType.Text = acc.PayType;
             cPayFreq.Text = acc.PayFreq;
             cTaxDepType.Text = acc.TaxDepType;
-            dPayStartDate.Text = acc.PayStartDate;
-            dPayCloseDate.Text = acc.PayCloseDate;
+            tpayStartDate.Text = acc.PayStartDate;
+            tpayCloseDate.Text = acc.PayCloseDate;
             tBank.Text = acc.Bank;
             tBankRtg.Text = acc.BankRtg;
-            tBankAcc.Text = acc.BankAcc;
-            dBankStartDate.Text = acc.BankStartDate;
+            tBankAcc.Text = acc.BankAcc;            
+            tbankStartDate.Text = acc.BankStartDate;
             cDateIn.Text = acc.DateIn;
             cDateOut.Text = acc.DateOut;
             tTimeToDone.Text = acc.TimeToDone;
@@ -207,12 +201,12 @@ namespace KYLDB
             cPayType.Text = acc.PayType;
             cPayFreq.Text = acc.PayFreq;
             cTaxDepType.Text = acc.TaxDepType;
-            dPayStartDate.Text = acc.PayStartDate;
-            dPayCloseDate.Text = acc.PayCloseDate;
+            tpayStartDate.Text = acc.PayStartDate;
+            tpayCloseDate.Text = acc.PayCloseDate;
             tBank.Text = acc.Bank;
             tBankRtg.Text = acc.BankRtg;
             tBankAcc.Text = acc.BankAcc;
-            dBankStartDate.Text = acc.BankStartDate;
+            tbankStartDate.Text = acc.BankStartDate;
             cDateIn.Text = acc.DateIn;
             cDateOut.Text = acc.DateOut;
             tTimeToDone.Text = acc.TimeToDone;
@@ -411,20 +405,17 @@ namespace KYLDB
 
         private void dPayStartDate_ValueChanged(object sender, EventArgs e)
         {
-            dPayStartDate.CustomFormat = null;
-            dPayStartDate.Format = DateTimePickerFormat.Short;
+            tpayStartDate.Text = dPayStartDate.Text;
         }
 
         private void dPayCloseDate_ValueChanged(object sender, EventArgs e)
         {
-            dPayCloseDate.CustomFormat = null;
-            dPayCloseDate.Format = DateTimePickerFormat.Short;
+            tpayCloseDate.Text = dPayCloseDate.Text;
         }
 
         private void dBankStartDate_ValueChanged(object sender, EventArgs e)
         {
-            dBankStartDate.CustomFormat = null;
-            dBankStartDate.Format = DateTimePickerFormat.Short;
+            tbankStartDate.Text = dBankStartDate.Text;
         }
     }
 }

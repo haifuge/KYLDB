@@ -195,6 +195,9 @@
             this.tEFTPS = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.cUCUsername = new System.Windows.Forms.TextBox();
+            this.tpayStartDate = new System.Windows.Forms.TextBox();
+            this.tpayCloseDate = new System.Windows.Forms.TextBox();
+            this.tbankStartDate = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnMain
@@ -595,9 +598,10 @@
             // 
             // dPayStartDate
             // 
-            this.dPayStartDate.CustomFormat = " ";
+            this.dPayStartDate.Checked = false;
+            this.dPayStartDate.CustomFormat = "";
             this.dPayStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dPayStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dPayStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dPayStartDate.Location = new System.Drawing.Point(129, 366);
             this.dPayStartDate.Name = "dPayStartDate";
             this.dPayStartDate.Size = new System.Drawing.Size(139, 24);
@@ -832,7 +836,7 @@
             // tBankAcc
             // 
             this.tBankAcc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBankAcc.Location = new System.Drawing.Point(604, 402);
+            this.tBankAcc.Location = new System.Drawing.Point(599, 402);
             this.tBankAcc.Name = "tBankAcc";
             this.tBankAcc.Size = new System.Drawing.Size(106, 24);
             this.tBankAcc.TabIndex = 35;
@@ -869,12 +873,12 @@
             // 
             // dBankStartDate
             // 
-            this.dBankStartDate.CustomFormat = " ";
+            this.dBankStartDate.CustomFormat = "";
             this.dBankStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dBankStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dBankStartDate.Location = new System.Drawing.Point(842, 403);
+            this.dBankStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dBankStartDate.Location = new System.Drawing.Point(836, 403);
             this.dBankStartDate.Name = "dBankStartDate";
-            this.dBankStartDate.Size = new System.Drawing.Size(122, 24);
+            this.dBankStartDate.Size = new System.Drawing.Size(128, 24);
             this.dBankStartDate.TabIndex = 36;
             this.dBankStartDate.Value = new System.DateTime(2017, 6, 15, 21, 36, 28, 0);
             this.dBankStartDate.ValueChanged += new System.EventHandler(this.dBankStartDate_ValueChanged);
@@ -883,7 +887,7 @@
             // 
             this.label39.AutoSize = true;
             this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.Location = new System.Drawing.Point(733, 405);
+            this.label39.Location = new System.Drawing.Point(722, 405);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(108, 18);
             this.label39.TabIndex = 115;
@@ -1748,9 +1752,9 @@
             // 
             // dPayCloseDate
             // 
-            this.dPayCloseDate.CustomFormat = " ";
+            this.dPayCloseDate.CustomFormat = "";
             this.dPayCloseDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dPayCloseDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dPayCloseDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dPayCloseDate.Location = new System.Drawing.Point(412, 366);
             this.dPayCloseDate.Name = "dPayCloseDate";
             this.dPayCloseDate.Size = new System.Drawing.Size(141, 24);
@@ -1856,11 +1860,47 @@
             this.cUCUsername.TabIndex = 163;
             this.cUCUsername.Text = "Batch";
             // 
+            // tpayStartDate
+            // 
+            this.tpayStartDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tpayStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tpayStartDate.Location = new System.Drawing.Point(132, 369);
+            this.tpayStartDate.Multiline = true;
+            this.tpayStartDate.Name = "tpayStartDate";
+            this.tpayStartDate.Size = new System.Drawing.Size(86, 19);
+            this.tpayStartDate.TabIndex = 164;
+            this.tpayStartDate.Text = "PA";
+            // 
+            // tpayCloseDate
+            // 
+            this.tpayCloseDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tpayCloseDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tpayCloseDate.Location = new System.Drawing.Point(416, 369);
+            this.tpayCloseDate.Multiline = true;
+            this.tpayCloseDate.Name = "tpayCloseDate";
+            this.tpayCloseDate.Size = new System.Drawing.Size(90, 19);
+            this.tpayCloseDate.TabIndex = 165;
+            this.tpayCloseDate.Text = "PA";
+            // 
+            // tbankStartDate
+            // 
+            this.tbankStartDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbankStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbankStartDate.Location = new System.Drawing.Point(841, 406);
+            this.tbankStartDate.Multiline = true;
+            this.tbankStartDate.Name = "tbankStartDate";
+            this.tbankStartDate.Size = new System.Drawing.Size(80, 19);
+            this.tbankStartDate.TabIndex = 166;
+            this.tbankStartDate.Text = "PA";
+            // 
             // ClientPayroll
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(993, 930);
+            this.Controls.Add(this.tbankStartDate);
+            this.Controls.Add(this.tpayCloseDate);
+            this.Controls.Add(this.tpayStartDate);
             this.Controls.Add(this.cUCUsername);
             this.Controls.Add(this.tCkRep);
             this.Controls.Add(this.tPayRep);
@@ -2206,5 +2246,8 @@
         private System.Windows.Forms.ComboBox tEFTPS;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox cUCUsername;
+        private System.Windows.Forms.TextBox tpayStartDate;
+        private System.Windows.Forms.TextBox tpayCloseDate;
+        private System.Windows.Forms.TextBox tbankStartDate;
     }
 }
