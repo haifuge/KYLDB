@@ -29,7 +29,7 @@ namespace KYLDB.Model
         public string HomeAdd { get; set; }
         public string Fax { get; set; }
         public string Email { get; set; }
-        public string Language { get; set; }
+        public string Lauguage { get; set; }        
         public string Contact1 { get; set; }
         public string Contact1Tel1 { get; set; }
         public string Contact1Tel2 { get; set; }
@@ -56,7 +56,7 @@ namespace KYLDB.Model
                 }
             }
         }
-        public string PayCloseDate { get; set; }
+        public string PayClosedDate { get; set; }
         public string Bank { get; set; }
         public string BankRtg { get; set; }
         public string BankAcc { get; set; }
@@ -95,9 +95,9 @@ namespace KYLDB.Model
         public string PhilaNum { get; set; }
         public string PhilaTaxFreq { get; set; }
         public string PhilaPayType { get; set; }
-        public string PhilaEZReportN { get; set; }
+        public string PhilaEZReportNum { get; set; }
         public string PhilaEZPw { get; set; }
-        public string PhilaOnlinPin { get; set; }
+        public string PhilaOnlinePin { get; set; }
         public string Local { get; set; }
         public string LocalPSD { get; set; }
         public string LocalCollector { get; set; }

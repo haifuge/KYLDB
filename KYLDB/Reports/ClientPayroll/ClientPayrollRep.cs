@@ -39,24 +39,27 @@ namespace KYLDB.Reports
         List<Model.ClientPayroll> ClientPayrolls = new List<Model.ClientPayroll>();
         private void ClientPayrollRep_Load(object sender, EventArgs e)
         {
-            string sql = "select * from ClientPayroll";
+            string sql="";
+            if (Main.cUser.UserLevel > 5)
+                sql = "select AccNum from ClientPayroll";
+            else
+                sql = "select AccNum from ClientPayroll where AccRep='" + Main.cUser.Rep+"' or PayRep = '"+Main.cUser.Rep+"' or CkRep='"+Main.cUser.Rep+"'";
             DataTable dt = DBOperator.QuerySql(sql);
-            ClientPayrolls = DBOperator.getListFromTable<Model.ClientPayroll>(dt);
-            var acclist = from ac in ClientPayrolls
-                          select ac.AccNum;
+            var acclist = from ac in dt.AsEnumerable()
+                          select ac[0].ToString();
             comboBox1.DataSource = acclist.ToArray();
-            this.reportViewer1.RefreshReport();
+            //this.reportViewer1.RefreshReport();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var acc = (from ac in ClientPayrolls
-                      where ac.AccNum==comboBox1.Text
-                      select ac).First();
-            this.ClientPayrollBindingSource.DataSource = acc;
-            string sql = "select FirstCheckDate from ClientCheckDate where AccNum='"+acc.AccNum+"'";
-            string firstCheckDate = "";
+            string sql = "select * from ClientPayroll where AccNum='" + comboBox1.Text + "'";
             DataTable dt = DBOperator.QuerySql(sql);
+            var acc = DBOperator.getObjectFromRow<Model.ClientPayroll>(dt.Rows[0]);
+            this.ClientPayrollBindingSource.DataSource = acc;
+            sql = "select FirstCheckDate from ClientCheckDate where AccNum='"+acc.AccNum+"'";
+            string firstCheckDate = "";
+            dt = DBOperator.QuerySql(sql);
             if (dt.Rows.Count == 0)
                 firstCheckDate = "1/1/" + DateTime.Now.Year.ToString();
             else

@@ -91,6 +91,7 @@ namespace KYLDB.Reports.MonthlySaleTax
             ReportParameter totalPar = new ReportParameter("totalNum", "Total #: "+total.ToString());
             reportViewer1.LocalReport.SetParameters(new ReportParameter[] { repTitle, repMonth, totalPar });
             ReportDataSource rds = new ReportDataSource("dsMonthlySalesTax", items);
+            reportViewer1.LocalReport.DataSources.Clear();
             reportViewer1.LocalReport.DataSources.Add(rds);
 
             reportViewer1.RefreshReport();

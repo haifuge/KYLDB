@@ -102,7 +102,7 @@ namespace KYLDB
             tHomeAdd.Text = acc.HomeAdd;
             tFax.Text = acc.Fax;
             tEmail.Text = acc.Email;
-            tLanguage.Text = acc.Language;
+            tLanguage.Text = acc.Lauguage;
             tContact1.Text = acc.Contact1;
             tContact1Tel1.Text = acc.Contact1Tel1;
             tContact1Tel2.Text = acc.Contact1Tel2;
@@ -113,7 +113,7 @@ namespace KYLDB
             cPayFreq.Text = acc.PayFreq;
             cTaxDepType.Text = acc.TaxDepType;
             tpayStartDate.Text = acc.PayStartDate;
-            tpayCloseDate.Text = acc.PayCloseDate;
+            tpayCloseDate.Text = acc.PayClosedDate;
             tBank.Text = acc.Bank;
             tBankRtg.Text = acc.BankRtg;
             tBankAcc.Text = acc.BankAcc;            
@@ -136,9 +136,9 @@ namespace KYLDB
             tPhilaNum.Text = acc.PhilaNum;
             cPhilaTaxFreq.Text = acc.PhilaTaxFreq;
             cPhilaPayType.Text = acc.PhilaPayType;
-            tPhilaEZReportN.Text = acc.PhilaEZReportN;
+            tPhilaEZReportN.Text = acc.PhilaEZReportNum;
             tPhilaEZPw.Text = acc.PhilaEZPw;
-            tPhilaOnlinePin.Text = acc.PhilaOnlinPin;
+            tPhilaOnlinePin.Text = acc.PhilaOnlinePin;
             tLocal.Text = acc.Local;
             tLocalPSD.Text = acc.LocalPSD;
             tLocalCollector.Text = acc.LocalCollector;
@@ -191,7 +191,7 @@ namespace KYLDB
             tHomeAdd.Text = acc.HomeAdd;
             tFax.Text = acc.Fax;
             tEmail.Text = acc.Email;
-            tLanguage.Text = acc.Language;
+            tLanguage.Text = acc.Lauguage;
             tContact1.Text = acc.Contact1;
             tContact1Tel1.Text = acc.Contact1Tel1;
             tContact1Tel2.Text = acc.Contact1Tel2;
@@ -202,7 +202,7 @@ namespace KYLDB
             cPayFreq.Text = acc.PayFreq;
             cTaxDepType.Text = acc.TaxDepType;
             tpayStartDate.Text = acc.PayStartDate;
-            tpayCloseDate.Text = acc.PayCloseDate;
+            tpayCloseDate.Text = acc.PayClosedDate;
             tBank.Text = acc.Bank;
             tBankRtg.Text = acc.BankRtg;
             tBankAcc.Text = acc.BankAcc;
@@ -225,9 +225,9 @@ namespace KYLDB
             tPhilaNum.Text = acc.PhilaNum;
             cPhilaTaxFreq.Text = acc.PhilaTaxFreq;
             cPhilaPayType.Text = acc.PhilaPayType;
-            tPhilaEZReportN.Text = acc.PhilaEZReportN;
+            tPhilaEZReportN.Text = acc.PhilaEZReportNum;
             tPhilaEZPw.Text = acc.PhilaEZPw;
-            tPhilaOnlinePin.Text = acc.PhilaOnlinPin;
+            tPhilaOnlinePin.Text = acc.PhilaOnlinePin;
             tLocal.Text = acc.Local;
             tLocalPSD.Text = acc.LocalPSD;
             tLocalCollector.Text = acc.LocalCollector;
@@ -359,14 +359,14 @@ namespace KYLDB
     
         private void saveCurentItem()
         {
-            string sql = "update ClientPayroll set EIN='" + tEIN.Text + "', AccRep='" + tAccRep.Text + "', PayRep='" + tPayRep.Text + "', CkRep='" + tCkRep.Text + "', Entity='" + tEntity.Text + "', TradeName='" + tTradeName.Text + "', BusAdd1='" + tBusAdd1.Text + "', BusAdd2='" + tBusAdd2.Text + "', BusCity='" + tBusCity.Text + "', BusSt='" + tBusSt.Text + "', BusZip='" + tBusZip.Text + @"', 
-                                                 MailAdd1 = '" + tMailAdd1.Text + "', MailAdd2 = '" + tMailAdd2.Text + "', MailCity = '" + tMailCity.Text + "', MailSt = '" + tMailSt.Text + "', MailZip = '" + tMailZip.Text + "', HomeAdd = '" + tHomeAdd.Text + "', Contact1 = '" + tContact1.Text + "', Contact1Tel1 = '" + tContact1Tel1.Text + "', Contact1Tel2 = '" + tContact1Tel2.Text + "', Contact2 = '" + tContact2.Text + "', Contact2Tel1 = '" + tContact2Tel1.Text + @"', 
-                                                 Contact2Tel2 = '" + tContact2Tel2.Text + "', Fax = '" + tFax.Text + "', Email = '" + tEmail.Text + "', Lauguage = '" + tLanguage.Text + "', PayStartDate = '" + dPayStartDate.Text + "', PayType = '" + cPayType.Text + "', PayFreq = '" + cPayFreq.Text + "', TaxDepType = '" + cTaxDepType.Text + "', Bank = '" + tBank.Text + "', BankRtg = '" + tBankRtg.Text + "', BankAcc = '" + tBankAcc.Text + "', BankStartDate = '" + dBankStartDate.Text + @"',
-                                                 DateIn = '" + cDateIn.Text + "', DateOut = '" + cDateOut.Text + "', TimeToDone = '" + tTimeToDone.Text + "', AveNumEE = '" + tAveNumEE.Text + "', PayClosedDate = '" + dPayCloseDate.Text + "', Note = '" + tNote.Text + "', FedTaxFreq = '" + cFedTaxFreq.Text + "', EFTPS = '" + tEFTPS.Text + "', F8655 = '" + cF8655.Text + "', EFTPSPin = '" + tEFTPSPin.Text + "', EFTPSPw = '" + tEFTPSPw.Text + "', PhilaNum = '" + tPhilaNum.Text + @"',
-                                                 PhilaTaxFreq = '" + cPhilaTaxFreq.Text + "', PhilaPayType = '" + cPhilaPayType.Text + "', PhilaEZReportNum = '" + tPhilaEZReportN.Text + "', PhilaEZPw = '" + tPhilaEZPw.Text + "', PhilaOnlinePin = '" + tPhilaOnlinePin.Text + "', Local = '" + tLocal.Text + "', LocalPSD = '" + tLocalPSD.Text + "', LocalCollector = '" + tLocalCollector.Text + "', LocalTaxFreq = '" + tLocalTaxFreq.Text + @"',
-                                                 LocalPayType = '" + cLocalPayType.Text + "', LocalUser = '" + tLocalUser.Text + "', LocalPw = '" + tLocalPw.Text + "', LST = '" + tLST.Text + "', LSTCollector = '" + tLSTCollector.Text + "', LSTTaxFreq = '" + tLSTTaxFreq.Text + "', LSTPayType = '" + cLSTPayType.Text + "', LSTUser = '" + tLSTUser.Text + "', LSTPw = '" + tLSTPW.Text + "', UC = '" + tUC.Text + "', UCNum = '" + tUCNum.Text + "', UCPayType = '" + cUCPayType.Text + @"',
-                                                 UCUsername = '" + cUCUsername.Text + "', UCPassword = '" + tUCPassword.Text + "', UCContaceEM = '" + tUCContactEm.Text + "', PAUCQ1 = '" + tPAUCQ1.Text.Replace("'", "''") + "', PAUCQ2 = '" + tPAUCQ2.Text.Replace("'", "''") + "', PAUCQ3 = '" + tPAUCQ3.Text.Replace("'", "''") + "', State = '" + tState.Text + @"',
-                                                 StateTaxFreq = '" + cStateTaxFreq.Text + "', StateWH = '" + tStateWH.Text + "', StateUser = '" + tStateUser.Text + "', StatePw = '" + tStatePw.Text + @"'
+            string sql = "update ClientPayroll set EIN='" + tEIN.Text.Replace("'","''") + "', AccRep='" + tAccRep.Text + "', PayRep='" + tPayRep.Text + "', CkRep='" + tCkRep.Text + "', Entity='" + tEntity.Text.Replace("'", "''") + "', TradeName='" + tTradeName.Text.Replace("'", "''") + "', BusAdd1='" + tBusAdd1.Text + "', BusAdd2='" + tBusAdd2.Text + "', BusCity='" + tBusCity.Text + "', BusSt='" + tBusSt.Text + "', BusZip='" + tBusZip.Text + @"', 
+                                MailAdd1 = '" + tMailAdd1.Text + "', MailAdd2 = '" + tMailAdd2.Text + "', MailCity = '" + tMailCity.Text + "', MailSt = '" + tMailSt.Text + "', MailZip = '" + tMailZip.Text + "', HomeAdd = '" + tHomeAdd.Text + "', Contact1 = '" + tContact1.Text + "', Contact1Tel1 = '" + tContact1Tel1.Text + "', Contact1Tel2 = '" + tContact1Tel2.Text + "', Contact2 = '" + tContact2.Text + "', Contact2Tel1 = '" + tContact2Tel1.Text + @"', 
+                                Contact2Tel2 = '" + tContact2Tel2.Text + "', Fax = '" + tFax.Text + "', Email = '" + tEmail.Text + "', Lauguage = '" + tLanguage.Text + "', PayStartDate = '" + tpayStartDate.Text + "', PayType = '" + cPayType.Text + "', PayFreq = '" + cPayFreq.Text + "', TaxDepType = '" + cTaxDepType.Text + "', Bank = '" + tBank.Text + "', BankRtg = '" + tBankRtg.Text + "', BankAcc = '" + tBankAcc.Text + "', BankStartDate = '" + tbankStartDate.Text + @"',
+                                DateIn = '" + cDateIn.Text + "', DateOut = '" + cDateOut.Text + "', TimeToDone = '" + tTimeToDone.Text + "', AveNumEE = '" + tAveNumEE.Text + "', PayClosedDate = '" + tpayCloseDate.Text + "', Note = '" + tNote.Text.Replace("'","''") + "', FedTaxFreq = '" + cFedTaxFreq.Text + "', EFTPS = '" + tEFTPS.Text + "', F8655 = '" + cF8655.Text + "', EFTPSPin = '" + tEFTPSPin.Text + "', EFTPSPw = '" + tEFTPSPw.Text + "', PhilaNum = '" + tPhilaNum.Text + @"',
+                                PhilaTaxFreq = '" + cPhilaTaxFreq.Text + "', PhilaPayType = '" + cPhilaPayType.Text + "', PhilaEZReportNum = '" + tPhilaEZReportN.Text + "', PhilaEZPw = '" + tPhilaEZPw.Text + "', PhilaOnlinePin = '" + tPhilaOnlinePin.Text + "', Local = '" + tLocal.Text + "', LocalPSD = '" + tLocalPSD.Text + "', LocalCollector = '" + tLocalCollector.Text + "', LocalTaxFreq = '" + tLocalTaxFreq.Text + @"',
+                                LocalPayType = '" + cLocalPayType.Text + "', LocalUser = '" + tLocalUser.Text + "', LocalPw = '" + tLocalPw.Text + "', LST = '" + tLST.Text + "', LSTCollector = '" + tLSTCollector.Text + "', LSTTaxFreq = '" + tLSTTaxFreq.Text + "', LSTPayType = '" + cLSTPayType.Text + "', LSTUser = '" + tLSTUser.Text + "', LSTPw = '" + tLSTPW.Text + "', UC = '" + tUC.Text + "', UCNum = '" + tUCNum.Text + "', UCPayType = '" + cUCPayType.Text + @"',
+                                UCUsername = '" + cUCUsername.Text + "', UCPassword = '" + tUCPassword.Text + "', UCContaceEM = '" + tUCContactEm.Text + "', PAUCQ1 = '" + tPAUCQ1.Text.Replace("'", "''") + "', PAUCQ2 = '" + tPAUCQ2.Text.Replace("'", "''") + "', PAUCQ3 = '" + tPAUCQ3.Text.Replace("'", "''") + "', State = '" + tState.Text + @"',
+                                StateTaxFreq = '" + cStateTaxFreq.Text + "', StateWH = '" + tStateWH.Text + "', StateUser = '" + tStateUser.Text + "', StatePw = '" + tStatePw.Text + @"'
                         where AccNum = '" + tAccNum.Text + "'";
             DBOperator.ExecuteSql(sql);
             sql = " select cp.*, ccd.FirstCheckDate from ClientPayroll cp left join ClientCheckDate ccd on cp.AccNum = ccd.AccNum ";
