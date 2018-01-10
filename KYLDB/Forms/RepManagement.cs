@@ -32,7 +32,9 @@ namespace KYLDB.Forms
         int rows = 0;
         private void RepManagement_Load(object sender, EventArgs e)
         {
-            string sql = "select *, 'save' as 'Save', 'delete' as 'Delete' from Representative order by Id";
+            string sql = @"select Id, Rep, LastName, FirstName, email, Note, ReportTo, UserName, '******' as 'Password', UserLevel, 
+                                  'save' as 'Save', 'delete' as 'Delete' 
+                           from Representative order by Id";
             DataTable dt = DBOperator.QuerySql(sql);
             rows = dt.Rows.Count;
             dataGridView1.DataSource = dt;
@@ -111,7 +113,9 @@ namespace KYLDB.Forms
                 DBOperator.ExecuteSql(sql);
                 MessageBox.Show("data is deleted.");
             }
-            sql = " select *, 'save' as 'Save', 'delete' as 'Delete' from Representative order by Id";
+            sql = @"select Id, Rep, LastName, FirstName, email, Note, ReportTo, UserName, '******' as 'Password', UserLevel, 
+                                  'save' as 'Save', 'delete' as 'Delete' 
+                           from Representative order by Id";
             DataTable dt = DBOperator.QuerySql(sql);
             dataGridView1.DataSource = null;
             dataGridView1.Rows.Clear();

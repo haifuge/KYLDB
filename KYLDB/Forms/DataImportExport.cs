@@ -107,6 +107,20 @@ namespace KYLDB.Forms
 						                         BusAdd2=cd.BusAdd2, BusCity=cd.BusAdd3, BusSt=cd.BusAdd4 , BusZip=cd.BusAdd5, Fax=cd.Fax
                         from ClientDetail cd, ClientPayroll where AccNum=cd.AccountNo";
                 DBOperator.ExecuteSql(sql);
+                sql = @"select AccountNo, EIN, Rep, Customer, Company, BusAdd1, PaycheckRep, PayrollRep, BusAdd2, BusAdd3, BusAdd4, BusAdd5, Fax
+                        from ClientDetail where AccountNo not in (select AccNum from ClientPayroll)";
+                dt = DBOperator.QuerySql(sql);
+                sql = "";
+                foreach(DataRow dr in dt.Rows)
+                {
+                    sql += @" insert into ClientPayroll(AccNum, EIN, AccRep, Entity, TradeName, BusAdd1, CkRep, PayRep, BusAdd2, BusCity, BusSt, BusZip, Fax) 
+                              values('" + dr[0].ToString()+ "', '" + dr[1].ToString() + "', '" + dr[2].ToString() + "', '" + dr[3].ToString().Replace("'","''") + @"', 
+                                     '" + dr[4].ToString().Replace("'", "''") + "', '" + dr[5].ToString().Replace("'", "''") + "', '" + dr[6].ToString() + "', '" + dr[7].ToString() + @"', 
+                                     '" + dr[8].ToString() + "', '" + dr[9].ToString() + "', '" + dr[10].ToString() + "', '" + dr[11].ToString() + "', " +
+                                     "'" + dr[12].ToString() + "'); ";
+                }
+                if (sql != "")
+                    DBOperator.ExecuteSql(sql);
             }
         }
         private DataTable ReadExcelToDataTable(string filePath, string tableName)

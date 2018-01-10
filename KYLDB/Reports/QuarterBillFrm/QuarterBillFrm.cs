@@ -48,7 +48,7 @@ namespace KYLDB.Reports.QuarterBillFrm
                     thisQEnd = "3/31/" + year;
                     lastQStart = "10/1/" + (year - 1);
                     lastQEnd = "12/31/" + (year - 1);
-                    quarter = "Q4";
+                    quarter = "Q1";
                     break;
                 case 4:
                 case 5:
@@ -57,7 +57,7 @@ namespace KYLDB.Reports.QuarterBillFrm
                     thisQEnd = "6/30/" + year;
                     lastQStart = "1/1/" + year;
                     lastQEnd = "3/31/" + year;
-                    quarter = "Q1";
+                    quarter = "Q2";
                     break;
                 case 7:
                 case 8:
@@ -66,7 +66,7 @@ namespace KYLDB.Reports.QuarterBillFrm
                     thisQEnd = "9/30/" + year;
                     lastQStart = "4/1/" + year;
                     lastQEnd = "6/30/" + year;
-                    quarter = "Q2";
+                    quarter = "Q3";
                     break;
                 case 10:
                 case 11:
@@ -75,7 +75,7 @@ namespace KYLDB.Reports.QuarterBillFrm
                     thisQEnd = "12/31/" + year;
                     lastQStart = "7/1/" + year;
                     lastQEnd = "9/30/" + year;
-                    quarter = "Q3";
+                    quarter = "Q4";
                     break;
             }
             cmbQuarter.Text = quarter;
@@ -87,15 +87,12 @@ namespace KYLDB.Reports.QuarterBillFrm
             cmbYear.SelectedIndex = 0;
             string sql = @"select a.AccNum, a.Customer, a.NumOfCkThisQtr, a.NumOfCkLastQtr, a.CkFee,
                                   a.NumOfCkThisQtr-a.NumOfCkLastQtr as 'Difference', convert(varchar(20),a.BillAmt) as 'BillAmt'
-                            from(
-	                            select cp.AccNum, cp.Entity as 'Customer', ISNULL(SUM(p.NumOfCk),0) as NumOfCkThisQtr, 
-                                        ISNULL(SUM(p2.NumOfCk),0) as NumOfCkLastQtr, max(p.CkFee) as 'CkFee',
-                                        sum(case when p.BillAmount is null then 0 else Convert(money,REPLACE(p.BillAmount,'$','')) end) as 'BillAmt'
+                             from(
+	                            select cp.AccNum, cp.Entity as 'Customer', isnull(c1.NumOfCkThisQtr, 0) as 'NumOfCkThisQtr', isnull(c2.NumOfCkLastQtr,0) as 'NumOfCkLastQtr', c1.CkFee, c1.BillAmt
 	                            from ClientPayroll cp 
-	                            left join PayCheck p on cp.AccNum=p.AccNum and p.PostDate between '" + thisQStart + "' and '" + thisQEnd + @"'
-	                            left join PayCheck p2 on cp.AccNum=p2.AccNum and p2.PostDate between '" + lastQStart + "' and '" + lastQEnd + @"'
-                                group by cp.AccNum, cp.Entity
-                            ) a where a.BillAmt>0 order by a.AccNum";
+	                            left join (select AccNum, SUM(ISNULL(NumOfCk,0)) as 'NumOfCkThisQtr', sum(case when BillAmount is null then 0 else Convert(money,REPLACE(BillAmount,'$','')) end) as 'BillAmt', max(CkFee) as 'CkFee' from PayCheck where PostDate between '" + thisQStart + "' and '" + thisQEnd + @"' group by AccNum) c1 on c1.AccNum= cp.AccNum
+	                            left join (select AccNum, SUM(ISNULL(NumOfCk,0)) as 'NumOfCkLastQtr', sum(case when BillAmount is null then 0 else Convert(money,REPLACE(BillAmount,'$','')) end) as 'BillAmt' from PayCheck where PostDate between '" + lastQStart + "' and '" + lastQEnd + @"' group by AccNum) c2 on c2.AccNum= cp.AccNum 
+                            ) a where a.BillAmt>0  order by a.AccNum";
             DataTable dt = DBOperator.QuerySql(sql);
             List<QuarterBill> items = DBOperator.getListFromTable<QuarterBill>(dt);
             ReportParameter yearP = new ReportParameter("year", year.ToString());
@@ -149,13 +146,10 @@ namespace KYLDB.Reports.QuarterBillFrm
             string sql = @"select a.AccNum, a.Customer, a.NumOfCkThisQtr, a.NumOfCkLastQtr, a.CkFee,
                                   a.NumOfCkThisQtr-a.NumOfCkLastQtr as 'Difference', convert(varchar(20),a.BillAmt) as 'BillAmt'
                              from(
-	                            select cp.AccNum, cp.Entity as 'Customer', ISNULL(SUM(p.NumOfCk),0) as NumOfCkThisQtr, 
-                                       ISNULL(SUM(p2.NumOfCk),0) as NumOfCkLastQtr, max(p.CkFee) as 'CkFee',
-                                       sum(case when p.BillAmount is null then 0 else Convert(money,REPLACE(p.BillAmount,'$','')) end) as 'BillAmt'
+	                            select cp.AccNum, cp.Entity as 'Customer', isnull(c1.NumOfCkThisQtr, 0) as 'NumOfCkThisQtr', isnull(c2.NumOfCkLastQtr,0) as 'NumOfCkLastQtr', c1.CkFee, c1.BillAmt
 	                            from ClientPayroll cp 
-	                            left join PayCheck p on cp.AccNum=p.AccNum and p.PostDate between '" + thisQStart + "' and '" + thisQEnd + @"'
-	                            left join PayCheck p2 on cp.AccNum=p2.AccNum and p2.PostDate between '" + lastQStart + "' and '" + lastQEnd + @"'
-                                group by cp.AccNum, cp.Entity
+	                            left join (select AccNum, SUM(ISNULL(NumOfCk,0)) as 'NumOfCkThisQtr', sum(case when BillAmount is null then 0 else Convert(money,REPLACE(BillAmount,'$','')) end) as 'BillAmt', max(CkFee) as 'CkFee' from PayCheck where PostDate between '" + thisQStart + "' and '" + thisQEnd + @"' group by AccNum) c1 on c1.AccNum= cp.AccNum
+	                            left join (select AccNum, SUM(ISNULL(NumOfCk,0)) as 'NumOfCkLastQtr', sum(case when BillAmount is null then 0 else Convert(money,REPLACE(BillAmount,'$','')) end) as 'BillAmt' from PayCheck where PostDate between '" + lastQStart + "' and '" + lastQEnd + @"' group by AccNum) c2 on c2.AccNum= cp.AccNum 
                             ) a where a.BillAmt>0  order by a.AccNum";
             DataTable dt = DBOperator.QuerySql(sql);
             List<QuarterBill> items = DBOperator.getListFromTable<QuarterBill>(dt);

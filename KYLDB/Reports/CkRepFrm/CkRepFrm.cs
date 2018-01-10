@@ -35,7 +35,7 @@ namespace KYLDB.Reports.CkRepFrm
         private void CkRepFrm_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
-            DBOperator.SetComboxRepDataFirstName(cmbRep);
+            DBOperator.SetComboxRepData(cmbRep);
             cmbRep.SelectedIndex = DateTime.Now.Month-1;
             comMonth.SelectedIndex = 0;
             int year = DateTime.Now.Year;
@@ -59,7 +59,7 @@ namespace KYLDB.Reports.CkRepFrm
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string re = cmbRep.Text;
+            string re = cmbRep.SelectedValue.ToString();
             ReportParameter rep = new ReportParameter("rep", re);
             string condition = "";
             if (re != "All")
@@ -80,17 +80,20 @@ namespace KYLDB.Reports.CkRepFrm
             {
                 string payFreq = items[i].PayFreq;
                 DateTime date = DateTime.Parse(items[i].CkDate);
+                int day = date.Day;
                 string checkDate = "";
                 switch (payFreq)
                 {
                     case "Monthly":
-                        date = date.AddMonths(comMonth.SelectedIndex);
+                        date = new DateTime(DateTime.Now.Year - comYear.SelectedIndex, comMonth.SelectedIndex + 1, day);
                         checkDate = date.ToString("M/d");
                         break;
                     case "Semi-monthly":
-                        date = new DateTime(DateTime.Now.Year - comYear.SelectedIndex, comMonth.SelectedIndex + 1, 15);
+                        if (day > 15)
+                            day -= 15;
+                        date = new DateTime(DateTime.Now.Year - comYear.SelectedIndex, comMonth.SelectedIndex + 1, day);
                         checkDate = date.ToString("M/d");
-                        date = new DateTime(DateTime.Now.Year - comYear.SelectedIndex, comMonth.SelectedIndex + 1, 1).AddMonths(1).AddDays(-1);
+                        date = date.AddDays(15);
                         checkDate += ", " + date.ToString("M/d");
                         break;
                     case "Bi-Weekly":
