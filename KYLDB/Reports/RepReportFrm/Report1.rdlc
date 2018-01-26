@@ -677,7 +677,7 @@
             <rd:DefaultName>Textbox16</rd:DefaultName>
             <Top>0.0625in</Top>
             <Height>0.25in</Height>
-            <Width>1.9175in</Width>
+            <Width>5.90083in</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -709,7 +709,7 @@
             <rd:DefaultName>Textbox16</rd:DefaultName>
             <Top>1.22833in</Top>
             <Height>0.25in</Height>
-            <Width>1.9175in</Width>
+            <Width>5.90083in</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>

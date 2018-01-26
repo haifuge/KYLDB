@@ -901,7 +901,7 @@
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(54, 18);
             this.label33.TabIndex = 122;
-            this.label33.Text = "DateIn:";
+            this.label33.Text = "DataIn:";
             // 
             // tTimeToDone
             // 
@@ -930,7 +930,7 @@
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(67, 18);
             this.label35.TabIndex = 120;
-            this.label35.Text = "DateOut:";
+            this.label35.Text = "DataOut:";
             // 
             // cDateIn
             // 

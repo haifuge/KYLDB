@@ -34,7 +34,7 @@ namespace KYLDB.Reports.RepReportFrm
 
         private void RepReportFrm_Load(object sender, EventArgs e)
         {
-            DBOperator.SetComboxRepDataFirstName(cmbRep);
+            DBOperator.SetComboxRepData(cmbRep);
             string repCond = "";
             string ckrepCond = "";
             if (Main.cUser.UserLevel >= Setting.ReporterLevel)
@@ -45,13 +45,13 @@ namespace KYLDB.Reports.RepReportFrm
             else
             {
                 cmbRep.Enabled = false;
-                cmbRep.Text = Main.cUser.Rep;
+                cmbRep.SelectedValue = Main.cUser.Rep;
                 repCond = " and cp.PayRep = '" + Main.cUser.Rep + "' ";
                 ckrepCond = " and cp.CkRep = '" + Main.cUser.Rep + "' ";
             }
             string sql = @"select cp.AccNum, cp.Entity as 'Name', cp.AccRep, cp.PayRep, cp.CkRep, cp.PayType, cp.PayFreq 
                             from ClientPayroll cp inner join ClientDetail cd on cp.accnum=cd.AccountNo 
-                            where cd.JobStatus='Current' and cd.Payroll like 'Yes%' " + repCond+@" order by cp.AccNum";
+                            where cd.JobStatus in ('Current', 'Pending') and cd.Payroll like 'Yes%' " + repCond+@" order by cp.AccNum";
             DataTable dt = DBOperator.QuerySql(sql);
             List<RepReport> payRep = DBOperator.getListFromTable<RepReport>(dt);
             ReportParameter rep = new ReportParameter("rep", cmbRep.Text);
@@ -62,7 +62,7 @@ namespace KYLDB.Reports.RepReportFrm
             reportViewer1.LocalReport.DataSources.Add(dsRep);
             sql = @"select cp.AccNum, cp.Entity as 'Name', cp.AccRep, cp.PayRep, cp.CkRep, cp.PayType, cp.PayFreq 
                     from ClientPayroll cp inner join ClientDetail cd on cp.accnum=cd.AccountNo 
-                    where cd.JobStatus='Current' " + ckrepCond + @"  order by cp.AccNum";
+                    where cd.JobStatus in ('Current', 'Pending') and cd.Payroll like 'Yes%' " + ckrepCond + @"  order by cp.AccNum";
             dt = DBOperator.QuerySql(sql);
 
             ReportParameter ckrepn = new ReportParameter("ckRepn", dt.Rows.Count.ToString());
@@ -91,12 +91,12 @@ namespace KYLDB.Reports.RepReportFrm
             }
             else
             {
-                Paycondition = " and cp.PayRep='" + cmbRep.Text + "' ";
-                CkCondition = " and cp.CkRep='" + cmbRep.Text + "' ";
+                Paycondition = " and cp.PayRep='" + cmbRep.SelectedValue.ToString() + "' ";
+                CkCondition = " and cp.CkRep='" + cmbRep.SelectedValue.ToString() + "' ";
             }
             string sql = @"select cp.AccNum, cp.Entity as 'Name', cp.AccRep, cp.PayRep, cp.CkRep, cp.PayType, cp.PayFreq 
                             from ClientPayroll cp inner join ClientDetail cd on cp.accnum=cd.AccountNo 
-                            where cd.JobStatus='Current' "+Paycondition+" order by cp.AccNum";
+                            where cd.JobStatus in ('Current', 'Pending') and cd.Payroll like 'Yes%'  " + Paycondition+" order by cp.AccNum";
             DataTable dt = DBOperator.QuerySql(sql);
             List<RepReport> payRep = DBOperator.getListFromTable<RepReport>(dt);
             ReportParameter rep = new ReportParameter("rep", re);
@@ -107,7 +107,7 @@ namespace KYLDB.Reports.RepReportFrm
             reportViewer1.LocalReport.DataSources.Add(dsRep);
             sql = @"select cp.AccNum, cp.Entity as 'Name', cp.AccRep, cp.PayRep, cp.CkRep, cp.PayType, cp.PayFreq 
                     from ClientPayroll cp inner join ClientDetail cd on cp.accnum=cd.AccountNo 
-                    where cd.JobStatus='Current' "+CkCondition+"  order by cp.AccNum";
+                    where cd.JobStatus in ('Current', 'Pending') and cd.Payroll like 'Yes%'  " + CkCondition+"  order by cp.AccNum";
             dt = DBOperator.QuerySql(sql);
 
             ReportParameter ckrepn = new ReportParameter("ckRepn", dt.Rows.Count.ToString());

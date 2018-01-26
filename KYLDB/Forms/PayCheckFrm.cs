@@ -40,8 +40,12 @@ namespace KYLDB.Forms
         List<Model.ClientPayroll> ClientPayrolls = new List<Model.ClientPayroll>();
         private void PayCheckFrm_Load(object sender, EventArgs e)
         {
-            string sql = @"select * from ClientPayroll 
-                           where (AccRep='"+Main.cUser.Rep+"' or PayRep='"+Main.cUser.Rep+"' or CkRep='"+Main.cUser.Rep+ "') and PayFreq<>'Quarterly'";
+            string sql = "";
+            if (Main.cUser.UserLevel >= Setting.ReporterLevel)
+                sql = "select * from ClientPayroll where PayFreq<>'Quarterly'";
+            else
+                sql = @"select * from ClientPayroll 
+                               where (AccRep='"+Main.cUser.Rep+"' or PayRep='"+Main.cUser.Rep+"' or CkRep='"+Main.cUser.Rep+ "') and PayFreq<>'Quarterly'";
             DataTable dt = DBOperator.QuerySql(sql);
             ClientPayrolls = DBOperator.getListFromTable<Model.ClientPayroll>(dt);
             var acclist = from ac in ClientPayrolls

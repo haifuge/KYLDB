@@ -52,13 +52,15 @@ namespace KYLDB.Reports.CkRepFrm
             else
             {
                 cmbRep.Enabled = false;
-                cmbRep.Text = Main.cUser.Rep;
+                cmbRep.Text = Main.cUser.FirstName+" "+Main.cUser.LastName;
+                cmbRep.SelectedValue = Main.cUser.Rep;
             }
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            int[] mdays = new int[] { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
             string re = cmbRep.SelectedValue.ToString();
             ReportParameter rep = new ReportParameter("rep", re);
             string condition = "";
@@ -82,22 +84,30 @@ namespace KYLDB.Reports.CkRepFrm
                 DateTime date = DateTime.Parse(items[i].CkDate);
                 int day = date.Day;
                 string checkDate = "";
+                DateTime cMonth = new DateTime(DateTime.Now.Year - comYear.SelectedIndex, comMonth.SelectedIndex + 1, 1);
                 switch (payFreq)
                 {
                     case "Monthly":
+                        if (day > mdays[comMonth.SelectedIndex])
+                            day = mdays[comMonth.SelectedIndex];
                         date = new DateTime(DateTime.Now.Year - comYear.SelectedIndex, comMonth.SelectedIndex + 1, day);
                         checkDate = date.ToString("M/d");
                         break;
                     case "Semi-monthly":
+                        if (day > mdays[comMonth.SelectedIndex])
+                            day = mdays[comMonth.SelectedIndex];
                         if (day > 15)
                             day -= 15;
                         date = new DateTime(DateTime.Now.Year - comYear.SelectedIndex, comMonth.SelectedIndex + 1, day);
                         checkDate = date.ToString("M/d");
-                        date = date.AddDays(15);
+                        if (day == 15)
+                            date = date.AddDays(mdays[comMonth.SelectedIndex] - 15);
+                        else
+                            date = date.AddDays(15);
                         checkDate += ", " + date.ToString("M/d");
                         break;
                     case "Bi-Weekly":
-                        DateTime cMonth = new DateTime(DateTime.Now.Year - comYear.SelectedIndex, comMonth.SelectedIndex + 1, 1);
+                    case "Biweekly":
                         while (date < cMonth)
                         {
                             date = date.AddDays(14);
@@ -109,6 +119,34 @@ namespace KYLDB.Reports.CkRepFrm
                             date = date.AddDays(14);
                         }
                         if(checkDate.Length>2)
+                            checkDate = checkDate.Substring(0, checkDate.Length - 2);
+                        break;
+                    case "Weekly":
+                        if (date < cMonth)
+                        {
+                            while (date.Year != cMonth.Year && date.Month != cMonth.Month)
+                            {
+                                date = date.AddDays(7);
+                            }
+                            while (date.Month == cMonth.Month)
+                            {
+                                checkDate += date.ToString("M/d") + ", ";
+                                date = date.AddDays(7);
+                            }
+                        }
+                        else
+                        {
+                            while (date.Year != cMonth.Year && date.Month != cMonth.Month)
+                            {
+                                date = date.AddDays(-7);
+                            }
+                            while (date.Month == cMonth.Month)
+                            {
+                                checkDate = date.ToString("M/d") + ", "+ checkDate;
+                                date = date.AddDays(-7);
+                            }
+                        }
+                        if (checkDate.Length > 2)
                             checkDate = checkDate.Substring(0, checkDate.Length - 2);
                         break;
                 }

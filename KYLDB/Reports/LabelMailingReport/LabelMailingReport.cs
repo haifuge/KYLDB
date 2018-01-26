@@ -57,27 +57,26 @@ namespace KYLDB.Reports.LabelMailingReport
             comboBox1.DataSource = dt;
             comboBox1.DisplayMember = "AccountNo";
             comboBox1.SelectedIndex = 0;
-            sql = @"select Mailto1, Mailto2, Mailto3 from ClientDetail where AccountNo='"+comboBox1.Text+"'";
-            dt = DBOperator.QuerySql(sql);
-            reportViewer1.LocalReport.DataSources.Clear();
-            ReportParameter mailto1 = new ReportParameter("mailto1", dt.Rows[0][0].ToString());
-            ReportParameter mailto2 = new ReportParameter("mailto2", dt.Rows[0][1].ToString());
-            ReportParameter mailto3 = new ReportParameter("mailto3", dt.Rows[0][2].ToString());
-            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { mailto1, mailto2, mailto3 });
-            this.reportViewer1.RefreshReport();
+            setReport();
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             WindowState = FormWindowState.Maximized;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string sql = @"select Mailto1, Mailto2, Mailto3 from ClientDetail where AccountNo='" + comboBox1.Text + "'";
+            setReport();
+        }
+        private void setReport()
+        {
+            string sql = @"select Mailto1, Mailto2, Mailto3, Mailto4, Mailto5 from ClientDetail where AccountNo='" + comboBox1.Text + "'";
             DataTable dt = DBOperator.QuerySql(sql);
             reportViewer1.LocalReport.DataSources.Clear();
             ReportParameter mailto1 = new ReportParameter("mailto1", dt.Rows[0][0].ToString());
             ReportParameter mailto2 = new ReportParameter("mailto2", dt.Rows[0][1].ToString());
             ReportParameter mailto3 = new ReportParameter("mailto3", dt.Rows[0][2].ToString());
-            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { mailto1, mailto2, mailto3 });
+            ReportParameter mailto4 = new ReportParameter("mailto4", "mail to 4....."); //dt.Rows[0][3].ToString());
+            ReportParameter mailto5 = new ReportParameter("mailto5", "mail to 5.....");// dt.Rows[0][4].ToString());
+            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { mailto1, mailto2, mailto3, mailto4, mailto5 });
             this.reportViewer1.RefreshReport();
         }
         public void setAccNum(string aNum)

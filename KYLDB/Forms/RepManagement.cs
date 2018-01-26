@@ -36,9 +36,9 @@ namespace KYLDB.Forms
                                   'save' as 'Save', 'delete' as 'Delete' 
                            from Representative order by Id";
             DataTable dt = DBOperator.QuerySql(sql);
+            dt.Columns[8].ReadOnly = false;
             rows = dt.Rows.Count;
             dataGridView1.DataSource = dt;
-
             dataGridView1.Columns.Remove("Save");
             dataGridView1.Columns.Remove("Delete");
 
@@ -99,9 +99,17 @@ namespace KYLDB.Forms
                                     Note='" + dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString() + @"', 
                                     ReportTo='" + dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString() + @"', 
                                     UserName='" + dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString() + @"', 
-                                    Password='" + dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString() + @"', 
+                                    Password 
                                     UserLevel=" + dataGridView1.Rows[e.RowIndex].Cells[9].Value.ToString() + @" 
                                 where Id=" + dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+                    if (dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString() == "111111")
+                    {
+                        sql = sql.Replace("Password", "");
+                    }
+                    else
+                    {
+                        sql = sql.Replace("Password", "Password='"+ dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString() + "', ");
+                    }
                 }
                 DBOperator.ExecuteSql(sql);
                 MessageBox.Show("data is saved.");
@@ -117,12 +125,12 @@ namespace KYLDB.Forms
                                   'save' as 'Save', 'delete' as 'Delete' 
                            from Representative order by Id";
             DataTable dt = DBOperator.QuerySql(sql);
+            dt.Columns[8].ReadOnly = false;
             dataGridView1.DataSource = null;
             dataGridView1.Rows.Clear();
             dataGridView1.Columns.Clear();
             dataGridView1.DataSource = dt;
             rows = dt.Rows.Count;
-
             dataGridView1.Columns.Remove("Save");
             dataGridView1.Columns.Remove("Delete");
 
